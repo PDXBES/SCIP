@@ -451,3 +451,9 @@ FROM	[dbo].[ASSETS] AS A
 		ON	A.COMPKEY = D.COMPKEY
 END
 
+UPDATE [dbo].[ASSETS]
+SET district_id = 'NULL'
+FROM [dbo].[ASSETS] AS A
+WHERE district_id = '1'
+
+

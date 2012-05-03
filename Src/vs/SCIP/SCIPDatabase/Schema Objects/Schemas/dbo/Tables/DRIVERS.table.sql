@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[DRIVERS] (
-    [driver_id]                INT          NULL,
+    [driver_id]                INT          IDENTITY (1,1) NOT NULL,
     [driver_type_id]           INT          NULL,
     [compkey]                  INT          NULL,
     [override_cost_per_ft]     MONEY        NULL,

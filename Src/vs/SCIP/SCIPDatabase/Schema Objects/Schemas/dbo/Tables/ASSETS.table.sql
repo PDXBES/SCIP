@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[ASSETS] (
-    [COMPKEY]                   INT         IDENTITY (1,1) NOT NULL,
+    [COMPKEY]                   INT         NOT NULL,
     [length_ft]                 INT         NOT NULL,
     [diamWidth_inches]          FLOAT       NOT NULL,
     [height_inches]             FLOAT       NULL,

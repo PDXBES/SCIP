@@ -431,7 +431,7 @@ FROM	[dbo].[ASSETS] AS A
 			FROM	[HANSEN8].[ASSETMANAGEMENT_SEWER].[COMPSMN] AS B
 					INNER JOIN
 					BASINS AS C
-					ON	B.AREA = C.name
+					ON	B.AREA = C.hansen_area
 		) AS D
 		ON	A.COMPKEY = D.COMPKEY
 

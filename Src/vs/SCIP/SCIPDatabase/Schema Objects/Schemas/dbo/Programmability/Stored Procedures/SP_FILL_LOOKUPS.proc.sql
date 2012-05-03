@@ -3,7 +3,7 @@ AS
 BEGIN
   TRUNCATE TABLE [SCIP].[dbo].[BASIN_TYPES];
   INSERT INTO BASIN_TYPES VALUES
-    ('A','Abandoned/Nonfunctional');
+    ('A','Abandoned/Nonfunc');
   INSERT INTO BASIN_TYPES VALUES
     ('C','Combined Basin');
   INSERT INTO BASIN_TYPES VALUES
@@ -187,7 +187,7 @@ BEGIN
 
   TRUNCATE TABLE [SCIP].[dbo].[ALTERNATIVES];
   SET IDENTITY_INSERT ALTERNATIVES ON;
-  INSERT INTO ALTERNATIVES ([alternative_id], [description], [name]) VALUES
+  INSERT INTO ALTERNATIVES ([alternative_id], [name], [description]) VALUES
     (1, 'Current', NULL);
   SET IDENTITY_INSERT ALTERNATIVES OFF;
 

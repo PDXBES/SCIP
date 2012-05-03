@@ -300,11 +300,13 @@ SELECT     COMPKEY, MAX(STARTDTTM) AS LastInspected
 FROM         dbo.AllInspections AS AllInspections_1
 GROUP BY COMPKEY
 
-INSERT INTO [dbo].[ASSETS] (COMPKEY, length_ft, diamWidth_inches, height_inches)
+INSERT INTO [dbo].[ASSETS] (COMPKEY, length_ft, diamWidth_inches, height_inches, basin_id, district_id)
 SELECT	COMPKEY ,
 		PIPELEN,
 		PIPEDIAM,
-		PIPEHT
+		PIPEHT,
+    1,
+    1
 FROM	[HANSEN8].[ASSETMANAGEMENT_SEWER].COMPSMN
 WHERE	(OWN = 'BES' OR OWN = 'DNRV')
 		AND 

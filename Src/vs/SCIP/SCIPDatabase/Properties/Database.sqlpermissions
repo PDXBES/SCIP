@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Permissions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dns="urn:Microsoft.VisualStudio.Data.Schema.Permissions" Version="1.0" xmlns="urn:Microsoft.VisualStudio.Data.Schema.Permissions">
+  <PermissionStatement Action="GRANT">
+    <Permission>CONNECT</Permission>
+    <Grantee>dbo</Grantee>
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>CONNECT</Permission>
+    <Grantee>ROSE\arnelm</Grantee>
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>CONNECT</Permission>
+    <Grantee>ROSE\issacg</Grantee>
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>CONNECT</Permission>
+    <Grantee>ROSE\mszwaya</Grantee>
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>CONNECT</Permission>
+    <Grantee>ROSE\grp117</Grantee>
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>DELETE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dtproperties" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>INSERT</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dtproperties" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>REFERENCES</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dtproperties" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>SELECT</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dtproperties" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>UPDATE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dtproperties" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_generateansiname" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_adduserobject" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_setpropertybyid" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_getobjwithprop" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_getpropertiesbyid" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_setpropertybyid_u" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_getobjwithprop_u" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_getpropertiesbyid_u" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_dropuserobjectbyid" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_droppropertiesbyid" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_verstamp006" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_verstamp007" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_getpropertiesbyid_vcs" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_displayoaerror" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_adduserobject_vcs" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_addtosourcecontrol" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_checkinobject" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_checkoutobject" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_isundersourcecontrol" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_removefromsourcecontrol" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_validateloginparams" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_vcsenabled" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_whocheckedout" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_getpropertiesbyid_vcs_u" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_displayoaerror_u" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_addtosourcecontrol_u" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_checkinobject_u" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_checkoutobject_u" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_isundersourcecontrol_u" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_validateloginparams_u" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+  <PermissionStatement Action="GRANT">
+    <Permission>EXECUTE</Permission>
+    <Grantee>public</Grantee>
+    <Object Name="dt_whocheckedout_u" Schema="dbo" Type="OBJECT" />
+    <Grantor>dbo</Grantor>
+  </PermissionStatement>
+</Permissions>

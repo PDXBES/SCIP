@@ -216,7 +216,7 @@ WHERE C3.OBKEY = @OBKEY_GR
 
 -----------------------------------------------------------------------
 --Fill RootInspections with all of the valid 
---sanitary inspections for grease accumulation
+--sanitary inspections for root evidence
 INSERT	INTO  RootInspections 
 SELECT	C2.COMPKEY AS COMPKEY,
 		C2.INSPKEY AS INSPKEY, 
@@ -296,8 +296,8 @@ SELECT	C2.COMPKEY AS COMPKEY,
 		ON C6.INSPNDXKEY = C4.INDEXKEY
 
 INSERT	INTO  LatestInspections 
-SELECT     COMPKEY, MAX(STARTDTTM) AS LastInspected
-FROM         dbo.AllInspections AS AllInspections_1
+SELECT  COMPKEY, MAX(STARTDTTM) AS LastInspected
+FROM    dbo.AllInspections AS AllInspections_1
 GROUP BY COMPKEY
 
 INSERT INTO [dbo].[ASSETS] (COMPKEY, length_ft, diamWidth_inches, height_inches, basin_id, district_id)
@@ -305,8 +305,8 @@ SELECT	COMPKEY ,
 		PIPELEN,
 		PIPEDIAM,
 		PIPEHT,
-    1,
-    1
+        1,
+        1
 FROM	[HANSEN8].[ASSETMANAGEMENT_SEWER].COMPSMN
 WHERE	(OWN = 'BES' OR OWN = 'DNRV')
 		AND 
@@ -355,42 +355,12 @@ FROM	[dbo].[ASSETS] AS C
 				(
 					D.RES = 'INCMPLT'
 					AND 
-					D.ACTUALQTY >= C.length_ft * 0.8
-				)
-			)
-
---Update the root cleaning date		
-UPDATE [dbo].[ASSETS]
-SET		last_root_management_date = COMPDTTM
-FROM	[dbo].[ASSETS] AS C
-		INNER JOIN
-		(
-			SELECT	A.COMPKEY, A.ACTKEY, A.RES, A.ACTUALQTY, A.COMPDTTM
-			FROM	[HANSEN8].[WORKMANAGEMENT].[HISTORY] AS A
-					INNER JOIN 
-					[HANSEN8].[ASSETMANAGEMENT_SEWER].[COMPSMN] AS B
-					ON	A.COMPKEY = B.COMPKEY
-					WHERE ACTKEY = @ACTKEY_RTCHEM
-					
-		)AS D
-		ON	C.COMPKEY = D.COMPKEY
-			AND 
-			(
-				(
-					D.RES = 'COMPLTED'
-					OR 
-					D.RES = 'OTHERS'
-				)
-				OR 
-				(
-					D.RES = 'INCMPLT'
-					AND 
-					D.ACTUALQTY > 0--C.length_ft * 0.8
+					D.ACTUALQTY > 0
 				)
 			)
 			
 --Update the special cleaning date		
-UPDATE [dbo].[ASSETS]
+UPDATE  [dbo].[ASSETS]
 SET		last_cleaning_date = COMPDTTM
 FROM	[dbo].[ASSETS] AS C
 		INNER JOIN
@@ -420,7 +390,7 @@ FROM	[dbo].[ASSETS] AS C
 				(
 					D.RES = 'INCMPLT'
 					AND 
-					D.ACTUALQTY >0 --C.length_ft * 0.8
+					D.ACTUALQTY > 0 --C.length_ft * 0.8
 				)
 			)
 			
@@ -452,8 +422,8 @@ FROM	[dbo].[ASSETS] AS A
 END
 
 UPDATE [dbo].[ASSETS]
-SET district_id = 'NULL'
-FROM [dbo].[ASSETS] AS A
-WHERE district_id = '1'
+SET    district_id = 'NULL'
+FROM   [dbo].[ASSETS] AS A
+WHERE  district_id = '1'
 
 

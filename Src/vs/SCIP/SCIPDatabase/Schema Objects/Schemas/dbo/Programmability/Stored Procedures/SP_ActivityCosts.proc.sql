@@ -288,8 +288,16 @@ INSERT INTO #_InspectionsDueCondition (COMPKEY, last_inspection_date, next_inspe
 
 ------------------------------------------------------------------------------------------
 --Combine inspections data
-------------------------------------------------------------------------------------------   
-INSERT INTO #_InspectionsDue(COMPKEY, next_inspection_date)
+------------------------------------------------------------------------------------------ 
+INSERT INTO #_InspectionsDue(COMPKEY, next_inspection_date, reason, last_inspection_date, cost)
+SELECT	COMPKEY, next_inspection_date, 'PMInsp', last_inspection_date, cost
+FROM    #_InspectionsDuePM
+
+INSERT INTO #_InspectionsDue(COMPKEY, next_inspection_date, reason, last_inspection_date, cost)
+SELECT	COMPKEY, next_inspection_date, 'CondInsp', last_inspection_date, cost
+FROM    #_InspectionsDueCondition
+
+/*INSERT INTO #_InspectionsDue(COMPKEY, next_inspection_date)
 SELECT	COMPKEY, MIN(next_inspection_date)
 FROM
 		(
@@ -320,11 +328,27 @@ FROM	#_InspectionsDue
 		ON	#_InspectionsDue.COMPKEY = #_InspectionsDueCondition.COMPKEY
 			AND 
 			#_InspectionsDue.next_inspection_date = #_InspectionsDueCondition.next_inspection_date
-
+			*/
 ------------------------------------------------------------------------------------------
 --Combine all data
 ------------------------------------------------------------------------------------------   
-INSERT INTO #_AllDue(COMPKEY, next_activity_date)
+INSERT INTO #_AllDue(COMPKEY, next_activity_date, reason, last_activity_date, cost)
+SELECT	COMPKEY, next_inspection_date, 'PMInsp', last_inspection_date, cost
+FROM    #_InspectionsDuePM
+
+INSERT INTO #_AllDue(COMPKEY, next_activity_date, reason, last_activity_date, cost)
+SELECT	COMPKEY, next_inspection_date, 'CondInsp', last_inspection_date, cost
+FROM    #_InspectionsDueCondition
+
+INSERT INTO #_AllDue(COMPKEY, next_activity_date, reason, last_activity_date, cost)
+SELECT	COMPKEY, next_service_date, 'Grease', last_service_date, cost
+FROM    #_InspectionsDueCondition
+
+INSERT INTO #_AllDue(COMPKEY, next_activity_date, reason, last_activity_date, cost)
+SELECT	COMPKEY, next_service_date, 'Roots', last_service_date, cost
+FROM    #_InspectionsDueCondition
+
+/*INSERT INTO #_AllDue(COMPKEY, next_activity_date)
 SELECT	COMPKEY, MIN(next_activity_date)
 FROM
 		(
@@ -368,7 +392,7 @@ FROM	#_AllDue
 		ON	#_AllDue.COMPKEY = #_RootsDue.COMPKEY
 			AND 
 			#_AllDue.next_activity_date = #_RootsDue.next_service_date
-
+			*/
 DELETE FROM ACTIVITIES
 
 INSERT INTO ACTIVITIES (COMPKEY, hansen_activity_code, activity_date, cost)

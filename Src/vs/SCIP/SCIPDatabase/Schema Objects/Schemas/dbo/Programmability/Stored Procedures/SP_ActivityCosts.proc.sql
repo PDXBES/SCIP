@@ -342,11 +342,11 @@ FROM    #_InspectionsDueCondition
 
 INSERT INTO #_AllDue(COMPKEY, next_activity_date, reason, last_activity_date, cost)
 SELECT	COMPKEY, next_service_date, 'Grease', last_service_date, cost
-FROM    #_InspectionsDueCondition
+FROM    #_GreaseDue
 
 INSERT INTO #_AllDue(COMPKEY, next_activity_date, reason, last_activity_date, cost)
 SELECT	COMPKEY, next_service_date, 'Roots', last_service_date, cost
-FROM    #_InspectionsDueCondition
+FROM    #_RootsDue
 
 /*INSERT INTO #_AllDue(COMPKEY, next_activity_date)
 SELECT	COMPKEY, MIN(next_activity_date)

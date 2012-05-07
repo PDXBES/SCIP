@@ -211,7 +211,7 @@ INSERT INTO #_InspectionsDuePM (COMPKEY, last_inspection_date, next_inspection_d
 --Inspections dates and costs for Condition
 ------------------------------------------------------------------------------------------                      
 INSERT INTO #_InspectionsDueCondition (COMPKEY, last_inspection_date, next_inspection_date, cost, activity_type_id, alternative_id)
-/*Drivers for small diameter PM inspections*/
+/*Drivers for small diameter Condition inspections*/
 (
 	SELECT	ASSETS.COMPKEY, 
 			last_inspection_date, 
@@ -222,7 +222,10 @@ INSERT INTO #_InspectionsDueCondition (COMPKEY, last_inspection_date, next_inspe
 						last_inspection_date IS NULL
 					)
 			THEN	GetDate() 
-			ELSE	DATEADD(year, default_frequency_years, last_inspection_date) 
+			ELSE	CASE WHEN DATEPART(year,  last_inspection_date) + default_frequency_years < ACCUM_RISK_INSPECT_YEAR
+					THEN      DATEADD(year, default_frequency_years, last_inspection_date)
+					ELSE      DATEADD(YEAR, ACCUM_RISK_INSPECT_YEAR-DATEPART(YEAR, GETDATE()), GETDATE())
+					END 
 			END AS	next_inspection_date, 
 			default_cost_per_ft * length_ft AS COST,
 			activity_type_id, 
@@ -256,7 +259,7 @@ INSERT INTO #_InspectionsDueCondition (COMPKEY, last_inspection_date, next_inspe
                                  ACCUM_RISK_INSPECT_YEAR IS NOT NULL
                      ) AS X 
                      ON	ASSETS.COMPKEY = X.COMPKEY
-/*Drivers For large diameter PM inspections*/ 
+/*Drivers For large diameter Condition inspections*/ 
 	UNION
 	SELECT	ASSETS.COMPKEY, 
 			last_inspection_date, 
@@ -267,7 +270,10 @@ INSERT INTO #_InspectionsDueCondition (COMPKEY, last_inspection_date, next_inspe
 						last_inspection_date IS NULL
 					)
 			THEN	GetDate() 
-			ELSE	DATEADD(year, default_frequency_years, last_inspection_date) 
+			ELSE	CASE WHEN DATEPART(year,  last_inspection_date) + default_frequency_years < ACCUM_RISK_INSPECT_YEAR
+					THEN      DATEADD(year, default_frequency_years, last_inspection_date)
+					ELSE      DATEADD(YEAR, ACCUM_RISK_INSPECT_YEAR-DATEPART(YEAR, GETDATE()), GETDATE())
+					END  
             END AS	next_inspection_date, 
             default_cost_per_ft * length_ft AS COST,
             activity_type_id, 
@@ -427,5 +433,5 @@ FROM	#_GreaseDue
 SELECT	*
 FROM	#_RootsDue*/
 
-END
 
+END

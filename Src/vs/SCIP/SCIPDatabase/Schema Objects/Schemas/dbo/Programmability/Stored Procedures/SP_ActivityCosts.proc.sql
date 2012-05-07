@@ -12,7 +12,9 @@ CREATE TABLE #_GreaseDue
 	COMPKEY int,
 	last_service_date datetime,
 	next_service_date datetime,
-	cost money
+	cost money,
+	activity_type_id int, 
+	alternative_id int
 )
 
 CREATE TABLE #_RootsDue
@@ -20,7 +22,9 @@ CREATE TABLE #_RootsDue
 	COMPKEY int,
 	last_service_date datetime,
 	next_service_date datetime,
-	cost money
+	cost money,
+	activity_type_id int, 
+	alternative_id int
 )
 
 CREATE TABLE #_InspectionsDuePM
@@ -28,7 +32,9 @@ CREATE TABLE #_InspectionsDuePM
 	COMPKEY int,
 	last_inspection_date datetime,
 	next_inspection_date datetime,
-	cost money
+	cost money,
+	activity_type_id int, 
+	alternative_id int
 )
 
 CREATE TABLE #_InspectionsDueCondition
@@ -36,7 +42,9 @@ CREATE TABLE #_InspectionsDueCondition
 	COMPKEY int,
 	last_inspection_date datetime,
 	next_inspection_date datetime,
-	cost money
+	cost money,
+	activity_type_id int, 
+	alternative_id int
 )
 
 CREATE TABLE #_InspectionsDue
@@ -45,7 +53,9 @@ CREATE TABLE #_InspectionsDue
 	last_inspection_date datetime,
 	next_inspection_date datetime,
 	cost money,
-	reason nvarchar(20)
+	reason nvarchar(20),
+	activity_type_id int, 
+	alternative_id int
 )
 
 CREATE TABLE #_AllDue
@@ -54,10 +64,12 @@ CREATE TABLE #_AllDue
 	last_activity_date datetime,
 	next_activity_date datetime,
 	cost money,
-	reason nvarchar(20)
+	reason nvarchar(20),
+	activity_type_id int, 
+	alternative_id int
 )
 
-INSERT INTO #_RootsDue (Compkey, last_service_date, next_service_date, cost)
+INSERT INTO #_RootsDue (Compkey, last_service_date, next_service_date, cost, activity_type_id, alternative_id)
 SELECT	ASSETS.COMPKEY, 
         ASSETS.last_root_management_date,
         CASE WHEN	DATEADD(year, A.default_frequency_years, ASSETS.last_root_management_date) < GetDate() 
@@ -66,32 +78,34 @@ SELECT	ASSETS.COMPKEY,
         THEN		GetDate()
 		ELSE		DATEADD(year, A.default_frequency_years, ASSETS.last_root_management_date) END
         AS next_service_date, 
-        A.default_cost_per_ft * ASSETS.length_ft AS next_root_management_cost
+        A.default_cost_per_ft * ASSETS.length_ft AS next_root_management_cost,
+        activity_type_id,
+        alternative_id
 FROM	ASSETS 
 		INNER JOIN
 		(
-			/*Drivers For Root control H small pipes*/ SELECT DRIVER_TYPE_ID, ASSETS.COMPKEY, default_cost_per_ft, default_frequency_years
+			/*Drivers For Root control H small pipes*/ SELECT DRIVER_TYPE_ID, ASSETS.COMPKEY, default_cost_per_ft, default_frequency_years, activity_type_id, alternative_id
 			FROM	(ASSETS INNER JOIN
-								  DRIVER_TYPES ON (DRIVER_TYPES.activity_type_id = 2 AND DRIVER_TYPES.Driver_type_id = 33 AND 
+								  DRIVER_TYPES ON (DRIVER_TYPES.name = 'RootControlH' AND 
 								  (ASSETS.last_root_management_date IS NOT NULL) AND (ASSETS.diamWidth_inches <= 36 AND ASSETS.height_inches <= 36))) INNER JOIN
 								  SpecialRoot ON ASSETS.COMPKEY = Specialroot.compkey AND Specialroot.ROOTPROB = 'H'
 			/*Drivers For Root control H large pipes*/ UNION
-			SELECT     DRIVER_TYPE_ID, ASSETS.COMPKEY, default_cost_per_ft, default_frequency_years
+			SELECT     DRIVER_TYPE_ID, ASSETS.COMPKEY, default_cost_per_ft, default_frequency_years, activity_type_id, alternative_id
 			FROM         (ASSETS INNER JOIN
-								  DRIVER_TYPES ON (DRIVER_TYPES.activity_type_id = 2 AND DRIVER_TYPES.Driver_type_id = 34 AND 
+								  DRIVER_TYPES ON (DRIVER_TYPES.name = 'RootControlHLarge' AND 
 								  (ASSETS.last_root_management_date IS NOT NULL) AND (ASSETS.diamWidth_inches > 36 OR
 								  ASSETS.height_inches > 36))) INNER JOIN
 								  SpecialRoot ON ASSETS.COMPKEY = Specialroot.compkey AND Specialroot.ROOTPROB = 'H'
 			/*Drivers For Root control M small pipes*/ UNION
-			SELECT     DRIVER_TYPE_ID, ASSETS.COMPKEY, default_cost_per_ft, default_frequency_years
+			SELECT     DRIVER_TYPE_ID, ASSETS.COMPKEY, default_cost_per_ft, default_frequency_years, activity_type_id, alternative_id
 			FROM         (ASSETS INNER JOIN
-								  DRIVER_TYPES ON (DRIVER_TYPES.activity_type_id = 2 AND DRIVER_TYPES.Driver_type_id = 33 AND 
+								  DRIVER_TYPES ON (DRIVER_TYPES.name = 'RootControlM' AND 
 								  (ASSETS.last_root_management_date IS NOT NULL) AND (ASSETS.diamWidth_inches <= 36 AND ASSETS.height_inches <= 36))) INNER JOIN
 								  SpecialRoot ON ASSETS.COMPKEY = Specialroot.compkey AND Specialroot.ROOTPROB = 'M'
 			/*Drivers For Root control M large pipes*/ UNION
-			SELECT     DRIVER_TYPE_ID, ASSETS.COMPKEY, default_cost_per_ft, default_frequency_years
+			SELECT     DRIVER_TYPE_ID, ASSETS.COMPKEY, default_cost_per_ft, default_frequency_years, activity_type_id, alternative_id
 			FROM         (ASSETS INNER JOIN
-								  DRIVER_TYPES ON (DRIVER_TYPES.activity_type_id = 2 AND DRIVER_TYPES.Driver_type_id = 34 AND 
+								  DRIVER_TYPES ON (DRIVER_TYPES.name = 'RootControlMLarge' AND 
 								  (ASSETS.last_root_management_date IS NOT NULL) AND (ASSETS.diamWidth_inches > 36 OR
 								  ASSETS.height_inches > 36))) INNER JOIN
 								  SpecialRoot ON ASSETS.COMPKEY = Specialroot.compkey AND Specialroot.ROOTPROB = 'M'
@@ -102,7 +116,7 @@ FROM	ASSETS
 ------------------------------------------------------------------------------------------
 --Grease service dates and costs
 ------------------------------------------------------------------------------------------
-INSERT INTO #_GreaseDue (Compkey, last_service_date, next_service_date, cost)
+INSERT INTO #_GreaseDue (Compkey, last_service_date, next_service_date, cost, activity_type_id, alternative_id)
 SELECT	dbo.ASSETS.COMPKEY, 
 		dbo.ASSETS.last_cleaning_date AS last_service_date,
 		CASE WHEN	DATEADD(year, A.default_frequency_years, dbo.ASSETS.last_cleaning_date) < GetDate()
@@ -111,20 +125,22 @@ SELECT	dbo.ASSETS.COMPKEY,
 		THEN		GetDate()
 		ELSE		DATEADD(year, A.default_frequency_years, dbo.ASSETS.last_cleaning_date) END
 		AS next_service_date, 
-        A.default_cost_per_ft * dbo.ASSETS.length_ft AS next_service_cost
+        A.default_cost_per_ft * dbo.ASSETS.length_ft AS next_service_cost,
+        activity_type_id, 
+        alternative_id
 FROM	dbo.ASSETS 
 		INNER JOIN
         (
 			SELECT	dbo.DRIVER_TYPES.driver_type_id, 
 					dbo.ASSETS.COMPKEY, 
 					dbo.DRIVER_TYPES.default_cost_per_ft, 
-                    dbo.DRIVER_TYPES.default_frequency_years
+                    dbo.DRIVER_TYPES.default_frequency_years,
+                    activity_type_id, 
+                    alternative_id
 			FROM	dbo.ASSETS 
 					INNER JOIN
 					dbo.DRIVER_TYPES 
-					ON	dbo.DRIVER_TYPES.activity_type_id = 3 
-						AND 
-						dbo.DRIVER_TYPES.driver_type_id = 25 
+					ON	dbo.DRIVER_TYPES.name = 'AcceleratedFOGApartments' 
 						AND 
 						dbo.ASSETS.last_cleaning_date IS NOT NULL
 		) AS A
@@ -133,7 +149,7 @@ FROM	dbo.ASSETS
 ------------------------------------------------------------------------------------------
 --Inspections dates and costs for PM
 ------------------------------------------------------------------------------------------
-INSERT INTO #_InspectionsDuePM (COMPKEY, last_inspection_date, next_inspection_date, cost)
+INSERT INTO #_InspectionsDuePM (COMPKEY, last_inspection_date, next_inspection_date, cost, activity_type_id, alternative_id)
 (
 	SELECT	COMPKEY, 
 			last_inspection_date, 
@@ -146,14 +162,14 @@ INSERT INTO #_InspectionsDuePM (COMPKEY, last_inspection_date, next_inspection_d
 			THEN	GetDate() 
 			ELSE	DATEADD(year, default_frequency_years, last_inspection_date) 
 			END AS	next_inspection_date,
-			default_cost_per_ft * length_ft AS COST
+			default_cost_per_ft * length_ft AS COST,
+			activity_type_id, 
+			alternative_id
 	FROM	ASSETS 
 			INNER JOIN
 			DRIVER_TYPES 
 			ON (
-					DRIVER_TYPES.activity_type_id = 1 
-					AND 
-					DRIVER_TYPES.Driver_type_id = 19 
+					DRIVER_TYPES.name = 'PM'
 					AND 
 					(
 						ASSETS.diamWidth_inches <= 36 
@@ -174,14 +190,14 @@ INSERT INTO #_InspectionsDuePM (COMPKEY, last_inspection_date, next_inspection_d
 			THEN	GetDate() 
 			ELSE	DATEADD(year, default_frequency_years, last_inspection_date) 
 			END AS	next_inspection_date, 
-			default_cost_per_ft * length_ft AS COST
+			default_cost_per_ft * length_ft AS COST,
+			activity_type_id, 
+			alternative_id
 	FROM	ASSETS 
 			INNER JOIN
 			DRIVER_TYPES 
 			ON (
-					DRIVER_TYPES.activity_type_id = 1 
-					AND 
-					DRIVER_TYPES.Driver_type_id = 20 
+					DRIVER_TYPES.name = 'PMLarge'
 					AND 
 					(
 						ASSETS.diamWidth_inches > 36 
@@ -194,7 +210,7 @@ INSERT INTO #_InspectionsDuePM (COMPKEY, last_inspection_date, next_inspection_d
 ------------------------------------------------------------------------------------------
 --Inspections dates and costs for Condition
 ------------------------------------------------------------------------------------------                      
-INSERT INTO #_InspectionsDueCondition (COMPKEY, last_inspection_date, next_inspection_date, cost)
+INSERT INTO #_InspectionsDueCondition (COMPKEY, last_inspection_date, next_inspection_date, cost, activity_type_id, alternative_id)
 /*Drivers for small diameter PM inspections*/
 (
 	SELECT	ASSETS.COMPKEY, 
@@ -208,16 +224,16 @@ INSERT INTO #_InspectionsDueCondition (COMPKEY, last_inspection_date, next_inspe
 			THEN	GetDate() 
 			ELSE	DATEADD(year, default_frequency_years, last_inspection_date) 
 			END AS	next_inspection_date, 
-					default_cost_per_ft * length_ft AS COST
+			default_cost_per_ft * length_ft AS COST,
+			activity_type_id, 
+			alternative_id
 	FROM    (
 				ASSETS 
 				INNER JOIN
                 DRIVER_TYPES 
                 ON
 					(
-						DRIVER_TYPES.activity_type_id = 1 
-						AND 
-						DRIVER_TYPES.Driver_type_id = 23 
+						DRIVER_TYPES.name = 'Condition'
 						AND 
 						(
 							ASSETS.diamWidth_inches <= 36 
@@ -253,15 +269,15 @@ INSERT INTO #_InspectionsDueCondition (COMPKEY, last_inspection_date, next_inspe
 			THEN	GetDate() 
 			ELSE	DATEADD(year, default_frequency_years, last_inspection_date) 
             END AS	next_inspection_date, 
-            default_cost_per_ft * length_ft AS COST
+            default_cost_per_ft * length_ft AS COST,
+            activity_type_id, 
+            alternative_id
 	FROM	ASSETS 
 			INNER JOIN
             DRIVER_TYPES 
             ON	
 				(
-					DRIVER_TYPES.activity_type_id = 1 
-					AND 
-					DRIVER_TYPES.Driver_type_id = 24 
+					DRIVER_TYPES.name = 'ConditionLarge'
 					AND 
 					(
 						ASSETS.diamWidth_inches > 36 
@@ -289,12 +305,12 @@ INSERT INTO #_InspectionsDueCondition (COMPKEY, last_inspection_date, next_inspe
 ------------------------------------------------------------------------------------------
 --Combine inspections data
 ------------------------------------------------------------------------------------------ 
-INSERT INTO #_InspectionsDue(COMPKEY, next_inspection_date, reason, last_inspection_date, cost)
-SELECT	COMPKEY, next_inspection_date, 'PMInsp', last_inspection_date, cost
+INSERT INTO #_InspectionsDue(COMPKEY, next_inspection_date, reason, last_inspection_date, cost, activity_type_id, alternative_id)
+SELECT	COMPKEY, next_inspection_date, 'PMInsp', last_inspection_date, cost, activity_type_id, alternative_id
 FROM    #_InspectionsDuePM
 
-INSERT INTO #_InspectionsDue(COMPKEY, next_inspection_date, reason, last_inspection_date, cost)
-SELECT	COMPKEY, next_inspection_date, 'CondInsp', last_inspection_date, cost
+INSERT INTO #_InspectionsDue(COMPKEY, next_inspection_date, reason, last_inspection_date, cost, activity_type_id, alternative_id)
+SELECT	COMPKEY, next_inspection_date, 'CondInsp', last_inspection_date, cost, activity_type_id, alternative_id
 FROM    #_InspectionsDueCondition
 
 /*INSERT INTO #_InspectionsDue(COMPKEY, next_inspection_date)
@@ -332,20 +348,20 @@ FROM	#_InspectionsDue
 ------------------------------------------------------------------------------------------
 --Combine all data
 ------------------------------------------------------------------------------------------   
-INSERT INTO #_AllDue(COMPKEY, next_activity_date, reason, last_activity_date, cost)
-SELECT	COMPKEY, next_inspection_date, 'PMInsp', last_inspection_date, cost
+INSERT INTO #_AllDue(COMPKEY, next_activity_date, reason, last_activity_date, cost, activity_type_id, alternative_id)
+SELECT	COMPKEY, next_inspection_date, 'PMInsp', last_inspection_date, cost, activity_type_id, alternative_id
 FROM    #_InspectionsDuePM
 
-INSERT INTO #_AllDue(COMPKEY, next_activity_date, reason, last_activity_date, cost)
-SELECT	COMPKEY, next_inspection_date, 'CondInsp', last_inspection_date, cost
+INSERT INTO #_AllDue(COMPKEY, next_activity_date, reason, last_activity_date, cost, activity_type_id, alternative_id)
+SELECT	COMPKEY, next_inspection_date, 'CondInsp', last_inspection_date, cost, activity_type_id, alternative_id
 FROM    #_InspectionsDueCondition
 
-INSERT INTO #_AllDue(COMPKEY, next_activity_date, reason, last_activity_date, cost)
-SELECT	COMPKEY, next_service_date, 'Grease', last_service_date, cost
+INSERT INTO #_AllDue(COMPKEY, next_activity_date, reason, last_activity_date, cost, activity_type_id, alternative_id)
+SELECT	COMPKEY, next_service_date, 'Grease', last_service_date, cost, activity_type_id, alternative_id
 FROM    #_GreaseDue
 
-INSERT INTO #_AllDue(COMPKEY, next_activity_date, reason, last_activity_date, cost)
-SELECT	COMPKEY, next_service_date, 'Roots', last_service_date, cost
+INSERT INTO #_AllDue(COMPKEY, next_activity_date, reason, last_activity_date, cost, activity_type_id, alternative_id)
+SELECT	COMPKEY, next_service_date, 'Roots', last_service_date, cost , activity_type_id, alternative_id
 FROM    #_RootsDue
 
 /*INSERT INTO #_AllDue(COMPKEY, next_activity_date)
@@ -395,8 +411,10 @@ FROM	#_AllDue
 			*/
 DELETE FROM ACTIVITIES
 
-INSERT INTO ACTIVITIES (COMPKEY, hansen_activity_code, activity_date, cost)
-SELECT COMPKEY, Reason, next_activity_date, cost
+--SELECT * FROM #_AllDue WHERE alternative_id IS null
+
+INSERT INTO ACTIVITIES (COMPKEY, hansen_activity_code, activity_date, cost, activity_type_id, alternative_id)
+SELECT COMPKEY, Reason, next_activity_date, cost, activity_type_id, alternative_id
 FROM #_AllDue
 
 /*
@@ -408,7 +426,6 @@ FROM	#_GreaseDue
 
 SELECT	*
 FROM	#_RootsDue*/
-
 
 END
 

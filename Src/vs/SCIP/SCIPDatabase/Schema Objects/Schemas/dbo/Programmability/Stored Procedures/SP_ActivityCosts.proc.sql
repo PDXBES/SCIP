@@ -117,34 +117,39 @@ FROM	ASSETS
 --Grease service dates and costs
 ------------------------------------------------------------------------------------------
 INSERT INTO #_GreaseDue (Compkey, last_service_date, next_service_date, cost, activity_type_id, alternative_id)
-SELECT	dbo.ASSETS.COMPKEY, 
-		dbo.ASSETS.last_cleaning_date AS last_service_date,
-		CASE WHEN	DATEADD(year, A.default_frequency_years, dbo.ASSETS.last_cleaning_date) < GetDate()
-					/*OR 
-					ASSETS.last_cleaning_date IS NULL*/
-		THEN		GetDate()
-		ELSE		DATEADD(year, A.default_frequency_years, dbo.ASSETS.last_cleaning_date) END
-		AS next_service_date, 
-        A.default_cost_per_ft * dbo.ASSETS.length_ft AS next_service_cost,
+SELECT  B.COMPKEY, 
+        last_cleaning_date AS last_service_date, 
+        CASE WHEN DATEADD(YEAR, frequency_years, last_cleaning_date)  < GETDATE() OR last_cleaning_date IS NULL THEN GETDATE() ELSE DATEADD(YEAR, frequency_years, last_cleaning_date) END AS next_service_date, 
+        A.default_cost_per_ft * length_ft AS next_service_cost, 
         activity_type_id, 
         alternative_id
-FROM	dbo.ASSETS 
+FROM	(   
+            SELECT ASSETS.COMPKEY, 
+                   ACCELERATED_CLEANINGS.last_cleaning_date,
+				   ACCELERATED_CLEANINGS.frequency_years,
+				   ASSETS.length_ft
+		    FROM   ASSETS 
+			       INNER JOIN
+                   ACCELERATED_CLEANINGS
+			       ON   ASSETS.COMPKEY = ACCELERATED_CLEANINGS.COMPKEY
+		) AS B       
 		INNER JOIN
         (
 			SELECT	dbo.DRIVER_TYPES.driver_type_id, 
-					dbo.ASSETS.COMPKEY, 
+					--dbo.ASSETS.COMPKEY, 
 					dbo.DRIVER_TYPES.default_cost_per_ft, 
                     dbo.DRIVER_TYPES.default_frequency_years,
+					DRIVER_TYPES.NAME,
                     activity_type_id, 
                     alternative_id
-			FROM	dbo.ASSETS 
-					INNER JOIN
+			FROM	--dbo.ASSETS 
+					--INNER JOIN 
 					dbo.DRIVER_TYPES 
-					ON	dbo.DRIVER_TYPES.name = 'AcceleratedFOGApartments' 
-						AND 
-						dbo.ASSETS.last_cleaning_date IS NOT NULL
-		) AS A
-		ON	A.COMPKEY = dbo.ASSETS.COMPKEY
+			WHERE	dbo.DRIVER_TYPES.name = 'AcceleratedFOGApartments' 
+						--AND 
+						--dbo.ASSETS.last_cleaning_date IS NOT NULL
+		) AS A ON A.NAME = 'AcceleratedFOGApartments'
+		--ON	A.COMPKEY = B.COMPKEY
 
 ------------------------------------------------------------------------------------------
 --Inspections dates and costs for PM

@@ -224,17 +224,9 @@ BEGIN
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id]) VALUES
     (10,2,'RootControlMLarge',NULL,2.93,3,1);
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id]) VALUES
-    (11,3,'PM',NULL,0.85,6,1);
+    (11,3,'PMFaster',NULL,0.85,6,1);
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id]) VALUES
-    (12,3,'AcceleratedFOGApartments',NULL,1.73,5,1);
-  INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id]) VALUES
-    (13,3,'AcceleratedFOGRestaurants',NULL,1.73,5,1);
-  INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id]) VALUES
-    (14,3,'AcceleratedSediment',NULL,1.73,5,1);
-  INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id]) VALUES
-    (15,3,'AcceleratedSag',NULL,1.73,5,1);
-  INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id]) VALUES
-    (16,3,'AcceleratedPump',NULL,1.73,5,1);
+    (12,3,'AcceleratedArea',NULL,1.73,5,1);
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id]) VALUES
     (17,3,'TractiveForces',NULL,1.73,5,1);
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id]) VALUES

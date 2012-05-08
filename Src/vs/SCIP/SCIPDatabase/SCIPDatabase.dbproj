@@ -574,19 +574,10 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_FILL_LOOKUPS.proc.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CREATE_TRACTIVE_FORCE_TABLE.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CREATE_VIEW_DWF_FLOW_STATISTICS.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_INSERT_DWF_FLOW_DATA.proc.sql">
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_INSERT_TRACTIVE_FORCE_DATA.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CREATE_DWF_FLOW_DATA_TABLE.proc.sql">
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\dbo\Views\VW_DWF_FLOW_STATISTICS.view.sql">
@@ -596,6 +587,9 @@
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\dbo\Tables\TRACTIVE_FORCE_MODEL_INPUTS.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\ACCELERATED_CLEANINGS.table.sql">
       <SubType>Code</SubType>
     </Build>
   </ItemGroup>

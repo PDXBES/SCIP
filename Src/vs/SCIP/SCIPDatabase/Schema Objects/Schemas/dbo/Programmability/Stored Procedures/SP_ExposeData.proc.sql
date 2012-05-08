@@ -173,7 +173,8 @@ DELETE FROM ASSETS
 -----------------------------------------------------------------------
 --Fill GreaseInspections with all of the valid 
 --sanitary inspections for grease accumulation
-INSERT	INTO  GreaseInspections 
+
+/*INSERT	INTO  GreaseInspections 
 SELECT	C2.COMPKEY AS COMPKEY,
 		C2.INSPKEY AS INSPKEY, 
 		OBRATING AS OBRATING, 
@@ -212,7 +213,7 @@ SELECT	C2.COMPKEY AS COMPKEY,
 		INNER JOIN 
 		[HANSEN8].[ASSETMANAGEMENT].[ASSETINSPINDEX] AS C6
 		ON C6.INSPNDXKEY = C4.INDEXKEY
-WHERE C3.OBKEY = @OBKEY_GR
+WHERE C3.OBKEY = @OBKEY_GR*/
 
 -----------------------------------------------------------------------
 --Fill RootInspections with all of the valid 

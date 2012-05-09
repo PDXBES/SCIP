@@ -601,5 +601,8 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_FILL_DRIVERS.proc.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\TRACTIVE_FORCE_GRADES.table.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

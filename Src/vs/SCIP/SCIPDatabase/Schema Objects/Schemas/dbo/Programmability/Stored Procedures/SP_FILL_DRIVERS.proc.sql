@@ -43,52 +43,69 @@ BEGIN
 
   BEGIN TRANSACTION
     -- Insert normal inspection PM drivers
+    PRINT 'Inserting normal inspection PM drivers'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT compkey, driver_type_id, GETDATE(), 'System', 1
       FROM @SmallCompKeys, DRIVER_TYPES
       WHERE [DRIVER_TYPES].name = 'PM'
 
     -- Insert large inspection PM drivers
+    PRINT 'Inserting large inspection PM drivers'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT compkey, driver_type_id, GETDATE(), 'System', 1
       FROM @LargeCompKeys, DRIVER_TYPES
       WHERE [DRIVER_TYPES].name = 'PMLarge'
 
     -- Insert normal cleaning PM drivers
+    PRINT 'Inserting normal cleaning PM drivers'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT compkey, driver_type_id, GETDATE(), 'System', 1 
       FROM @AllCompKeys, DRIVER_TYPES
       WHERE [DRIVER_TYPES].name = 'PMFaster'
 
     -- Insert H large root drivers
+    PRINT 'Inserting H large root drivers'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
       FROM @LargeRootCompKeys A, SpecialRoot, DRIVER_TYPES
       WHERE SpecialRoot.ROOTPROB IN ('H') AND [DRIVER_TYPES].name = 'RootControlHLarge'
 
     -- Insert M large root drivers
+    PRINT 'Inserting M large root drivers'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
       FROM @LargeRootCompKeys A, SpecialRoot, DRIVER_TYPES
       WHERE SpecialRoot.ROOTPROB IN ('M') AND [DRIVER_TYPES].name = 'RootControlMLarge'
 
     -- Insert H small root drivers
+    PRINT 'Inserting H small root drivers'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
       FROM @SmallRootCompKeys A, SpecialRoot, DRIVER_TYPES
       WHERE SpecialRoot.ROOTPROB IN ('H') AND [DRIVER_TYPES].name = 'RootControlHSmall'
 
     -- Insert M small root drivers
+    PRINT 'Inserting M small root drivers'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
       FROM @SmallRootCompKeys A, SpecialRoot, DRIVER_TYPES
       WHERE SpecialRoot.ROOTPROB IN ('M') AND [DRIVER_TYPES].name = 'RootControlMSmall'
 
     -- Insert Accelerated drivers
+    PRINT 'Inserting Accelerated drivers'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, override_frequency_years, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, B.frequency_years, GETDATE(), 'System', 1
       FROM ASSETS A INNER JOIN ACCELERATED_CLEANINGS B ON (A.COMPKEY = B.compkey), DRIVER_TYPES C
       WHERE C.name = 'AcceleratedArea'
+
+    ---- Insert Tractive Force drivers
+    --PRINT 'Inserting Tractive Force drivers'
+    --INSERT INTO [DRIVERS] (compkey, driver_type_id, override_frequency_years, update_date, updated_by, alternative_id)
+    --  SELECT A.compkey, driver_type_id, B.frequency_years, GETDATE(), 'System', 1
+    --  FROM ASSETS A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey), DRIVER_TYPES C
+    --  WHERE C.name = 'TractiveForceVH'
+
+    -- Insert Condition inspection drivers
 
   COMMIT TRANSACTION
 END

@@ -85,12 +85,44 @@ BEGIN
       FROM @LargeCompKeys, DRIVER_TYPES
       WHERE [DRIVER_TYPES].name = 'PMLarge'
 
-    -- Insert normal cleaning PM drivers
-    PRINT 'Inserting normal cleaning PM drivers'
+    -- Insert root control inspection drivers
+    PRINT 'Inserting H root control inspection drivers'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
-      SELECT compkey, driver_type_id, GETDATE(), 'System', 1 
-      FROM @AllCompKeys, DRIVER_TYPES
-      WHERE [DRIVER_TYPES].name = 'PMFaster'
+      SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
+      FROM @SmallRootCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES
+      WHERE B.ROOTPROB IN ('H') AND [DRIVER_TYPES].name = 'RootControlH'
+
+    PRINT 'Inserting H large root control inspection drivers'
+    INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
+      SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
+      FROM @LargeRootCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES
+      WHERE B.ROOTPROB IN ('H') AND [DRIVER_TYPES].name = 'RootControlHLarge'
+
+    PRINT 'Inserting H large, large piperoot control inspection drivers'
+    INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
+      SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
+      FROM @LargeRootLargePipeCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES
+      WHERE B.ROOTPROB IN ('H') AND [DRIVER_TYPES].name = 'RootControlHLargePipe'
+
+    PRINT 'Inserting M root control inspection drivers'
+    INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
+      SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
+      FROM @SmallRootCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES
+      WHERE B.ROOTPROB IN ('M') AND [DRIVER_TYPES].name = 'RootControlM'
+
+    PRINT 'Inserting M large root control inspection drivers'
+    INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
+      SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
+      FROM @LargeRootCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES
+      WHERE B.ROOTPROB IN ('M') AND [DRIVER_TYPES].name = 'RootControlMLarge'
+
+    PRINT 'Inserting M large, large piperoot control inspection drivers'
+    INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
+      SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
+      FROM @LargeRootLargePipeCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES
+      WHERE B.ROOTPROB IN ('M') AND [DRIVER_TYPES].name = 'RootControlMLargePipe'
+
+    ---------------------------------------------------------------------------
 
     -- Insert H large root drivers
     PRINT 'Inserting H large root drivers'
@@ -104,7 +136,7 @@ BEGIN
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
       FROM @LargeRootLargePipeCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES
-      WHERE B.ROOTPROB IN ('H') AND [DRIVER_TYPES].name = 'RootControlHLargePipe'
+      WHERE B.ROOTPROB IN ('H') AND [DRIVER_TYPES].name = 'RootControlHLarge'
 
     -- Insert M large root drivers
     PRINT 'Inserting M large root drivers'
@@ -118,7 +150,7 @@ BEGIN
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
       FROM @LargeRootLargePipeCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES
-      WHERE B.ROOTPROB IN ('M') AND [DRIVER_TYPES].name = 'RootControlMLargePipe'
+      WHERE B.ROOTPROB IN ('M') AND [DRIVER_TYPES].name = 'RootControlMLarge'
 
     -- Insert H small root drivers
     PRINT 'Inserting H small root drivers'
@@ -133,6 +165,15 @@ BEGIN
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
       FROM @SmallRootCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES
       WHERE B.ROOTPROB IN ('M') AND [DRIVER_TYPES].name = 'RootControlM'
+
+    ---------------------------------------------------------------------------
+
+    -- Insert normal cleaning PM drivers
+    PRINT 'Inserting normal cleaning PM drivers'
+    INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
+      SELECT compkey, driver_type_id, GETDATE(), 'System', 1 
+      FROM @AllCompKeys, DRIVER_TYPES
+      WHERE [DRIVER_TYPES].name = 'PMFaster'
 
     -- Insert Accelerated drivers
     PRINT 'Inserting Accelerated drivers'

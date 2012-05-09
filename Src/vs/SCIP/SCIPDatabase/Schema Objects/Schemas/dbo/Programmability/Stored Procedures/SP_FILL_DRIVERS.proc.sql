@@ -108,14 +108,14 @@ BEGIN
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
       FROM @SmallRootCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES
-      WHERE B.ROOTPROB IN ('H') AND [DRIVER_TYPES].name = 'RootControlHSmall'
+      WHERE B.ROOTPROB IN ('H') AND [DRIVER_TYPES].name = 'RootControlH'
 
     -- Insert M small root drivers
     PRINT 'Inserting M small root drivers'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
       FROM @SmallRootCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES
-      WHERE B.ROOTPROB IN ('M') AND [DRIVER_TYPES].name = 'RootControlMSmall'
+      WHERE B.ROOTPROB IN ('M') AND [DRIVER_TYPES].name = 'RootControlM'
 
     -- Insert Accelerated drivers
     PRINT 'Inserting Accelerated drivers'

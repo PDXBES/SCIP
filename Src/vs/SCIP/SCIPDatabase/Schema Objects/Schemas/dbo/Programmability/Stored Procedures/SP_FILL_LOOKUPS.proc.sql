@@ -242,15 +242,15 @@ BEGIN
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id]) VALUES
     (22,3,'TractiveForcesVL',NULL,1.73,10,1);
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id]) VALUES
-    (23,3,'TractiveForcesVHLarge',NULL,1.73,1,1);
+    (23,3,'TractiveForcesVHLarge',NULL,2.00,1,1);
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id]) VALUES
-    (24,3,'TractiveForcesHLarge',NULL,1.73,3,1);
+    (24,3,'TractiveForcesHLarge',NULL,2.00,3,1);
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id]) VALUES
-    (25,3,'TractiveForcesMLarge',NULL,1.73,6,1);
+    (25,3,'TractiveForcesMLarge',NULL,2.00,6,1);
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id]) VALUES
-    (26,3,'TractiveForcesLLarge',NULL,1.73,7,1);
+    (26,3,'TractiveForcesLLarge',NULL,2.00,7,1);
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id]) VALUES
-    (27,3,'TractiveForcesVLLarge',NULL,1.73,9,1);
+    (27,3,'TractiveForcesVLLarge',NULL,2.00,9,1);
   SET IDENTITY_INSERT DRIVER_TYPES OFF;
 
   TRUNCATE TABLE [SCIP].[dbo].[ACCELERATED_CLEANING_CAUSE_TYPES]

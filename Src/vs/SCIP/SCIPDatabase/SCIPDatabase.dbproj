@@ -594,5 +594,8 @@
     <Build Include="Schema Objects\Schemas\dbo\Tables\TRACTIVE_FORCE_GRADES.table.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Views\VW_ALL_DRIVERS.view.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

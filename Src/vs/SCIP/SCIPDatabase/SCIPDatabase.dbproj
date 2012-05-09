@@ -592,5 +592,14 @@
     <Build Include="Schema Objects\Schemas\dbo\Tables\ACCELERATED_CLEANINGS.table.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\ACCELERATED_CLEANING_CAUSES.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\ACCELERATED_CLEANING_CAUSE_TYPES.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_FILL_DRIVERS.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

@@ -236,7 +236,7 @@ BEGIN
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank]) VALUES
     (12,3,'AcceleratedArea',NULL,1.73,5,1,2);
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank]) VALUES
-    (28,3,'AcceleratedAreaLarge',NULL,50.00,5,1,2);
+    (33,3,'AcceleratedAreaLarge',NULL,50.00,5,1,2);
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank]) VALUES
     (17,3,'TractiveForcesSanVH',NULL,1.73,2,1,4);
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank]) VALUES

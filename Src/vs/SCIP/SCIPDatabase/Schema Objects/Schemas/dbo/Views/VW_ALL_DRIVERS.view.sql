@@ -8,6 +8,7 @@
         ,E.name AS basin
         ,F.name AS district
         ,B.name AS driver_type
+        ,B.[rank] as driver_rank
         ,C.name AS activity_type
         ,CASE WHEN A.[override_cost_per_ft] IS NULL THEN B.default_cost_per_ft ELSE A.[override_cost_per_ft] END AS cost_per_ft
         ,CASE WHEN A.[override_frequency_years] IS NULL THEN B.default_frequency_years ELSE A.[override_frequency_years] END AS frequency_years

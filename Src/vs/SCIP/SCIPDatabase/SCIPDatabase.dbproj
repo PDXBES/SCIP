@@ -597,7 +597,10 @@
     <Build Include="Schema Objects\Schemas\dbo\Views\VW_ALL_DRIVERS.view.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="VW_MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE.view.sql">
+    <Build Include="Schema Objects\Schemas\dbo\Views\VW_MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE.view.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Views\VW_CONTROLLING_DRIVERS.view.sql">
       <SubType>Code</SubType>
     </Build>
   </ItemGroup>

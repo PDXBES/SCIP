@@ -5,6 +5,7 @@
     [height_inches]             FLOAT       NULL,
     [basin_id]                  VARCHAR (3) NOT NULL,
 	  [district_id]               VARCHAR (4) NOT NULL,
+    [unit_type]                  VARCHAR (10) NOT NULL,
     [last_inspection_date]      DATETIME    NULL,
     [last_root_management_date] DATETIME    NULL,
     [last_cleaning_date]        DATETIME    NULL,

@@ -294,6 +294,17 @@ BEGIN
       WHERE C.grade = 'VL' AND D.name = 'TractiveForcesVLLarge'
 
     -- Insert Condition inspection drivers
+    PRINT 'Inserting condition inspections (non-large)'
+    INSERT INTO [DRIVERS] (compkey, driver_type_id, override_frequency_years, update_date, updated_by, alternative_id)
+      SELECT A.compkey, driver_type_id, B.next_condition_inspection_interval_years, GETDATE(), 'System', 1
+      FROM @SmallCompKeys A INNER JOIN VW_NEXT_CONDITON_INSPECTION_INTERVAL B ON (A.compkey = B.compkey), DRIVER_TYPES D
+      WHERE D.name = 'Condition'
+
+    PRINT 'Inserting condition inspections (large)'
+    INSERT INTO [DRIVERS] (compkey, driver_type_id, override_frequency_years, update_date, updated_by, alternative_id)
+      SELECT A.compkey, driver_type_id, B.next_condition_inspection_interval_years, GETDATE(), 'System', 1
+      FROM @LargeCompKeys A INNER JOIN VW_NEXT_CONDITON_INSPECTION_INTERVAL B ON (A.compkey = B.compkey), DRIVER_TYPES D
+      WHERE D.name = 'ConditionLarge'
 
   COMMIT TRANSACTION
 END

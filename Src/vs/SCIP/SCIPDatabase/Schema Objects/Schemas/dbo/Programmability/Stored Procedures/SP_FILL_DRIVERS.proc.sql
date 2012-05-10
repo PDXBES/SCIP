@@ -182,18 +182,24 @@ BEGIN
     ---------------------------------------------------------------------------
 
     -- Insert normal cleaning PM drivers
-    PRINT 'Inserting normal cleaning PM drivers'
+    PRINT 'Inserting normal cleaning PM drivers (non-large)'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT compkey, driver_type_id, GETDATE(), 'System', 1 
-      FROM @AllCompKeys, DRIVER_TYPES
+      FROM @SmallCompKeys, DRIVER_TYPES
       WHERE [DRIVER_TYPES].name = 'PMFaster'
 
     -- Insert Accelerated drivers
-    PRINT 'Inserting Accelerated drivers'
+    PRINT 'Inserting Accelerated drivers (non-large)'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, override_frequency_years, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, B.frequency_years, GETDATE(), 'System', 1
-      FROM ASSETS A INNER JOIN ACCELERATED_CLEANINGS B ON (A.COMPKEY = B.compkey), DRIVER_TYPES C
+      FROM @SmallCompKeys A INNER JOIN ACCELERATED_CLEANINGS B ON (A.COMPKEY = B.compkey), DRIVER_TYPES C
       WHERE C.name = 'AcceleratedArea'
+
+    PRINT 'Inserting Accelerated drivers (large)'
+    INSERT INTO [DRIVERS] (compkey, driver_type_id, override_frequency_years, update_date, updated_by, alternative_id)
+      SELECT A.compkey, driver_type_id, B.frequency_years, GETDATE(), 'System', 1
+      FROM @LargeCompKeys A INNER JOIN ACCELERATED_CLEANINGS B ON (A.COMPKEY = B.compkey), DRIVER_TYPES C
+      WHERE C.name = 'AcceleratedAreaLarge'
 
     -- Insert Tractive Force drivers
     PRINT 'Inserting Tractive Force drivers sanitary (VH)'

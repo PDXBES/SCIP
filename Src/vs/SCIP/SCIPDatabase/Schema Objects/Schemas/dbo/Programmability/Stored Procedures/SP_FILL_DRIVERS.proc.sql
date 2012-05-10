@@ -10,6 +10,8 @@ BEGIN
   DECLARE @SmallRootCompKeys TABLE (compkey int)
   DECLARE @LargeTractiveCompKeys TABLE (compkey int)
   DECLARE @SmallTractiveCompKeys TABLE (compkey int)
+  DECLARE @SmallTractiveSanCompKeys TABLE (compkey int)
+  DECLARE @SmallTractiveCmbCompKeys TABLE (compkey int)
   DECLARE @LargeDiameterIn int
   SET @LargeDiameterIn = 36
   DECLARE @LargeRootDiameterIn int
@@ -68,6 +70,17 @@ BEGIN
   EXCEPT
     SELECT compkey
     FROM @LargeTractiveCompKeys
+
+  INSERT INTO @SmallTractiveSanCompKeys
+  SELECT A.compkey
+  FROM @SmallTractiveCompKeys A INNER JOIN ASSETS B ON (A.compkey = B.COMPKEY AND B.unit_type IN ('SAINT', 'SAML'))
+
+  INSERT INTO @SmallTractiveCmbCompKeys
+  SELECT compkey
+  FROM @SmallTractiveCompKeys
+  EXCEPT
+    SELECT compkey
+    FROM @SmallTractiveSanCompKeys
 
   -- Filling Routine
   BEGIN TRANSACTION
@@ -183,36 +196,65 @@ BEGIN
       WHERE C.name = 'AcceleratedArea'
 
     -- Insert Tractive Force drivers
-    PRINT 'Inserting Tractive Force drivers (VH)'
+    PRINT 'Inserting Tractive Force drivers sanitary (VH)'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
-      FROM (@SmallTractiveCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
-      WHERE C.grade = 'VH' AND D.name = 'TractiveForcesVH'
+      FROM (@SmallTractiveSanCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
+      WHERE C.grade = 'VH' AND D.name = 'TractiveForcesSanVH'
 
-    PRINT 'Inserting Tractive Force drivers (H)'
+    PRINT 'Inserting Tractive Force drivers sanitary (H)'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
-      FROM (@SmallTractiveCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
-      WHERE C.grade = 'H' AND D.name = 'TractiveForcesH'
-    -- Insert Condition inspection drivers
+      FROM (@SmallTractiveSanCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
+      WHERE C.grade = 'H' AND D.name = 'TractiveForcesSanH'
 
-    PRINT 'Inserting Tractive Force drivers (M)'
+    PRINT 'Inserting Tractive Force drivers sanitary (M)'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
-      FROM (@SmallTractiveCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
-      WHERE C.grade = 'M' AND D.name = 'TractiveForcesM'
+      FROM (@SmallTractiveSanCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
+      WHERE C.grade = 'M' AND D.name = 'TractiveForcesSanM'
 
-    PRINT 'Inserting Tractive Force drivers (L)'
+    PRINT 'Inserting Tractive Force drivers sanitary (L)'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
-      FROM (@SmallTractiveCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
-      WHERE C.grade = 'L' AND D.name = 'TractiveForcesL'
+      FROM (@SmallTractiveSanCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
+      WHERE C.grade = 'L' AND D.name = 'TractiveForcesSanL'
 
-    PRINT 'Inserting Tractive Force drivers (VL)'
+    PRINT 'Inserting Tractive Force drivers sanitary (VL)'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
-      FROM (@SmallTractiveCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
-      WHERE C.grade = 'VL' AND D.name = 'TractiveForcesVL'
+      FROM (@SmallTractiveSanCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
+      WHERE C.grade = 'VL' AND D.name = 'TractiveForcesCmbVL'
+
+    PRINT 'Inserting Tractive Force drivers combo (VH)'
+    INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
+      SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
+      FROM (@SmallTractiveCmbCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
+      WHERE C.grade = 'VH' AND D.name = 'TractiveForcesCmbVH'
+
+    PRINT 'Inserting Tractive Force drivers combo (H)'
+    INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
+      SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
+      FROM (@SmallTractiveCmbCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
+      WHERE C.grade = 'H' AND D.name = 'TractiveForcesCmbH'
+
+    PRINT 'Inserting Tractive Force drivers combo (M)'
+    INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
+      SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
+      FROM (@SmallTractiveCmbCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
+      WHERE C.grade = 'M' AND D.name = 'TractiveForcesCmbM'
+
+    PRINT 'Inserting Tractive Force drivers combo (L)'
+    INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
+      SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
+      FROM (@SmallTractiveCmbCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
+      WHERE C.grade = 'L' AND D.name = 'TractiveForcesCmbL'
+
+    PRINT 'Inserting Tractive Force drivers combo (VL)'
+    INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
+      SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
+      FROM (@SmallTractiveCmbCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
+      WHERE C.grade = 'VL' AND D.name = 'TractiveForcesCmbVL'
 
     PRINT 'Inserting Tractive Force drivers large (Large VH)'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
@@ -244,5 +286,8 @@ BEGIN
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
       FROM (@LargeTractiveCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
       WHERE C.grade = 'VL' AND D.name = 'TractiveForcesVLLarge'
+
+    -- Insert Condition inspection drivers
+
   COMMIT TRANSACTION
 END

@@ -609,5 +609,17 @@
     <Build Include="Schema Objects\Schemas\dbo\Views\VW_NEXT_CONDITION_INSPECTION_INTERVAL.view.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_FILL_ACTIVITIES.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Views\VW_LAST_ACTIVITY_DATES.view.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_STATUS_MESSAGE.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_RECORD_COUNT.function.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

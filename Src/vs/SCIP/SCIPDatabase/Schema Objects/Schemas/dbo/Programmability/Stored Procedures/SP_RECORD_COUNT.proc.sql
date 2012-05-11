@@ -3,7 +3,7 @@
 AS
 BEGIN
 	DECLARE @recordCount BIGINT, @sql VARCHAR(512)
-  SET @sql = 'SQLECT @recordCount = COUNT(*) FROM ' + @tableName
+  SET @sql = 'SELECT @recordCount = COUNT(*) FROM ' + @tableName
 
   EXEC sp_executesql
     @query = @sql,

@@ -7,7 +7,7 @@ BEGIN
 
   EXEC sp_executesql
     @query = @sql,
-    @params = '@i INT OUTPUT',
+    @params = '@recordcount INT OUTPUT',
     @recordCount = @recordCount OUTPUT
 
   RETURN @recordCount

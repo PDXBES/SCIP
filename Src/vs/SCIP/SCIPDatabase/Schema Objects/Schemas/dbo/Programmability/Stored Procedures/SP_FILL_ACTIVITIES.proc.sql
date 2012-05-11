@@ -37,7 +37,7 @@ BEGIN
   EXEC SP_STATUS_MESSAGE 'Begin SP_FILL_ACTIVITIES'
 
   DECLARE @driversCount BIGINT
-  SET @driversCount = [dbo].[FN_RECORD_COUNT]('DRIVERS')
+  EXEC @driversCount = SP_RECORD_COUNT 'DRIVERS'
   DECLARE @currentRecordNum BIGINT
   DECLARE @statusMessage VARCHAR(100)
 

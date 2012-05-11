@@ -20,6 +20,8 @@ BEGIN
   DECLARE @LargeTractiveDiameterIn int
   SET @LargeTractiveDiameterIn = 24
 
+  PRINT 'Begin SP_FILL_DRIVERS ' + CAST(GETDATE() AS CHAR(25))
+
   INSERT INTO @AllCompKeys
     SELECT compkey
     FROM [dbo].[ASSETS]
@@ -134,7 +136,20 @@ BEGIN
       FROM @LargeRootLargePipeCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES C INNER JOIN ACTIVITY_TYPES D ON (C.activity_type_id = D.activity_type_id)
       WHERE B.ROOTPROB IN ('M') AND C.name = 'RootControlMLargePipe' AND D.name = 'Inspection'
 
-    ---------------------------------------------------------------------------
+    -- Insert Condition inspection drivers
+    PRINT 'Inserting condition inspections (non-large) ' + CAST(GETDATE() AS CHAR(25))
+    INSERT INTO [DRIVERS] (compkey, driver_type_id, override_frequency_years, update_date, updated_by, alternative_id)
+      SELECT A.compkey, driver_type_id, B.next_condition_inspection_interval_years, GETDATE(), 'System', 1
+      FROM @SmallCompKeys A INNER JOIN VW_NEXT_CONDITION_INSPECTION_INTERVAL B ON (A.compkey = B.compkey), DRIVER_TYPES D
+      WHERE D.name = 'Condition'
+
+    PRINT 'Inserting condition inspections (large) ' + CAST(GETDATE() AS CHAR(25))
+    INSERT INTO [DRIVERS] (compkey, driver_type_id, override_frequency_years, update_date, updated_by, alternative_id)
+      SELECT A.compkey, driver_type_id, B.next_condition_inspection_interval_years, GETDATE(), 'System', 1
+      FROM @LargeCompKeys A INNER JOIN VW_NEXT_CONDITION_INSPECTION_INTERVAL B ON (A.compkey = B.compkey), DRIVER_TYPES D
+      WHERE D.name = 'ConditionLarge'
+
+   ---------------------------------------------------------------------------
 
     -- Insert H large root drivers
     PRINT 'Inserting H large root drivers ' + CAST(GETDATE() AS CHAR(25))
@@ -291,19 +306,6 @@ BEGIN
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
       FROM (@LargeTractiveCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
       WHERE C.grade = 'VL' AND D.name = 'TractiveForcesVLLarge'
-
-    -- Insert Condition inspection drivers
-    PRINT 'Inserting condition inspections (non-large) ' + CAST(GETDATE() AS CHAR(25))
-    INSERT INTO [DRIVERS] (compkey, driver_type_id, override_frequency_years, update_date, updated_by, alternative_id)
-      SELECT A.compkey, driver_type_id, B.next_condition_inspection_interval_years, GETDATE(), 'System', 1
-      FROM @SmallCompKeys A INNER JOIN VW_NEXT_CONDITON_INSPECTION_INTERVAL B ON (A.compkey = B.compkey), DRIVER_TYPES D
-      WHERE D.name = 'Condition'
-
-    PRINT 'Inserting condition inspections (large) ' + CAST(GETDATE() AS CHAR(25))
-    INSERT INTO [DRIVERS] (compkey, driver_type_id, override_frequency_years, update_date, updated_by, alternative_id)
-      SELECT A.compkey, driver_type_id, B.next_condition_inspection_interval_years, GETDATE(), 'System', 1
-      FROM @LargeCompKeys A INNER JOIN VW_NEXT_CONDITON_INSPECTION_INTERVAL B ON (A.compkey = B.compkey), DRIVER_TYPES D
-      WHERE D.name = 'ConditionLarge'
 
     PRINT 'End SP_FILL_DRIVERS ' + CAST(GETDATE() AS CHAR(25))
 END

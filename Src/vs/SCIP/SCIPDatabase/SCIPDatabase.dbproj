@@ -621,5 +621,8 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_RECORD_COUNT.proc.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_COMPARE_TO_CURRENT_DATE.function.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

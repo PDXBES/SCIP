@@ -1,8 +1,4 @@
 ﻿CREATE PROCEDURE [dbo].[SP_FILL_ACTIVITIES]
-(
-  @startRowIndex INT,
-  @maximumRows INT
-)
 AS
 BEGIN
   SET NOCOUNT ON
@@ -62,6 +58,7 @@ BEGIN
   )
 
   DECLARE @CurrentDate DATETIME
+  SET @CurrentDate = GETDATE()
   DECLARE @EndDate DATETIME
   SET @EndDate = DATEADD(year, @MaxYears, @CurrentDate)
 
@@ -79,34 +76,35 @@ BEGIN
     FETCH NEXT FROM activity_cursor INTO @currentFrequency
     WHILE @@FETCH_STATUS = 0
     BEGIN
-      SET @statusMessage = 'Inserting for frequency of ' + @currentFrequency + ' years'
+      SET @statusMessage = 'Inserting for frequency of ' + CONVERT(VARCHAR(6), @currentFrequency) + ' years'
       EXEC SP_STATUS_MESSAGE @statusMessage
       
       SET @currentYear = 0
 
       WHILE (@currentYear < @MaxYears)
       BEGIN
-        INSERT INTO ACTIVITIES (compkey, hansen_activity_code, driver_id, activity_date, cost, activity_type_id, alternative_id)
-          SELECT A.compkey, 'insp', A.driver_id, DATEADD(day, DATEDIFF(day, B.last_inspection_date, DATEADD(year, CEILING(@currentYear), B.last_inspection_date)) * @currentFrequency, B.last_inspection_date), A.driver_cost, A.activity_type_id, A.alternative_id
+        INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
+          SELECT A.compkey, A.driver_id, DATEADD(day, DATEDIFF(day, [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_inspection_date, @currentDate), DATEADD(year, CEILING(@currentYear), [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_inspection_date, @currentDate))) * @currentFrequency, [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_inspection_date, @currentDate)), A.driver_cost, A.activity_type_id, A.alternative_id
           FROM (VW_CONTROLLING_DRIVERS A INNER JOIN VW_LAST_ACTIVITY_DATES B ON (A.compkey = B.compkey))
           WHERE (A.frequency_years = @currentFrequency) AND (A.activity_type = 'Inspection')
-        INSERT INTO ACTIVITIES (compkey, hansen_activity_code, driver_id, activity_date, cost, activity_type_id, alternative_id)
-          SELECT A.compkey, 'clean', A.driver_id, DATEADD(day, DATEDIFF(day, B.last_cleaning_date, DATEADD(year, CEILING(@currentYear), B.last_cleaning_date)) * @currentFrequency, B.last_inspection_date), A.driver_cost, A.activity_type_id, A.alternative_id
+        INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
+          SELECT A.compkey, A.driver_id, DATEADD(day, DATEDIFF(day, [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_cleaning_date, @currentDate), DATEADD(year, CEILING(@currentYear), [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_cleaning_date, @currentDate))) * @currentFrequency, [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_cleaning_date, @currentDate)), A.driver_cost, A.activity_type_id, A.alternative_id
           FROM (VW_CONTROLLING_DRIVERS A INNER JOIN VW_LAST_ACTIVITY_DATES B ON (A.compkey = B.compkey))
           WHERE (A.frequency_years = @currentFrequency) AND (A.activity_type = 'Cleaning')
-        INSERT INTO ACTIVITIES (compkey, hansen_activity_code, driver_id, activity_date, cost, activity_type_id, alternative_id)
-          SELECT A.compkey, 'root', A.driver_id, DATEADD(day, DATEDIFF(day, B.last_root_management_date, DATEADD(year, CEILING(@currentYear), B.last_root_management_date)) * @currentFrequency, B.last_inspection_date), A.driver_cost, A.activity_type_id, A.alternative_id
+        INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
+          SELECT A.compkey, A.driver_id, DATEADD(day, DATEDIFF(day, [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_root_management_date, @currentDate), DATEADD(year, CEILING(@currentYear), [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_root_management_date, @currentDate))) * @currentFrequency, [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_root_management_date, @currentDate)), A.driver_cost, A.activity_type_id, A.alternative_id
           FROM (VW_CONTROLLING_DRIVERS A INNER JOIN VW_LAST_ACTIVITY_DATES B ON (A.compkey = B.compkey))
           WHERE (A.frequency_years = @currentFrequency) AND (A.activity_type = 'Root Management')
         IF @currentFrequency = 0
           BREAK
         SET @currentYear = @currentYear + @currentFrequency
       END
-
+      IF @currentFrequency > @MaxYears
+        BREAK
       FETCH NEXT FROM activity_cursor INTO @currentFrequency
     END
   CLOSE activity_cursor
-  DEALLOCATE db_cursor
+  DEALLOCATE activity_cursor
 
   --DECLARE @cd_driver_id INT
   --DECLARE @cd_compkey INT

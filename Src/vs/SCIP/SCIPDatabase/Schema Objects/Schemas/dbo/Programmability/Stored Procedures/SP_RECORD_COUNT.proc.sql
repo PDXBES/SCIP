@@ -1,13 +1,13 @@
 ﻿CREATE PROCEDURE [dbo].[SP_RECORD_COUNT]
-	@tableName VARCHAR(100) 
+	@tableName NVARCHAR(100) 
 AS
 BEGIN
-	DECLARE @recordCount BIGINT, @sql VARCHAR(512)
-  SET @sql = 'SELECT @recordCount = COUNT(*) FROM ' + @tableName
+	DECLARE @recordCount BIGINT, @sql NVARCHAR(512)
+  SET @sql = N'SELECT @recordCount = COUNT(*) FROM ' + @tableName
 
   EXEC sp_executesql
     @query = @sql,
-    @params = '@recordcount INT OUTPUT',
+    @params = N'@recordcount INT OUTPUT',
     @recordCount = @recordCount OUTPUT
 
   RETURN @recordCount

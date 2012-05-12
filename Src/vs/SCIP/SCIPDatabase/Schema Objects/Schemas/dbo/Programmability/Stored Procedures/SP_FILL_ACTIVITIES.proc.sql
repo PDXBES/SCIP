@@ -5,7 +5,14 @@ BEGIN
 
   EXEC SP_STATUS_MESSAGE 'Begin SP_FILL_ACTIVITIES'
   TRUNCATE TABLE ACTIVITIES
-  
+
+  TRUNCATE TABLE CONTROLLING_DRIVER_FREQUENCIES
+  INSERT INTO CONTROLLING_DRIVER_FREQUENCIES
+    SELECT compkey, [Inspection] AS inspection_frequency_years, [Cleaning] AS cleaning_frequency_years, [Root Management] AS root_frequency_years
+    FROM 
+    (SELECT compkey, activity_type, frequency_years FROM VW_CONTROLLING_DRIVERS) PS
+    PIVOT (AVG(frequency_years) FOR activity_type IN ([Inspection], [Cleaning], [Root Management])) AS PVT
+
   DECLARE @MaxYears DECIMAL(5,2)
   SET @MaxYears = 12
 
@@ -76,6 +83,9 @@ BEGIN
     FETCH NEXT FROM activity_cursor INTO @currentFrequency
     WHILE @@FETCH_STATUS = 0
     BEGIN
+      IF @currentFrequency > @MaxYears
+      BREAK
+
       SET @statusMessage = 'Inserting for frequency of ' + CONVERT(VARCHAR(6), @currentFrequency) + ' years'
       EXEC SP_STATUS_MESSAGE @statusMessage
       
@@ -83,24 +93,39 @@ BEGIN
 
       WHILE (@currentYear < @MaxYears)
       BEGIN
+        SET @currentYear = @currentYear + @currentFrequency
+        IF @currentFrequency = 0
+        BEGIN
         INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
-          SELECT A.compkey, A.driver_id, DATEADD(day, DATEDIFF(day, [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_inspection_date, @currentDate), DATEADD(year, CEILING(@currentYear), [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_inspection_date, @currentDate))) * @currentFrequency, [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_inspection_date, @currentDate)), A.driver_cost, A.activity_type_id, A.alternative_id
+          SELECT A.compkey, A.driver_id, @currentDate, A.driver_cost, A.activity_type_id, A.alternative_id
           FROM (VW_CONTROLLING_DRIVERS A INNER JOIN VW_LAST_ACTIVITY_DATES B ON (A.compkey = B.compkey))
           WHERE (A.frequency_years = @currentFrequency) AND (A.activity_type = 'Inspection')
         INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
-          SELECT A.compkey, A.driver_id, DATEADD(day, DATEDIFF(day, [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_cleaning_date, @currentDate), DATEADD(year, CEILING(@currentYear), [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_cleaning_date, @currentDate))) * @currentFrequency, [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_cleaning_date, @currentDate)), A.driver_cost, A.activity_type_id, A.alternative_id
+          SELECT A.compkey, A.driver_id, @currentDate, A.driver_cost, A.activity_type_id, A.alternative_id
           FROM (VW_CONTROLLING_DRIVERS A INNER JOIN VW_LAST_ACTIVITY_DATES B ON (A.compkey = B.compkey))
           WHERE (A.frequency_years = @currentFrequency) AND (A.activity_type = 'Cleaning')
         INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
-          SELECT A.compkey, A.driver_id, DATEADD(day, DATEDIFF(day, [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_root_management_date, @currentDate), DATEADD(year, CEILING(@currentYear), [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_root_management_date, @currentDate))) * @currentFrequency, [dbo].FN_COMPARE_TO_CURRENT_DATE(B.last_root_management_date, @currentDate)), A.driver_cost, A.activity_type_id, A.alternative_id
+          SELECT A.compkey, A.driver_id, @currentDate, A.driver_cost, A.activity_type_id, A.alternative_id
           FROM (VW_CONTROLLING_DRIVERS A INNER JOIN VW_LAST_ACTIVITY_DATES B ON (A.compkey = B.compkey))
           WHERE (A.frequency_years = @currentFrequency) AND (A.activity_type = 'Root Management')
-        IF @currentFrequency = 0
-          BREAK
-        SET @currentYear = @currentYear + @currentFrequency
-      END
-      IF @currentFrequency > @MaxYears
         BREAK
+        END
+        ELSE
+        BEGIN
+          INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
+            SELECT A.compkey, A.driver_id, [dbo].[FN_DATE_ADD_FRACTIONAL_YEARS](B.last_inspection_date, @currentYear), A.driver_cost, A.activity_type_id, A.alternative_id
+            FROM (VW_CONTROLLING_DRIVERS A INNER JOIN VW_LAST_ACTIVITY_DATES B ON (A.compkey = B.compkey))
+            WHERE (A.frequency_years = @currentFrequency) AND (A.activity_type = 'Inspection')
+          INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
+            SELECT A.compkey, A.driver_id, [dbo].[FN_DATE_ADD_FRACTIONAL_YEARS](B.last_cleaning_date, @currentYear), A.driver_cost, A.activity_type_id, A.alternative_id
+            FROM (VW_CONTROLLING_DRIVERS A INNER JOIN VW_LAST_ACTIVITY_DATES B ON (A.compkey = B.compkey))
+            WHERE (A.frequency_years = @currentFrequency) AND (A.activity_type = 'Cleaning')
+          INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
+            SELECT A.compkey, A.driver_id, [dbo].[FN_DATE_ADD_FRACTIONAL_YEARS](B.last_root_management_date, @currentYear), A.driver_cost, A.activity_type_id, A.alternative_id
+            FROM (VW_CONTROLLING_DRIVERS A INNER JOIN VW_LAST_ACTIVITY_DATES B ON (A.compkey = B.compkey))
+            WHERE (A.frequency_years = @currentFrequency) AND (A.activity_type = 'Root Management')
+        END
+      END
       FETCH NEXT FROM activity_cursor INTO @currentFrequency
     END
   CLOSE activity_cursor

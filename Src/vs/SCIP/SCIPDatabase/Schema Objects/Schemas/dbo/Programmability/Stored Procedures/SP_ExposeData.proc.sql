@@ -424,6 +424,10 @@ FROM	[dbo].[ASSETS] AS A
 END
 
 UPDATE [dbo].[ASSETS]
+SET structural_grade = B.grade_h5
+FROM [dbo].[ASSETS] A INNER JOIN REHAB10FTSEGS B ON (A.COMPKEY = B.compkey)
+
+UPDATE [dbo].[ASSETS]
 SET    district_id = 'NULL'
 FROM   [dbo].[ASSETS] AS A
 WHERE  district_id = '1'

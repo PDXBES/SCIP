@@ -624,5 +624,14 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_COMPARE_TO_CURRENT_DATE.function.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_DATE_ADD_FRACTIONAL_YEARS.function.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\CONTROLLING_DRIVER_FREQUENCIES.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Views\VW_ALL_ACTIVITIES.view.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

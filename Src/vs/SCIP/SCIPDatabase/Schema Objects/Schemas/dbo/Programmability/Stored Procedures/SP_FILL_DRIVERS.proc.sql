@@ -153,6 +153,16 @@ BEGIN
       FROM @LargeCompKeys A INNER JOIN VW_NEXT_CONDITION_INSPECTION_INTERVAL B ON (A.compkey = B.compkey), DRIVER_TYPES D
       WHERE D.name = 'ConditionLarge'
 
+    -- Delete Grade 5 Inspections
+    EXEC SP_STATUS_MESSAGE 'Deleting Grade 5 Inspections'
+    DELETE FROM [DRIVERS]
+    WHERE driver_id IN
+      (
+        SELECT driver_id
+        FROM ((DRIVERS A INNER JOIN ASSETS B ON (A.compkey = B.COMPKEY)) INNER JOIN DRIVER_TYPES C ON (A.driver_type_id = C.driver_type_id)) INNER JOIN ACTIVITY_TYPES D ON (D.activity_type_id = C.activity_type_id)
+        WHERE (B.structural_grade = 5 AND (D.name = 'Inspection'))
+      )
+
    ---------------------------------------------------------------------------
 
     -- Insert H large root drivers
@@ -310,6 +320,16 @@ BEGIN
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
       FROM (@LargeTractiveCompKeys A INNER JOIN TRACTIVE_FORCE_MODEL_INPUTS B ON (A.COMPKEY = B.compkey)) INNER JOIN TRACTIVE_FORCE_GRADES C ON(B.particle_size_mm <= C.max_particle_size_mm AND B.particle_size_mm >= C.min_particle_size_mm), DRIVER_TYPES D
       WHERE C.grade = 'VL' AND D.name = 'TractiveForcesVLLarge'
+
+    -- Delete Grade 5 Cleanings
+    EXEC SP_STATUS_MESSAGE 'Deleting Grade 5 Cleanings'
+    DELETE FROM [DRIVERS]
+    WHERE driver_id IN
+      (
+        SELECT driver_id
+        FROM ((DRIVERS A INNER JOIN ASSETS B ON (A.compkey = B.COMPKEY)) INNER JOIN DRIVER_TYPES C ON (A.driver_type_id = C.driver_type_id)) INNER JOIN ACTIVITY_TYPES D ON (D.activity_type_id = C.activity_type_id)
+        WHERE (B.structural_grade = 5 AND (D.name = 'Cleaning'))
+      )
 
     EXEC SP_STATUS_MESSAGE 'End SP_FILL_DRIVERS'
 END

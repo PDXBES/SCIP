@@ -633,5 +633,11 @@
     <Build Include="Schema Objects\Schemas\dbo\Views\VW_ALL_ACTIVITIES.view.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Views\VW_NEXT_ACTIVITIES_BY_COMPKEY.view.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Views\VW_EXPORT_NEXT_ACTIVITIES_FOR_MAPPING.view.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

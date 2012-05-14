@@ -331,7 +331,23 @@ FROM	[dbo].[ASSETS]
 		LatestInspections
 		ON [dbo].[ASSETS].COMPKEY = LatestInspections.COMPKEY
 
---Update the root management date		
+--Update the root management date
+UPDATE [dbo].[ASSETS]
+SET		last_root_management_date = COMPDTTM
+FROM	[dbo].[ASSETS] AS C
+		INNER JOIN
+		(
+			SELECT	A.COMPKEY, A.ACTKEY, A.RES, A.ACTUALQTY, A.COMPDTTM
+			FROM	[HANSEN8].[WORKMANAGEMENT].[HISTORY] AS A
+					INNER JOIN 
+					[HANSEN8].[ASSETMANAGEMENT_SEWER].[COMPSMN] AS B
+					ON	A.COMPKEY = B.COMPKEY
+					WHERE ACTKEY = @ACTKEY_RTCHEM
+					
+		)AS D
+		ON	C.COMPKEY = D.COMPKEY
+
+--Update the root management date	if RES available
 UPDATE [dbo].[ASSETS]
 SET		last_root_management_date = COMPDTTM
 FROM	[dbo].[ASSETS] AS C
@@ -361,7 +377,29 @@ FROM	[dbo].[ASSETS] AS C
 				)
 			)
 			
---Update the special cleaning date		
+--Update the special cleaning date
+UPDATE  [dbo].[ASSETS]
+SET		last_cleaning_date = COMPDTTM
+FROM	[dbo].[ASSETS] AS C
+		INNER JOIN
+		(
+			SELECT	A.COMPKEY, A.ACTKEY, A.RES, A.ACTUALQTY, A.COMPDTTM
+			FROM	[HANSEN8].[WORKMANAGEMENT].[HISTORY] AS A
+					INNER JOIN 
+					[HANSEN8].[ASSETMANAGEMENT_SEWER].[COMPSMN] AS B
+					ON	A.COMPKEY = B.COMPKEY
+					WHERE 
+						(		
+							ACTKEY = @ACTKEY_SPCLN
+							OR
+							ACTKEY = @ACTKEY_SEWCLN
+						)
+					
+		)AS D
+		ON	C.COMPKEY = D.COMPKEY
+
+--Update the special cleaning date if RES available
+		
 UPDATE  [dbo].[ASSETS]
 SET		last_cleaning_date = COMPDTTM
 FROM	[dbo].[ASSETS] AS C

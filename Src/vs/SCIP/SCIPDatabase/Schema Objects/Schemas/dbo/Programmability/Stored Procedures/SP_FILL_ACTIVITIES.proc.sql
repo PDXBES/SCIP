@@ -14,7 +14,11 @@ BEGIN
     PIVOT (AVG(frequency_years) FOR activity_type IN ([Inspection], [Cleaning], [Root Management])) AS PVT
 
   DECLARE @MaxYears DECIMAL(5,2)
-  SET @MaxYears = 12
+  SET @MaxYears = 24
+
+  DECLARE @statusMessage VARCHAR(200)
+  SET @statusMessage = 'Processing ' + CONVERT(VARCHAR(10), @MaxYears) + ' years'
+  EXEC SP_STATUS_MESSAGE @statusMessage
 
   ---- Paging algorithm
   --DECLARE @first_id INT, @startRow INT
@@ -75,7 +79,6 @@ BEGIN
   FROM @frequenciesTable
   
   DECLARE @currentFrequency DECIMAL(5,2)
-  DECLARE @statusMessage VARCHAR(200)
   DECLARE @currentYear DECIMAL(5,2)
   DECLARE @nextYearDate DATETIME
 

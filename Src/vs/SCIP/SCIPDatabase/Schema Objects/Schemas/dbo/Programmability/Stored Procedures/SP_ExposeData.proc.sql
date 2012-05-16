@@ -301,11 +301,12 @@ SELECT  COMPKEY, MAX(STARTDTTM) AS LastInspected
 FROM    dbo.AllInspections AS AllInspections_1
 GROUP BY COMPKEY
 
-INSERT INTO [dbo].[ASSETS] (COMPKEY, length_ft, diamWidth_inches, height_inches, basin_id, district_id)
+INSERT INTO [dbo].[ASSETS] (COMPKEY, length_ft, diamWidth_inches, height_inches, unit_type, basin_id, district_id)
 SELECT	COMPKEY ,
 		PIPELEN,
 		PIPEDIAM,
 		PIPEHT,
+    UNITTYPE,
         1,
         1
 FROM	[HANSEN8].[ASSETMANAGEMENT_SEWER].COMPSMN
@@ -330,7 +331,23 @@ FROM	[dbo].[ASSETS]
 		LatestInspections
 		ON [dbo].[ASSETS].COMPKEY = LatestInspections.COMPKEY
 
---Update the root management date		
+--Update the root management date
+UPDATE [dbo].[ASSETS]
+SET		last_root_management_date = COMPDTTM
+FROM	[dbo].[ASSETS] AS C
+		INNER JOIN
+		(
+			SELECT	A.COMPKEY, A.ACTKEY, A.RES, A.ACTUALQTY, A.COMPDTTM
+			FROM	[HANSEN8].[WORKMANAGEMENT].[HISTORY] AS A
+					INNER JOIN 
+					[HANSEN8].[ASSETMANAGEMENT_SEWER].[COMPSMN] AS B
+					ON	A.COMPKEY = B.COMPKEY
+					WHERE ACTKEY = @ACTKEY_RTCHEM
+					
+		)AS D
+		ON	C.COMPKEY = D.COMPKEY
+
+--Update the root management date	if RES available
 UPDATE [dbo].[ASSETS]
 SET		last_root_management_date = COMPDTTM
 FROM	[dbo].[ASSETS] AS C
@@ -360,7 +377,29 @@ FROM	[dbo].[ASSETS] AS C
 				)
 			)
 			
---Update the special cleaning date		
+--Update the special cleaning date
+UPDATE  [dbo].[ASSETS]
+SET		last_cleaning_date = COMPDTTM
+FROM	[dbo].[ASSETS] AS C
+		INNER JOIN
+		(
+			SELECT	A.COMPKEY, A.ACTKEY, A.RES, A.ACTUALQTY, A.COMPDTTM
+			FROM	[HANSEN8].[WORKMANAGEMENT].[HISTORY] AS A
+					INNER JOIN 
+					[HANSEN8].[ASSETMANAGEMENT_SEWER].[COMPSMN] AS B
+					ON	A.COMPKEY = B.COMPKEY
+					WHERE 
+						(		
+							ACTKEY = @ACTKEY_SPCLN
+							OR
+							ACTKEY = @ACTKEY_SEWCLN
+						)
+					
+		)AS D
+		ON	C.COMPKEY = D.COMPKEY
+
+--Update the special cleaning date if RES available
+		
 UPDATE  [dbo].[ASSETS]
 SET		last_cleaning_date = COMPDTTM
 FROM	[dbo].[ASSETS] AS C
@@ -421,6 +460,10 @@ FROM	[dbo].[ASSETS] AS A
 		) AS D
 		ON	A.COMPKEY = D.COMPKEY
 END
+
+UPDATE [dbo].[ASSETS]
+SET structural_grade = B.grade_h5
+FROM [dbo].[ASSETS] A INNER JOIN REHAB10FTSEGS B ON (A.COMPKEY = B.compkey)
 
 UPDATE [dbo].[ASSETS]
 SET    district_id = 'NULL'

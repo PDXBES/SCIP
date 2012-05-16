@@ -642,5 +642,11 @@
     <Build Include="Schema Objects\Schemas\dbo\Views\VW_NEXT_ACTIVITY_FISCAL_YEARS.view.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\ASSET_SETS.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\ASSET_SETS.PK_ASSET_SETS.pkey.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

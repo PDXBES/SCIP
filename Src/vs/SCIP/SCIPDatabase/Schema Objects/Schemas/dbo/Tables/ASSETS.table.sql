@@ -9,6 +9,7 @@
     [last_inspection_date]      DATETIME    NULL,
     [last_root_management_date] DATETIME    NULL,
     [last_cleaning_date]        DATETIME    NULL,
-    [structural_grade]          INT         NULL
+    [structural_grade]          INT         NULL,
+    [asset_set_id]              INT         NOT NULL
 );
 

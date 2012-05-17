@@ -648,5 +648,20 @@
     <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\ASSET_SETS.PK_ASSET_SETS.pkey.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Views\VW_NEXT_ACTIVITY_HANSEN_ACTIVITY_CODE_BY_COMPKEY.view.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Views\VW_NEXT_ACTIVITY_FISCAL_YEAR_BY_COMPKEY.view.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Views\VW_NEXT_ACTIVITY_COST_BY_COMPKEY.view.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\NEXT_ACTIVITIES.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_FILL_NEXT_ACTIVITIES.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

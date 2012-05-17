@@ -450,7 +450,7 @@ BEGIN
 			  FROM	[HANSEN8].[ASSETMANAGEMENT_SEWER].[COMPSMN] AS B
 					  INNER JOIN
 					  DISTRICTS AS C
-					  ON	B.DISTRICT = C.name
+					  ON	B.DISTRICT = C.district_id
 		  ) AS D
 		  ON	A.COMPKEY = D.COMPKEY
 

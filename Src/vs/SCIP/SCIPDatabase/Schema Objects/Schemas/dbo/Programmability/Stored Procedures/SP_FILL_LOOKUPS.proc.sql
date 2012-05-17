@@ -197,10 +197,16 @@ BEGIN
     (3,'Cleaning', 'Sewer cleaning');
   SET IDENTITY_INSERT ACTIVITY_TYPES OFF;
 
+  TRUNCATE TABLE [SCIP].[dbo].[ASSET_SETS];
+  SET IDENTITY_INSERT ASSET_SETS ON
+  INSERT INTO ASSET_SETS ([asset_set_id], [name], [import_date], [description]) VALUES
+    (1, 'Initial import', GETDATE(), NULL);
+  SET IDENTITY_INSERT ASSET_SETS OFF
+
   TRUNCATE TABLE [SCIP].[dbo].[ALTERNATIVES];
   SET IDENTITY_INSERT ALTERNATIVES ON;
-  INSERT INTO ALTERNATIVES ([alternative_id], [name], [description]) VALUES
-    (1, 'Current', NULL);
+  INSERT INTO ALTERNATIVES ([alternative_id], [name], [description], [asset_set_id]) VALUES
+    (1, 'Current', NULL, 1);
   SET IDENTITY_INSERT ALTERNATIVES OFF;
 
   TRUNCATE TABLE [SCIP].[dbo].[DRIVER_TYPES];

@@ -663,5 +663,44 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_FILL_NEXT_ACTIVITIES.proc.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Views\VW_INSPECTION_ACTIVITIES_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Views\VW_ROOT_ACTIVITIES_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Views\VW_CLEANING_ACTIVITIES_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_ASSET_COUNT.function.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Views\VW_INSPECTION_ACTIVITIES_COUNT_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Views\VW_CLEANING_ACTIVITIES_COUNT_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Views\VW_ROOT_ACTIVITIES_COUNT_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_ANNUALIZED_INSPECTION_ACTIVITIES_BY_DRIVER_TYPE.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_ANNUALIZED_ROOT_ACTIVITIES_BY_DRIVER_TYPE.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_ANNUALIZED_CLEANING_ACTIVITIES_BY_DRIVER_TYPE.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_ANNUALIZED_INSPECTION_ACTIVITIES_COUNT_BY_DRIVER_TYPE.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_ANNUALIZED_CLEANING_ACTIVITIES_COUNT_BY_DRIVER_TYPE.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_ANNUALIZED_ROOT_ACTIVITIES_COUNT_BY_DRIVER_TYPE.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

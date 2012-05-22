@@ -463,6 +463,6 @@ BEGIN
   FROM   [dbo].[ASSETS] AS A
   WHERE  district_id = '1'
 
-  EXEC SP_STATUS_MESSAGE 'Begin SP_ExposeData'
+  EXEC SP_STATUS_MESSAGE 'End SP_ExposeData'
 
 END

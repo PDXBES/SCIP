@@ -26,15 +26,18 @@ BEGIN
 
   RAISERROR(@StatusMessage, 0, 1) WITH NOWAIT
 
+  --Create a list of every compkey
   INSERT INTO @AllCompKeys
     SELECT compkey
     FROM [dbo].[ASSETS]
 
+  --Create a list of compkeys for pipes with dimensions greater than @LargeDiameterIn
   INSERT INTO @LargeCompKeys
     SELECT compkey
     FROM [dbo].[ASSETS]
     WHERE ([ASSETS].diamWidth_inches > @LargeDiameterIn) OR ([ASSETS].height_inches > @LargeDiameterIn)
 
+  --Create a list of compkeys for pipes with dimensions LTE @LargeDiameterIn
   INSERT INTO @SmallCompKeys
     SELECT compkey
     FROM @AllCompKeys
@@ -42,12 +45,16 @@ BEGIN
     SELECT compkey
     FROM @LargeCompKeys
 
+  --Create a list of compkeys for pipes with dimensions GTE
+  --the greater of (@largeRootDiameterIn and @LargeDiameterIn)
   INSERT INTO @LargeRootLargePipeCompKeys
     SELECT compkey
     FROM [dbo].[ASSETS]
     WHERE ([ASSETS].diamWidth_inches >= @LargeRootDiameterIn OR [ASSETS].height_inches >= @LargeRootDiameterIn)
       AND ([ASSETS].diamWidth_inches > @LargeDiameterIn OR [ASSETS].height_inches > @LargeDiameterIn)
 
+  --Create a list of compkeys for pipes with dimensions GT the root large pipe cutoff,
+  --but not in the @LargeRootLargePipeCompkeys set
   INSERT INTO @LargeRootCompKeys
     SELECT compkey
     FROM [dbo].[ASSETS]
@@ -56,6 +63,8 @@ BEGIN
       SELECT compkey
       FROM @LargeRootLargePipeCompKeys
 
+  --Create a list of compkeys for pipes that are smaller than both the large root pipes cutoff and
+  --the large pipe cutoff
   INSERT INTO @SmallRootCompKeys
     SELECT compkey
     FROM @AllCompKeys
@@ -65,11 +74,13 @@ BEGIN
       UNION SELECT compkey
       FROM @LargeRootLargePipeCompKeys
 
+  --Create a list of compkeys for pipes that are GT the @LargeTractiveDiameterIn cutoff
   INSERT INTO @LargeTractiveCompKeys
   SELECT compkey
   FROM [dbo].[ASSETS]
   WHERE ([ASSETS].diamWidth_inches > @LargeTractiveDiameterIn OR [ASSETS].height_inches > @LargeTractiveDiameterIn)
 
+  --Create a list of compkeys for pipes that are LTE the @LargeTractiveDiameterIn cutoff
   INSERT INTO @SmallTractiveCompKeys
   SELECT compkey
   FROM [dbo].[ASSETS]
@@ -77,10 +88,13 @@ BEGIN
     SELECT compkey
     FROM @LargeTractiveCompKeys
 
+  --Create a list of compkeys for pipes that are in @SmallTractiveCompkeys and are sanitary interceptors or sanitary mainlines
   INSERT INTO @SmallTractiveSanCompKeys
   SELECT A.compkey
   FROM @SmallTractiveCompKeys A INNER JOIN ASSETS B ON (A.compkey = B.COMPKEY AND B.unit_type IN ('SAINT', 'SAML'))
 
+  --Create a list of compkeys for pipes that are in @SmallTractiveCompkeys and are not sanitary interceptors or sanitary mainlines
+  --(which technically leaves combined pipes, for our assumptions of the ASSETS table as of 5/21/2012)
   INSERT INTO @SmallTractiveCmbCompKeys
   SELECT compkey
   FROM @SmallTractiveCompKeys

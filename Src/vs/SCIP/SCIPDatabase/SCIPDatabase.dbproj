@@ -695,5 +695,8 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_ASSETS_TOTAL_LENGTH.function.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Views\VW_EXPORT_ALL_ACTIVITIES_FOR_MAPPING.view.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

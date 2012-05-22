@@ -17,14 +17,14 @@ BEGIN
   DECLARE @SmallTractiveSanCompKeys TABLE (compkey int)
   DECLARE @SmallTractiveCmbCompKeys TABLE (compkey int)
   --Anything equal to or greater than LargeDiameterIn is considered a large pipe
-  DECLARE @LargeDiameterIn double
+  DECLARE @LargeDiameterIn float
   SET @LargeDiameterIn = 36.01
   --Anything equal to or greater than LargeRootDiameterIn is considered a large root control pipe
-  DECLARE @LargeRootDiameterIn double
+  DECLARE @LargeRootDiameterIn float
   SET @LargeRootDiameterIn = 16
   DECLARE @LargeRootLargePipeCompKeys TABLE (compkey int)
   --Anything equal to or greater than LargeTractiveDiamterIn is considered a large tractive pipe
-  DECLARE @LargeTractiveDiameterIn int
+  DECLARE @LargeTractiveDiameterIn float
   SET @LargeTractiveDiameterIn = 24.01
   DECLARE @StatusMessage VARCHAR(100)
 
@@ -39,21 +39,21 @@ BEGIN
   INSERT INTO @LargeCompKeys
     SELECT compkey
     FROM [dbo].[ASSETS]
-    WHERE ([ASSETS].diamWidth_inches >= @LargeDiameterIn) OR ([ASSETS].height_inches >= @LargeDiameterIn)
+    WHERE ([dbo].[ASSETS].diamWidth_inches >= @LargeDiameterIn) OR ([dbo].[ASSETS].height_inches >= @LargeDiameterIn)
 
   --Create a list of compkeys for pipes with dimensions LTE @LargeDiameterIn
   INSERT INTO @SmallCompKeys
     SELECT compkey
     FROM [dbo].[ASSETS]
-    WHERE ([ASSETS].diamWidth_inches < @LargeDiameterIn) AND ([ASSETS].height_inches < @LargeDiameterIn)
+    WHERE ([dbo].[ASSETS].diamWidth_inches < @LargeDiameterIn) AND ([dbo].[ASSETS].height_inches < @LargeDiameterIn)
 
   --Create a list of compkeys for pipes with dimensions GTE
   --the greater of (@largeRootDiameterIn and @LargeDiameterIn)
   INSERT INTO @LargeRootLargePipeCompKeys
     SELECT compkey
     FROM [dbo].[ASSETS]
-    WHERE ([ASSETS].diamWidth_inches >= @LargeRootDiameterIn OR [ASSETS].height_inches >= @LargeRootDiameterIn)
-      AND ([ASSETS].diamWidth_inches >= @LargeDiameterIn OR [ASSETS].height_inches >= @LargeDiameterIn)
+    WHERE ([dbo].[ASSETS].diamWidth_inches >= @LargeRootDiameterIn OR [dbo].[ASSETS].height_inches >= @LargeRootDiameterIn)
+      AND ([dbo].[ASSETS].diamWidth_inches >= @LargeDiameterIn OR [dbo].[ASSETS].height_inches >= @LargeDiameterIn)
 
   --Create a list of compkeys for pipes with dimensions between the large root cutoff and the large pipe cutoff
   --NOTE: it may occur at some point in the future that the large pipe cutoff is actually lower than the
@@ -64,22 +64,22 @@ BEGIN
     SELECT compkey
     FROM [dbo].[ASSETS]
     WHERE (
-	        ([ASSETS].diamWidth_inches >= @LargeRootDiameterIn) OR ([ASSETS].height_inches >= @LargeRootDiameterIn)
+	        ([dbo].[ASSETS].diamWidth_inches >= @LargeRootDiameterIn) OR ([dbo].[ASSETS].height_inches >= @LargeRootDiameterIn)
             AND
-            ([ASSETS].diamWidth_inches < @LargeDiameterIn) AND ([ASSETS].height_inches < @LargeDiameterIn)
+            ([dbo].[ASSETS].diamWidth_inches < @LargeDiameterIn) AND ([dbo].[ASSETS].height_inches < @LargeDiameterIn)
 		  )
 		  OR
 		  (
-	        ([ASSETS].diamWidth_inches < @LargeRootDiameterIn) AND ([ASSETS].height_inches < @LargeRootDiameterIn)
+	        ([dbo].[ASSETS].diamWidth_inches < @LargeRootDiameterIn) AND ([dbo].[ASSETS].height_inches < @LargeRootDiameterIn)
             AND
-            ([ASSETS].diamWidth_inches >= @LargeDiameterIn) OR ([ASSETS].height_inches >= @LargeDiameterIn)
+            ([dbo].[ASSETS].diamWidth_inches >= @LargeDiameterIn) OR ([dbo].[ASSETS].height_inches >= @LargeDiameterIn)
 		  )
 
   --Create a list of compkeys for pipes that are smaller than both the large root pipes cutoff and
   --the large pipe cutoff
   INSERT INTO @SmallRootCompKeys
     SELECT compkey
-    FROM @AllCompKeys
+    FROM [dbo].[ASSETS]
     WHERE ([ASSETS].diamWidth_inches < @LargeRootDiameterIn) AND ([ASSETS].height_inches < @LargeRootDiameterIn)
 	      AND
 		  ([ASSETS].diamWidth_inches < @LargeDiameterIn) AND ([ASSETS].height_inches < @LargeDiameterIn)
@@ -135,16 +135,16 @@ BEGIN
       WHERE B.ROOTPROB IN ('H') AND C.name = 'RootControlH' AND D.name = 'Inspection'
 
     --@LargeRootXORLargePipeCompKeys
-	CASE WHEN @LargeRootDiameterIn < @LargeDiameterIn
-	THEN
+	IF @LargeRootDiameterIn < @LargeDiameterIn
+	  BEGIN
       EXEC SP_STATUS_MESSAGE 'Inserting H large root control inspection drivers'
       INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
         SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
-        FROM @LargeRootCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES C INNER JOIN ACTIVITY_TYPES D ON (C.activity_type_id = D.activity_type_id)
+        FROM @LargeRootXORLargePipeCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES C INNER JOIN ACTIVITY_TYPES D ON (C.activity_type_id = D.activity_type_id)
         WHERE B.ROOTPROB IN ('H') AND C.name = 'RootControlHLarge' AND D.name = 'Inspection'
-    ELSE
+	  END
+	ELSE
 	  EXEC SP_STATUS_MESSAGE 'H large root control inspection drivers do not apply (@LargeRootDiameterIn >= @LargeDiameterIn'
-	END
 
     EXEC SP_STATUS_MESSAGE 'Inserting H large, large piperoot control inspection drivers'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
@@ -159,16 +159,16 @@ BEGIN
       WHERE B.ROOTPROB IN ('M') AND C.name = 'RootControlM' AND D.name = 'Inspection'
     
 	--@LargeRootXORLargePipeCompKeys
-	CASE WHEN @LargeRootDiameterIn < @LargeDiameterIn
-	THEN
+	IF @LargeRootDiameterIn < @LargeDiameterIn
+	  BEGIN
       EXEC SP_STATUS_MESSAGE 'Inserting M large root control inspection drivers'
       INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
         SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
-        FROM @LargeRootCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES C INNER JOIN ACTIVITY_TYPES D ON (C.activity_type_id = D.activity_type_id)
+        FROM @LargeRootXORLargePipeCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES C INNER JOIN ACTIVITY_TYPES D ON (C.activity_type_id = D.activity_type_id)
         WHERE B.ROOTPROB IN ('M') AND C.name = 'RootControlMLarge' AND D.name = 'Inspection'
+	  END
 	ELSE
 	  EXEC SP_STATUS_MESSAGE 'M large root control inspection drivers do not apply (@LargeRootDiameterIn >= @LargeDiameterIn'
-	END
 
     EXEC SP_STATUS_MESSAGE 'Inserting M large, large piperoot control inspection drivers'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
@@ -203,16 +203,16 @@ BEGIN
 
     -- Insert H large root drivers
 	--@LargeRootXORLargePipeCompKeys
-	CASE WHEN @LargeRootDiameterIn < @LargeDiameterIn
-	THEN
+	IF @LargeRootDiameterIn < @LargeDiameterIn
+	  BEGIN
 	  EXEC SP_STATUS_MESSAGE 'Inserting H large root drivers'
 	  INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
 	    SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
-	    FROM @LargeRootCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES C INNER JOIN ACTIVITY_TYPES D ON (C.activity_type_id = D.activity_type_id)
+	    FROM @LargeRootXORLargePipeCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES C INNER JOIN ACTIVITY_TYPES D ON (C.activity_type_id = D.activity_type_id)
 	    WHERE B.ROOTPROB IN ('H') AND C.name = 'RootControlHLarge' AND D.name = 'Root Management'
+	  END
 	ELSE
 	  EXEC SP_STATUS_MESSAGE 'H large root drivers do not apply (@LargeRootDiameterIn >= @LargeDiameterIn'
-	END
 
     -- Insert H large root large pipe drivers
     EXEC SP_STATUS_MESSAGE 'Inserting H large root large pipe drivers'
@@ -223,16 +223,16 @@ BEGIN
 
     -- Insert M large root drivers
 	--@LargeRootXORLargePipeCompKeys
-	CASE WHEN @LargeRootDiameterIn < @LargeDiameterIn
-	THEN
+	IF @LargeRootDiameterIn < @LargeDiameterIn
+	  BEGIN
       EXEC SP_STATUS_MESSAGE 'Inserting M large root drivers'
       INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
         SELECT A.compkey, driver_type_id, GETDATE(), 'System', 1
-        FROM @LargeRootCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES C INNER JOIN ACTIVITY_TYPES D ON (C.activity_type_id = D.activity_type_id)
+        FROM @LargeRootXORLargePipeCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES C INNER JOIN ACTIVITY_TYPES D ON (C.activity_type_id = D.activity_type_id)
         WHERE B.ROOTPROB IN ('M') AND C.name = 'RootControlMLarge' AND D.name = 'Root Management'
+	  END
 	ELSE
 	  EXEC SP_STATUS_MESSAGE 'M large root drivers do not apply (@LargeRootDiameterIn >= @LargeDiameterIn'
-	END
 
     -- Insert M large root large pipe drivers
     EXEC SP_STATUS_MESSAGE 'Inserting M large root large pipe drivers'

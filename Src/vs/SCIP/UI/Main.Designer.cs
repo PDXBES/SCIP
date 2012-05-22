@@ -28,39 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint4 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint6 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint5 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint3 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint4 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint2 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
-      this.btnRecalculateBase = new Infragistics.Win.Misc.UltraButton();
+      this.btnRecalculateBaseCondition = new Infragistics.Win.Misc.UltraButton();
       this.btnCreateCharts = new Infragistics.Win.Misc.UltraButton();
       this.ultraGridBagLayoutPanel1 = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
-      this.btnSetPreferences = new Infragistics.Win.Misc.UltraButton();
       this.btnExportDatabases = new Infragistics.Win.Misc.UltraButton();
+      this.btnSetPreferences = new Infragistics.Win.Misc.UltraButton();
+      this.btnManageAlternatives = new Infragistics.Win.Misc.UltraButton();
+      this.btnRunModel = new Infragistics.Win.Misc.UltraButton();
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel1)).BeginInit();
       this.ultraGridBagLayoutPanel1.SuspendLayout();
       this.SuspendLayout();
       // 
-      // btnRecalculateBase
+      // btnRecalculateBaseCondition
       // 
-      gridBagConstraint4.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint4.OriginX = 0;
-      gridBagConstraint4.OriginY = 0;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnRecalculateBase, gridBagConstraint4);
-      this.btnRecalculateBase.Location = new System.Drawing.Point(234, 175);
-      this.btnRecalculateBase.Name = "btnRecalculateBase";
-      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnRecalculateBase, new System.Drawing.Size(155, 23));
-      this.btnRecalculateBase.Size = new System.Drawing.Size(155, 23);
-      this.btnRecalculateBase.TabIndex = 0;
-      this.btnRecalculateBase.Text = "Recalculate Base Condition";
+      gridBagConstraint6.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint6.OriginX = 0;
+      gridBagConstraint6.OriginY = 2;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnRecalculateBaseCondition, gridBagConstraint6);
+      this.btnRecalculateBaseCondition.Location = new System.Drawing.Point(234, 198);
+      this.btnRecalculateBaseCondition.Name = "btnRecalculateBaseCondition";
+      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnRecalculateBaseCondition, new System.Drawing.Size(155, 23));
+      this.btnRecalculateBaseCondition.Size = new System.Drawing.Size(155, 23);
+      this.btnRecalculateBaseCondition.TabIndex = 0;
+      this.btnRecalculateBaseCondition.Text = "Recalculate Base Condition";
       // 
       // btnCreateCharts
       // 
-      gridBagConstraint3.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint3.OriginX = 0;
-      gridBagConstraint3.OriginY = 1;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnCreateCharts, gridBagConstraint3);
-      this.btnCreateCharts.Location = new System.Drawing.Point(234, 198);
+      gridBagConstraint5.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint5.OriginX = 0;
+      gridBagConstraint5.OriginY = 3;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnCreateCharts, gridBagConstraint5);
+      this.btnCreateCharts.Location = new System.Drawing.Point(234, 221);
       this.btnCreateCharts.Name = "btnCreateCharts";
       this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnCreateCharts, new System.Drawing.Size(75, 23));
       this.btnCreateCharts.Size = new System.Drawing.Size(155, 23);
@@ -69,9 +73,11 @@
       // 
       // ultraGridBagLayoutPanel1
       // 
+      this.ultraGridBagLayoutPanel1.Controls.Add(this.btnRunModel);
+      this.ultraGridBagLayoutPanel1.Controls.Add(this.btnManageAlternatives);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.btnExportDatabases);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.btnSetPreferences);
-      this.ultraGridBagLayoutPanel1.Controls.Add(this.btnRecalculateBase);
+      this.ultraGridBagLayoutPanel1.Controls.Add(this.btnRecalculateBaseCondition);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.btnCreateCharts);
       this.ultraGridBagLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
       this.ultraGridBagLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -79,31 +85,57 @@
       this.ultraGridBagLayoutPanel1.Size = new System.Drawing.Size(624, 442);
       this.ultraGridBagLayoutPanel1.TabIndex = 2;
       // 
+      // btnExportDatabases
+      // 
+      gridBagConstraint3.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint3.OriginX = 0;
+      gridBagConstraint3.OriginY = 4;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnExportDatabases, gridBagConstraint3);
+      this.btnExportDatabases.Location = new System.Drawing.Point(234, 244);
+      this.btnExportDatabases.Name = "btnExportDatabases";
+      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnExportDatabases, new System.Drawing.Size(75, 23));
+      this.btnExportDatabases.Size = new System.Drawing.Size(155, 23);
+      this.btnExportDatabases.TabIndex = 3;
+      this.btnExportDatabases.Text = "Export Databases...";
+      // 
       // btnSetPreferences
       // 
-      gridBagConstraint2.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint2.OriginX = 0;
-      gridBagConstraint2.OriginY = 3;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnSetPreferences, gridBagConstraint2);
-      this.btnSetPreferences.Location = new System.Drawing.Point(234, 244);
+      gridBagConstraint4.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint4.OriginX = 0;
+      gridBagConstraint4.OriginY = 5;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnSetPreferences, gridBagConstraint4);
+      this.btnSetPreferences.Location = new System.Drawing.Point(234, 267);
       this.btnSetPreferences.Name = "btnSetPreferences";
       this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnSetPreferences, new System.Drawing.Size(75, 23));
       this.btnSetPreferences.Size = new System.Drawing.Size(155, 23);
       this.btnSetPreferences.TabIndex = 2;
       this.btnSetPreferences.Text = "Set Preferences...";
       // 
-      // btnExportDatabases
+      // btnManageAlternatives
+      // 
+      gridBagConstraint2.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint2.OriginX = 0;
+      gridBagConstraint2.OriginY = 0;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnManageAlternatives, gridBagConstraint2);
+      this.btnManageAlternatives.Location = new System.Drawing.Point(234, 152);
+      this.btnManageAlternatives.Name = "btnManageAlternatives";
+      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnManageAlternatives, new System.Drawing.Size(75, 23));
+      this.btnManageAlternatives.Size = new System.Drawing.Size(155, 23);
+      this.btnManageAlternatives.TabIndex = 4;
+      this.btnManageAlternatives.Text = "Manage Alternatives";
+      // 
+      // btnRunModel
       // 
       gridBagConstraint1.Fill = Infragistics.Win.Layout.FillType.Both;
       gridBagConstraint1.OriginX = 0;
-      gridBagConstraint1.OriginY = 2;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnExportDatabases, gridBagConstraint1);
-      this.btnExportDatabases.Location = new System.Drawing.Point(234, 221);
-      this.btnExportDatabases.Name = "btnExportDatabases";
-      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnExportDatabases, new System.Drawing.Size(75, 23));
-      this.btnExportDatabases.Size = new System.Drawing.Size(155, 23);
-      this.btnExportDatabases.TabIndex = 3;
-      this.btnExportDatabases.Text = "Export Databases...";
+      gridBagConstraint1.OriginY = 1;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnRunModel, gridBagConstraint1);
+      this.btnRunModel.Location = new System.Drawing.Point(234, 175);
+      this.btnRunModel.Name = "btnRunModel";
+      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnRunModel, new System.Drawing.Size(75, 23));
+      this.btnRunModel.Size = new System.Drawing.Size(155, 23);
+      this.btnRunModel.TabIndex = 5;
+      this.btnRunModel.Text = "Run Model";
       // 
       // Main
       // 
@@ -121,11 +153,13 @@
 
         #endregion
 
-        private Infragistics.Win.Misc.UltraButton btnRecalculateBase;
+        private Infragistics.Win.Misc.UltraButton btnRecalculateBaseCondition;
         private Infragistics.Win.Misc.UltraGridBagLayoutPanel ultraGridBagLayoutPanel1;
         private Infragistics.Win.Misc.UltraButton btnSetPreferences;
         private Infragistics.Win.Misc.UltraButton btnCreateCharts;
         private Infragistics.Win.Misc.UltraButton btnExportDatabases;
+        private Infragistics.Win.Misc.UltraButton btnRunModel;
+        private Infragistics.Win.Misc.UltraButton btnManageAlternatives;
     }
 }
 

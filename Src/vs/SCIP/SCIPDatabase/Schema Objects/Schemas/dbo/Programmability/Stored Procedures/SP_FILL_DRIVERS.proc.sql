@@ -39,13 +39,17 @@ BEGIN
   INSERT INTO @LargeCompKeys
     SELECT compkey
     FROM [dbo].[ASSETS]
-    WHERE ([dbo].[ASSETS].diamWidth_inches >= @LargeDiameterIn) OR ([dbo].[ASSETS].height_inches >= @LargeDiameterIn)
+    WHERE ([dbo].[ASSETS].diamWidth_inches >= @LargeDiameterIn) 
+	      OR 
+		  ([dbo].[ASSETS].height_inches >= @LargeDiameterIn)
 
   --Create a list of compkeys for pipes with dimensions LTE @LargeDiameterIn
   INSERT INTO @SmallCompKeys
     SELECT compkey
     FROM [dbo].[ASSETS]
-    WHERE ([dbo].[ASSETS].diamWidth_inches < @LargeDiameterIn) AND ([dbo].[ASSETS].height_inches < @LargeDiameterIn)
+    WHERE ([dbo].[ASSETS].diamWidth_inches < @LargeDiameterIn OR [dbo].[ASSETS].diamWidth_inches IS NULL) 
+	      AND 
+		  ([dbo].[ASSETS].height_inches < @LargeDiameterIn OR [dbo].[ASSETS].height_inches IS NULL)
 
   --Create a list of compkeys for pipes with dimensions GTE
   --the greater of (@largeRootDiameterIn and @LargeDiameterIn)
@@ -53,7 +57,8 @@ BEGIN
     SELECT compkey
     FROM [dbo].[ASSETS]
     WHERE ([dbo].[ASSETS].diamWidth_inches >= @LargeRootDiameterIn OR [dbo].[ASSETS].height_inches >= @LargeRootDiameterIn)
-      AND ([dbo].[ASSETS].diamWidth_inches >= @LargeDiameterIn OR [dbo].[ASSETS].height_inches >= @LargeDiameterIn)
+          AND 
+		  ([dbo].[ASSETS].diamWidth_inches >= @LargeDiameterIn OR [dbo].[ASSETS].height_inches >= @LargeDiameterIn)
 
   --Create a list of compkeys for pipes with dimensions between the large root cutoff and the large pipe cutoff
   --NOTE: it may occur at some point in the future that the large pipe cutoff is actually lower than the
@@ -64,15 +69,31 @@ BEGIN
     SELECT compkey
     FROM [dbo].[ASSETS]
     WHERE (
-	        ([dbo].[ASSETS].diamWidth_inches >= @LargeRootDiameterIn) OR ([dbo].[ASSETS].height_inches >= @LargeRootDiameterIn)
+	        (
+			  ([dbo].[ASSETS].diamWidth_inches >= @LargeRootDiameterIn) 
+			  OR 
+			  ([dbo].[ASSETS].height_inches >= @LargeRootDiameterIn)
+		    )
             AND
-            ([dbo].[ASSETS].diamWidth_inches < @LargeDiameterIn) AND ([dbo].[ASSETS].height_inches < @LargeDiameterIn)
+			(
+              ([dbo].[ASSETS].diamWidth_inches < @LargeDiameterIn OR [dbo].[ASSETS].diamWidth_inches IS NULL) 
+			  AND 
+			  ([dbo].[ASSETS].height_inches < @LargeDiameterIn OR [dbo].[ASSETS].height_inches IS NULL)
+			)
 		  )
 		  OR
 		  (
-	        ([dbo].[ASSETS].diamWidth_inches < @LargeRootDiameterIn) AND ([dbo].[ASSETS].height_inches < @LargeRootDiameterIn)
+	        (
+			  ([dbo].[ASSETS].diamWidth_inches < @LargeRootDiameterIn OR [dbo].[ASSETS].diamWidth_inches IS NULL) 
+			  AND 
+			  ([dbo].[ASSETS].height_inches < @LargeRootDiameterIn OR [dbo].[ASSETS].height_inches IS NULL)
+			)
             AND
-            ([dbo].[ASSETS].diamWidth_inches >= @LargeDiameterIn) OR ([dbo].[ASSETS].height_inches >= @LargeDiameterIn)
+			(
+              ([dbo].[ASSETS].diamWidth_inches >= @LargeDiameterIn) 
+			  OR 
+			  ([dbo].[ASSETS].height_inches >= @LargeDiameterIn)
+		    )
 		  )
 
   --Create a list of compkeys for pipes that are smaller than both the large root pipes cutoff and
@@ -80,9 +101,17 @@ BEGIN
   INSERT INTO @SmallRootCompKeys
     SELECT compkey
     FROM [dbo].[ASSETS]
-    WHERE ([ASSETS].diamWidth_inches < @LargeRootDiameterIn) AND ([ASSETS].height_inches < @LargeRootDiameterIn)
+    WHERE (
+	        ([ASSETS].diamWidth_inches < @LargeRootDiameterIn OR [dbo].[ASSETS].diamWidth_inches IS NULL) 
+			AND 
+			([ASSETS].height_inches < @LargeRootDiameterIn OR [dbo].[ASSETS].height_inches IS NULL)
+		  )
 	      AND
-		  ([ASSETS].diamWidth_inches < @LargeDiameterIn) AND ([ASSETS].height_inches < @LargeDiameterIn)
+		  (
+		    ([ASSETS].diamWidth_inches < @LargeDiameterIn OR [dbo].[ASSETS].diamWidth_inches IS NULL) 
+			AND 
+			([ASSETS].height_inches < @LargeDiameterIn OR [dbo].[ASSETS].height_inches IS NULL)
+		  )
 
   --Create a list of compkeys for pipes that are GT the @LargeTractiveDiameterIn cutoff
   INSERT INTO @LargeTractiveCompKeys

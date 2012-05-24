@@ -15,5 +15,15 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void buttonEditIndividualDrivers_Click(object sender, EventArgs e)
+        {
+            FormIndividualDrivers child = new FormIndividualDrivers();
+
+            this.Enabled = false;
+            child.ShowDialog();
+            this.Enabled = true;
+
+        }
     }
 }

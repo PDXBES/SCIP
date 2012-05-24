@@ -15,5 +15,12 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void FormIndividualDrivers_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'sCIPDataSet.DRIVERS_UPDATE' table. You can move, or remove it, as needed.
+            this.dRIVERS_UPDATETableAdapter.Fill(this.sCIPDataSet.DRIVERS_UPDATE);
+
+        }
     }
 }

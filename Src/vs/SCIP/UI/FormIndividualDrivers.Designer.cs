@@ -50,43 +50,29 @@
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance20 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance21 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance24 = new Infragistics.Win.Appearance();
             this.LabelCompkey = new Infragistics.Win.Misc.UltraLabel();
             this.TextEditorCompkey = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
-            this.LabelDriverType = new Infragistics.Win.Misc.UltraLabel();
-            this.LabelOverrideCost = new Infragistics.Win.Misc.UltraLabel();
-            this.labelOverrideFrequency = new Infragistics.Win.Misc.UltraLabel();
             this.labelDriversForThisCompkey = new Infragistics.Win.Misc.UltraLabel();
             this.ultraGrid1 = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.ultraDropDown1 = new Infragistics.Win.UltraWinGrid.UltraDropDown();
-            this.sCIPDataSet = new UI.SCIPDataSet();
             this.dRIVERSUPDATEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sCIPDataSet = new UI.SCIPDataSet();
+            this.buttonFetchCompkey = new Infragistics.Win.Misc.UltraButton();
+            this.buttonUpdateDrivers = new Infragistics.Win.Misc.UltraButton();
+            this.buttonRevertDrivers = new Infragistics.Win.Misc.UltraButton();
             this.dRIVERS_UPDATETableAdapter = new UI.SCIPDataSetTableAdapters.DRIVERS_UPDATETableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.TextEditorCompkey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ultraDropDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIPDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dRIVERSUPDATEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIPDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelCompkey
             // 
-            this.LabelCompkey.Location = new System.Drawing.Point(220, 14);
+            this.LabelCompkey.Location = new System.Drawing.Point(289, 18);
             this.LabelCompkey.Name = "LabelCompkey";
-            this.LabelCompkey.Size = new System.Drawing.Size(158, 19);
+            this.LabelCompkey.Size = new System.Drawing.Size(90, 19);
             this.LabelCompkey.TabIndex = 0;
-            this.LabelCompkey.Text = "Updating Driver for Compkey:";
+            this.LabelCompkey.Text = "Fetch Compkey:";
             // 
             // TextEditorCompkey
             // 
@@ -96,33 +82,9 @@
             this.TextEditorCompkey.TabIndex = 1;
             this.TextEditorCompkey.Text = "COMPKEY";
             // 
-            // LabelDriverType
-            // 
-            this.LabelDriverType.Location = new System.Drawing.Point(330, 75);
-            this.LabelDriverType.Name = "LabelDriverType";
-            this.LabelDriverType.Size = new System.Drawing.Size(109, 19);
-            this.LabelDriverType.TabIndex = 2;
-            this.LabelDriverType.Text = "Driver Type:";
-            // 
-            // LabelOverrideCost
-            // 
-            this.LabelOverrideCost.Location = new System.Drawing.Point(330, 100);
-            this.LabelOverrideCost.Name = "LabelOverrideCost";
-            this.LabelOverrideCost.Size = new System.Drawing.Size(109, 19);
-            this.LabelOverrideCost.TabIndex = 3;
-            this.LabelOverrideCost.Text = "Override Cost:";
-            // 
-            // labelOverrideFrequency
-            // 
-            this.labelOverrideFrequency.Location = new System.Drawing.Point(330, 125);
-            this.labelOverrideFrequency.Name = "labelOverrideFrequency";
-            this.labelOverrideFrequency.Size = new System.Drawing.Size(109, 19);
-            this.labelOverrideFrequency.TabIndex = 4;
-            this.labelOverrideFrequency.Text = "Override Frequency:";
-            // 
             // labelDriversForThisCompkey
             // 
-            this.labelDriversForThisCompkey.Location = new System.Drawing.Point(41, 139);
+            this.labelDriversForThisCompkey.Location = new System.Drawing.Point(41, 65);
             this.labelDriversForThisCompkey.Name = "labelDriversForThisCompkey";
             this.labelDriversForThisCompkey.Size = new System.Drawing.Size(164, 19);
             this.labelDriversForThisCompkey.TabIndex = 5;
@@ -203,84 +165,48 @@
             this.ultraGrid1.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
             this.ultraGrid1.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.ultraGrid1.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
-            this.ultraGrid1.Location = new System.Drawing.Point(41, 164);
+            this.ultraGrid1.Location = new System.Drawing.Point(41, 90);
             this.ultraGrid1.Name = "ultraGrid1";
             this.ultraGrid1.Size = new System.Drawing.Size(828, 171);
             this.ultraGrid1.TabIndex = 6;
             this.ultraGrid1.Text = "ultraGrid1";
             // 
-            // ultraDropDown1
+            // dRIVERSUPDATEBindingSource
             // 
-            appearance13.BackColor = System.Drawing.SystemColors.Window;
-            appearance13.BorderColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ultraDropDown1.DisplayLayout.Appearance = appearance13;
-            this.ultraDropDown1.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
-            this.ultraDropDown1.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
-            appearance14.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            appearance14.BackColor2 = System.Drawing.SystemColors.ControlDark;
-            appearance14.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
-            appearance14.BorderColor = System.Drawing.SystemColors.Window;
-            this.ultraDropDown1.DisplayLayout.GroupByBox.Appearance = appearance14;
-            appearance15.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.ultraDropDown1.DisplayLayout.GroupByBox.BandLabelAppearance = appearance15;
-            this.ultraDropDown1.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
-            appearance16.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            appearance16.BackColor2 = System.Drawing.SystemColors.Control;
-            appearance16.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
-            appearance16.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.ultraDropDown1.DisplayLayout.GroupByBox.PromptAppearance = appearance16;
-            this.ultraDropDown1.DisplayLayout.MaxColScrollRegions = 1;
-            this.ultraDropDown1.DisplayLayout.MaxRowScrollRegions = 1;
-            appearance17.BackColor = System.Drawing.SystemColors.Window;
-            appearance17.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ultraDropDown1.DisplayLayout.Override.ActiveCellAppearance = appearance17;
-            appearance18.BackColor = System.Drawing.SystemColors.Highlight;
-            appearance18.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.ultraDropDown1.DisplayLayout.Override.ActiveRowAppearance = appearance18;
-            this.ultraDropDown1.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted;
-            this.ultraDropDown1.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted;
-            appearance19.BackColor = System.Drawing.SystemColors.Window;
-            this.ultraDropDown1.DisplayLayout.Override.CardAreaAppearance = appearance19;
-            appearance20.BorderColor = System.Drawing.Color.Silver;
-            appearance20.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
-            this.ultraDropDown1.DisplayLayout.Override.CellAppearance = appearance20;
-            this.ultraDropDown1.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText;
-            this.ultraDropDown1.DisplayLayout.Override.CellPadding = 0;
-            appearance21.BackColor = System.Drawing.SystemColors.Control;
-            appearance21.BackColor2 = System.Drawing.SystemColors.ControlDark;
-            appearance21.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
-            appearance21.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
-            appearance21.BorderColor = System.Drawing.SystemColors.Window;
-            this.ultraDropDown1.DisplayLayout.Override.GroupByRowAppearance = appearance21;
-            appearance22.TextHAlignAsString = "Left";
-            this.ultraDropDown1.DisplayLayout.Override.HeaderAppearance = appearance22;
-            this.ultraDropDown1.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
-            this.ultraDropDown1.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand;
-            appearance23.BackColor = System.Drawing.SystemColors.Window;
-            appearance23.BorderColor = System.Drawing.Color.Silver;
-            this.ultraDropDown1.DisplayLayout.Override.RowAppearance = appearance23;
-            this.ultraDropDown1.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.False;
-            appearance24.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ultraDropDown1.DisplayLayout.Override.TemplateAddRowAppearance = appearance24;
-            this.ultraDropDown1.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
-            this.ultraDropDown1.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
-            this.ultraDropDown1.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
-            this.ultraDropDown1.Location = new System.Drawing.Point(445, 64);
-            this.ultraDropDown1.Name = "ultraDropDown1";
-            this.ultraDropDown1.Size = new System.Drawing.Size(424, 80);
-            this.ultraDropDown1.TabIndex = 7;
-            this.ultraDropDown1.Text = "ultraDropDown1";
-            this.ultraDropDown1.Visible = false;
+            this.dRIVERSUPDATEBindingSource.DataMember = "DRIVERS_UPDATE";
+            this.dRIVERSUPDATEBindingSource.DataSource = this.sCIPDataSet;
             // 
             // sCIPDataSet
             // 
             this.sCIPDataSet.DataSetName = "SCIPDataSet";
             this.sCIPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dRIVERSUPDATEBindingSource
+            // buttonFetchCompkey
             // 
-            this.dRIVERSUPDATEBindingSource.DataMember = "DRIVERS_UPDATE";
-            this.dRIVERSUPDATEBindingSource.DataSource = this.sCIPDataSet;
+            this.buttonFetchCompkey.Location = new System.Drawing.Point(504, 13);
+            this.buttonFetchCompkey.Name = "buttonFetchCompkey";
+            this.buttonFetchCompkey.Size = new System.Drawing.Size(75, 23);
+            this.buttonFetchCompkey.TabIndex = 8;
+            this.buttonFetchCompkey.Text = "Fetch!";
+            this.buttonFetchCompkey.Click += new System.EventHandler(this.buttonFetchCompkey_Click);
+            // 
+            // buttonUpdateDrivers
+            // 
+            this.buttonUpdateDrivers.Location = new System.Drawing.Point(781, 300);
+            this.buttonUpdateDrivers.Name = "buttonUpdateDrivers";
+            this.buttonUpdateDrivers.Size = new System.Drawing.Size(119, 35);
+            this.buttonUpdateDrivers.TabIndex = 9;
+            this.buttonUpdateDrivers.Text = "Update Drivers";
+            this.buttonUpdateDrivers.Click += new System.EventHandler(this.buttonUpdateDrivers_Click);
+            // 
+            // buttonRevertDrivers
+            // 
+            this.buttonRevertDrivers.Location = new System.Drawing.Point(612, 300);
+            this.buttonRevertDrivers.Name = "buttonRevertDrivers";
+            this.buttonRevertDrivers.Size = new System.Drawing.Size(119, 35);
+            this.buttonRevertDrivers.TabIndex = 10;
+            this.buttonRevertDrivers.Text = "Revert Drivers";
+            this.buttonRevertDrivers.Click += new System.EventHandler(this.buttonRevertDrivers_Click);
             // 
             // dRIVERS_UPDATETableAdapter
             // 
@@ -291,12 +217,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 347);
-            this.Controls.Add(this.ultraDropDown1);
+            this.Controls.Add(this.buttonRevertDrivers);
+            this.Controls.Add(this.buttonUpdateDrivers);
+            this.Controls.Add(this.buttonFetchCompkey);
             this.Controls.Add(this.ultraGrid1);
             this.Controls.Add(this.labelDriversForThisCompkey);
-            this.Controls.Add(this.labelOverrideFrequency);
-            this.Controls.Add(this.LabelOverrideCost);
-            this.Controls.Add(this.LabelDriverType);
             this.Controls.Add(this.TextEditorCompkey);
             this.Controls.Add(this.LabelCompkey);
             this.Name = "FormIndividualDrivers";
@@ -304,9 +229,8 @@
             this.Load += new System.EventHandler(this.FormIndividualDrivers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TextEditorCompkey)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ultraDropDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sCIPDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dRIVERSUPDATEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sCIPDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,14 +240,14 @@
 
         private Infragistics.Win.Misc.UltraLabel LabelCompkey;
         private Infragistics.Win.UltraWinEditors.UltraTextEditor TextEditorCompkey;
-        private Infragistics.Win.Misc.UltraLabel LabelDriverType;
-        private Infragistics.Win.Misc.UltraLabel LabelOverrideCost;
-        private Infragistics.Win.Misc.UltraLabel labelOverrideFrequency;
         private Infragistics.Win.Misc.UltraLabel labelDriversForThisCompkey;
         private Infragistics.Win.UltraWinGrid.UltraGrid ultraGrid1;
-        private Infragistics.Win.UltraWinGrid.UltraDropDown ultraDropDown1;
         private SCIPDataSet sCIPDataSet;
         private System.Windows.Forms.BindingSource dRIVERSUPDATEBindingSource;
         private SCIPDataSetTableAdapters.DRIVERS_UPDATETableAdapter dRIVERS_UPDATETableAdapter;
+        private SCIPDataSetTableAdapters.DRIVERSTableAdapter dRIVERSTableAdapter;
+        private Infragistics.Win.Misc.UltraButton buttonFetchCompkey;
+        private Infragistics.Win.Misc.UltraButton buttonUpdateDrivers;
+        private Infragistics.Win.Misc.UltraButton buttonRevertDrivers;
     }
 }

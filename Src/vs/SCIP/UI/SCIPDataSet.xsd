@@ -91,7 +91,7 @@ SELECT driver_id, driver_type_id, compkey, override_cost_per_ft, override_freque
               <Mapping SourceColumn="update_date" DataSetColumn="update_date" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="ConnectionString (SCIPUI)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DriversUpdate_Empty" Modifier="Public" Name="DriversUpdate_Empty" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DriversUpdate_Empty">
+              <DbSource ConnectionRef="ConnectionString (SCIPUI)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DriversUpdate_Empty" Modifier="Public" Name="DriversUpdate_Empty" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DriversUpdate_Empty">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [dbo].[DRIVERS_UPDATE] </CommandText>
@@ -99,7 +99,7 @@ SELECT driver_id, driver_type_id, compkey, override_cost_per_ft, override_freque
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (SCIPUI)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateByCompkey" Modifier="Public" Name="UpdateByCompkey" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateByCompkey">
+              <DbSource ConnectionRef="ConnectionString (SCIPUI)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateByCompkey" Modifier="Public" Name="UpdateByCompkey" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateByCompkey">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM dbo.DRIVERS_UPDATE;
@@ -433,10 +433,25 @@ SELECT driver_id, driver_type_id, compkey, override_cost_per_ft, override_freque
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE [dbo].[DRIVERS]
 SET override_cost_per_ft = B.override_cost_per_ft,
-override_frequency_years = B.override_frequency_years
+override_frequency_years = B.override_frequency_years,
+updated_by = USER_NAME(),
+update_date = GETDATE()
 FROM [dbo].[DRIVERS] INNER JOIN [dbo].[DRIVERS_UPDATE] AS B
 ON  [dbo].[DRIVERS].COMPKEY = B.COMPKEY
-AND [dbo].[DRIVERS].driver_type_id = B.driver_type_id;</CommandText>
+AND [dbo].[DRIVERS].driver_type_id = B.driver_type_id
+AND
+(  [dbo].[DRIVERS].override_cost_per_ft &lt;&gt; B.override_cost_per_ft 
+   OR 
+   [dbo].[DRIVERS].override_cost_per_ft IS NULL AND B.override_cost_per_ft IS NOT NULL
+   OR
+   [dbo].[DRIVERS].override_cost_per_ft IS NOT NULL AND B.override_cost_per_ft IS NULL
+OR
+ [dbo].[DRIVERS].override_frequency_years &lt;&gt; B.override_frequency_years  
+ OR
+ [dbo].[DRIVERS].override_frequency_years IS NULL AND B.override_frequency_years IS NOT NULL
+ OR
+ [dbo].[DRIVERS].override_frequency_years IS NOT NULL AND B.override_frequency_years IS NULL
+)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </UpdateCommand>

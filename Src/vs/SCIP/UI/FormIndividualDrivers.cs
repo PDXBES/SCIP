@@ -62,7 +62,10 @@ namespace UI
             
             results = this.dRIVERSTableAdapter.UpdateDriversFromDriversUpdate();
 
-            results = 1000;
+            this.dRIVERS_UPDATETableAdapter.ClearBeforeFill = true;
+            this.dRIVERS_UPDATETableAdapter.UpdateByCompkey(Int32.Parse(TextEditorCompkey.Text));
+            this.sCIPDataSet.AcceptChanges();
+            this.dRIVERS_UPDATETableAdapter.Fill(this.sCIPDataSet.DRIVERS_UPDATE);
 
         }
     }

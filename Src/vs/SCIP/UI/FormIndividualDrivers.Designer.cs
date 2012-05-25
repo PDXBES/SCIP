@@ -96,13 +96,20 @@
             appearance1.BackColor = System.Drawing.SystemColors.Window;
             appearance1.BorderColor = System.Drawing.SystemColors.InactiveCaption;
             this.ultraGrid1.DisplayLayout.Appearance = appearance1;
+            ultraGridColumn1.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
             ultraGridColumn1.Header.VisiblePosition = 0;
+            ultraGridColumn1.Hidden = true;
+            ultraGridColumn2.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
             ultraGridColumn2.Header.VisiblePosition = 1;
+            ultraGridColumn3.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
             ultraGridColumn3.Header.VisiblePosition = 2;
             ultraGridColumn4.Header.VisiblePosition = 3;
             ultraGridColumn5.Header.VisiblePosition = 4;
+            ultraGridColumn6.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
             ultraGridColumn6.Header.VisiblePosition = 5;
+            ultraGridColumn7.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
             ultraGridColumn7.Header.VisiblePosition = 6;
+            ultraGridColumn8.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
             ultraGridColumn8.Header.VisiblePosition = 7;
             ultraGridBand1.Columns.AddRange(new object[] {
             ultraGridColumn1,

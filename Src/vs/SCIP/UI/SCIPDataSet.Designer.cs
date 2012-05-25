@@ -4957,10 +4957,25 @@ SELECT driver_id, driver_type_id, compkey, override_cost_per_ft, override_freque
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"UPDATE [dbo].[DRIVERS]
 SET override_cost_per_ft = B.override_cost_per_ft,
-override_frequency_years = B.override_frequency_years
+override_frequency_years = B.override_frequency_years,
+updated_by = USER_NAME(),
+update_date = GETDATE()
 FROM [dbo].[DRIVERS] INNER JOIN [dbo].[DRIVERS_UPDATE] AS B
 ON  [dbo].[DRIVERS].COMPKEY = B.COMPKEY
-AND [dbo].[DRIVERS].driver_type_id = B.driver_type_id;";
+AND [dbo].[DRIVERS].driver_type_id = B.driver_type_id
+AND
+(  [dbo].[DRIVERS].override_cost_per_ft <> B.override_cost_per_ft 
+   OR 
+   [dbo].[DRIVERS].override_cost_per_ft IS NULL AND B.override_cost_per_ft IS NOT NULL
+   OR
+   [dbo].[DRIVERS].override_cost_per_ft IS NOT NULL AND B.override_cost_per_ft IS NULL
+OR
+ [dbo].[DRIVERS].override_frequency_years <> B.override_frequency_years  
+ OR
+ [dbo].[DRIVERS].override_frequency_years IS NULL AND B.override_frequency_years IS NOT NULL
+ OR
+ [dbo].[DRIVERS].override_frequency_years IS NOT NULL AND B.override_frequency_years IS NULL
+)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         

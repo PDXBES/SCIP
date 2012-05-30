@@ -6,6 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using ADOX;
+using ADODB;
+
 
 namespace UI
 {
@@ -26,5 +30,14 @@ namespace UI
 
         }
 
+        private void btnExportDatabases_Click(object sender, EventArgs e)
+        {
+            FormExportDatabase child = new FormExportDatabase();
+
+            this.Enabled = false;
+            child.ShowDialog();
+            this.Enabled = true;
+        }
+            
     }
 }

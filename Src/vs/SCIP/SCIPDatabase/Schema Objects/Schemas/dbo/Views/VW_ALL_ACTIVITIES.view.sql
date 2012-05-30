@@ -14,6 +14,7 @@
       ,A.[alternative_id]
       ,CASE WHEN DATEPART(q, A.activity_date) IN (1,2) THEN DATEPART(year, A.activity_date) ELSE DATEPART(year, A.activity_date) + 1 END AS fiscal_year
       ,C.name AS driver_type
+      ,C.reporting_category AS reporting_category
       ,H.name AS activity_type
       ,C.hansen_activity_code
       ,B.frequency_years

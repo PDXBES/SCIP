@@ -44,7 +44,7 @@ namespace UI
 
         }
 
-        private void ultraButtonEditDriverTypes_Click(object sender, EventArgs e)
+        private void buttonEditDriverTypes_Click(object sender, EventArgs e)
         {
             FormDriverTypes child = new FormDriverTypes();
 

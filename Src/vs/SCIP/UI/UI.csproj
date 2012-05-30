@@ -66,6 +66,12 @@
     <Compile Include="FormCreateCharts.Designer.cs">
       <DependentUpon>FormCreateCharts.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDriverTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDriverTypes.Designer.cs">
+      <DependentUpon>FormDriverTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormExportDatabase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>SCIPUI.settings</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormDriverTypes.resx">
+      <DependentUpon>FormDriverTypes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormExportDatabase.resx">
       <DependentUpon>FormExportDatabase.cs</DependentUpon>
     </EmbeddedResource>

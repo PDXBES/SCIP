@@ -38,6 +38,20 @@ namespace UI
             child.ShowDialog();
             this.Enabled = true;
         }
+
+        private void btnManageAlternatives_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ultraButtonEditDriverTypes_Click(object sender, EventArgs e)
+        {
+            FormDriverTypes child = new FormDriverTypes();
+
+            this.Enabled = false;
+            child.ShowDialog();
+            this.Enabled = true;
+        }
             
     }
 }

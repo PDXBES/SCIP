@@ -31,18 +31,19 @@
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
             Infragistics.Win.Layout.GridBagConstraint gridBagConstraint2 = new Infragistics.Win.Layout.GridBagConstraint();
+            Infragistics.Win.Layout.GridBagConstraint gridBagConstraint10 = new Infragistics.Win.Layout.GridBagConstraint();
             Infragistics.Win.Layout.GridBagConstraint gridBagConstraint9 = new Infragistics.Win.Layout.GridBagConstraint();
-            Infragistics.Win.Layout.GridBagConstraint gridBagConstraint8 = new Infragistics.Win.Layout.GridBagConstraint();
-            Infragistics.Win.Layout.GridBagConstraint gridBagConstraint3 = new Infragistics.Win.Layout.GridBagConstraint();
             Infragistics.Win.Layout.GridBagConstraint gridBagConstraint4 = new Infragistics.Win.Layout.GridBagConstraint();
             Infragistics.Win.Layout.GridBagConstraint gridBagConstraint5 = new Infragistics.Win.Layout.GridBagConstraint();
             Infragistics.Win.Layout.GridBagConstraint gridBagConstraint6 = new Infragistics.Win.Layout.GridBagConstraint();
             Infragistics.Win.Layout.GridBagConstraint gridBagConstraint7 = new Infragistics.Win.Layout.GridBagConstraint();
+            Infragistics.Win.Layout.GridBagConstraint gridBagConstraint8 = new Infragistics.Win.Layout.GridBagConstraint();
             Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
             Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Infragistics.Win.UltraWinTabControl.UltraTab();
             Infragistics.Win.UltraWinTabControl.UltraTab ultraTab3 = new Infragistics.Win.UltraWinTabControl.UltraTab();
             Infragistics.Win.UltraWinTabControl.UltraTab ultraTab4 = new Infragistics.Win.UltraWinTabControl.UltraTab();
             Infragistics.Win.UltraWinTabControl.UltraTab ultraTab5 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+            Infragistics.Win.Layout.GridBagConstraint gridBagConstraint3 = new Infragistics.Win.Layout.GridBagConstraint();
             this.ultraTabPageControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
             this.ultraTabPageControl2 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
             this.ultraTabPageControl3 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
@@ -64,6 +65,7 @@
             this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
             this.lblPageTitle = new Infragistics.Win.Misc.UltraLabel();
             this.ultraControlContainerEditor1 = new Infragistics.Win.UltraWinEditors.UltraControlContainerEditor(this.components);
+            this.ultraButtonEditDriverTypes = new Infragistics.Win.Misc.UltraButton();
             this.ultraTabPageControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel2)).BeginInit();
             this.ultraGridBagLayoutPanel2.SuspendLayout();
@@ -146,32 +148,33 @@
             // 
             // btnRecalculateBaseCondition
             // 
-            gridBagConstraint9.Fill = Infragistics.Win.Layout.FillType.Both;
-            gridBagConstraint9.OriginX = 1;
-            gridBagConstraint9.OriginY = 0;
-            this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnRecalculateBaseCondition, gridBagConstraint9);
+            gridBagConstraint10.Fill = Infragistics.Win.Layout.FillType.Both;
+            gridBagConstraint10.OriginX = 1;
+            gridBagConstraint10.OriginY = 0;
+            this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnRecalculateBaseCondition, gridBagConstraint10);
             this.btnRecalculateBaseCondition.Location = new System.Drawing.Point(58, 0);
             this.btnRecalculateBaseCondition.Name = "btnRecalculateBaseCondition";
-            this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnRecalculateBaseCondition, new System.Drawing.Size(155, 23));
+            this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnRecalculateBaseCondition, new System.Drawing.Size(117, 23));
             this.btnRecalculateBaseCondition.Size = new System.Drawing.Size(117, 31);
             this.btnRecalculateBaseCondition.TabIndex = 0;
             this.btnRecalculateBaseCondition.Text = "Recalculate Base Condition";
             // 
             // btnCreateCharts
             // 
-            gridBagConstraint8.Fill = Infragistics.Win.Layout.FillType.Both;
-            gridBagConstraint8.OriginX = 0;
-            gridBagConstraint8.OriginY = 2;
-            this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnCreateCharts, gridBagConstraint8);
+            gridBagConstraint9.Fill = Infragistics.Win.Layout.FillType.Both;
+            gridBagConstraint9.OriginX = 0;
+            gridBagConstraint9.OriginY = 2;
+            this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnCreateCharts, gridBagConstraint9);
             this.btnCreateCharts.Location = new System.Drawing.Point(0, 54);
             this.btnCreateCharts.Name = "btnCreateCharts";
-            this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnCreateCharts, new System.Drawing.Size(75, 23));
+            this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnCreateCharts, new System.Drawing.Size(58, 23));
             this.btnCreateCharts.Size = new System.Drawing.Size(58, 23);
             this.btnCreateCharts.TabIndex = 1;
             this.btnCreateCharts.Text = "Create Charts";
             // 
             // ultraGridBagLayoutPanel1
             // 
+            this.ultraGridBagLayoutPanel1.Controls.Add(this.ultraButtonEditDriverTypes);
             this.ultraGridBagLayoutPanel1.Controls.Add(this.buttonEditIndividualDrivers);
             this.ultraGridBagLayoutPanel1.Controls.Add(this.btnRunModel);
             this.ultraGridBagLayoutPanel1.Controls.Add(this.btnManageAlternatives);
@@ -187,13 +190,13 @@
             // 
             // buttonEditIndividualDrivers
             // 
-            gridBagConstraint3.Fill = Infragistics.Win.Layout.FillType.Both;
-            gridBagConstraint3.OriginX = 0;
-            gridBagConstraint3.OriginY = 3;
-            this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.buttonEditIndividualDrivers, gridBagConstraint3);
+            gridBagConstraint4.Fill = Infragistics.Win.Layout.FillType.Both;
+            gridBagConstraint4.OriginX = 0;
+            gridBagConstraint4.OriginY = 3;
+            this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.buttonEditIndividualDrivers, gridBagConstraint4);
             this.buttonEditIndividualDrivers.Location = new System.Drawing.Point(0, 77);
             this.buttonEditIndividualDrivers.Name = "buttonEditIndividualDrivers";
-            this.ultraGridBagLayoutPanel1.SetPreferredSize(this.buttonEditIndividualDrivers, new System.Drawing.Size(75, 23));
+            this.ultraGridBagLayoutPanel1.SetPreferredSize(this.buttonEditIndividualDrivers, new System.Drawing.Size(58, 23));
             this.buttonEditIndividualDrivers.Size = new System.Drawing.Size(58, 23);
             this.buttonEditIndividualDrivers.TabIndex = 6;
             this.buttonEditIndividualDrivers.Text = "EditIndividualDrivers";
@@ -201,42 +204,43 @@
             // 
             // btnRunModel
             // 
-            gridBagConstraint4.Fill = Infragistics.Win.Layout.FillType.Both;
-            gridBagConstraint4.OriginX = 0;
-            gridBagConstraint4.OriginY = 1;
-            this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnRunModel, gridBagConstraint4);
+            gridBagConstraint5.Fill = Infragistics.Win.Layout.FillType.Both;
+            gridBagConstraint5.OriginX = 0;
+            gridBagConstraint5.OriginY = 1;
+            this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnRunModel, gridBagConstraint5);
             this.btnRunModel.Location = new System.Drawing.Point(0, 31);
             this.btnRunModel.Name = "btnRunModel";
-            this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnRunModel, new System.Drawing.Size(75, 23));
+            this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnRunModel, new System.Drawing.Size(58, 23));
             this.btnRunModel.Size = new System.Drawing.Size(58, 23);
             this.btnRunModel.TabIndex = 5;
             this.btnRunModel.Text = "Run Model";
             // 
             // btnManageAlternatives
             // 
-            gridBagConstraint5.Fill = Infragistics.Win.Layout.FillType.Both;
-            gridBagConstraint5.Insets.Top = 8;
-            gridBagConstraint5.OriginX = 0;
-            gridBagConstraint5.OriginY = 0;
-            this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnManageAlternatives, gridBagConstraint5);
+            gridBagConstraint6.Fill = Infragistics.Win.Layout.FillType.Both;
+            gridBagConstraint6.Insets.Top = 8;
+            gridBagConstraint6.OriginX = 0;
+            gridBagConstraint6.OriginY = 0;
+            this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnManageAlternatives, gridBagConstraint6);
             this.btnManageAlternatives.Location = new System.Drawing.Point(0, 8);
             this.btnManageAlternatives.Name = "btnManageAlternatives";
-            this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnManageAlternatives, new System.Drawing.Size(75, 23));
+            this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnManageAlternatives, new System.Drawing.Size(58, 23));
             this.btnManageAlternatives.Size = new System.Drawing.Size(58, 23);
             this.btnManageAlternatives.TabIndex = 4;
             this.btnManageAlternatives.Text = "Manage Alternatives";
+            this.btnManageAlternatives.Click += new System.EventHandler(this.btnManageAlternatives_Click);
             // 
             // btnExportDatabases
             // 
-            gridBagConstraint6.Anchor = Infragistics.Win.Layout.AnchorType.Top;
-            gridBagConstraint6.Fill = Infragistics.Win.Layout.FillType.Horizontal;
-            gridBagConstraint6.OriginX = 0;
-            gridBagConstraint6.OriginY = 4;
-            gridBagConstraint6.WeightY = 1F;
-            this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnExportDatabases, gridBagConstraint6);
-            this.btnExportDatabases.Location = new System.Drawing.Point(0, 100);
+            gridBagConstraint7.Anchor = Infragistics.Win.Layout.AnchorType.Top;
+            gridBagConstraint7.Fill = Infragistics.Win.Layout.FillType.Horizontal;
+            gridBagConstraint7.OriginX = 0;
+            gridBagConstraint7.OriginY = 5;
+            gridBagConstraint7.WeightY = 1F;
+            this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnExportDatabases, gridBagConstraint7);
+            this.btnExportDatabases.Location = new System.Drawing.Point(0, 124);
             this.btnExportDatabases.Name = "btnExportDatabases";
-            this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnExportDatabases, new System.Drawing.Size(75, 23));
+            this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnExportDatabases, new System.Drawing.Size(58, 23));
             this.btnExportDatabases.Size = new System.Drawing.Size(58, 23);
             this.btnExportDatabases.TabIndex = 3;
             this.btnExportDatabases.Text = "Export Databases...";
@@ -244,13 +248,13 @@
             // 
             // btnSetPreferences
             // 
-            gridBagConstraint7.Fill = Infragistics.Win.Layout.FillType.Both;
-            gridBagConstraint7.OriginX = 1;
-            gridBagConstraint7.OriginY = 0;
-            this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnSetPreferences, gridBagConstraint7);
+            gridBagConstraint8.Fill = Infragistics.Win.Layout.FillType.Both;
+            gridBagConstraint8.OriginX = 1;
+            gridBagConstraint8.OriginY = 0;
+            this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnSetPreferences, gridBagConstraint8);
             this.btnSetPreferences.Location = new System.Drawing.Point(58, 0);
             this.btnSetPreferences.Name = "btnSetPreferences";
-            this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnSetPreferences, new System.Drawing.Size(75, 23));
+            this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnSetPreferences, new System.Drawing.Size(117, 23));
             this.btnSetPreferences.Size = new System.Drawing.Size(117, 31);
             this.btnSetPreferences.TabIndex = 2;
             this.btnSetPreferences.Text = "Set Preferences...";
@@ -319,6 +323,20 @@
             this.ultraControlContainerEditor1.ContainingControl = this;
             this.ultraControlContainerEditor1.Name = "ultraControlContainerEditor1";
             // 
+            // ultraButtonEditDriverTypes
+            // 
+            gridBagConstraint3.Fill = Infragistics.Win.Layout.FillType.Both;
+            gridBagConstraint3.OriginX = 0;
+            gridBagConstraint3.OriginY = 4;
+            this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.ultraButtonEditDriverTypes, gridBagConstraint3);
+            this.ultraButtonEditDriverTypes.Location = new System.Drawing.Point(0, 100);
+            this.ultraButtonEditDriverTypes.Name = "ultraButtonEditDriverTypes";
+            this.ultraGridBagLayoutPanel1.SetPreferredSize(this.ultraButtonEditDriverTypes, new System.Drawing.Size(58, 24));
+            this.ultraButtonEditDriverTypes.Size = new System.Drawing.Size(58, 24);
+            this.ultraButtonEditDriverTypes.TabIndex = 7;
+            this.ultraButtonEditDriverTypes.Text = "Driver Types";
+            this.ultraButtonEditDriverTypes.Click += new System.EventHandler(this.ultraButtonEditDriverTypes_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,6 +385,7 @@
         private Infragistics.Win.Misc.UltraLabel ultraLabel1;
         private Infragistics.Win.UltraWinEditors.UltraControlContainerEditor ultraControlContainerEditor1;
         private Infragistics.Win.Misc.UltraButton buttonEditIndividualDrivers;
+        private Infragistics.Win.Misc.UltraButton ultraButtonEditDriverTypes;
     }
 }
 

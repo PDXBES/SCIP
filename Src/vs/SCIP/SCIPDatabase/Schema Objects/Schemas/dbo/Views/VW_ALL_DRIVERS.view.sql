@@ -8,6 +8,7 @@
         ,E.name AS basin
         ,F.name AS district
         ,B.name AS driver_type
+        ,B.reporting_category AS reporting_category
         ,B.driver_type_id AS driver_type_id
         ,B.[rank] AS driver_rank
         ,C.name AS activity_type

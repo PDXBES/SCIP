@@ -684,7 +684,10 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_ACTIVITIES_COUNT_BY_DRIVER_TYPE_BETWEEN_YEARS.proc.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVER_TYPES_UPDATE.table.sql">
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_FILL_DRIVER_TYPES.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_INIT_DB.proc.sql">
       <SubType>Code</SubType>
     </Build>
   </ItemGroup>

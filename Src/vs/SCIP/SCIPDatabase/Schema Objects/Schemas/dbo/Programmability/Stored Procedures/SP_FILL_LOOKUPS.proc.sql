@@ -212,69 +212,69 @@ BEGIN
   TRUNCATE TABLE [SCIP].[dbo].[DRIVER_TYPES];
   SET IDENTITY_INSERT DRIVER_TYPES ON;
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (1,1,'PM',NULL,0.80,12,1,1,'TVSEWS');
+    (1,1,'PM','Preventive Maintenance',0.80,12,1,1,'TVSEWS');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (2,1,'PMLarge',NULL,2.00,12,1,2,'TVSEWS');
+    (2,1,'PMLarge','Preventive Maintenance (>36 in)',2.00,12,1,2,'TVSEWS');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (3,1,'RootControlH',NULL,1.25,6,1,7,'SPSWTV');
+    (3,1,'RootControlH','Root Control High',1.25,6,1,7,'SPSWTV');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (13,1,'RootControlHLarge',NULL,1.25,9,1,6,'SPSWTV');
+    (13,1,'RootControlHLarge','Root Control High (>15 in, <=36 in)',1.25,9,1,6,'SPSWTV');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (15,1,'RootControlHLargePipe',NULL,2.50,9,1,5,'SPSWTV');
+    (15,1,'RootControlHLargePipe','Root Control High (>36 in)',2.50,9,1,5,'SPSWTV');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (4,1,'RootControlM',NULL,1.25,9,1,10,'SPSWTV');
+    (4,1,'RootControlM','Root Control Medium',1.25,9,1,10,'SPSWTV');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (14,1,'RootControlMLarge',NULL,1.25,12,1,9,'SPSWTV');
+    (14,1,'RootControlMLarge','Root Control Medium (>15 in, <=36 in)',1.25,12,1,9,'SPSWTV');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (16,1,'RootControlMLargePipe',NULL,2.50,12,1,8,'SPSWTV');
+    (16,1,'RootControlMLargePipe','Root Control Medium (>36 in)',2.50,12,1,8,'SPSWTV');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (5,1,'Condition',NULL,0.80,12,1,3,'SPSWTV');
+    (5,1,'Condition','Condition',0.80,12,1,3,'SPSWTV');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (6,1,'ConditionLarge',NULL,2.00,12,1,4,'SPSWTV');
+    (6,1,'ConditionLarge','Condition (>36 in)',2.00,12,1,4,'SPSWTV');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (7,2,'RootControlH',NULL,1.20,2,1,1,'RTCHEM');
+    (7,2,'RootControlH','Root Control High',1.20,2,1,1,'RTCHEM');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (8,2,'RootControlHLarge',NULL,2.93,3,1,2,'RTCHEM');
+    (8,2,'RootControlHLarge','Root Control High (>36 in)',2.93,3,1,2,'RTCHEM');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (9,2,'RootControlM',NULL,1.20,3,1,3,'RTCHEM');
+    (9,2,'RootControlM','Root Control Medium',1.20,3,1,3,'RTCHEM');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (10,2,'RootControlMLarge',NULL,2.93,3,1,4,'RTCHEM');
+    (10,2,'RootControlMLarge','Root Control Medium (>15 in, <=36 in)',2.93,3,1,4,'RTCHEM');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (11,3,'PMFaster',NULL,0.85,6,1,1,'SEWCLN');
+    (11,3,'PMFaster','Preventive Maintenance',0.85,6,1,1,'SEWCLN');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (12,3,'AcceleratedArea',NULL,1.73,5,1,3,'SPCLN');
+    (12,3,'AcceleratedArea','Accelerated Area',1.73,5,1,3,'SPCLN');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (33,3,'AcceleratedAreaLarge',NULL,50.00,5,1,2,'SPCLN');
+    (33,3,'AcceleratedAreaLarge','Accelerated Area (>36 in)',50.00,5,1,2,'SPCLN');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (17,3,'TractiveForcesSanVH',NULL,1.73,4,1,6,'SPCLN');
+    (17,3,'TractiveForcesSanVH','Tractive Forces Sanitary Very High',1.73,4,1,6,'SPCLN');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (19,3,'TractiveForcesSanH',NULL,1.73,8,1,9,'SPCLN');
+    (19,3,'TractiveForcesSanH','Tractive Forces Sanitary High',1.73,8,1,9,'SPCLN');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (20,3,'TractiveForcesSanM',NULL,1.73,12,1,12,'SPCLN');
+    (20,3,'TractiveForcesSanM','Tractive Forces Sanitary Medium',1.73,12,1,12,'SPCLN');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (21,3,'TractiveForcesSanL',NULL,1.73,16,1,15,'SPCLN');
+    (21,3,'TractiveForcesSanL','Tractive Forces Sanitary Low',1.73,16,1,15,'SPCLN');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (22,3,'TractiveForcesSanVL',NULL,1.73,20,1,18,'SPCLN');
+    (22,3,'TractiveForcesSanVL','Tractive Forces Sanitary Very Low',1.73,20,1,18,'SPCLN');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (23,3,'TractiveForcesVHLarge',NULL,50.00,6,1,4,'SPCLN');
+    (23,3,'TractiveForcesVHLarge','Tractive Forces Very High (>36 in)',50.00,6,1,4,'SPCLN');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (24,3,'TractiveForcesHLarge',NULL,50.00,12,1,7,'SPCLN');
+    (24,3,'TractiveForcesHLarge','Tractive Forces High (>36 in)',50.00,12,1,7,'SPCLN');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (25,3,'TractiveForcesMLarge',NULL,50.00,18,1,10,'SPCLN');
+    (25,3,'TractiveForcesMLarge','Tractive Forces Medium (>36 in)',50.00,18,1,10,'SPCLN');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (26,3,'TractiveForcesLLarge',NULL,50.00,24,1,13,'SPCLN');
+    (26,3,'TractiveForcesLLarge','Tractive Forces Low (>36 in)',50.00,24,1,13,'SPCLN');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (27,3,'TractiveForcesVLLarge',NULL,50.00,30,1,16,'SPCLN');
+    (27,3,'TractiveForcesVLLarge','Tractive Forces Very Low (>36 in)',50.00,30,1,16,'SPCLN');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (28,3,'TractiveForcesCmbVH',NULL,1.73,2,1,5,'SPCLN');
+    (28,3,'TractiveForcesCmbVH','Tractive Forces Combined Very High',1.73,2,1,5,'SPCLN');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (29,3,'TractiveForcesCmbH',NULL,1.73,4,1,8,'SPCLN');
+    (29,3,'TractiveForcesCmbH','Tractive Forces Combined High',1.73,4,1,8,'SPCLN');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (30,3,'TractiveForcesCmbM',NULL,1.73,6,1,11,'SPCLN');
+    (30,3,'TractiveForcesCmbM','Tractive Forces Combined Medium',1.73,6,1,11,'SPCLN');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (31,3,'TractiveForcesCmbL',NULL,1.73,8,1,14,'SPCLN');
+    (31,3,'TractiveForcesCmbL','Tractive Forces Combined Low',1.73,8,1,14,'SPCLN');
   INSERT INTO DRIVER_TYPES ([driver_type_id], [activity_type_id], [name], [description], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (32,3,'TractiveForcesCmbVL',NULL,1.73,10,1,17,'SPCLN');
+    (32,3,'TractiveForcesCmbVL','Tractive Forces Combined Very Low',1.73,10,1,17,'SPCLN');
   SET IDENTITY_INSERT DRIVER_TYPES OFF;
 
   TRUNCATE TABLE [SCIP].[dbo].[ACCELERATED_CLEANING_CAUSE_TYPES]

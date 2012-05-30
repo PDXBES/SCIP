@@ -3,6 +3,7 @@
     [activity_type_id]        INT           NOT NULL,
     [name]                    VARCHAR (50)  NOT NULL,
     [description]             VARCHAR (100) NULL,
+    [reporting_category]      VARCHAR (100) NULL,
     [hansen_activity_code]    VARCHAR (10)  NULL,
     [default_cost_per_ft]     MONEY         NOT NULL,
     [default_frequency_years] FLOAT         NOT NULL,

@@ -4,6 +4,7 @@
 -- Description:	Barebones 
 -- =============================================
 CREATE PROCEDURE [dbo].[SP_ExposeData]
+  @asset_set_id INT = 1
 AS
 BEGIN
   SET NOCOUNT ON
@@ -11,7 +12,6 @@ BEGIN
 
   IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[REHAB10FTSEGS]') AND type in (N'U'))
   DROP TABLE [REHAB10FTSEGS]
-
 
   CREATE TABLE [REHAB10FTSEGS](
 	  [OBJECTID] [int] NOT NULL,
@@ -168,54 +168,9 @@ BEGIN
   SET @ACTKEY_SPCLN = 1064
 
   DELETE FROM RootInspections
-  DELETE FROM GreaseInspections
   DELETE FROM AllInspections
   DELETE FROM LatestInspections
   DELETE FROM ASSETS
-  -----------------------------------------------------------------------
-  --Fill GreaseInspections with all of the valid 
-  --sanitary inspections for grease accumulation
-
-  /*INSERT	INTO  GreaseInspections 
-  SELECT	C2.COMPKEY AS COMPKEY,
-		  C2.INSPKEY AS INSPKEY, 
-		  OBRATING AS OBRATING, 
-		  C3.DISTFROM AS [FROM], 
-		  C3.DISTTO	AS [TO], 
-		  STARTDTTM,		COMPDTTM,		INSTDATE,	
-		  C5.SEVDESC,		C6.INSPNDX,		INDEXVAL,	
-		  OWN,			UnitType,		ServStat
-	  FROM(
-			  (
-				  (
-					  [HANSEN8].[ASSETMANAGEMENT_SEWER].COMPSMN AS C1 
-					  INNER JOIN 
-					  (
-						  [HANSEN8].[ASSETMANAGEMENT_SEWER].[SMNSERVICEINSP] AS C2 
-						  INNER JOIN 
-						  [HANSEN8].[ASSETMANAGEMENT_SEWER].[SMNSERVINSPOB] AS C3
-						  ON C2.INSPKEY=C3.INSPKEY
-					  ) 
-					  ON C1.COMPKEY=C2.COMPKEY
-				  ) 
-				  INNER JOIN 
-				  [HANSEN8].[ASSETMANAGEMENT_SEWER].[SMNINDHIST] AS C4 
-				  ON	C3.INSPKEY = C4.INSPKEY 
-					  AND 
-					  (
-						  C4.INDEXKEY = @INDEXKEY_GreaseCount OR
-						  C4.INDEXKEY = @INDEXKEY_GreateRating OR
-						  C4.INDEXKEY = @INDEXKEY_GreaseScore 
-					  )
-			  ) 
-			  INNER JOIN 
-			  [HANSEN8].[ASSETMANAGEMENT_SEWER].[SMNSERVINSPTYPEOBSEV] AS C5
-			  ON	C5.OBSEVKEY = C3.OBSEVKEY
-		  ) 
-		  INNER JOIN 
-		  [HANSEN8].[ASSETMANAGEMENT].[ASSETINSPINDEX] AS C6
-		  ON C6.INSPNDXKEY = C4.INDEXKEY
-  WHERE C3.OBKEY = @OBKEY_GR*/
 
   -----------------------------------------------------------------------
   --Fill RootInspections with all of the valid 
@@ -311,7 +266,7 @@ BEGIN
       A.UNITTYPE,
       1,
       1,
-      1
+      @asset_set_id
   FROM	([HANSEN8].[ASSETMANAGEMENT_SEWER].COMPSMN A INNER JOIN [HANSEN8].[ASSETMANAGEMENT_SEWER].COMPSMH B ON (A.UNITID = B.UNITID)) INNER JOIN [HANSEN8].[ASSETMANAGEMENT_SEWER].COMPSMH C ON (A.UNITID2 = C.UNITID)
   WHERE	(A.OWN = 'BES' OR A.OWN = 'DNRV')
 		  AND A.UNITTYPE IN ('CSINT', 'CSML', 'CSOTN', 'SAINT', 'SAML')
@@ -324,6 +279,7 @@ BEGIN
 		  INNER JOIN
 		  LatestInspections
 		  ON [dbo].[ASSETS].COMPKEY = LatestInspections.COMPKEY
+  WHERE ASSETS.asset_set_id = @asset_set_id
 
   --Update the root management date
   UPDATE [dbo].[ASSETS]
@@ -340,6 +296,7 @@ BEGIN
 					
 		  )AS D
 		  ON	C.COMPKEY = D.COMPKEY
+  WHERE C.asset_set_id = @asset_set_id
 
   --Update the root management date	if RES available
   UPDATE [dbo].[ASSETS]
@@ -370,6 +327,7 @@ BEGIN
 					  D.ACTUALQTY > 0
 				  )
 			  )
+  WHERE C.asset_set_id = @asset_set_id
 			
   --Update the special cleaning date
   UPDATE  [dbo].[ASSETS]
@@ -391,6 +349,7 @@ BEGIN
 					
 		  )AS D
 		  ON	C.COMPKEY = D.COMPKEY
+  WHERE C.asset_set_id = @asset_set_id
 
   --Update the special cleaning date if RES available
 		
@@ -427,6 +386,7 @@ BEGIN
 					  D.ACTUALQTY > 0 --C.length_ft * 0.8
 				  )
 			  )
+  WHERE C.asset_set_id = @asset_set_id
 			
   UPDATE	[dbo].[ASSETS]
   SET		BASIN_ID = D.basin_id
@@ -440,6 +400,7 @@ BEGIN
 					  ON	B.AREA = C.hansen_area
 		  ) AS D
 		  ON	A.COMPKEY = D.COMPKEY
+  WHERE A.asset_set_id = @asset_set_id
 
   UPDATE	[dbo].[ASSETS]
   SET		DISTRICT_ID = D.district_id
@@ -453,15 +414,17 @@ BEGIN
 					  ON	B.DISTRICT = C.district_id
 		  ) AS D
 		  ON	A.COMPKEY = D.COMPKEY
+  WHERE A.asset_set_id = @asset_set_id
 
   UPDATE [dbo].[ASSETS]
   SET structural_grade = B.grade_h5
   FROM [dbo].[ASSETS] A INNER JOIN REHAB10FTSEGS B ON (A.COMPKEY = B.compkey)
+  WHERE A.asset_set_id = @asset_set_id
 
   UPDATE [dbo].[ASSETS]
   SET    district_id = 'NULL'
   FROM   [dbo].[ASSETS] AS A
-  WHERE  district_id = '1'
+  WHERE  district_id = '1' AND A.asset_set_id = @asset_set_id
 
   EXEC SP_STATUS_MESSAGE 'End SP_ExposeData'
 

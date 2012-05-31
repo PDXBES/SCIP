@@ -30,39 +30,37 @@
         {
             this.components = new System.ComponentModel.Container();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("DRIVER_TYPES_UPDATE", -1);
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("driver_type_id");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("activity_type_id");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn3 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("name");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn4 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("description");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn5 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("hansen_activity_code");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn6 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("default_cost_per_ft");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn7 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("default_frequency_years");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn8 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("rank");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn9 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn11 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("driver_type_id");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn12 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("activity_type_id");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn13 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("name");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn18 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("description");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn19 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("reporting_category");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn20 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("hansen_activity_code");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn21 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("default_cost_per_ft");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn22 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("default_frequency_years");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn23 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("rank");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn24 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand2 = new Infragistics.Win.UltraWinGrid.UltraGridBand("ALTERNATIVES", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn14 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn15 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("name");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn16 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("description");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn17 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("asset_set_id");
             this.ultraGridDriverTypes = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.dRIVERTYPESUPDATEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sCIPDataSet = new UI.SCIPDataSet();
-            this.dRIVERTYPESBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dRIVER_TYPESTableAdapter = new UI.SCIPDataSetTableAdapters.DRIVER_TYPESTableAdapter();
-            this.dRIVER_TYPES_UPDATETableAdapter = new UI.SCIPDataSetTableAdapters.DRIVER_TYPES_UPDATETableAdapter();
             this.aLTERNATIVESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aLTERNATIVESTableAdapter = new UI.SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter();
             this.aLTERNATIVESBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.ultraComboAlternative = new Infragistics.Win.UltraWinGrid.UltraCombo();
             this.ultraButtonUpdateDriverTypes = new Infragistics.Win.Misc.UltraButton();
             this.ultraButtonRevertDriverTypes = new Infragistics.Win.Misc.UltraButton();
+            this.dRIVERTYPESUPDATEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dRIVER_TYPES_UPDATETableAdapter = new UI.SCIPDataSetTableAdapters.DRIVER_TYPES_UPDATETableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGridDriverTypes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dRIVERTYPESUPDATEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sCIPDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dRIVERTYPESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraComboAlternative)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dRIVERTYPESUPDATEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ultraGridDriverTypes
@@ -72,41 +70,44 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.ultraGridDriverTypes.DataSource = this.dRIVERTYPESUPDATEBindingSource;
             ultraGridBand1.CardSettings.CaptionLines = 2;
-            ultraGridColumn1.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
-            ultraGridColumn1.Header.Caption = "driver type id";
-            ultraGridColumn1.Header.VisiblePosition = 0;
-            ultraGridColumn1.Hidden = true;
-            ultraGridColumn2.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
-            ultraGridColumn2.Header.Caption = "activity type id";
-            ultraGridColumn2.Header.VisiblePosition = 1;
-            ultraGridColumn3.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
-            ultraGridColumn3.Header.Caption = "Name";
-            ultraGridColumn3.Header.VisiblePosition = 2;
-            ultraGridColumn4.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
-            ultraGridColumn4.Header.Caption = "Description";
-            ultraGridColumn4.Header.VisiblePosition = 3;
-            ultraGridColumn5.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
-            ultraGridColumn5.Header.Caption = "Hansen activity code";
-            ultraGridColumn5.Header.VisiblePosition = 4;
-            ultraGridColumn6.Header.Caption = "default cost per ft";
-            ultraGridColumn6.Header.VisiblePosition = 5;
-            ultraGridColumn7.Header.Caption = "default frequency years";
-            ultraGridColumn7.Header.VisiblePosition = 6;
-            ultraGridColumn8.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
-            ultraGridColumn8.Header.VisiblePosition = 7;
-            ultraGridColumn9.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
-            ultraGridColumn9.Header.Caption = "alternative id";
-            ultraGridColumn9.Header.VisiblePosition = 8;
+            ultraGridColumn11.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
+            ultraGridColumn11.Header.Caption = "driver type id";
+            ultraGridColumn11.Header.VisiblePosition = 0;
+            ultraGridColumn11.Hidden = true;
+            ultraGridColumn12.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
+            ultraGridColumn12.Header.Caption = "activity type id";
+            ultraGridColumn12.Header.VisiblePosition = 1;
+            ultraGridColumn13.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
+            ultraGridColumn13.Header.Caption = "Name";
+            ultraGridColumn13.Header.VisiblePosition = 2;
+            ultraGridColumn18.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
+            ultraGridColumn18.Header.Caption = "Description";
+            ultraGridColumn18.Header.VisiblePosition = 3;
+            ultraGridColumn19.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
+            ultraGridColumn19.Header.VisiblePosition = 4;
+            ultraGridColumn20.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
+            ultraGridColumn20.Header.Caption = "Hansen activity code";
+            ultraGridColumn20.Header.VisiblePosition = 5;
+            ultraGridColumn21.Header.Caption = "default cost per ft";
+            ultraGridColumn21.Header.VisiblePosition = 6;
+            ultraGridColumn22.Header.Caption = "default frequency years";
+            ultraGridColumn22.Header.VisiblePosition = 7;
+            ultraGridColumn23.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
+            ultraGridColumn23.Header.VisiblePosition = 8;
+            ultraGridColumn24.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
+            ultraGridColumn24.Header.Caption = "alternative id";
+            ultraGridColumn24.Header.VisiblePosition = 9;
             ultraGridBand1.Columns.AddRange(new object[] {
-            ultraGridColumn1,
-            ultraGridColumn2,
-            ultraGridColumn3,
-            ultraGridColumn4,
-            ultraGridColumn5,
-            ultraGridColumn6,
-            ultraGridColumn7,
-            ultraGridColumn8,
-            ultraGridColumn9});
+            ultraGridColumn11,
+            ultraGridColumn12,
+            ultraGridColumn13,
+            ultraGridColumn18,
+            ultraGridColumn19,
+            ultraGridColumn20,
+            ultraGridColumn21,
+            ultraGridColumn22,
+            ultraGridColumn23,
+            ultraGridColumn24});
             this.ultraGridDriverTypes.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
             this.ultraGridDriverTypes.Location = new System.Drawing.Point(13, 138);
             this.ultraGridDriverTypes.Name = "ultraGridDriverTypes";
@@ -114,28 +115,10 @@
             this.ultraGridDriverTypes.TabIndex = 0;
             this.ultraGridDriverTypes.Text = "Driver Types";
             // 
-            // dRIVERTYPESUPDATEBindingSource
-            // 
-            this.dRIVERTYPESUPDATEBindingSource.DataMember = "DRIVER_TYPES_UPDATE";
-            this.dRIVERTYPESUPDATEBindingSource.DataSource = this.sCIPDataSet;
-            // 
             // sCIPDataSet
             // 
             this.sCIPDataSet.DataSetName = "SCIPDataSet";
             this.sCIPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dRIVERTYPESBindingSource
-            // 
-            this.dRIVERTYPESBindingSource.DataMember = "DRIVER_TYPES";
-            this.dRIVERTYPESBindingSource.DataSource = this.sCIPDataSet;
-            // 
-            // dRIVER_TYPESTableAdapter
-            // 
-            this.dRIVER_TYPESTableAdapter.ClearBeforeFill = true;
-            // 
-            // dRIVER_TYPES_UPDATETableAdapter
-            // 
-            this.dRIVER_TYPES_UPDATETableAdapter.ClearBeforeFill = true;
             // 
             // aLTERNATIVESBindingSource
             // 
@@ -192,6 +175,15 @@
             this.ultraButtonRevertDriverTypes.Text = "Revert Driver Types";
             this.ultraButtonRevertDriverTypes.Click += new System.EventHandler(this.ultraButtonRevertDriverTypes_Click);
             // 
+            // dRIVERTYPESUPDATEBindingSource
+            // 
+            this.dRIVERTYPESUPDATEBindingSource.DataMember = "DRIVER_TYPES_UPDATE";
+            this.dRIVERTYPESUPDATEBindingSource.DataSource = this.sCIPDataSet;
+            // 
+            // dRIVER_TYPES_UPDATETableAdapter
+            // 
+            this.dRIVER_TYPES_UPDATETableAdapter.ClearBeforeFill = true;
+            // 
             // FormDriverTypes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,12 +197,11 @@
             this.Text = "Driver Types";
             this.Load += new System.EventHandler(this.FormDriverTypes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ultraGridDriverTypes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dRIVERTYPESUPDATEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sCIPDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dRIVERTYPESBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraComboAlternative)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dRIVERTYPESUPDATEBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,15 +211,13 @@
 
         private Infragistics.Win.UltraWinGrid.UltraGrid ultraGridDriverTypes;
         private SCIPDataSet sCIPDataSet;
-        private System.Windows.Forms.BindingSource dRIVERTYPESBindingSource;
-        private SCIPDataSetTableAdapters.DRIVER_TYPESTableAdapter dRIVER_TYPESTableAdapter;
-        private System.Windows.Forms.BindingSource dRIVERTYPESUPDATEBindingSource;
-        private SCIPDataSetTableAdapters.DRIVER_TYPES_UPDATETableAdapter dRIVER_TYPES_UPDATETableAdapter;
         private System.Windows.Forms.BindingSource aLTERNATIVESBindingSource;
         private SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter aLTERNATIVESTableAdapter;
         private System.Windows.Forms.BindingSource aLTERNATIVESBindingSource1;
         private Infragistics.Win.UltraWinGrid.UltraCombo ultraComboAlternative;
         private Infragistics.Win.Misc.UltraButton ultraButtonUpdateDriverTypes;
         private Infragistics.Win.Misc.UltraButton ultraButtonRevertDriverTypes;
+        private System.Windows.Forms.BindingSource dRIVERTYPESUPDATEBindingSource;
+        private SCIPDataSetTableAdapters.DRIVER_TYPES_UPDATETableAdapter dRIVER_TYPES_UPDATETableAdapter;
     }
 }

@@ -744,5 +744,8 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_CLTF.proc.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVER_TYPES_UPDATE.table.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

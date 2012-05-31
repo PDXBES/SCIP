@@ -3,10 +3,10 @@
 	@endYear int = 2023
 AS
   SELECT fiscal_year, 
-      SUM([Accelerated Area]) AS [Accelerated Area],
-      SUM([Preventive Maintenance]) AS [Preventive Maintenance],
-      SUM([Tractive Forces]) AS [Tractive Forces], 
-      SUM([Tractive Forces (>36 in)]) AS [Tractive Forces (>36 in)]
+      ISNULL(SUM([Accelerated Area]), 0) AS [Accelerated Area],
+      ISNULL(SUM([Preventive Maintenance]), 0) AS [Preventive Maintenance],
+      ISNULL(SUM([Tractive Forces]), 0) AS [Tractive Forces], 
+      ISNULL(SUM([Tractive Forces (>36 in)]), 0) AS [Tractive Forces (>36 in)]
   FROM (SELECT * FROM VW_CLEANING_ACTIVITIES_BY_DRIVER_TYPE_FISCAL_YEAR WHERE fiscal_year BETWEEN @beginYear AND @endYear) PS
   PIVOT
   (SUM(cost) FOR reporting_category IN 

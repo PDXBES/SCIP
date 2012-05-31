@@ -15,5 +15,9 @@ namespace UI
     {
       InitializeComponent();
     }
+
+    private void FormCreateCharts_Load(object sender, EventArgs e)
+    {
+    }
   }
 }

@@ -52,6 +52,14 @@ namespace UI
             child.ShowDialog();
             this.Enabled = true;
         }
+
+        private void btnCreateCharts_Click(object sender, EventArgs e)
+        {
+          FormCreateCharts child = new FormCreateCharts();
+          this.Enabled = false;
+          child.ShowDialog();
+          this.Enabled = true;
+        }
             
     }
 }

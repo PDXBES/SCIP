@@ -3,16 +3,16 @@
 	@endYear int = 2023
 AS
   SELECT fiscal_year, 
-      SUM([Condition]) AS [Condition],
-      SUM([Condition (>36 in)]) AS [Condition (>36 in)],
-      SUM([Preventive Maintenance]) AS [Preventive Maintenance], 
-      SUM([Preventive Maintenance (>36in)]) AS [Preventive Maintenance (>36in)],
-      SUM([Root Control High]) AS [Root Control High], 
-      SUM([Root Control High (>15 in, <=36 in)]) AS [Root Control High (>15 in, <=36 in)],
-      SUM([Root Control High (>36 in)]) AS [Root Control High (>36 in)],
-      SUM([Root Control Medium]) AS [Root Control Medium], 
-      SUM([Root Control Medium (>15 in, <=36 in)]) AS [Root Control Medium (>15 in, <=36 in)],
-      SUM([Root Control Medium (>36 in)]) AS [Root Control Medium (>36 in)]
+      ISNULL(SUM([Condition]), 0) AS [Condition],
+      ISNULL(SUM([Condition (>36 in)]), 0) AS [Condition (>36 in)],
+      ISNULL(SUM([Preventive Maintenance]), 0) AS [Preventive Maintenance], 
+      ISNULL(SUM([Preventive Maintenance (>36in)]), 0) AS [Preventive Maintenance (>36in)],
+      ISNULL(SUM([Root Control High]), 0) AS [Root Control High], 
+      ISNULL(SUM([Root Control High (>15 in, <=36 in)]), 0) AS [Root Control High (>15 in, <=36 in)],
+      ISNULL(SUM([Root Control High (>36 in)]), 0) AS [Root Control High (>36 in)],
+      ISNULL(SUM([Root Control Medium]), 0) AS [Root Control Medium], 
+      ISNULL(SUM([Root Control Medium (>15 in, <=36 in)]), 0) AS [Root Control Medium (>15 in, <=36 in)],
+      ISNULL(SUM([Root Control Medium (>36 in)]), 0) AS [Root Control Medium (>36 in)]
   FROM (SELECT * FROM VW_INSPECTION_ACTIVITIES_BY_DRIVER_TYPE_FISCAL_YEAR WHERE fiscal_year BETWEEN @beginYear AND @endYear) PS
   PIVOT
   (SUM(length_ft) FOR reporting_category IN 

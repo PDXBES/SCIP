@@ -109,6 +109,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>SCIPUI.settings</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Cleaning.rdlc" />
     <EmbeddedResource Include="FormCreateCharts.resx">
       <DependentUpon>FormCreateCharts.cs</DependentUpon>
     </EmbeddedResource>

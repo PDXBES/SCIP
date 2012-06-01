@@ -13248,13 +13248,6 @@ SELECT driver_type_id, activity_type_id, name, description, reporting_category,h
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._dRIVERSTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -13315,12 +13308,6 @@ SELECT driver_type_id, activity_type_id, name, description, reporting_category,h
             }
             if ((this._dRIVERSTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.DRIVERS.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._dRIVERSTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._dRIVERSTableAdapter.Update(addedRows));

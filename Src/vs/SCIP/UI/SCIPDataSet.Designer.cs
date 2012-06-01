@@ -5816,9 +5816,9 @@ namespace UI {
             
             private global::System.Data.DataColumn columnRootControlMedium;
             
-            private global::System.Data.DataColumn columnRootControlMediumMidsize;
-            
             private global::System.Data.DataColumn columnRootControlMediumLargeSize;
+            
+            private global::System.Data.DataColumn columnRootControlMediumMidSize;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -5927,17 +5927,17 @@ namespace UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn RootControlMediumMidsizeColumn {
+            public global::System.Data.DataColumn RootControlMediumLargeSizeColumn {
                 get {
-                    return this.columnRootControlMediumMidsize;
+                    return this.columnRootControlMediumLargeSize;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn RootControlMediumLargeSizeColumn {
+            public global::System.Data.DataColumn RootControlMediumMidSizeColumn {
                 get {
-                    return this.columnRootControlMediumLargeSize;
+                    return this.columnRootControlMediumMidSize;
                 }
             }
             
@@ -5978,7 +5978,7 @@ namespace UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FN_CHART_ILTDRow AddFN_CHART_ILTDRow(int fiscal_year, decimal Condition, decimal ConditionLarge, decimal PreventiveMaintenance, decimal PreventiveMaintenanceLarge, decimal RootControlHigh, decimal RootControlHighMidSize, decimal RootControlHighLargeSize, decimal RootControlMedium, decimal RootControlMediumMidsize, decimal RootControlMediumLargeSize) {
+            public FN_CHART_ILTDRow AddFN_CHART_ILTDRow(int fiscal_year, decimal Condition, decimal ConditionLarge, decimal PreventiveMaintenance, decimal PreventiveMaintenanceLarge, decimal RootControlHigh, decimal RootControlHighMidSize, decimal RootControlHighLargeSize, decimal RootControlMedium, decimal RootControlMediumLargeSize, decimal RootControlMediumMidSize) {
                 FN_CHART_ILTDRow rowFN_CHART_ILTDRow = ((FN_CHART_ILTDRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         fiscal_year,
@@ -5990,8 +5990,8 @@ namespace UI {
                         RootControlHighMidSize,
                         RootControlHighLargeSize,
                         RootControlMedium,
-                        RootControlMediumMidsize,
-                        RootControlMediumLargeSize};
+                        RootControlMediumLargeSize,
+                        RootControlMediumMidSize};
                 rowFN_CHART_ILTDRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFN_CHART_ILTDRow);
                 return rowFN_CHART_ILTDRow;
@@ -6023,8 +6023,8 @@ namespace UI {
                 this.columnRootControlHighMidSize = base.Columns["RootControlHighMidSize"];
                 this.columnRootControlHighLargeSize = base.Columns["RootControlHighLargeSize"];
                 this.columnRootControlMedium = base.Columns["RootControlMedium"];
-                this.columnRootControlMediumMidsize = base.Columns["RootControlMediumMidsize"];
                 this.columnRootControlMediumLargeSize = base.Columns["RootControlMediumLargeSize"];
+                this.columnRootControlMediumMidSize = base.Columns["RootControlMediumMidSize"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6048,20 +6048,28 @@ namespace UI {
                 base.Columns.Add(this.columnRootControlHighLargeSize);
                 this.columnRootControlMedium = new global::System.Data.DataColumn("RootControlMedium", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRootControlMedium);
-                this.columnRootControlMediumMidsize = new global::System.Data.DataColumn("RootControlMediumMidsize", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRootControlMediumMidsize);
                 this.columnRootControlMediumLargeSize = new global::System.Data.DataColumn("RootControlMediumLargeSize", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRootControlMediumLargeSize);
+                this.columnRootControlMediumMidSize = new global::System.Data.DataColumn("RootControlMediumMidSize", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRootControlMediumMidSize);
                 this.columnCondition.ReadOnly = true;
                 this.columnConditionLarge.ReadOnly = true;
+                this.columnConditionLarge.Caption = "Condition(>36 in)";
                 this.columnPreventiveMaintenance.ReadOnly = true;
+                this.columnPreventiveMaintenance.Caption = "Preventive Maintenance";
                 this.columnPreventiveMaintenanceLarge.ReadOnly = true;
+                this.columnPreventiveMaintenanceLarge.Caption = "Preventive Maintenance (>36 in)";
                 this.columnRootControlHigh.ReadOnly = true;
+                this.columnRootControlHigh.Caption = "Root Control High";
                 this.columnRootControlHighMidSize.ReadOnly = true;
+                this.columnRootControlHighMidSize.Caption = "Root Control High (>15 in, <=36 in)";
                 this.columnRootControlHighLargeSize.ReadOnly = true;
+                this.columnRootControlHighLargeSize.Caption = "Root Control High (>36 in)";
                 this.columnRootControlMedium.ReadOnly = true;
-                this.columnRootControlMediumMidsize.ReadOnly = true;
+                this.columnRootControlMedium.Caption = "Root Control Medium";
                 this.columnRootControlMediumLargeSize.ReadOnly = true;
+                this.columnRootControlMediumLargeSize.Caption = "Root Control Medium (>36 in)";
+                this.columnRootControlMediumMidSize.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6213,9 +6221,9 @@ namespace UI {
             
             private global::System.Data.DataColumn columnRootControlMedium;
             
-            private global::System.Data.DataColumn columnRootControlMediumMidsize;
-            
             private global::System.Data.DataColumn columnRootControlMediumLargeSize;
+            
+            private global::System.Data.DataColumn columnRootControlMediumMidSize;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -6324,17 +6332,17 @@ namespace UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn RootControlMediumMidsizeColumn {
+            public global::System.Data.DataColumn RootControlMediumLargeSizeColumn {
                 get {
-                    return this.columnRootControlMediumMidsize;
+                    return this.columnRootControlMediumLargeSize;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn RootControlMediumLargeSizeColumn {
+            public global::System.Data.DataColumn RootControlMediumMidSizeColumn {
                 get {
-                    return this.columnRootControlMediumLargeSize;
+                    return this.columnRootControlMediumMidSize;
                 }
             }
             
@@ -6375,7 +6383,7 @@ namespace UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FN_CHART_ILTFRow AddFN_CHART_ILTFRow(int fiscal_year, int Condition, int ConditionLarge, int PreventiveMaintenance, int PreventiveMaintenanceLarge, int RootControlHigh, int RootControlHighMidSize, int RootControlHighLargeSize, int RootControlMedium, int RootControlMediumMidsize, int RootControlMediumLargeSize) {
+            public FN_CHART_ILTFRow AddFN_CHART_ILTFRow(int fiscal_year, int Condition, int ConditionLarge, int PreventiveMaintenance, int PreventiveMaintenanceLarge, int RootControlHigh, int RootControlHighMidSize, int RootControlHighLargeSize, int RootControlMedium, int RootControlMediumLargeSize, int RootControlMediumMidSize) {
                 FN_CHART_ILTFRow rowFN_CHART_ILTFRow = ((FN_CHART_ILTFRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         fiscal_year,
@@ -6387,8 +6395,8 @@ namespace UI {
                         RootControlHighMidSize,
                         RootControlHighLargeSize,
                         RootControlMedium,
-                        RootControlMediumMidsize,
-                        RootControlMediumLargeSize};
+                        RootControlMediumLargeSize,
+                        RootControlMediumMidSize};
                 rowFN_CHART_ILTFRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFN_CHART_ILTFRow);
                 return rowFN_CHART_ILTFRow;
@@ -6420,8 +6428,8 @@ namespace UI {
                 this.columnRootControlHighMidSize = base.Columns["RootControlHighMidSize"];
                 this.columnRootControlHighLargeSize = base.Columns["RootControlHighLargeSize"];
                 this.columnRootControlMedium = base.Columns["RootControlMedium"];
-                this.columnRootControlMediumMidsize = base.Columns["RootControlMediumMidsize"];
                 this.columnRootControlMediumLargeSize = base.Columns["RootControlMediumLargeSize"];
+                this.columnRootControlMediumMidSize = base.Columns["RootControlMediumMidSize"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6445,20 +6453,28 @@ namespace UI {
                 base.Columns.Add(this.columnRootControlHighLargeSize);
                 this.columnRootControlMedium = new global::System.Data.DataColumn("RootControlMedium", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRootControlMedium);
-                this.columnRootControlMediumMidsize = new global::System.Data.DataColumn("RootControlMediumMidsize", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRootControlMediumMidsize);
                 this.columnRootControlMediumLargeSize = new global::System.Data.DataColumn("RootControlMediumLargeSize", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRootControlMediumLargeSize);
+                this.columnRootControlMediumMidSize = new global::System.Data.DataColumn("RootControlMediumMidSize", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRootControlMediumMidSize);
                 this.columnCondition.ReadOnly = true;
                 this.columnConditionLarge.ReadOnly = true;
+                this.columnConditionLarge.Caption = "Condition (>36 in)";
                 this.columnPreventiveMaintenance.ReadOnly = true;
+                this.columnPreventiveMaintenance.Caption = "Preventive Maintenance";
                 this.columnPreventiveMaintenanceLarge.ReadOnly = true;
+                this.columnPreventiveMaintenanceLarge.Caption = "Preventive Maintenance (>36 in)";
                 this.columnRootControlHigh.ReadOnly = true;
+                this.columnRootControlHigh.Caption = "Root Control High";
                 this.columnRootControlHighMidSize.ReadOnly = true;
+                this.columnRootControlHighMidSize.Caption = "Root Control High (>15 in, <=36 in)";
                 this.columnRootControlHighLargeSize.ReadOnly = true;
+                this.columnRootControlHighLargeSize.Caption = "Root Control High (>36 in)";
                 this.columnRootControlMedium.ReadOnly = true;
-                this.columnRootControlMediumMidsize.ReadOnly = true;
+                this.columnRootControlMedium.Caption = "Root Control Medium";
                 this.columnRootControlMediumLargeSize.ReadOnly = true;
+                this.columnRootControlMediumLargeSize.Caption = "Root Control Medium (>36 in)";
+                this.columnRootControlMediumMidSize.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7811,9 +7827,13 @@ namespace UI {
                 this.columnRootControlMediumLarge = new global::System.Data.DataColumn("RootControlMediumLarge", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRootControlMediumLarge);
                 this.columnRootControlHigh.ReadOnly = true;
+                this.columnRootControlHigh.Caption = "Root Control High";
                 this.columnRootControlHighLarge.ReadOnly = true;
+                this.columnRootControlHighLarge.Caption = "Root Control High (>15 in)";
                 this.columnRootControlMedium.ReadOnly = true;
+                this.columnRootControlMedium.Caption = "Root Control Medium";
                 this.columnRootControlMediumLarge.ReadOnly = true;
+                this.columnRootControlMediumLarge.Caption = "Root Control Medium (>15 in)";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8118,9 +8138,13 @@ namespace UI {
                 this.columnRootControlMediumLarge = new global::System.Data.DataColumn("RootControlMediumLarge", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRootControlMediumLarge);
                 this.columnRootControlHigh.ReadOnly = true;
+                this.columnRootControlHigh.Caption = "Root Control High";
                 this.columnRootControlHighLarge.ReadOnly = true;
+                this.columnRootControlHighLarge.Caption = "Root Control High (>15 in)";
                 this.columnRootControlMedium.ReadOnly = true;
+                this.columnRootControlMedium.Caption = "Root Control Medium";
                 this.columnRootControlMediumLarge.ReadOnly = true;
+                this.columnRootControlMediumLarge.Caption = "Root Control Medium (>15 in)";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11366,23 +11390,6 @@ namespace UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal RootControlMediumMidsize {
-                get {
-                    try {
-                        return ((decimal)(this[this.tableFN_CHART_ILTD.RootControlMediumMidsizeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RootControlMediumMidsize\' in table \'FN_CHART_ILTD\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableFN_CHART_ILTD.RootControlMediumMidsizeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal RootControlMediumLargeSize {
                 get {
                     try {
@@ -11395,6 +11402,23 @@ namespace UI {
                 }
                 set {
                     this[this.tableFN_CHART_ILTD.RootControlMediumLargeSizeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal RootControlMediumMidSize {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableFN_CHART_ILTD.RootControlMediumMidSizeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RootControlMediumMidSize\' in table \'FN_CHART_ILTD\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_ILTD.RootControlMediumMidSizeColumn] = value;
                 }
             }
             
@@ -11508,18 +11532,6 @@ namespace UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRootControlMediumMidsizeNull() {
-                return this.IsNull(this.tableFN_CHART_ILTD.RootControlMediumMidsizeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRootControlMediumMidsizeNull() {
-                this[this.tableFN_CHART_ILTD.RootControlMediumMidsizeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsRootControlMediumLargeSizeNull() {
                 return this.IsNull(this.tableFN_CHART_ILTD.RootControlMediumLargeSizeColumn);
             }
@@ -11528,6 +11540,18 @@ namespace UI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetRootControlMediumLargeSizeNull() {
                 this[this.tableFN_CHART_ILTD.RootControlMediumLargeSizeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRootControlMediumMidSizeNull() {
+                return this.IsNull(this.tableFN_CHART_ILTD.RootControlMediumMidSizeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRootControlMediumMidSizeNull() {
+                this[this.tableFN_CHART_ILTD.RootControlMediumMidSizeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -11694,23 +11718,6 @@ namespace UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int RootControlMediumMidsize {
-                get {
-                    try {
-                        return ((int)(this[this.tableFN_CHART_ILTF.RootControlMediumMidsizeColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RootControlMediumMidsize\' in table \'FN_CHART_ILTF\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableFN_CHART_ILTF.RootControlMediumMidsizeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int RootControlMediumLargeSize {
                 get {
                     try {
@@ -11723,6 +11730,23 @@ namespace UI {
                 }
                 set {
                     this[this.tableFN_CHART_ILTF.RootControlMediumLargeSizeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int RootControlMediumMidSize {
+                get {
+                    try {
+                        return ((int)(this[this.tableFN_CHART_ILTF.RootControlMediumMidSizeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RootControlMediumMidSize\' in table \'FN_CHART_ILTF\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_ILTF.RootControlMediumMidSizeColumn] = value;
                 }
             }
             
@@ -11836,18 +11860,6 @@ namespace UI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsRootControlMediumMidsizeNull() {
-                return this.IsNull(this.tableFN_CHART_ILTF.RootControlMediumMidsizeColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetRootControlMediumMidsizeNull() {
-                this[this.tableFN_CHART_ILTF.RootControlMediumMidsizeColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsRootControlMediumLargeSizeNull() {
                 return this.IsNull(this.tableFN_CHART_ILTF.RootControlMediumLargeSizeColumn);
             }
@@ -11856,6 +11868,18 @@ namespace UI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetRootControlMediumLargeSizeNull() {
                 this[this.tableFN_CHART_ILTF.RootControlMediumLargeSizeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsRootControlMediumMidSizeNull() {
+                return this.IsNull(this.tableFN_CHART_ILTF.RootControlMediumMidSizeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetRootControlMediumMidSizeNull() {
+                this[this.tableFN_CHART_ILTF.RootControlMediumMidSizeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -18934,8 +18958,8 @@ SELECT driver_type_id, activity_type_id, name, description, reporting_category,h
             tableMapping.ColumnMappings.Add("RootControlHighMidSize", "RootControlHighMidSize");
             tableMapping.ColumnMappings.Add("RootControlHighLargeSize", "RootControlHighLargeSize");
             tableMapping.ColumnMappings.Add("RootControlMedium", "RootControlMedium");
-            tableMapping.ColumnMappings.Add("RootControlMediumMidsize", "RootControlMediumMidsize");
             tableMapping.ColumnMappings.Add("RootControlMediumLargeSize", "RootControlMediumLargeSize");
+            tableMapping.ColumnMappings.Add("RootControlMediumMidSize", "RootControlMediumMidSize");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -18952,7 +18976,7 @@ SELECT driver_type_id, activity_type_id, name, description, reporting_category,h
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT fiscal_year, Condition, [Condition (>36 in)] AS ConditionLarge, [Preventive Maintenance] AS PreventiveMaintenance, [Preventive Maintenance (>36 in)] AS PreventiveMaintenanceLarge, [Root Control High] AS RootControlHigh, [Root Control High (>15 in, <=36 in)] AS RootControlHighMidSize, [Root Control High (>36 in)] AS RootControlHighLargeSize, [Root Control Medium] AS RootControlMedium, [Root Control Medium (>15 in, <=36 in)] AS RootControlMediumMidsize, [Root Control Medium (>36 in)] AS RootControlMediumLargeSize
+            this._commandCollection[0].CommandText = @"SELECT fiscal_year, Condition, [Condition (>36 in)] AS ConditionLarge, [Preventive Maintenance] AS PreventiveMaintenance, [Preventive Maintenance (>36 in)] AS PreventiveMaintenanceLarge, [Root Control High] AS RootControlHigh, [Root Control High (>15 in, <=36 in)] AS RootControlHighMidSize, [Root Control High (>36 in)] AS RootControlHighLargeSize, [Root Control Medium] AS RootControlMedium, [Root Control Medium (>15 in, <=36 in)] AS RootControlMediumMidSize, [Root Control Medium (>36 in)] AS RootControlMediumLargeSize
 FROM dbo.FN_CHART_ILTD(@beginYear, @endYear)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@beginYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -19118,8 +19142,8 @@ FROM dbo.FN_CHART_ILTD(@beginYear, @endYear)";
             tableMapping.ColumnMappings.Add("RootControlHighMidSize", "RootControlHighMidSize");
             tableMapping.ColumnMappings.Add("RootControlHighLargeSize", "RootControlHighLargeSize");
             tableMapping.ColumnMappings.Add("RootControlMedium", "RootControlMedium");
-            tableMapping.ColumnMappings.Add("RootControlMediumMidsize", "RootControlMediumMidsize");
             tableMapping.ColumnMappings.Add("RootControlMediumLargeSize", "RootControlMediumLargeSize");
+            tableMapping.ColumnMappings.Add("RootControlMediumMidSize", "RootControlMediumMidSize");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -19136,7 +19160,7 @@ FROM dbo.FN_CHART_ILTD(@beginYear, @endYear)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT fiscal_year, Condition, [Condition (>36 in)] AS ConditionLarge, [Preventive Maintenance] AS PreventiveMaintenance, [Preventive Maintenance (>36 in)] AS PreventiveMaintenanceLarge, [Root Control High] AS RootControlHigh, [Root Control High (>15 in, <=36 in)] AS RootControlHighMidSize, [Root Control High (>36 in)] AS RootControlHighLargeSize, [Root Control Medium] AS RootControlMedium, [Root Control Medium (>15 in, <=36 in)] AS RootControlMediumMidsize, [Root Control Medium (>36 in)] AS RootControlMediumLargeSize
+            this._commandCollection[0].CommandText = @"SELECT fiscal_year, Condition, [Condition (>36 in)] AS ConditionLarge, [Preventive Maintenance] AS PreventiveMaintenance, [Preventive Maintenance (>36 in)] AS PreventiveMaintenanceLarge, [Root Control High] AS RootControlHigh, [Root Control High (>15 in, <=36 in)] AS RootControlHighMidSize, [Root Control High (>36 in)] AS RootControlHighLargeSize, [Root Control Medium] AS RootControlMedium, [Root Control Medium (>15 in, <=36 in)] AS RootControlMediumMidSize, [Root Control Medium (>36 in)] AS RootControlMediumLargeSize
 FROM dbo.FN_CHART_ILTF(@beginYear, @endYear)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@beginYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

@@ -48,12 +48,12 @@
           <DataField>RootControlMedium</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
-        <Field Name="RootControlMediumMidsize">
-          <DataField>RootControlMediumMidsize</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
         <Field Name="RootControlMediumLargeSize">
           <DataField>RootControlMediumLargeSize</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="RootControlMediumMidSize">
+          <DataField>RootControlMediumMidSize</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
@@ -108,12 +108,12 @@
           <DataField>RootControlMedium</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="RootControlMediumMidsize">
-          <DataField>RootControlMediumMidsize</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="RootControlMediumLargeSize">
           <DataField>RootControlMediumLargeSize</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RootControlMediumMidSize">
+          <DataField>RootControlMediumMidSize</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
@@ -523,7 +523,10 @@
                     <Y>=Sum(Fields!length_ft.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
-                    <Style />
+                    <Style>
+                      <FontStyle>Italic</FontStyle>
+                      <FontFamily>Calibri</FontFamily>
+                    </Style>
                     <Label>="#LEGENDTEXT" &amp; vbcrlf &amp; "#VALY{N0} ft (#PERCENT{P1})"</Label>
                     <Visible>true</Visible>
                   </ChartDataLabel>
@@ -1251,7 +1254,7 @@
         </ChartAreas>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>="Inspection (ft over FY " &amp; Parameters!beginYear.Value &amp; "-" &amp; Parameters!endYear.Value &amp; ")"</Caption>
+            <Caption>="Inspection (ft/yr over FY " &amp; Parameters!beginYear.Value &amp; "-" &amp; Parameters!endYear.Value &amp; ")"</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontFamily>Calibri</FontFamily>
@@ -1402,6 +1405,9 @@
                   <Style />
                 </ChartDataLabel>
               </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Condition(&gt;36 in)</LegendText>
+              </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
@@ -1436,6 +1442,9 @@
                   <Style />
                 </ChartDataLabel>
               </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Preventive Maintenance</LegendText>
+              </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
@@ -1470,6 +1479,9 @@
                   <Style />
                 </ChartDataLabel>
               </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Preventive Maintenance (&gt;36 in)</LegendText>
+              </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
@@ -1538,6 +1550,9 @@
                   <Style />
                 </ChartDataLabel>
               </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Root Control High (&gt;15 in, &lt;=36 in)</LegendText>
+              </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
@@ -1572,6 +1587,9 @@
                   <Style />
                 </ChartDataLabel>
               </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Root Control High (&gt;36 in)</LegendText>
+              </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
@@ -1613,11 +1631,11 @@
                 <MinMovingDistance>0pt</MinMovingDistance>
               </ChartSmartLabel>
             </ChartSeries>
-            <ChartSeries Name="RootControlMediumMidsize">
+            <ChartSeries Name="RootControlMediumMidSize">
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
-                    <Y>=Sum(Fields!RootControlMediumMidsize.Value)</Y>
+                    <Y>=Sum(Fields!RootControlMediumMidSize.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
@@ -1640,6 +1658,9 @@
                   <Style />
                 </ChartDataLabel>
               </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Root Control Medium (&gt;15 in, &lt;=36 in)</LegendText>
+              </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
@@ -1674,6 +1695,9 @@
                   <Style />
                 </ChartDataLabel>
               </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Root Control Medium (&gt;36 in)</LegendText>
+              </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
@@ -1744,7 +1768,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (ConditionLarge)</LegendText>
+                  <LegendText>Mean (Condition (&gt;36 in))</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -1781,7 +1805,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (PreventiveMaintenance)</LegendText>
+                  <LegendText>Mean (Preventive Maintenance)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -1818,7 +1842,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (PreventiveMaintenanceLarge)</LegendText>
+                  <LegendText>Mean (Preventive Maintenance (&gt;36 in))</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -1855,7 +1879,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (RootControlHigh)</LegendText>
+                  <LegendText>Mean (Root Control High)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -1892,7 +1916,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (RootControlHighMidSize)</LegendText>
+                  <LegendText>Mean (Root Control High (&gt;15 in, &lt;=36 in))</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -1929,7 +1953,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (RootControlHighLargeSize)</LegendText>
+                  <LegendText>Mean (Root Control High (&gt;36 in))</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -1966,7 +1990,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (RootControlMedium)</LegendText>
+                  <LegendText>Mean (Root Control Medium)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2003,7 +2027,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (RootControlMediumMidsize)</LegendText>
+                  <LegendText>Mean (Root Control Medium (&gt;15 in, &lt;=36 in))</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2013,7 +2037,7 @@
                   <MinMovingDistance>0pt</MinMovingDistance>
                 </ChartSmartLabel>
               </ChartSeries>
-              <SourceChartSeriesName>RootControlMediumMidsize</SourceChartSeriesName>
+              <SourceChartSeriesName>RootControlMediumMidSize</SourceChartSeriesName>
               <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
             </ChartDerivedSeries>
             <ChartDerivedSeries>
@@ -2040,377 +2064,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (RootControlMediumLargeSize)</LegendText>
-                </ChartItemInLegend>
-                <ChartAreaName>Default</ChartAreaName>
-                <ValueAxisName>Primary</ValueAxisName>
-                <CategoryAxisName>Primary</CategoryAxisName>
-                <ChartSmartLabel>
-                  <CalloutLineColor>Black</CalloutLineColor>
-                  <MinMovingDistance>0pt</MinMovingDistance>
-                </ChartSmartLabel>
-              </ChartSeries>
-              <SourceChartSeriesName>RootControlMediumLargeSize</SourceChartSeriesName>
-              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
-            </ChartDerivedSeries>
-            <ChartDerivedSeries>
-              <ChartSeries Name="Series11">
-                <Type>Line</Type>
-                <Style>
-                  <Border>
-                    <Style>Dotted</Style>
-                  </Border>
-                </Style>
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-                <ChartEmptyPoints>
-                  <Style />
-                  <ChartMarker>
-                    <Style />
-                  </ChartMarker>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                </ChartEmptyPoints>
-                <ChartItemInLegend>
-                  <LegendText>Mean (Condition)</LegendText>
-                </ChartItemInLegend>
-                <ChartAreaName>Default</ChartAreaName>
-                <ValueAxisName>Primary</ValueAxisName>
-                <CategoryAxisName>Primary</CategoryAxisName>
-                <ChartSmartLabel>
-                  <CalloutLineColor>Black</CalloutLineColor>
-                  <MinMovingDistance>0pt</MinMovingDistance>
-                </ChartSmartLabel>
-              </ChartSeries>
-              <SourceChartSeriesName>Condition</SourceChartSeriesName>
-              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
-            </ChartDerivedSeries>
-            <ChartDerivedSeries>
-              <ChartSeries Name="Series12">
-                <Type>Line</Type>
-                <Style>
-                  <Border>
-                    <Style>Dotted</Style>
-                  </Border>
-                </Style>
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-                <ChartEmptyPoints>
-                  <Style />
-                  <ChartMarker>
-                    <Style />
-                  </ChartMarker>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                </ChartEmptyPoints>
-                <ChartItemInLegend>
-                  <LegendText>Mean (ConditionLarge)</LegendText>
-                </ChartItemInLegend>
-                <ChartAreaName>Default</ChartAreaName>
-                <ValueAxisName>Primary</ValueAxisName>
-                <CategoryAxisName>Primary</CategoryAxisName>
-                <ChartSmartLabel>
-                  <CalloutLineColor>Black</CalloutLineColor>
-                  <MinMovingDistance>0pt</MinMovingDistance>
-                </ChartSmartLabel>
-              </ChartSeries>
-              <SourceChartSeriesName>ConditionLarge</SourceChartSeriesName>
-              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
-            </ChartDerivedSeries>
-            <ChartDerivedSeries>
-              <ChartSeries Name="Series13">
-                <Type>Line</Type>
-                <Style>
-                  <Border>
-                    <Style>Dotted</Style>
-                  </Border>
-                </Style>
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-                <ChartEmptyPoints>
-                  <Style />
-                  <ChartMarker>
-                    <Style />
-                  </ChartMarker>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                </ChartEmptyPoints>
-                <ChartItemInLegend>
-                  <LegendText>Mean (PreventiveMaintenance)</LegendText>
-                </ChartItemInLegend>
-                <ChartAreaName>Default</ChartAreaName>
-                <ValueAxisName>Primary</ValueAxisName>
-                <CategoryAxisName>Primary</CategoryAxisName>
-                <ChartSmartLabel>
-                  <CalloutLineColor>Black</CalloutLineColor>
-                  <MinMovingDistance>0pt</MinMovingDistance>
-                </ChartSmartLabel>
-              </ChartSeries>
-              <SourceChartSeriesName>PreventiveMaintenance</SourceChartSeriesName>
-              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
-            </ChartDerivedSeries>
-            <ChartDerivedSeries>
-              <ChartSeries Name="Series14">
-                <Type>Line</Type>
-                <Style>
-                  <Border>
-                    <Style>Dotted</Style>
-                  </Border>
-                </Style>
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-                <ChartEmptyPoints>
-                  <Style />
-                  <ChartMarker>
-                    <Style />
-                  </ChartMarker>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                </ChartEmptyPoints>
-                <ChartItemInLegend>
-                  <LegendText>Mean (PreventiveMaintenanceLarge)</LegendText>
-                </ChartItemInLegend>
-                <ChartAreaName>Default</ChartAreaName>
-                <ValueAxisName>Primary</ValueAxisName>
-                <CategoryAxisName>Primary</CategoryAxisName>
-                <ChartSmartLabel>
-                  <CalloutLineColor>Black</CalloutLineColor>
-                  <MinMovingDistance>0pt</MinMovingDistance>
-                </ChartSmartLabel>
-              </ChartSeries>
-              <SourceChartSeriesName>PreventiveMaintenanceLarge</SourceChartSeriesName>
-              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
-            </ChartDerivedSeries>
-            <ChartDerivedSeries>
-              <ChartSeries Name="Series15">
-                <Type>Line</Type>
-                <Style>
-                  <Border>
-                    <Style>Dotted</Style>
-                  </Border>
-                </Style>
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-                <ChartEmptyPoints>
-                  <Style />
-                  <ChartMarker>
-                    <Style />
-                  </ChartMarker>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                </ChartEmptyPoints>
-                <ChartItemInLegend>
-                  <LegendText>Mean (RootControlHigh)</LegendText>
-                </ChartItemInLegend>
-                <ChartAreaName>Default</ChartAreaName>
-                <ValueAxisName>Primary</ValueAxisName>
-                <CategoryAxisName>Primary</CategoryAxisName>
-                <ChartSmartLabel>
-                  <CalloutLineColor>Black</CalloutLineColor>
-                  <MinMovingDistance>0pt</MinMovingDistance>
-                </ChartSmartLabel>
-              </ChartSeries>
-              <SourceChartSeriesName>RootControlHigh</SourceChartSeriesName>
-              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
-            </ChartDerivedSeries>
-            <ChartDerivedSeries>
-              <ChartSeries Name="Series16">
-                <Type>Line</Type>
-                <Style>
-                  <Border>
-                    <Style>Dotted</Style>
-                  </Border>
-                </Style>
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-                <ChartEmptyPoints>
-                  <Style />
-                  <ChartMarker>
-                    <Style />
-                  </ChartMarker>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                </ChartEmptyPoints>
-                <ChartItemInLegend>
-                  <LegendText>Mean (RootControlHighMidSize)</LegendText>
-                </ChartItemInLegend>
-                <ChartAreaName>Default</ChartAreaName>
-                <ValueAxisName>Primary</ValueAxisName>
-                <CategoryAxisName>Primary</CategoryAxisName>
-                <ChartSmartLabel>
-                  <CalloutLineColor>Black</CalloutLineColor>
-                  <MinMovingDistance>0pt</MinMovingDistance>
-                </ChartSmartLabel>
-              </ChartSeries>
-              <SourceChartSeriesName>RootControlHighMidSize</SourceChartSeriesName>
-              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
-            </ChartDerivedSeries>
-            <ChartDerivedSeries>
-              <ChartSeries Name="Series17">
-                <Type>Line</Type>
-                <Style>
-                  <Border>
-                    <Style>Dotted</Style>
-                  </Border>
-                </Style>
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-                <ChartEmptyPoints>
-                  <Style />
-                  <ChartMarker>
-                    <Style />
-                  </ChartMarker>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                </ChartEmptyPoints>
-                <ChartItemInLegend>
-                  <LegendText>Mean (RootControlHighLargeSize)</LegendText>
-                </ChartItemInLegend>
-                <ChartAreaName>Default</ChartAreaName>
-                <ValueAxisName>Primary</ValueAxisName>
-                <CategoryAxisName>Primary</CategoryAxisName>
-                <ChartSmartLabel>
-                  <CalloutLineColor>Black</CalloutLineColor>
-                  <MinMovingDistance>0pt</MinMovingDistance>
-                </ChartSmartLabel>
-              </ChartSeries>
-              <SourceChartSeriesName>RootControlHighLargeSize</SourceChartSeriesName>
-              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
-            </ChartDerivedSeries>
-            <ChartDerivedSeries>
-              <ChartSeries Name="Series18">
-                <Type>Line</Type>
-                <Style>
-                  <Border>
-                    <Style>Dotted</Style>
-                  </Border>
-                </Style>
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-                <ChartEmptyPoints>
-                  <Style />
-                  <ChartMarker>
-                    <Style />
-                  </ChartMarker>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                </ChartEmptyPoints>
-                <ChartItemInLegend>
-                  <LegendText>Mean (RootControlMedium)</LegendText>
-                </ChartItemInLegend>
-                <ChartAreaName>Default</ChartAreaName>
-                <ValueAxisName>Primary</ValueAxisName>
-                <CategoryAxisName>Primary</CategoryAxisName>
-                <ChartSmartLabel>
-                  <CalloutLineColor>Black</CalloutLineColor>
-                  <MinMovingDistance>0pt</MinMovingDistance>
-                </ChartSmartLabel>
-              </ChartSeries>
-              <SourceChartSeriesName>RootControlMedium</SourceChartSeriesName>
-              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
-            </ChartDerivedSeries>
-            <ChartDerivedSeries>
-              <ChartSeries Name="Series19">
-                <Type>Line</Type>
-                <Style>
-                  <Border>
-                    <Style>Dotted</Style>
-                  </Border>
-                </Style>
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-                <ChartEmptyPoints>
-                  <Style />
-                  <ChartMarker>
-                    <Style />
-                  </ChartMarker>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                </ChartEmptyPoints>
-                <ChartItemInLegend>
-                  <LegendText>Mean (RootControlMediumMidsize)</LegendText>
-                </ChartItemInLegend>
-                <ChartAreaName>Default</ChartAreaName>
-                <ValueAxisName>Primary</ValueAxisName>
-                <CategoryAxisName>Primary</CategoryAxisName>
-                <ChartSmartLabel>
-                  <CalloutLineColor>Black</CalloutLineColor>
-                  <MinMovingDistance>0pt</MinMovingDistance>
-                </ChartSmartLabel>
-              </ChartSeries>
-              <SourceChartSeriesName>RootControlMediumMidsize</SourceChartSeriesName>
-              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
-            </ChartDerivedSeries>
-            <ChartDerivedSeries>
-              <ChartSeries Name="Series20">
-                <Type>Line</Type>
-                <Style>
-                  <Border>
-                    <Style>Dotted</Style>
-                  </Border>
-                </Style>
-                <ChartMarker>
-                  <Style />
-                </ChartMarker>
-                <ChartDataLabel>
-                  <Style />
-                </ChartDataLabel>
-                <ChartEmptyPoints>
-                  <Style />
-                  <ChartMarker>
-                    <Style />
-                  </ChartMarker>
-                  <ChartDataLabel>
-                    <Style />
-                  </ChartDataLabel>
-                </ChartEmptyPoints>
-                <ChartItemInLegend>
-                  <LegendText>Mean (RootControlMediumLargeSize)</LegendText>
+                  <LegendText>Mean (Root Control Medium (&gt;36 in))</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2581,7 +2235,9 @@
           <ChartLegend Name="Default">
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Calibri</FontFamily>
               <FontSize>8pt</FontSize>
+              <FontWeight>Bold</FontWeight>
             </Style>
             <ChartLegendTitle>
               <Caption />
@@ -2816,6 +2472,9 @@
                   <Style />
                 </ChartDataLabel>
               </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Preventive Maintenance (&gt;36 in)</LegendText>
+              </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
@@ -2884,6 +2543,9 @@
                   <Style />
                 </ChartDataLabel>
               </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Root Control High (&gt;15 in, &lt;=36 in)</LegendText>
+              </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
@@ -2918,6 +2580,9 @@
                   <Style />
                 </ChartDataLabel>
               </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Root Control High (&gt;36 in)</LegendText>
+              </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
@@ -2959,11 +2624,11 @@
                 <MinMovingDistance>0pt</MinMovingDistance>
               </ChartSmartLabel>
             </ChartSeries>
-            <ChartSeries Name="RootControlMediumMidsize">
+            <ChartSeries Name="RootControlMediumMidSize">
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
-                    <Y>=Sum(Fields!RootControlMediumMidsize.Value)</Y>
+                    <Y>=Sum(Fields!RootControlMediumMidSize.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
@@ -2986,6 +2651,9 @@
                   <Style />
                 </ChartDataLabel>
               </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Root Control Medium (&gt;15 in, &lt;=36 in)</LegendText>
+              </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
@@ -3020,6 +2688,9 @@
                   <Style />
                 </ChartDataLabel>
               </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Root Control Medium (&gt;36 in)</LegendText>
+              </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
@@ -3028,6 +2699,386 @@
               </ChartSmartLabel>
             </ChartSeries>
           </ChartSeriesCollection>
+          <ChartDerivedSeriesCollection>
+            <ChartDerivedSeries>
+              <ChartSeries Name="Series1">
+                <Type>Line</Type>
+                <Style>
+                  <Border>
+                    <Style>Dotted</Style>
+                  </Border>
+                </Style>
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+                <ChartEmptyPoints>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                </ChartEmptyPoints>
+                <ChartItemInLegend>
+                  <LegendText>Mean (Condition)</LegendText>
+                </ChartItemInLegend>
+                <ChartAreaName>Default</ChartAreaName>
+                <ValueAxisName>Primary</ValueAxisName>
+                <CategoryAxisName>Primary</CategoryAxisName>
+                <ChartSmartLabel>
+                  <CalloutLineColor>Black</CalloutLineColor>
+                  <MinMovingDistance>0pt</MinMovingDistance>
+                </ChartSmartLabel>
+              </ChartSeries>
+              <SourceChartSeriesName>Condition</SourceChartSeriesName>
+              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
+            </ChartDerivedSeries>
+            <ChartDerivedSeries>
+              <ChartSeries Name="Series2">
+                <Type>Line</Type>
+                <Style>
+                  <Border>
+                    <Style>Dotted</Style>
+                  </Border>
+                </Style>
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+                <ChartEmptyPoints>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                </ChartEmptyPoints>
+                <ChartItemInLegend>
+                  <LegendText>Mean (Condition (&gt;36 in))</LegendText>
+                </ChartItemInLegend>
+                <ChartAreaName>Default</ChartAreaName>
+                <ValueAxisName>Primary</ValueAxisName>
+                <CategoryAxisName>Primary</CategoryAxisName>
+                <ChartSmartLabel>
+                  <CalloutLineColor>Black</CalloutLineColor>
+                  <MinMovingDistance>0pt</MinMovingDistance>
+                </ChartSmartLabel>
+              </ChartSeries>
+              <SourceChartSeriesName>ConditionLarge</SourceChartSeriesName>
+              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
+            </ChartDerivedSeries>
+            <ChartDerivedSeries>
+              <ChartSeries Name="Series3">
+                <Type>Line</Type>
+                <Style>
+                  <Border>
+                    <Style>Dotted</Style>
+                  </Border>
+                </Style>
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+                <ChartEmptyPoints>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                </ChartEmptyPoints>
+                <ChartItemInLegend>
+                  <LegendText>Mean (Preventive Maintenance)</LegendText>
+                </ChartItemInLegend>
+                <ChartAreaName>Default</ChartAreaName>
+                <ValueAxisName>Primary</ValueAxisName>
+                <CategoryAxisName>Primary</CategoryAxisName>
+                <ChartSmartLabel>
+                  <CalloutLineColor>Black</CalloutLineColor>
+                  <MinMovingDistance>0pt</MinMovingDistance>
+                </ChartSmartLabel>
+              </ChartSeries>
+              <SourceChartSeriesName>PreventiveMaintenance</SourceChartSeriesName>
+              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
+            </ChartDerivedSeries>
+            <ChartDerivedSeries>
+              <ChartSeries Name="Series4">
+                <Type>Line</Type>
+                <Style>
+                  <Border>
+                    <Style>Dotted</Style>
+                  </Border>
+                </Style>
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+                <ChartEmptyPoints>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                </ChartEmptyPoints>
+                <ChartItemInLegend>
+                  <LegendText>Mean (Preventive Maintenance (&gt;36 in))</LegendText>
+                </ChartItemInLegend>
+                <ChartAreaName>Default</ChartAreaName>
+                <ValueAxisName>Primary</ValueAxisName>
+                <CategoryAxisName>Primary</CategoryAxisName>
+                <ChartSmartLabel>
+                  <CalloutLineColor>Black</CalloutLineColor>
+                  <MinMovingDistance>0pt</MinMovingDistance>
+                </ChartSmartLabel>
+              </ChartSeries>
+              <SourceChartSeriesName>PreventiveMaintenanceLarge</SourceChartSeriesName>
+              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
+            </ChartDerivedSeries>
+            <ChartDerivedSeries>
+              <ChartSeries Name="Series5">
+                <Type>Line</Type>
+                <Style>
+                  <Border>
+                    <Style>Dotted</Style>
+                  </Border>
+                </Style>
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+                <ChartEmptyPoints>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                </ChartEmptyPoints>
+                <ChartItemInLegend>
+                  <LegendText>Mean (Root Control High)</LegendText>
+                </ChartItemInLegend>
+                <ChartAreaName>Default</ChartAreaName>
+                <ValueAxisName>Primary</ValueAxisName>
+                <CategoryAxisName>Primary</CategoryAxisName>
+                <ChartSmartLabel>
+                  <CalloutLineColor>Black</CalloutLineColor>
+                  <MinMovingDistance>0pt</MinMovingDistance>
+                </ChartSmartLabel>
+              </ChartSeries>
+              <SourceChartSeriesName>RootControlHigh</SourceChartSeriesName>
+              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
+            </ChartDerivedSeries>
+            <ChartDerivedSeries>
+              <ChartSeries Name="Series6">
+                <Type>Line</Type>
+                <Style>
+                  <Border>
+                    <Style>Dotted</Style>
+                  </Border>
+                </Style>
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+                <ChartEmptyPoints>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                </ChartEmptyPoints>
+                <ChartItemInLegend>
+                  <LegendText>Mean (Root Control High (&gt;15 in, &lt;=36 in))</LegendText>
+                </ChartItemInLegend>
+                <ChartAreaName>Default</ChartAreaName>
+                <ValueAxisName>Primary</ValueAxisName>
+                <CategoryAxisName>Primary</CategoryAxisName>
+                <ChartSmartLabel>
+                  <CalloutLineColor>Black</CalloutLineColor>
+                  <MinMovingDistance>0pt</MinMovingDistance>
+                </ChartSmartLabel>
+              </ChartSeries>
+              <SourceChartSeriesName>RootControlHighMidSize</SourceChartSeriesName>
+              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
+            </ChartDerivedSeries>
+            <ChartDerivedSeries>
+              <ChartSeries Name="Series7">
+                <Type>Line</Type>
+                <Style>
+                  <Border>
+                    <Style>Dotted</Style>
+                  </Border>
+                </Style>
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+                <ChartEmptyPoints>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                </ChartEmptyPoints>
+                <ChartItemInLegend>
+                  <LegendText>Mean (Root Control High (&gt;36 in))</LegendText>
+                </ChartItemInLegend>
+                <ChartAreaName>Default</ChartAreaName>
+                <ValueAxisName>Primary</ValueAxisName>
+                <CategoryAxisName>Primary</CategoryAxisName>
+                <ChartSmartLabel>
+                  <CalloutLineColor>Black</CalloutLineColor>
+                  <MinMovingDistance>0pt</MinMovingDistance>
+                </ChartSmartLabel>
+              </ChartSeries>
+              <SourceChartSeriesName>RootControlHighLargeSize</SourceChartSeriesName>
+              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
+            </ChartDerivedSeries>
+            <ChartDerivedSeries>
+              <ChartSeries Name="Series8">
+                <Type>Line</Type>
+                <Style>
+                  <Border>
+                    <Style>Dotted</Style>
+                  </Border>
+                </Style>
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+                <ChartEmptyPoints>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                </ChartEmptyPoints>
+                <ChartItemInLegend>
+                  <LegendText>Mean (Root Control Medium)</LegendText>
+                </ChartItemInLegend>
+                <ChartAreaName>Default</ChartAreaName>
+                <ValueAxisName>Primary</ValueAxisName>
+                <CategoryAxisName>Primary</CategoryAxisName>
+                <ChartSmartLabel>
+                  <CalloutLineColor>Black</CalloutLineColor>
+                  <MinMovingDistance>0pt</MinMovingDistance>
+                </ChartSmartLabel>
+              </ChartSeries>
+              <SourceChartSeriesName>RootControlMedium</SourceChartSeriesName>
+              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
+            </ChartDerivedSeries>
+            <ChartDerivedSeries>
+              <ChartSeries Name="Series9">
+                <Type>Line</Type>
+                <Style>
+                  <Border>
+                    <Style>Dotted</Style>
+                  </Border>
+                </Style>
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+                <ChartEmptyPoints>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                </ChartEmptyPoints>
+                <ChartItemInLegend>
+                  <LegendText>Mov.Avg (Root Control Medium (&gt;15 in, &lt;=36 in))</LegendText>
+                </ChartItemInLegend>
+                <ChartAreaName>Default</ChartAreaName>
+                <ValueAxisName>Primary</ValueAxisName>
+                <CategoryAxisName>Primary</CategoryAxisName>
+                <ChartSmartLabel>
+                  <CalloutLineColor>Black</CalloutLineColor>
+                  <MinMovingDistance>0pt</MinMovingDistance>
+                </ChartSmartLabel>
+              </ChartSeries>
+              <SourceChartSeriesName>RootControlMediumMidSize</SourceChartSeriesName>
+              <DerivedSeriesFormula>MovingAverage</DerivedSeriesFormula>
+              <ChartFormulaParameters>
+                <ChartFormulaParameter Name="Period">
+                  <Value>2</Value>
+                </ChartFormulaParameter>
+                <ChartFormulaParameter Name="StartFromFirst">
+                  <Value>False</Value>
+                </ChartFormulaParameter>
+              </ChartFormulaParameters>
+            </ChartDerivedSeries>
+            <ChartDerivedSeries>
+              <ChartSeries Name="Series10">
+                <Type>Line</Type>
+                <Style>
+                  <Border>
+                    <Style>Dotted</Style>
+                  </Border>
+                </Style>
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+                <ChartEmptyPoints>
+                  <Style />
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                </ChartEmptyPoints>
+                <ChartItemInLegend>
+                  <LegendText>Mean (Root Control Medium (&gt;36 in))</LegendText>
+                </ChartItemInLegend>
+                <ChartAreaName>Default</ChartAreaName>
+                <ValueAxisName>Primary</ValueAxisName>
+                <CategoryAxisName>Primary</CategoryAxisName>
+                <ChartSmartLabel>
+                  <CalloutLineColor>Black</CalloutLineColor>
+                  <MinMovingDistance>0pt</MinMovingDistance>
+                </ChartSmartLabel>
+              </ChartSeries>
+              <SourceChartSeriesName>RootControlMediumLargeSize</SourceChartSeriesName>
+              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
+            </ChartDerivedSeries>
+          </ChartDerivedSeriesCollection>
         </ChartData>
         <ChartAreas>
           <ChartArea Name="Default">
@@ -3185,7 +3236,9 @@
           <ChartLegend Name="Default">
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Calibri</FontFamily>
               <FontSize>8pt</FontSize>
+              <FontWeight>Bold</FontWeight>
             </Style>
             <ChartLegendTitle>
               <Caption />

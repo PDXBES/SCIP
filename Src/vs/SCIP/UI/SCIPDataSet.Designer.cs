@@ -19137,16 +19137,20 @@ FROM dbo.FN_CHART_ILTD(@beginYear, @endYear)";
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT fiscal_year, Condition, [Condition (>36 in)] AS ConditionLarge, [Preventive Maintenance] AS PreventiveMaintenance, [Preventive Maintenance (>36 in)] AS PreventiveMaintenanceLarge, [Root Control High] AS RootControlHigh, [Root Control High (>15 in, <=36 in)] AS RootControlHighMidSize, [Root Control High (>36 in)] AS RootControlHighLargeSize, [Root Control Medium] AS RootControlMedium, [Root Control Medium (>15 in, <=36 in)] AS RootControlMediumMidsize, [Root Control Medium (>36 in)] AS RootControlMediumLargeSize
-FROM dbo.FN_CHART_ILTF(2012, 2023)";
+FROM dbo.FN_CHART_ILTF(@beginYear, @endYear)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@beginYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@endYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SCIPDataSet.FN_CHART_ILTFDataTable dataTable) {
+        public virtual int Fill(SCIPDataSet.FN_CHART_ILTFDataTable dataTable, int beginYear, int endYear) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(beginYear));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(endYear));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -19158,8 +19162,10 @@ FROM dbo.FN_CHART_ILTF(2012, 2023)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SCIPDataSet.FN_CHART_ILTFDataTable GetData() {
+        public virtual SCIPDataSet.FN_CHART_ILTFDataTable GetData(int beginYear, int endYear) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(beginYear));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(endYear));
             SCIPDataSet.FN_CHART_ILTFDataTable dataTable = new SCIPDataSet.FN_CHART_ILTFDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

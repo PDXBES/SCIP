@@ -33,6 +33,8 @@ namespace UI
         this.FN_CHART_CPTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CPTF, beginYear, endYear);
         this.FN_CHART_CPADTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CPAD, beginYear, endYear);
         this.FN_CHART_CPAFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CPAF, beginYear, endYear);
+        this.FN_CHART_CLTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CLTD, beginYear, endYear);
+        this.FN_CHART_CLTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CLTF, beginYear, endYear);
 
         ReportParameter p1 = new ReportParameter("beginYear", txtBeginYear.Text);
         ReportParameter p2 = new ReportParameter("endYear", txtEndYear.Text);

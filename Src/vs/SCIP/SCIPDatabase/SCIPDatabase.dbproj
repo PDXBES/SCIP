@@ -801,5 +801,8 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_RPTF.function.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\Indexes\SomeTableOrView.IDX_ASSETS_COMPKEY.index.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

@@ -1,3 +1,3 @@
 ﻿ALTER TABLE [dbo].[ASSETS]
 	ADD CONSTRAINT [PK_ASSETS]
-	PRIMARY KEY (compkey)
+	PRIMARY KEY (asset_id)

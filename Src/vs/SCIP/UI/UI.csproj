@@ -87,6 +87,12 @@
     <Compile Include="FormIndividualDrivers.Designer.cs">
       <DependentUpon>FormIndividualDrivers.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormManageAlternatives.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManageAlternatives.Designer.cs">
+      <DependentUpon>FormManageAlternatives.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormIndividualDrivers.resx">
       <DependentUpon>FormIndividualDrivers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManageAlternatives.resx">
+      <DependentUpon>FormManageAlternatives.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inspections.rdlc" />
     <EmbeddedResource Include="Main.resx">

@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[SP_FILL_DRIVER_TYPES]
-	@alternative_id INT = 0
+	@alternative_id INT = 1
 AS
 
   DELETE FROM DRIVER_TYPES WHERE alternative_id = @alternative_id

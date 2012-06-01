@@ -41,7 +41,11 @@ namespace UI
 
         private void btnManageAlternatives_Click(object sender, EventArgs e)
         {
+            FormManageAlternatives child = new FormManageAlternatives();
 
+            this.Enabled = false;
+            child.ShowDialog();
+            this.Enabled = true;
         }
 
         private void buttonEditDriverTypes_Click(object sender, EventArgs e)
@@ -60,6 +64,5 @@ namespace UI
           child.ShowDialog();
           this.Enabled = true;
         }
-            
     }
 }

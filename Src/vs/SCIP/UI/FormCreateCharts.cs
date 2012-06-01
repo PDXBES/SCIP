@@ -73,5 +73,32 @@ namespace UI
         Cursor = Cursors.Default;
       }
     }
+
+    private void btnRunRootReport_Click(object sender, EventArgs e)
+    {
+
+      Cursor = Cursors.WaitCursor;
+      try
+      {
+        int beginYear = Convert.ToInt32(txtBeginYear.Text);
+        int endYear = Convert.ToInt32(txtEndYear.Text);
+
+        this.FN_CHART_RPTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RPTD, beginYear, endYear);
+        this.FN_CHART_RPTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RPTF, beginYear, endYear);
+        this.FN_CHART_RPADTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RPAD, beginYear, endYear);
+        this.FN_CHART_RPAFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RPAF, beginYear, endYear);
+        this.FN_CHART_RLTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RLTD, beginYear, endYear);
+        this.FN_CHART_RLTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RLTF, beginYear, endYear);
+
+        ReportParameter p1 = new ReportParameter("beginYear", txtBeginYear.Text);
+        ReportParameter p2 = new ReportParameter("endYear", txtEndYear.Text);
+        this.reportViewer3.LocalReport.SetParameters(new ReportParameter[] { p1, p2 });
+        this.reportViewer3.RefreshReport();
+      }
+      finally
+      {
+        Cursor = Cursors.Default;
+      }
+    }
   }
 }

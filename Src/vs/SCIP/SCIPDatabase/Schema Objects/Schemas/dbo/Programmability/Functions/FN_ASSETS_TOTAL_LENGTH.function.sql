@@ -1,0 +1,12 @@
+﻿CREATE FUNCTION [dbo].[FN_ASSETS_TOTAL_LENGTH]
+(
+)
+RETURNS INT
+AS
+BEGIN
+  DECLARE @result INT
+  SELECT @result = SUM(length_ft)
+  FROM ASSETS
+
+  RETURN @result
+END

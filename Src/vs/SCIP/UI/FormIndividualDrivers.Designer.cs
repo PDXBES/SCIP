@@ -60,15 +60,18 @@
             this.buttonUpdateDrivers = new Infragistics.Win.Misc.UltraButton();
             this.buttonRevertDrivers = new Infragistics.Win.Misc.UltraButton();
             this.dRIVERS_UPDATETableAdapter = new UI.SCIPDataSetTableAdapters.DRIVERS_UPDATETableAdapter();
+            this.aLTERNATIVESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aLTERNATIVESTableAdapter = new UI.SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.TextEditorCompkey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dRIVERSUPDATEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sCIPDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelCompkey
             // 
-            this.LabelCompkey.Location = new System.Drawing.Point(289, 18);
+            this.LabelCompkey.Location = new System.Drawing.Point(293, 46);
             this.LabelCompkey.Name = "LabelCompkey";
             this.LabelCompkey.Size = new System.Drawing.Size(90, 19);
             this.LabelCompkey.TabIndex = 0;
@@ -76,7 +79,7 @@
             // 
             // TextEditorCompkey
             // 
-            this.TextEditorCompkey.Location = new System.Drawing.Point(385, 14);
+            this.TextEditorCompkey.Location = new System.Drawing.Point(389, 42);
             this.TextEditorCompkey.Name = "TextEditorCompkey";
             this.TextEditorCompkey.Size = new System.Drawing.Size(100, 21);
             this.TextEditorCompkey.TabIndex = 1;
@@ -190,7 +193,7 @@
             // 
             // buttonFetchCompkey
             // 
-            this.buttonFetchCompkey.Location = new System.Drawing.Point(504, 13);
+            this.buttonFetchCompkey.Location = new System.Drawing.Point(508, 41);
             this.buttonFetchCompkey.Name = "buttonFetchCompkey";
             this.buttonFetchCompkey.Size = new System.Drawing.Size(75, 23);
             this.buttonFetchCompkey.TabIndex = 8;
@@ -219,6 +222,15 @@
             // 
             this.dRIVERS_UPDATETableAdapter.ClearBeforeFill = true;
             // 
+            // aLTERNATIVESBindingSource
+            // 
+            this.aLTERNATIVESBindingSource.DataMember = "ALTERNATIVES";
+            this.aLTERNATIVESBindingSource.DataSource = this.sCIPDataSet;
+            // 
+            // aLTERNATIVESTableAdapter
+            // 
+            this.aLTERNATIVESTableAdapter.ClearBeforeFill = true;
+            // 
             // FormIndividualDrivers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +250,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ultraGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dRIVERSUPDATEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sCIPDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,5 +269,7 @@
         private Infragistics.Win.Misc.UltraButton buttonFetchCompkey;
         private Infragistics.Win.Misc.UltraButton buttonUpdateDrivers;
         private Infragistics.Win.Misc.UltraButton buttonRevertDrivers;
+        private System.Windows.Forms.BindingSource aLTERNATIVESBindingSource;
+        private SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter aLTERNATIVESTableAdapter;
     }
 }

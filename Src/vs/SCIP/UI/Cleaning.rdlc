@@ -758,7 +758,7 @@
                       <FontStyle>Italic</FontStyle>
                       <FontFamily>Calibri</FontFamily>
                     </Style>
-                    <Label>="#LEGENDTEXT" &amp; vbcrlf &amp; "#VALY{C0} (#PERCENT{P1})"</Label>
+                    <Label>="#LEGENDTEXT" &amp; vbcrlf &amp; "#VALY{C0}/yr (#PERCENT{P1})"</Label>
                     <Visible>true</Visible>
                   </ChartDataLabel>
                   <Style>
@@ -1025,7 +1025,7 @@
                       <FontStyle>Italic</FontStyle>
                       <FontFamily>Calibri</FontFamily>
                     </Style>
-                    <Label>="#LEGENDTEXT" &amp; vbcrlf &amp; "#VALY{N0} ft (#PERCENT{P1})"</Label>
+                    <Label>="#LEGENDTEXT" &amp; vbcrlf &amp; "#VALY{N0} ft/yr (#PERCENT{P1})"</Label>
                     <Visible>true</Visible>
                   </ChartDataLabel>
                   <Style>

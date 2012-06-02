@@ -10,3 +10,4 @@ syntax: glob
 [Dd]ebug/*
 [Rr]elease/*
 *.schemaview
+*.dbmdl

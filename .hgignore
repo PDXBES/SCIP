@@ -1,0 +1,13 @@
+syntax: glob
+*.suo
+*.user
+*.orig
+*.ldb
+[Bb]in/*
+[Oo]bj/*
+[Tt]humbs.db
+*.log
+[Dd]ebug/*
+[Rr]elease/*
+*.schemaview
+*.dbmdl

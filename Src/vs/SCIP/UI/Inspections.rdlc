@@ -316,7 +316,7 @@
                 </CustomProperty>
                 <CustomProperty>
                   <Name>CollectedSliceExploded</Name>
-                  <Value>false</Value>
+                  <Value>true</Value>
                 </CustomProperty>
                 <CustomProperty>
                   <Name>PieStartAngle</Name>
@@ -615,6 +615,10 @@
                   <Name>CollectedStyle</Name>
                   <Value>SingleSlice</Value>
                 </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedSliceExploded</Name>
+                  <Value>true</Value>
+                </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
@@ -906,6 +910,10 @@
                   <Name>CollectedStyle</Name>
                   <Value>SingleSlice</Value>
                 </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedSliceExploded</Name>
+                  <Value>true</Value>
+                </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
@@ -1196,6 +1204,10 @@
                 <CustomProperty>
                   <Name>CollectedStyle</Name>
                   <Value>SingleSlice</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedSliceExploded</Name>
+                  <Value>true</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>

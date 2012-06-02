@@ -267,6 +267,10 @@
                   <Name>LabelsRadialLineSize</Name>
                   <Value>0.5</Value>
                 </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedSliceExploded</Name>
+                  <Value>true</Value>
+                </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
@@ -424,8 +428,8 @@
           </ChartArea>
         </ChartAreas>
         <ChartTitles>
-          <ChartTitle Name="Default">
-            <Caption>="Root Management ($ over FY " &amp; Parameters!beginYear.Value &amp; "-" &amp; Parameters!endYear.Value &amp; ")"</Caption>
+          <ChartTitle Name="Title1">
+            <Caption>="Root Management (ft over FY " &amp; Parameters!beginYear.Value &amp; "-" &amp; Parameters!endYear.Value &amp; ")"</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontFamily>Calibri</FontFamily>
@@ -547,6 +551,10 @@
                 <CustomProperty>
                   <Name>LabelsRadialLineSize</Name>
                   <Value>0.5</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedSliceExploded</Name>
+                  <Value>true</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -733,7 +741,7 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>RPTF</DataSetName>
-        <Top>7in</Top>
+        <Top>7.01389in</Top>
         <Height>7in</Height>
         <Width>10.25in</Width>
         <ZIndex>1</ZIndex>
@@ -830,6 +838,10 @@
                 <CustomProperty>
                   <Name>LabelsRadialLineSize</Name>
                   <Value>0.5</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedSliceExploded</Name>
+                  <Value>true</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -1016,7 +1028,7 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>RPAD</DataSetName>
-        <Top>14in</Top>
+        <Top>14.01389in</Top>
         <Height>7in</Height>
         <Width>10.25in</Width>
         <ZIndex>2</ZIndex>
@@ -1113,6 +1125,10 @@
                 <CustomProperty>
                   <Name>LabelsRadialLineSize</Name>
                   <Value>0.5</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedSliceExploded</Name>
+                  <Value>true</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -1299,7 +1315,7 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>RPAF</DataSetName>
-        <Top>21.04167in</Top>
+        <Top>21.05556in</Top>
         <Height>7in</Height>
         <Width>10.25in</Width>
         <ZIndex>3</ZIndex>
@@ -1875,7 +1891,7 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>RLTD</DataSetName>
-        <Top>28in</Top>
+        <Top>28.01389in</Top>
         <Height>7in</Height>
         <Width>10.25in</Width>
         <ZIndex>4</ZIndex>
@@ -2442,7 +2458,7 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>RLTF</DataSetName>
-        <Top>35in</Top>
+        <Top>35.01389in</Top>
         <Height>7in</Height>
         <Width>10.25in</Width>
         <ZIndex>5</ZIndex>
@@ -2456,7 +2472,7 @@
         </Style>
       </Chart>
     </ReportItems>
-    <Height>42.04167in</Height>
+    <Height>42.05556in</Height>
     <Style />
   </Body>
   <ReportParameters>

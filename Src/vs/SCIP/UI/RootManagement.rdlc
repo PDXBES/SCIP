@@ -1828,7 +1828,9 @@
           <ChartLegend Name="Default">
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Calibri</FontFamily>
               <FontSize>8pt</FontSize>
+              <FontWeight>Bold</FontWeight>
             </Style>
             <ChartLegendTitle>
               <Caption />
@@ -2393,7 +2395,9 @@
           <ChartLegend Name="Default">
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Calibri</FontFamily>
               <FontSize>8pt</FontSize>
+              <FontWeight>Bold</FontWeight>
             </Style>
             <ChartLegendTitle>
               <Caption />

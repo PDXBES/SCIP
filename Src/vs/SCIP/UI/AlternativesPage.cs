@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class FormManageAlternatives : Form
+    public partial class AlternativesPage : ChildFormTemplate
     {
-        public FormManageAlternatives()
+        public AlternativesPage()
         {
             InitializeComponent();
         }

@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class FormIndividualDrivers : Form
+    public partial class IndividualDriversPage : ChildFormTemplate
     {
-        public FormIndividualDrivers()
+        public IndividualDriversPage()
         {
             InitializeComponent();
         }

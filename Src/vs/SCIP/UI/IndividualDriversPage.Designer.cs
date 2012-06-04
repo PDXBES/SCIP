@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class FormIndividualDrivers
+    partial class IndividualDriversPage
     {
         /// <summary>
         /// Required designer variable.

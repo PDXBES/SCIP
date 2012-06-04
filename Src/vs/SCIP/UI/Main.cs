@@ -31,12 +31,7 @@ namespace UI
 
     private void buttonEditIndividualDrivers_Click(object sender, EventArgs e)
     {
-      FormIndividualDrivers child = new FormIndividualDrivers();
-
-      this.Enabled = false;
-      child.ShowDialog();
-      this.Enabled = true;
-
+      tabMain.SelectedTab = tabMain.Tabs["IndividualDrivers"];
     }
 
     private void btnExportDatabases_Click(object sender, EventArgs e)
@@ -89,6 +84,7 @@ namespace UI
         case "Charts":
         case "DriverTypes":
         case "ExportDatabase":
+        case "IndividualDrivers":
           if (!_pages.ContainsKey(e.Tab.Key))
             InitializePage(e.Tab.Key);
           break;

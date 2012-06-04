@@ -46,6 +46,7 @@
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab4 = new Infragistics.Win.UltraWinTabControl.UltraTab();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab5 = new Infragistics.Win.UltraWinTabControl.UltraTab();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab7 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+      Infragistics.Win.UltraWinTabControl.UltraTab ultraTab8 = new Infragistics.Win.UltraWinTabControl.UltraTab();
       this.ultraTabPageControl6 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
       this.ultraTabPageControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
       this.ultraTabPageControl2 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
@@ -70,6 +71,7 @@
       this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
       this.lblPageTitle = new Infragistics.Win.Misc.UltraLabel();
       this.ultraControlContainerEditor1 = new Infragistics.Win.UltraWinEditors.UltraControlContainerEditor(this.components);
+      this.ultraTabPageControl8 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
       this.ultraTabPageControl5.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel2)).BeginInit();
       this.ultraGridBagLayoutPanel2.SuspendLayout();
@@ -313,6 +315,7 @@
       this.tabMain.Controls.Add(this.ultraTabPageControl5);
       this.tabMain.Controls.Add(this.ultraTabPageControl6);
       this.tabMain.Controls.Add(this.ultraTabPageControl7);
+      this.tabMain.Controls.Add(this.ultraTabPageControl8);
       this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tabMain.Location = new System.Drawing.Point(0, 23);
       this.tabMain.Name = "tabMain";
@@ -340,6 +343,9 @@
       ultraTab7.Key = "DriverTypes";
       ultraTab7.TabPage = this.ultraTabPageControl7;
       ultraTab7.Text = "Driver Types";
+      ultraTab8.Key = "IndividualDrivers";
+      ultraTab8.TabPage = this.ultraTabPageControl8;
+      ultraTab8.Text = "Drivers";
       this.tabMain.Tabs.AddRange(new Infragistics.Win.UltraWinTabControl.UltraTab[] {
             ultraTab6,
             ultraTab1,
@@ -347,7 +353,8 @@
             ultraTab3,
             ultraTab4,
             ultraTab5,
-            ultraTab7});
+            ultraTab7,
+            ultraTab8});
       this.tabMain.SelectedTabChanging += new Infragistics.Win.UltraWinTabControl.SelectedTabChangingEventHandler(this.tabMain_SelectedTabChanging);
       // 
       // ultraTabSharedControlsPage1
@@ -369,6 +376,12 @@
       // 
       this.ultraControlContainerEditor1.ContainingControl = this;
       this.ultraControlContainerEditor1.Name = "ultraControlContainerEditor1";
+      // 
+      // ultraTabPageControl8
+      // 
+      this.ultraTabPageControl8.Location = new System.Drawing.Point(-10000, -10000);
+      this.ultraTabPageControl8.Name = "ultraTabPageControl8";
+      this.ultraTabPageControl8.Size = new System.Drawing.Size(445, 393);
       // 
       // Main
       // 
@@ -422,6 +435,7 @@
         private Infragistics.Win.Misc.UltraButton buttonEditDriverTypes;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl6;
         private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl7;
+        private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl8;
     }
 }
 

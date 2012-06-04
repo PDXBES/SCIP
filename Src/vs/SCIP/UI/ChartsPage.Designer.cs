@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-  partial class FormCreateCharts
+  partial class ChartsPage
   {
     /// <summary>
     /// Required designer variable.

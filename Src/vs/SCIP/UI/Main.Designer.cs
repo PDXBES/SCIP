@@ -95,7 +95,7 @@
       // 
       // ultraTabPageControl3
       // 
-      this.ultraTabPageControl3.Location = new System.Drawing.Point(-10000, -10000);
+      this.ultraTabPageControl3.Location = new System.Drawing.Point(1, 23);
       this.ultraTabPageControl3.Name = "ultraTabPageControl3";
       this.ultraTabPageControl3.Size = new System.Drawing.Size(445, 393);
       // 
@@ -304,16 +304,22 @@
       this.tabMain.SharedControlsPage = this.ultraTabSharedControlsPage1;
       this.tabMain.Size = new System.Drawing.Size(449, 419);
       this.tabMain.TabIndex = 0;
+      ultraTab6.Key = "Home";
       ultraTab6.TabPage = this.ultraTabPageControl6;
       ultraTab6.Text = "Home";
+      ultraTab1.Key = "Alternatives";
       ultraTab1.TabPage = this.ultraTabPageControl1;
       ultraTab1.Text = "Alternatives";
+      ultraTab2.Key = "Model";
       ultraTab2.TabPage = this.ultraTabPageControl2;
       ultraTab2.Text = "Model";
+      ultraTab3.Key = "Charts";
       ultraTab3.TabPage = this.ultraTabPageControl3;
       ultraTab3.Text = "Charts";
+      ultraTab4.Key = "Export";
       ultraTab4.TabPage = this.ultraTabPageControl4;
       ultraTab4.Text = "Export";
+      ultraTab5.Key = "Preferences";
       ultraTab5.TabPage = this.ultraTabPageControl5;
       ultraTab5.Text = "Preferences";
       this.tabMain.Tabs.AddRange(new Infragistics.Win.UltraWinTabControl.UltraTab[] {
@@ -323,6 +329,7 @@
             ultraTab3,
             ultraTab4,
             ultraTab5});
+      this.tabMain.SelectedTabChanging += new Infragistics.Win.UltraWinTabControl.SelectedTabChangingEventHandler(this.tabMain_SelectedTabChanging);
       // 
       // ultraTabSharedControlsPage1
       // 
@@ -346,7 +353,7 @@
       // 
       // ultraTabPageControl6
       // 
-      this.ultraTabPageControl6.Location = new System.Drawing.Point(1, 23);
+      this.ultraTabPageControl6.Location = new System.Drawing.Point(-10000, -10000);
       this.ultraTabPageControl6.Name = "ultraTabPageControl6";
       this.ultraTabPageControl6.Size = new System.Drawing.Size(445, 393);
       // 

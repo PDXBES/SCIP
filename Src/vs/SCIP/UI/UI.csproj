@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChildFormTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildFormTemplate.Designer.cs">
+      <DependentUpon>ChildFormTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCreateCharts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>SCIPUI.settings</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChildFormTemplate.resx">
+      <DependentUpon>ChildFormTemplate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cleaning.rdlc" />
     <EmbeddedResource Include="FormCreateCharts.resx">
       <DependentUpon>FormCreateCharts.cs</DependentUpon>

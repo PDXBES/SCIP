@@ -22,8 +22,9 @@ namespace UI
             this.aLTERNATIVESTableAdapter.Fill(this.sCIPDataSet.ALTERNATIVES);
             // TODO: This line of code loads data into the 'sCIPDataSet.DRIVERS_UPDATE' table. You can move, or remove it, as needed.
             this.dRIVERS_UPDATETableAdapter.DriversUpdate_Empty();
-            this.dRIVERS_UPDATETableAdapter.Fill(this.sCIPDataSet.DRIVERS_UPDATE);
 
+            ultraComboAlternatives.Value = this.sCIPDataSet.ALTERNATIVES[0][0];
+            this.dRIVERS_UPDATETableAdapter.Fill(this.sCIPDataSet.DRIVERS_UPDATE);
         }
 
         private void buttonFetchCompkey_Click(object sender, EventArgs e)
@@ -34,40 +35,60 @@ namespace UI
             //send a message to the user.
 
             //SELECT * FROM ASSETS WHERE ASSETS.COMPKEY = Int32.Parse(COMPKEYtextbox.Text);
-            this.dRIVERS_UPDATETableAdapter.ClearBeforeFill = true;
-            this.dRIVERS_UPDATETableAdapter.UpdateByCompkey(Int32.Parse(TextEditorCompkey.Text));
-            this.sCIPDataSet.AcceptChanges();
-            this.dRIVERS_UPDATETableAdapter.Fill(this.sCIPDataSet.DRIVERS_UPDATE);
+            try
+            {
+                this.dRIVERS_UPDATETableAdapter.ClearBeforeFill = true;
+                this.dRIVERS_UPDATETableAdapter.UpdateByCompkey(Int32.Parse(TextEditorCompkey.Text), (int)ultraComboAlternatives.Value);
+                this.sCIPDataSet.AcceptChanges();
+                this.dRIVERS_UPDATETableAdapter.Fill(this.sCIPDataSet.DRIVERS_UPDATE);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid Compkey/alternative combination!");
+            }
         }
 
         private void buttonRevertDrivers_Click(object sender, EventArgs e)
         {
-            this.dRIVERS_UPDATETableAdapter.ClearBeforeFill = true;
-            this.dRIVERS_UPDATETableAdapter.UpdateByCompkey(Int32.Parse(TextEditorCompkey.Text));
-            this.sCIPDataSet.AcceptChanges();
-            this.dRIVERS_UPDATETableAdapter.Fill(this.sCIPDataSet.DRIVERS_UPDATE);
+            try
+            {
+                this.dRIVERS_UPDATETableAdapter.ClearBeforeFill = true;
+                this.dRIVERS_UPDATETableAdapter.UpdateByCompkey(Int32.Parse(TextEditorCompkey.Text), (int)ultraComboAlternatives.Value);
+                this.sCIPDataSet.AcceptChanges();
+                this.dRIVERS_UPDATETableAdapter.Fill(this.sCIPDataSet.DRIVERS_UPDATE);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid Compkey/alternative combination!");
+            }
         }
 
         private void buttonUpdateDrivers_Click(object sender, EventArgs e)
         {
             int results;
+            try
+            {
+                ultraGrid1.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.ExitEditMode);
+                ultraGrid1.UpdateData();
+                CurrencyManager cm = (CurrencyManager)ultraGrid1.BindingContext[ultraGrid1.DataSource, ultraGrid1.DataMember];
+                cm.EndCurrentEdit();
 
-            ultraGrid1.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.ExitEditMode);
-            ultraGrid1.UpdateData();
-            CurrencyManager cm = (CurrencyManager)ultraGrid1.BindingContext[ultraGrid1.DataSource, ultraGrid1.DataMember];
-            cm.EndCurrentEdit();
-            
-            results = this.dRIVERS_UPDATETableAdapter.Update(this.sCIPDataSet.DRIVERS_UPDATE);
-            this.sCIPDataSet.DRIVERS_UPDATE.AcceptChanges();
+                results = this.dRIVERS_UPDATETableAdapter.Update(this.sCIPDataSet.DRIVERS_UPDATE);
+                this.sCIPDataSet.DRIVERS_UPDATE.AcceptChanges();
 
-            this.dRIVERSTableAdapter = new SCIPDataSetTableAdapters.DRIVERSTableAdapter();
-            
-            results = this.dRIVERSTableAdapter.UpdateDriversFromDriversUpdate();
+                this.dRIVERSTableAdapter = new SCIPDataSetTableAdapters.DRIVERSTableAdapter();
 
-            this.dRIVERS_UPDATETableAdapter.ClearBeforeFill = true;
-            this.dRIVERS_UPDATETableAdapter.UpdateByCompkey(Int32.Parse(TextEditorCompkey.Text));
-            this.sCIPDataSet.AcceptChanges();
-            this.dRIVERS_UPDATETableAdapter.Fill(this.sCIPDataSet.DRIVERS_UPDATE);
+                results = this.dRIVERSTableAdapter.UpdateDriversFromDriversUpdate();
+
+                this.dRIVERS_UPDATETableAdapter.ClearBeforeFill = true;
+                this.dRIVERS_UPDATETableAdapter.UpdateByCompkey(Int32.Parse(TextEditorCompkey.Text), (int)ultraComboAlternatives.Value);
+                this.sCIPDataSet.AcceptChanges();
+                this.dRIVERS_UPDATETableAdapter.Fill(this.sCIPDataSet.DRIVERS_UPDATE);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid Compkey/alternative combination!");
+            }
 
         }
     }

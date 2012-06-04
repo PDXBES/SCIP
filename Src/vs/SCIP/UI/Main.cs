@@ -59,11 +59,7 @@ namespace UI
 
     private void buttonEditDriverTypes_Click(object sender, EventArgs e)
     {
-      FormDriverTypes child = new FormDriverTypes();
-
-      this.Enabled = false;
-      child.ShowDialog();
-      this.Enabled = true;
+      tabMain.SelectedTab = tabMain.Tabs["DriverTypes"];
     }
 
     private void btnCreateCharts_Click(object sender, EventArgs e)
@@ -95,6 +91,7 @@ namespace UI
       switch (e.Tab.Key)
       {
         case "Charts":
+        case "DriverTypes":
           if (!_pages.ContainsKey(e.Tab.Key))
             InitializePage(e.Tab.Key);
           break;

@@ -47,6 +47,7 @@
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab5 = new Infragistics.Win.UltraWinTabControl.UltraTab();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab7 = new Infragistics.Win.UltraWinTabControl.UltraTab();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab8 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+      Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
       this.ultraTabPageControl6 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
       this.ultraTabPageControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
       this.ultraTabPageControl2 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
@@ -57,6 +58,7 @@
       this.ultraTextEditor1 = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
       this.ultraLabel1 = new Infragistics.Win.Misc.UltraLabel();
       this.ultraTabPageControl7 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
+      this.ultraTabPageControl8 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
       this.btnRecalculateBaseCondition = new Infragistics.Win.Misc.UltraButton();
       this.btnCreateCharts = new Infragistics.Win.Misc.UltraButton();
       this.ultraGridBagLayoutPanel1 = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
@@ -71,7 +73,6 @@
       this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
       this.lblPageTitle = new Infragistics.Win.Misc.UltraLabel();
       this.ultraControlContainerEditor1 = new Infragistics.Win.UltraWinEditors.UltraControlContainerEditor(this.components);
-      this.ultraTabPageControl8 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
       this.ultraTabPageControl5.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel2)).BeginInit();
       this.ultraGridBagLayoutPanel2.SuspendLayout();
@@ -87,40 +88,40 @@
       // 
       // ultraTabPageControl6
       // 
-      this.ultraTabPageControl6.Location = new System.Drawing.Point(1, 23);
+      this.ultraTabPageControl6.Location = new System.Drawing.Point(9, 31);
       this.ultraTabPageControl6.Name = "ultraTabPageControl6";
-      this.ultraTabPageControl6.Size = new System.Drawing.Size(445, 393);
+      this.ultraTabPageControl6.Size = new System.Drawing.Size(429, 378);
       // 
       // ultraTabPageControl1
       // 
       this.ultraTabPageControl1.Location = new System.Drawing.Point(-10000, -10000);
       this.ultraTabPageControl1.Name = "ultraTabPageControl1";
-      this.ultraTabPageControl1.Size = new System.Drawing.Size(445, 393);
+      this.ultraTabPageControl1.Size = new System.Drawing.Size(429, 378);
       // 
       // ultraTabPageControl2
       // 
       this.ultraTabPageControl2.Location = new System.Drawing.Point(-10000, -10000);
       this.ultraTabPageControl2.Name = "ultraTabPageControl2";
-      this.ultraTabPageControl2.Size = new System.Drawing.Size(445, 393);
+      this.ultraTabPageControl2.Size = new System.Drawing.Size(429, 378);
       // 
       // ultraTabPageControl3
       // 
       this.ultraTabPageControl3.Location = new System.Drawing.Point(-10000, -10000);
       this.ultraTabPageControl3.Name = "ultraTabPageControl3";
-      this.ultraTabPageControl3.Size = new System.Drawing.Size(445, 393);
+      this.ultraTabPageControl3.Size = new System.Drawing.Size(429, 378);
       // 
       // ultraTabPageControl4
       // 
       this.ultraTabPageControl4.Location = new System.Drawing.Point(-10000, -10000);
       this.ultraTabPageControl4.Name = "ultraTabPageControl4";
-      this.ultraTabPageControl4.Size = new System.Drawing.Size(445, 393);
+      this.ultraTabPageControl4.Size = new System.Drawing.Size(429, 378);
       // 
       // ultraTabPageControl5
       // 
       this.ultraTabPageControl5.Controls.Add(this.ultraGridBagLayoutPanel2);
       this.ultraTabPageControl5.Location = new System.Drawing.Point(-10000, -10000);
       this.ultraTabPageControl5.Name = "ultraTabPageControl5";
-      this.ultraTabPageControl5.Size = new System.Drawing.Size(445, 393);
+      this.ultraTabPageControl5.Size = new System.Drawing.Size(429, 378);
       // 
       // ultraGridBagLayoutPanel2
       // 
@@ -129,7 +130,7 @@
       this.ultraGridBagLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
       this.ultraGridBagLayoutPanel2.Location = new System.Drawing.Point(0, 0);
       this.ultraGridBagLayoutPanel2.Name = "ultraGridBagLayoutPanel2";
-      this.ultraGridBagLayoutPanel2.Size = new System.Drawing.Size(445, 393);
+      this.ultraGridBagLayoutPanel2.Size = new System.Drawing.Size(429, 378);
       this.ultraGridBagLayoutPanel2.TabIndex = 0;
       // 
       // ultraTextEditor1
@@ -138,7 +139,7 @@
       gridBagConstraint1.OriginX = 1;
       gridBagConstraint1.OriginY = 0;
       this.ultraGridBagLayoutPanel2.SetGridBagConstraint(this.ultraTextEditor1, gridBagConstraint1);
-      this.ultraTextEditor1.Location = new System.Drawing.Point(222, 185);
+      this.ultraTextEditor1.Location = new System.Drawing.Point(214, 177);
       this.ultraTextEditor1.Name = "ultraTextEditor1";
       this.ultraGridBagLayoutPanel2.SetPreferredSize(this.ultraTextEditor1, new System.Drawing.Size(100, 21));
       this.ultraTextEditor1.Size = new System.Drawing.Size(100, 21);
@@ -151,7 +152,7 @@
       gridBagConstraint2.OriginX = 0;
       gridBagConstraint2.OriginY = 0;
       this.ultraGridBagLayoutPanel2.SetGridBagConstraint(this.ultraLabel1, gridBagConstraint2);
-      this.ultraLabel1.Location = new System.Drawing.Point(122, 185);
+      this.ultraLabel1.Location = new System.Drawing.Point(114, 177);
       this.ultraLabel1.Name = "ultraLabel1";
       this.ultraGridBagLayoutPanel2.SetPreferredSize(this.ultraLabel1, new System.Drawing.Size(100, 23));
       this.ultraLabel1.Size = new System.Drawing.Size(100, 23);
@@ -162,7 +163,13 @@
       // 
       this.ultraTabPageControl7.Location = new System.Drawing.Point(-10000, -10000);
       this.ultraTabPageControl7.Name = "ultraTabPageControl7";
-      this.ultraTabPageControl7.Size = new System.Drawing.Size(445, 393);
+      this.ultraTabPageControl7.Size = new System.Drawing.Size(429, 378);
+      // 
+      // ultraTabPageControl8
+      // 
+      this.ultraTabPageControl8.Location = new System.Drawing.Point(-10000, -10000);
+      this.ultraTabPageControl8.Name = "ultraTabPageControl8";
+      this.ultraTabPageControl8.Size = new System.Drawing.Size(429, 378);
       // 
       // btnRecalculateBaseCondition
       // 
@@ -317,11 +324,15 @@
       this.tabMain.Controls.Add(this.ultraTabPageControl7);
       this.tabMain.Controls.Add(this.ultraTabPageControl8);
       this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.tabMain.Location = new System.Drawing.Point(0, 23);
+      this.tabMain.Location = new System.Drawing.Point(0, 22);
       this.tabMain.Name = "tabMain";
       this.tabMain.SharedControlsPage = this.ultraTabSharedControlsPage1;
-      this.tabMain.Size = new System.Drawing.Size(449, 419);
+      this.tabMain.Size = new System.Drawing.Size(449, 420);
       this.tabMain.TabIndex = 0;
+      this.tabMain.TabPageMargins.Bottom = 8;
+      this.tabMain.TabPageMargins.Left = 8;
+      this.tabMain.TabPageMargins.Right = 8;
+      this.tabMain.TabPageMargins.Top = 8;
       ultraTab6.Key = "Home";
       ultraTab6.TabPage = this.ultraTabPageControl6;
       ultraTab6.Text = "Home";
@@ -361,27 +372,25 @@
       // 
       this.ultraTabSharedControlsPage1.Location = new System.Drawing.Point(-10000, -10000);
       this.ultraTabSharedControlsPage1.Name = "ultraTabSharedControlsPage1";
-      this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(445, 393);
+      this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(429, 378);
       // 
       // lblPageTitle
       // 
+      appearance1.TextVAlignAsString = "Middle";
+      this.lblPageTitle.Appearance = appearance1;
+      this.lblPageTitle.AutoSize = true;
       this.lblPageTitle.Dock = System.Windows.Forms.DockStyle.Top;
+      this.lblPageTitle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
       this.lblPageTitle.Location = new System.Drawing.Point(0, 0);
       this.lblPageTitle.Name = "lblPageTitle";
-      this.lblPageTitle.Size = new System.Drawing.Size(449, 23);
+      this.lblPageTitle.Size = new System.Drawing.Size(449, 22);
       this.lblPageTitle.TabIndex = 1;
-      this.lblPageTitle.Text = "ultraLabel1";
+      this.lblPageTitle.Text = "Home";
       // 
       // ultraControlContainerEditor1
       // 
       this.ultraControlContainerEditor1.ContainingControl = this;
       this.ultraControlContainerEditor1.Name = "ultraControlContainerEditor1";
-      // 
-      // ultraTabPageControl8
-      // 
-      this.ultraTabPageControl8.Location = new System.Drawing.Point(-10000, -10000);
-      this.ultraTabPageControl8.Name = "ultraTabPageControl8";
-      this.ultraTabPageControl8.Size = new System.Drawing.Size(445, 393);
       // 
       // Main
       // 
@@ -401,6 +410,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel1)).EndInit();
       this.ultraGridBagLayoutPanel1.ResumeLayout(false);
       this.ultraPanel1.ClientArea.ResumeLayout(false);
+      this.ultraPanel1.ClientArea.PerformLayout();
       this.ultraPanel1.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.tabMain)).EndInit();
       this.tabMain.ResumeLayout(false);

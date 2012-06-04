@@ -230,6 +230,12 @@
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
+                  <CustomProperties>
+                    <CustomProperty>
+                      <Name>Exploded</Name>
+                      <Value>true</Value>
+                    </CustomProperty>
+                  </CustomProperties>
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Shape</Type>
@@ -261,7 +267,27 @@
                 </CustomProperty>
                 <CustomProperty>
                   <Name>MinimumRelativePieSize</Name>
-                  <Value>70</Value>
+                  <Value>60</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedStyle</Name>
+                  <Value>SingleSlice</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>LabelsHorizontalLineSize</Name>
+                  <Value>0.5</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>LabelsRadialLineSize</Name>
+                  <Value>0.5</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>PieStartAngle</Name>
+                  <Value>45</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedSliceExploded</Name>
+                  <Value>true</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -412,8 +438,9 @@
               </ChartAxis>
             </ChartValueAxes>
             <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
-              <ShadowOffset>0pt</ShadowOffset>
+              <BackgroundColor>LightSteelBlue</BackgroundColor>
+              <BackgroundGradientType>TopBottom</BackgroundGradientType>
+              <ShadowOffset>0.5pt</ShadowOffset>
             </Style>
           </ChartArea>
         </ChartAreas>
@@ -503,6 +530,12 @@
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
+                  <CustomProperties>
+                    <CustomProperty>
+                      <Name>Exploded</Name>
+                      <Value>true</Value>
+                    </CustomProperty>
+                  </CustomProperties>
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Shape</Type>
@@ -528,6 +561,26 @@
                 <CustomProperty>
                   <Name>MinimumRelativePieSize</Name>
                   <Value>60</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedStyle</Name>
+                  <Value>SingleSlice</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>LabelsHorizontalLineSize</Name>
+                  <Value>0.5</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>LabelsRadialLineSize</Name>
+                  <Value>0.5</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>PieStartAngle</Name>
+                  <Value>45</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedSliceExploded</Name>
+                  <Value>true</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -678,7 +731,9 @@
               </ChartAxis>
             </ChartValueAxes>
             <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
+              <BackgroundColor>LightSteelBlue</BackgroundColor>
+              <BackgroundGradientType>TopBottom</BackgroundGradientType>
+              <ShadowOffset>0.5pt</ShadowOffset>
             </Style>
           </ChartArea>
         </ChartAreas>
@@ -770,6 +825,12 @@
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
+                  <CustomProperties>
+                    <CustomProperty>
+                      <Name>Exploded</Name>
+                      <Value>true</Value>
+                    </CustomProperty>
+                  </CustomProperties>
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Shape</Type>
@@ -795,6 +856,26 @@
                 <CustomProperty>
                   <Name>MinimumRelativePieSize</Name>
                   <Value>60</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedStyle</Name>
+                  <Value>SingleSlice</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>PieStartAngle</Name>
+                  <Value>45</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>LabelsHorizontalLineSize</Name>
+                  <Value>0.5</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>LabelsRadialLineSize</Name>
+                  <Value>0.5</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedSliceExploded</Name>
+                  <Value>true</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -945,7 +1026,9 @@
               </ChartAxis>
             </ChartValueAxes>
             <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
+              <BackgroundColor>LightSteelBlue</BackgroundColor>
+              <BackgroundGradientType>TopBottom</BackgroundGradientType>
+              <ShadowOffset>0.5pt</ShadowOffset>
             </Style>
           </ChartArea>
         </ChartAreas>
@@ -1037,6 +1120,12 @@
                     <Style />
                   </ChartMarker>
                   <DataElementOutput>Output</DataElementOutput>
+                  <CustomProperties>
+                    <CustomProperty>
+                      <Name>Exploded</Name>
+                      <Value>true</Value>
+                    </CustomProperty>
+                  </CustomProperties>
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Shape</Type>
@@ -1062,6 +1151,22 @@
                 <CustomProperty>
                   <Name>PieLabelStyle</Name>
                   <Value>Outside</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedStyle</Name>
+                  <Value>SingleSlice</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>LabelsHorizontalLineSize</Name>
+                  <Value>0.5</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>LabelsRadialLineSize</Name>
+                  <Value>0.5</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedSliceExploded</Name>
+                  <Value>true</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -1212,7 +1317,9 @@
               </ChartAxis>
             </ChartValueAxes>
             <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
+              <BackgroundColor>LightSteelBlue</BackgroundColor>
+              <BackgroundGradientType>TopBottom</BackgroundGradientType>
+              <ShadowOffset>0.5pt</ShadowOffset>
             </Style>
           </ChartArea>
         </ChartAreas>
@@ -1246,7 +1353,7 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>CPAF</DataSetName>
-        <Top>22.51389in</Top>
+        <Top>22.52778in</Top>
         <Height>7.5in</Height>
         <Width>10.25in</Width>
         <ZIndex>3</ZIndex>
@@ -1332,7 +1439,12 @@
                   <ChartDataLabel>
                     <Style />
                   </ChartDataLabel>
-                  <Style />
+                  <Style>
+                    <Border>
+                      <Width>2pt</Width>
+                    </Border>
+                    <Color>Red</Color>
+                  </Style>
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
@@ -1366,7 +1478,12 @@
                   <ChartDataLabel>
                     <Style />
                   </ChartDataLabel>
-                  <Style />
+                  <Style>
+                    <Border>
+                      <Width>2pt</Width>
+                    </Border>
+                    <Color>Black</Color>
+                  </Style>
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
@@ -1400,7 +1517,12 @@
                   <ChartDataLabel>
                     <Style />
                   </ChartDataLabel>
-                  <Style />
+                  <Style>
+                    <Border>
+                      <Width>2pt</Width>
+                    </Border>
+                    <Color>Lime</Color>
+                  </Style>
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
@@ -1434,7 +1556,12 @@
                   <ChartDataLabel>
                     <Style />
                   </ChartDataLabel>
-                  <Style />
+                  <Style>
+                    <Border>
+                      <Width>2pt</Width>
+                    </Border>
+                    <Color>Green</Color>
+                  </Style>
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
@@ -1471,6 +1598,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
+                  <Color>Red</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -1508,6 +1636,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
+                  <Color>Black</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -1545,6 +1674,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
+                  <Color>Lime</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -1582,6 +1712,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
+                  <Color>Green</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -1765,7 +1896,9 @@
               </ChartAxis>
             </ChartValueAxes>
             <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
+              <BackgroundColor>LightSteelBlue</BackgroundColor>
+              <BackgroundGradientType>TopBottom</BackgroundGradientType>
+              <ShadowOffset>0.5pt</ShadowOffset>
             </Style>
           </ChartArea>
         </ChartAreas>
@@ -1787,6 +1920,7 @@
             </ChartLegendTitle>
             <HeaderSeparatorColor>Black</HeaderSeparatorColor>
             <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+            <TextWrapThreshold>0</TextWrapThreshold>
           </ChartLegend>
         </ChartLegends>
         <ChartTitles>
@@ -1872,7 +2006,12 @@
                   <ChartDataLabel>
                     <Style />
                   </ChartDataLabel>
-                  <Style />
+                  <Style>
+                    <Border>
+                      <Width>2pt</Width>
+                    </Border>
+                    <Color>Red</Color>
+                  </Style>
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
@@ -1906,7 +2045,12 @@
                   <ChartDataLabel>
                     <Style />
                   </ChartDataLabel>
-                  <Style />
+                  <Style>
+                    <Border>
+                      <Width>2pt</Width>
+                    </Border>
+                    <Color>Black</Color>
+                  </Style>
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
@@ -1940,7 +2084,12 @@
                   <ChartDataLabel>
                     <Style />
                   </ChartDataLabel>
-                  <Style />
+                  <Style>
+                    <Border>
+                      <Width>2pt</Width>
+                    </Border>
+                    <Color>Lime</Color>
+                  </Style>
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
@@ -1974,7 +2123,12 @@
                   <ChartDataLabel>
                     <Style />
                   </ChartDataLabel>
-                  <Style />
+                  <Style>
+                    <Border>
+                      <Width>2pt</Width>
+                    </Border>
+                    <Color>Green</Color>
+                  </Style>
                   <ChartMarker>
                     <Style />
                   </ChartMarker>
@@ -2011,6 +2165,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
+                  <Color>Red</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2048,6 +2203,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
+                  <Color>Black</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2122,6 +2278,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
+                  <Color>Green</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2307,7 +2464,9 @@
               </ChartAxis>
             </ChartValueAxes>
             <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
+              <BackgroundColor>LightSteelBlue</BackgroundColor>
+              <BackgroundGradientType>TopBottom</BackgroundGradientType>
+              <ShadowOffset>0.5pt</ShadowOffset>
             </Style>
           </ChartArea>
         </ChartAreas>
@@ -2329,6 +2488,7 @@
             </ChartLegendTitle>
             <HeaderSeparatorColor>Black</HeaderSeparatorColor>
             <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+            <TextWrapThreshold>0</TextWrapThreshold>
           </ChartLegend>
         </ChartLegends>
         <ChartTitles>
@@ -2368,7 +2528,7 @@
         <Style>
           <Border>
             <Color>LightGrey</Color>
-            <Style>Solid</Style>
+            <Style>None</Style>
           </Border>
           <BackgroundColor>White</BackgroundColor>
           <BackgroundGradientType>None</BackgroundGradientType>
@@ -2394,16 +2554,6 @@
   </ReportParameters>
   <Width>10.25in</Width>
   <Page>
-    <PageHeader>
-      <Height>1in</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-      </Style>
-    </PageHeader>
     <PageFooter>
       <Height>1in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>

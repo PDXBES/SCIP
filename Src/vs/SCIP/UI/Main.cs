@@ -70,6 +70,7 @@ namespace UI
           Type.GetType(string.Format("UI.{0}{1}", pageBaseName.Replace(" ", null), "Page")),
           pageConstructorParams) as ChildFormTemplate));
       _pages[pageBaseName].Initialize(tabMain.Tabs[pageBaseName].TabPage, this);
+      _pages[pageBaseName].Dock = DockStyle.Fill;
     }
 
     private void tabMain_SelectedTabChanging(object sender, 
@@ -86,6 +87,8 @@ namespace UI
             InitializePage(e.Tab.Key);
           break;
       }
+
+      lblPageTitle.Text = e.Tab.Text;
     }
     #endregion
 

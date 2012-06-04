@@ -11,11 +11,11 @@ using ADODB;
 
 namespace UI
 {
-    public partial class FormExportDatabase : Form
+    public partial class ExportDatabasePage : ChildFormTemplate
     {
         string AccessDBLoc = "";
 
-        public FormExportDatabase()
+        public ExportDatabasePage()
         {
             InitializeComponent();
         }

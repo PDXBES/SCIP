@@ -41,11 +41,7 @@ namespace UI
 
     private void btnExportDatabases_Click(object sender, EventArgs e)
     {
-      FormExportDatabase child = new FormExportDatabase();
-
-      this.Enabled = false;
-      child.ShowDialog();
-      this.Enabled = true;
+      tabMain.SelectedTab = tabMain.Tabs["ExportDatabase"];
     }
 
     private void btnManageAlternatives_Click(object sender, EventArgs e)
@@ -92,6 +88,7 @@ namespace UI
       {
         case "Charts":
         case "DriverTypes":
+        case "ExportDatabase":
           if (!_pages.ContainsKey(e.Tab.Key))
             InitializePage(e.Tab.Key);
           break;

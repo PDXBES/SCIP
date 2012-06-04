@@ -46,6 +46,7 @@
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab4 = new Infragistics.Win.UltraWinTabControl.UltraTab();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab5 = new Infragistics.Win.UltraWinTabControl.UltraTab();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab7 = new Infragistics.Win.UltraWinTabControl.UltraTab();
+      this.ultraTabPageControl6 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
       this.ultraTabPageControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
       this.ultraTabPageControl2 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
       this.ultraTabPageControl3 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
@@ -54,6 +55,7 @@
       this.ultraGridBagLayoutPanel2 = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
       this.ultraTextEditor1 = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
       this.ultraLabel1 = new Infragistics.Win.Misc.UltraLabel();
+      this.ultraTabPageControl7 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
       this.btnRecalculateBaseCondition = new Infragistics.Win.Misc.UltraButton();
       this.btnCreateCharts = new Infragistics.Win.Misc.UltraButton();
       this.ultraGridBagLayoutPanel1 = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
@@ -61,15 +63,13 @@
       this.buttonEditIndividualDrivers = new Infragistics.Win.Misc.UltraButton();
       this.btnRunModel = new Infragistics.Win.Misc.UltraButton();
       this.btnManageAlternatives = new Infragistics.Win.Misc.UltraButton();
-      this.btnExportDatabases = new Infragistics.Win.Misc.UltraButton();
+      this.btnExportDatabase = new Infragistics.Win.Misc.UltraButton();
       this.btnSetPreferences = new Infragistics.Win.Misc.UltraButton();
       this.ultraPanel1 = new Infragistics.Win.Misc.UltraPanel();
       this.tabMain = new Infragistics.Win.UltraWinTabControl.UltraTabControl();
       this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
       this.lblPageTitle = new Infragistics.Win.Misc.UltraLabel();
       this.ultraControlContainerEditor1 = new Infragistics.Win.UltraWinEditors.UltraControlContainerEditor(this.components);
-      this.ultraTabPageControl6 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-      this.ultraTabPageControl7 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
       this.ultraTabPageControl5.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel2)).BeginInit();
       this.ultraGridBagLayoutPanel2.SuspendLayout();
@@ -82,6 +82,12 @@
       this.tabMain.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.ultraControlContainerEditor1)).BeginInit();
       this.SuspendLayout();
+      // 
+      // ultraTabPageControl6
+      // 
+      this.ultraTabPageControl6.Location = new System.Drawing.Point(1, 23);
+      this.ultraTabPageControl6.Name = "ultraTabPageControl6";
+      this.ultraTabPageControl6.Size = new System.Drawing.Size(445, 393);
       // 
       // ultraTabPageControl1
       // 
@@ -97,7 +103,7 @@
       // 
       // ultraTabPageControl3
       // 
-      this.ultraTabPageControl3.Location = new System.Drawing.Point(1, 23);
+      this.ultraTabPageControl3.Location = new System.Drawing.Point(-10000, -10000);
       this.ultraTabPageControl3.Name = "ultraTabPageControl3";
       this.ultraTabPageControl3.Size = new System.Drawing.Size(445, 393);
       // 
@@ -150,6 +156,12 @@
       this.ultraLabel1.TabIndex = 0;
       this.ultraLabel1.Text = "Server";
       // 
+      // ultraTabPageControl7
+      // 
+      this.ultraTabPageControl7.Location = new System.Drawing.Point(-10000, -10000);
+      this.ultraTabPageControl7.Name = "ultraTabPageControl7";
+      this.ultraTabPageControl7.Size = new System.Drawing.Size(445, 393);
+      // 
       // btnRecalculateBaseCondition
       // 
       gridBagConstraint10.Fill = Infragistics.Win.Layout.FillType.Both;
@@ -183,7 +195,7 @@
       this.ultraGridBagLayoutPanel1.Controls.Add(this.buttonEditIndividualDrivers);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.btnRunModel);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.btnManageAlternatives);
-      this.ultraGridBagLayoutPanel1.Controls.Add(this.btnExportDatabases);
+      this.ultraGridBagLayoutPanel1.Controls.Add(this.btnExportDatabase);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.btnSetPreferences);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.btnRecalculateBaseCondition);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.btnCreateCharts);
@@ -249,21 +261,21 @@
       this.btnManageAlternatives.Text = "Manage Alternatives";
       this.btnManageAlternatives.Click += new System.EventHandler(this.btnManageAlternatives_Click);
       // 
-      // btnExportDatabases
+      // btnExportDatabase
       // 
       gridBagConstraint7.Anchor = Infragistics.Win.Layout.AnchorType.Top;
       gridBagConstraint7.Fill = Infragistics.Win.Layout.FillType.Horizontal;
       gridBagConstraint7.OriginX = 0;
       gridBagConstraint7.OriginY = 7;
       gridBagConstraint7.WeightY = 1F;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnExportDatabases, gridBagConstraint7);
-      this.btnExportDatabases.Location = new System.Drawing.Point(10, 169);
-      this.btnExportDatabases.Name = "btnExportDatabases";
-      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnExportDatabases, new System.Drawing.Size(75, 23));
-      this.btnExportDatabases.Size = new System.Drawing.Size(155, 23);
-      this.btnExportDatabases.TabIndex = 3;
-      this.btnExportDatabases.Text = "Export Databases...";
-      this.btnExportDatabases.Click += new System.EventHandler(this.btnExportDatabases_Click);
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnExportDatabase, gridBagConstraint7);
+      this.btnExportDatabase.Location = new System.Drawing.Point(10, 169);
+      this.btnExportDatabase.Name = "btnExportDatabase";
+      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnExportDatabase, new System.Drawing.Size(75, 23));
+      this.btnExportDatabase.Size = new System.Drawing.Size(155, 23);
+      this.btnExportDatabase.TabIndex = 3;
+      this.btnExportDatabase.Text = "Export Database...";
+      this.btnExportDatabase.Click += new System.EventHandler(this.btnExportDatabases_Click);
       // 
       // btnSetPreferences
       // 
@@ -319,9 +331,9 @@
       ultraTab3.Key = "Charts";
       ultraTab3.TabPage = this.ultraTabPageControl3;
       ultraTab3.Text = "Charts";
-      ultraTab4.Key = "Export";
+      ultraTab4.Key = "ExportDatabase";
       ultraTab4.TabPage = this.ultraTabPageControl4;
-      ultraTab4.Text = "Export";
+      ultraTab4.Text = "Export Database";
       ultraTab5.Key = "Preferences";
       ultraTab5.TabPage = this.ultraTabPageControl5;
       ultraTab5.Text = "Preferences";
@@ -358,18 +370,6 @@
       this.ultraControlContainerEditor1.ContainingControl = this;
       this.ultraControlContainerEditor1.Name = "ultraControlContainerEditor1";
       // 
-      // ultraTabPageControl6
-      // 
-      this.ultraTabPageControl6.Location = new System.Drawing.Point(-10000, -10000);
-      this.ultraTabPageControl6.Name = "ultraTabPageControl6";
-      this.ultraTabPageControl6.Size = new System.Drawing.Size(445, 393);
-      // 
-      // ultraTabPageControl7
-      // 
-      this.ultraTabPageControl7.Location = new System.Drawing.Point(-10000, -10000);
-      this.ultraTabPageControl7.Name = "ultraTabPageControl7";
-      this.ultraTabPageControl7.Size = new System.Drawing.Size(445, 393);
-      // 
       // Main
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,7 +402,7 @@
         private Infragistics.Win.Misc.UltraGridBagLayoutPanel ultraGridBagLayoutPanel1;
         private Infragistics.Win.Misc.UltraButton btnSetPreferences;
         private Infragistics.Win.Misc.UltraButton btnCreateCharts;
-        private Infragistics.Win.Misc.UltraButton btnExportDatabases;
+        private Infragistics.Win.Misc.UltraButton btnExportDatabase;
         private Infragistics.Win.Misc.UltraButton btnRunModel;
         private Infragistics.Win.Misc.UltraButton btnManageAlternatives;
         private Infragistics.Win.Misc.UltraPanel ultraPanel1;

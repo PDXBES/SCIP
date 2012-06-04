@@ -81,11 +81,11 @@
     <Compile Include="DriverTypesPage.Designer.cs">
       <DependentUpon>DriverTypesPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormExportDatabase.cs">
+    <Compile Include="ExportDatabasePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormExportDatabase.Designer.cs">
-      <DependentUpon>FormExportDatabase.cs</DependentUpon>
+    <Compile Include="ExportDatabasePage.Designer.cs">
+      <DependentUpon>ExportDatabasePage.cs</DependentUpon>
     </Compile>
     <Compile Include="FormIndividualDrivers.cs">
       <SubType>Form</SubType>
@@ -131,8 +131,8 @@
     <EmbeddedResource Include="DriverTypesPage.resx">
       <DependentUpon>DriverTypesPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormExportDatabase.resx">
-      <DependentUpon>FormExportDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="ExportDatabasePage.resx">
+      <DependentUpon>ExportDatabasePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormIndividualDrivers.resx">
       <DependentUpon>FormIndividualDrivers.cs</DependentUpon>

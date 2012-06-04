@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class FormExportDatabase
+    partial class ExportDatabasePage
     {
         /// <summary>
         /// Required designer variable.

@@ -474,6 +474,9 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>CPTD</DataSetName>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
         <Height>7in</Height>
         <Width>10.25in</Width>
         <Style>
@@ -767,7 +770,10 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>CPTF</DataSetName>
-        <Top>7.5in</Top>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
+        <Top>7in</Top>
         <Height>7.5in</Height>
         <Width>10.25in</Width>
         <ZIndex>1</ZIndex>
@@ -1062,7 +1068,10 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>CPAD</DataSetName>
-        <Top>15.01389in</Top>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
+        <Top>14.5in</Top>
         <Height>7.5in</Height>
         <Width>10.25in</Width>
         <ZIndex>2</ZIndex>
@@ -1353,7 +1362,10 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>CPAF</DataSetName>
-        <Top>22.52778in</Top>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
+        <Top>22in</Top>
         <Height>7.5in</Height>
         <Width>10.25in</Width>
         <ZIndex>3</ZIndex>
@@ -1366,39 +1378,6 @@
           <BackgroundGradientType>None</BackgroundGradientType>
         </Style>
       </Chart>
-      <Textbox Name="Textbox2">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>="Total: " &amp; Format(Sum(Fields!cost.Value, "CPTD"), "C0")</Value>
-                <Style>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontSize>18pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>7.01389in</Top>
-        <Height>0.41667in</Height>
-        <Width>2.84375in</Width>
-        <ZIndex>4</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Chart Name="chartCLTD">
         <ChartCategoryHierarchy>
           <ChartMembers>
@@ -1953,10 +1932,13 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>CLTD</DataSetName>
-        <Top>30.02778in</Top>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
+        <Top>29.5in</Top>
         <Height>7in</Height>
         <Width>10.25in</Width>
-        <ZIndex>5</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -2521,10 +2503,10 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>CLTF</DataSetName>
-        <Top>37.02778in</Top>
+        <Top>36.5in</Top>
         <Height>7in</Height>
         <Width>10.25in</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -2535,10 +2517,10 @@
         </Style>
       </Chart>
     </ReportItems>
-    <Height>44.02778in</Height>
+    <Height>43.5in</Height>
     <Style>
       <Border>
-        <Style>Solid</Style>
+        <Style>None</Style>
       </Border>
     </Style>
   </Body>
@@ -2554,22 +2536,12 @@
   </ReportParameters>
   <Width>10.25in</Width>
   <Page>
-    <PageFooter>
-      <Height>1in</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-      </Style>
-    </PageFooter>
     <PageHeight>8.5in</PageHeight>
     <PageWidth>11in</PageWidth>
-    <LeftMargin>0.5in</LeftMargin>
-    <RightMargin>0.5in</RightMargin>
-    <TopMargin>0.5in</TopMargin>
-    <BottomMargin>0.5in</BottomMargin>
+    <LeftMargin>0.25in</LeftMargin>
+    <RightMargin>0.25in</RightMargin>
+    <TopMargin>0.25in</TopMargin>
+    <BottomMargin>0.25in</BottomMargin>
     <Style />
   </Page>
   <rd:ReportID>e4469cf7-dc86-446b-86f0-8194d212427d</rd:ReportID>

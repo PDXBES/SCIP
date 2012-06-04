@@ -457,6 +457,9 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>RPTD</DataSetName>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
         <Height>7in</Height>
         <Width>10.25in</Width>
         <Style>
@@ -741,6 +744,9 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>RPTF</DataSetName>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
         <Top>7.01389in</Top>
         <Height>7in</Height>
         <Width>10.25in</Width>
@@ -1028,6 +1034,9 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>RPAD</DataSetName>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
         <Top>14.01389in</Top>
         <Height>7in</Height>
         <Width>10.25in</Width>
@@ -1315,6 +1324,9 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>RPAF</DataSetName>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
         <Top>21.05556in</Top>
         <Height>7in</Height>
         <Width>10.25in</Width>
@@ -1891,6 +1903,9 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>RLTD</DataSetName>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
         <Top>28.01389in</Top>
         <Height>7in</Height>
         <Width>10.25in</Width>
@@ -2487,20 +2502,12 @@
   </ReportParameters>
   <Width>10.25in</Width>
   <Page>
-    <PageFooter>
-      <Height>1in</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-      </Style>
-    </PageFooter>
-    <LeftMargin>1in</LeftMargin>
-    <RightMargin>1in</RightMargin>
-    <TopMargin>1in</TopMargin>
-    <BottomMargin>1in</BottomMargin>
+    <PageHeight>8.5in</PageHeight>
+    <PageWidth>11in</PageWidth>
+    <LeftMargin>0.25in</LeftMargin>
+    <RightMargin>0.25in</RightMargin>
+    <TopMargin>0.25in</TopMargin>
+    <BottomMargin>0.25in</BottomMargin>
     <Style />
   </Page>
   <rd:ReportID>ed913c1a-bffb-4438-92cd-49fd5e8af04a</rd:ReportID>

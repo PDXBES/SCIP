@@ -511,6 +511,9 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>IPTD</DataSetName>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
         <Height>7in</Height>
         <Width>10.25in</Width>
         <Style>
@@ -804,6 +807,9 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>IPTF</DataSetName>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
         <Top>7in</Top>
         <Height>7in</Height>
         <Width>10.25in</Width>
@@ -1099,6 +1105,9 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>IPAD</DataSetName>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
         <Top>14in</Top>
         <Height>7in</Height>
         <Width>10.25in</Width>
@@ -1394,6 +1403,9 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>IPAF</DataSetName>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
         <Top>21in</Top>
         <Height>7in</Height>
         <Width>10.25in</Width>
@@ -2456,6 +2468,9 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>ILTD</DataSetName>
+        <PageBreak>
+          <BreakLocation>End</BreakLocation>
+        </PageBreak>
         <Top>27.98611in</Top>
         <Height>7in</Height>
         <Width>10.25in</Width>
@@ -3549,22 +3564,12 @@
   </ReportParameters>
   <Width>10.25in</Width>
   <Page>
-    <PageFooter>
-      <Height>1in</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-      </Style>
-    </PageFooter>
     <PageHeight>8.5in</PageHeight>
     <PageWidth>11in</PageWidth>
-    <LeftMargin>0.5in</LeftMargin>
-    <RightMargin>0.5in</RightMargin>
-    <TopMargin>0.5in</TopMargin>
-    <BottomMargin>0.5in</BottomMargin>
+    <LeftMargin>0.25in</LeftMargin>
+    <RightMargin>0.25in</RightMargin>
+    <TopMargin>0.25in</TopMargin>
+    <BottomMargin>0.25in</BottomMargin>
     <Style />
   </Page>
   <rd:ReportID>e814e8dc-2bb3-4843-b73d-a7bf2f1e3ce8</rd:ReportID>

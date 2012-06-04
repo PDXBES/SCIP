@@ -13886,9 +13886,11 @@ SELECT driver_id, driver_type_id, compkey, override_cost_per_ft, override_freque
 INSERT INTO dbo.Drivers_Update (driver_type_id, compkey, override_cost_per_ft, override_frequency_years, alternative_id, updated_by, update_date)
 SELECT driver_type_id, compkey, override_cost_per_ft, override_frequency_years, alternative_id, updated_by, update_date
 FROM dbo.Drivers
-WHERE COMPKEY = @Compkey";
+WHERE COMPKEY = @Compkey
+and alternative_id = @alternative_id";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Compkey", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "compkey", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@alternative_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "alternative_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14185,9 +14187,10 @@ WHERE COMPKEY = @Compkey";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateByCompkey(int Compkey) {
+        public virtual int UpdateByCompkey(int Compkey, int alternative_id) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             command.Parameters[0].Value = ((int)(Compkey));
+            command.Parameters[1].Value = ((int)(alternative_id));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15723,6 +15726,7 @@ update_date = GETDATE()
 FROM [dbo].[DRIVERS] INNER JOIN [dbo].[DRIVERS_UPDATE] AS B
 ON  [dbo].[DRIVERS].COMPKEY = B.COMPKEY
 AND [dbo].[DRIVERS].driver_type_id = B.driver_type_id
+AND [dbo].[DRIVERS].alternative_id = B.alternative_id
 AND
 (  [dbo].[DRIVERS].override_cost_per_ft <> B.override_cost_per_ft 
    OR 

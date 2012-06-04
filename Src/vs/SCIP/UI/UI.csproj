@@ -93,11 +93,11 @@
     <Compile Include="IndividualDriversPage.Designer.cs">
       <DependentUpon>IndividualDriversPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManageAlternatives.cs">
+    <Compile Include="AlternativesPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManageAlternatives.Designer.cs">
-      <DependentUpon>FormManageAlternatives.cs</DependentUpon>
+    <Compile Include="AlternativesPage.Designer.cs">
+      <DependentUpon>AlternativesPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -137,8 +137,8 @@
     <EmbeddedResource Include="IndividualDriversPage.resx">
       <DependentUpon>IndividualDriversPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManageAlternatives.resx">
-      <DependentUpon>FormManageAlternatives.cs</DependentUpon>
+    <EmbeddedResource Include="AlternativesPage.resx">
+      <DependentUpon>AlternativesPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inspections.rdlc" />
     <EmbeddedResource Include="Main.resx">

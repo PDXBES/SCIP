@@ -41,11 +41,7 @@ namespace UI
 
     private void btnManageAlternatives_Click(object sender, EventArgs e)
     {
-      FormManageAlternatives child = new FormManageAlternatives();
-
-      this.Enabled = false;
-      child.ShowDialog();
-      this.Enabled = true;
+      tabMain.SelectedTab = tabMain.Tabs["Alternatives"];
     }
 
     private void buttonEditDriverTypes_Click(object sender, EventArgs e)
@@ -85,6 +81,7 @@ namespace UI
         case "DriverTypes":
         case "ExportDatabase":
         case "IndividualDrivers":
+        case "Alternatives":
           if (!_pages.ContainsKey(e.Tab.Key))
             InitializePage(e.Tab.Key);
           break;

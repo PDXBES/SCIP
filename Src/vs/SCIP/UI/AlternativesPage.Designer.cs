@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class FormManageAlternatives
+    partial class AlternativesPage
     {
         /// <summary>
         /// Required designer variable.

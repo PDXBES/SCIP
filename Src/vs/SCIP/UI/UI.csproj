@@ -75,11 +75,11 @@
     <Compile Include="ChartsPage.Designer.cs">
       <DependentUpon>ChartsPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDriverTypes.cs">
+    <Compile Include="DriverTypesPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDriverTypes.Designer.cs">
-      <DependentUpon>FormDriverTypes.cs</DependentUpon>
+    <Compile Include="DriverTypesPage.Designer.cs">
+      <DependentUpon>DriverTypesPage.cs</DependentUpon>
     </Compile>
     <Compile Include="FormExportDatabase.cs">
       <SubType>Form</SubType>
@@ -128,8 +128,8 @@
     <EmbeddedResource Include="ChartsPage.resx">
       <DependentUpon>ChartsPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDriverTypes.resx">
-      <DependentUpon>FormDriverTypes.cs</DependentUpon>
+    <EmbeddedResource Include="DriverTypesPage.resx">
+      <DependentUpon>DriverTypesPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormExportDatabase.resx">
       <DependentUpon>FormExportDatabase.cs</DependentUpon>

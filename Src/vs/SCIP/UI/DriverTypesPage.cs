@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class FormDriverTypes : Form
+    public partial class DriverTypesPage : ChildFormTemplate
     {
-        public FormDriverTypes()
+        public DriverTypesPage()
         {
             InitializeComponent();
         }

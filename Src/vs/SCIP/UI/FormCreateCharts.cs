@@ -10,7 +10,7 @@ using Microsoft.Reporting.WinForms;
 
 namespace UI
 {
-  public partial class FormCreateCharts : Form
+  public partial class FormCreateCharts : ChildFormTemplate
   {
     public FormCreateCharts()
     {

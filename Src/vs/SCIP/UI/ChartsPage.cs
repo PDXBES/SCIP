@@ -10,9 +10,9 @@ using Microsoft.Reporting.WinForms;
 
 namespace UI
 {
-  public partial class FormCreateCharts : ChildFormTemplate
+  public partial class ChartsPage : ChildFormTemplate
   {
-    public FormCreateCharts()
+    public ChartsPage()
     {
       InitializeComponent();
     }

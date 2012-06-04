@@ -50,6 +50,11 @@
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand2 = new Infragistics.Win.UltraWinGrid.UltraGridBand("ALTERNATIVES", -1);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn13 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn14 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("name");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn15 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("description");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn16 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("asset_set_id");
             this.LabelCompkey = new Infragistics.Win.Misc.UltraLabel();
             this.TextEditorCompkey = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
             this.labelDriversForThisCompkey = new Infragistics.Win.Misc.UltraLabel();
@@ -62,11 +67,15 @@
             this.dRIVERS_UPDATETableAdapter = new UI.SCIPDataSetTableAdapters.DRIVERS_UPDATETableAdapter();
             this.aLTERNATIVESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aLTERNATIVESTableAdapter = new UI.SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter();
+            this.ultraComboAlternatives = new Infragistics.Win.UltraWinGrid.UltraCombo();
+            this.aLTERNATIVESBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.TextEditorCompkey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dRIVERSUPDATEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sCIPDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraComboAlternatives)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // LabelCompkey
@@ -231,11 +240,37 @@
             // 
             this.aLTERNATIVESTableAdapter.ClearBeforeFill = true;
             // 
+            // ultraComboAlternatives
+            // 
+            this.ultraComboAlternatives.DataSource = this.aLTERNATIVESBindingSource1;
+            ultraGridColumn13.Header.VisiblePosition = 0;
+            ultraGridColumn14.Header.VisiblePosition = 1;
+            ultraGridColumn15.Header.VisiblePosition = 2;
+            ultraGridColumn16.Header.VisiblePosition = 3;
+            ultraGridBand2.Columns.AddRange(new object[] {
+            ultraGridColumn13,
+            ultraGridColumn14,
+            ultraGridColumn15,
+            ultraGridColumn16});
+            this.ultraComboAlternatives.DisplayLayout.BandsSerializer.Add(ultraGridBand2);
+            this.ultraComboAlternatives.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ultraComboAlternatives.Location = new System.Drawing.Point(389, 13);
+            this.ultraComboAlternatives.Name = "ultraComboAlternatives";
+            this.ultraComboAlternatives.Size = new System.Drawing.Size(100, 22);
+            this.ultraComboAlternatives.TabIndex = 11;
+            this.ultraComboAlternatives.Text = "Select Alternative";
+            // 
+            // aLTERNATIVESBindingSource1
+            // 
+            this.aLTERNATIVESBindingSource1.DataMember = "ALTERNATIVES";
+            this.aLTERNATIVESBindingSource1.DataSource = this.sCIPDataSet;
+            // 
             // FormIndividualDrivers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 347);
+            this.Controls.Add(this.ultraComboAlternatives);
             this.Controls.Add(this.buttonRevertDrivers);
             this.Controls.Add(this.buttonUpdateDrivers);
             this.Controls.Add(this.buttonFetchCompkey);
@@ -251,6 +286,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dRIVERSUPDATEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sCIPDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ultraComboAlternatives)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +308,7 @@
         private Infragistics.Win.Misc.UltraButton buttonRevertDrivers;
         private System.Windows.Forms.BindingSource aLTERNATIVESBindingSource;
         private SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter aLTERNATIVESTableAdapter;
+        private Infragistics.Win.UltraWinGrid.UltraCombo ultraComboAlternatives;
+        private System.Windows.Forms.BindingSource aLTERNATIVESBindingSource1;
     }
 }

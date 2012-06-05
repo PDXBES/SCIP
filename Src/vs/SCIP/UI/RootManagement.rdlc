@@ -222,6 +222,7 @@
                     <Border>
                       <Color>Silver</Color>
                     </Border>
+                    <Color>=Code.GetColor(Fields!reporting_category.Value)</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -270,6 +271,14 @@
                 <CustomProperty>
                   <Name>CollectedSliceExploded</Name>
                   <Value>true</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>PieLineColor</Name>
+                  <Value>DimGray</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedColor</Name>
+                  <Value>DimGray</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -510,6 +519,7 @@
                     <Border>
                       <Color>Silver</Color>
                     </Border>
+                    <Color>=Code.GetColor(Fields!reporting_category.Value)</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -558,6 +568,14 @@
                 <CustomProperty>
                   <Name>CollectedSliceExploded</Name>
                   <Value>true</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedColor</Name>
+                  <Value>DimGray</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>PieLineColor</Name>
+                  <Value>DimGray</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -800,6 +818,7 @@
                     <Border>
                       <Color>Silver</Color>
                     </Border>
+                    <Color>=Code.GetColor(Fields!reporting_category.Value)</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -848,6 +867,14 @@
                 <CustomProperty>
                   <Name>CollectedSliceExploded</Name>
                   <Value>true</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedColor</Name>
+                  <Value>DimGray</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>PieLineColor</Name>
+                  <Value>DimGray</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -1090,6 +1117,7 @@
                     <Border>
                       <Color>Silver</Color>
                     </Border>
+                    <Color>=Code.GetColor(Fields!reporting_category.Value)</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1138,6 +1166,14 @@
                 <CustomProperty>
                   <Name>CollectedSliceExploded</Name>
                   <Value>true</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedColor</Name>
+                  <Value>DimGray</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>PieLineColor</Name>
+                  <Value>DimGray</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -1385,7 +1421,7 @@
                       <Color>Red</Color>
                       <Width>4pt</Width>
                     </Border>
-                    <Color>Red</Color>
+                    <Color>=Code.GetColor("Root Control High")</Color>
                     <BackgroundGradientType>None</BackgroundGradientType>
                   </Style>
                   <ChartMarker>
@@ -1426,7 +1462,7 @@
                       <Color>Lime</Color>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Lime</Color>
+                    <Color>=Code.GetColor("Root Control High (&gt;15 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1469,7 +1505,7 @@
                       <Color>Orange</Color>
                       <Width>4pt</Width>
                     </Border>
-                    <Color>Orange</Color>
+                    <Color>=Code.GetColor("Root Control Medium")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1509,7 +1545,7 @@
                       <Color>Green</Color>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Green</Color>
+                    <Color>=Code.GetColor("Root Control Medium (&gt;15 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2500,6 +2536,26 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
+  <Code>Public Function GetColor(ByVal reportingCategory As String) As String
+
+Dim returnColor As String
+
+Select Case reportingCategory
+  Case "Root Control High" 
+    returnColor = "Red"
+  Case "Root Control High (&gt;15 in)"
+    returnColor = "Lime"
+  Case "Root Control Medium"
+    returnColor = "Orange"
+  Case "Root Control Medium (&gt;15 in)"
+    returnColor = "Green"
+  Case Else
+    returnColor = "DimGray"
+End Select
+
+Return returnColor
+
+End Function</Code>
   <Width>10.25in</Width>
   <Page>
     <PageHeight>8.5in</PageHeight>

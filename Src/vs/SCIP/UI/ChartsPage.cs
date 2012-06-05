@@ -17,8 +17,17 @@ namespace UI
       InitializeComponent();
     }
 
+    private void SetProgressUIVisible(bool isVisible)
+    {
+      progress.Visible = isVisible;
+      progress.Value = 0;
+      Infragistics.Win.Layout.GridBagConstraint constraintRootButton = 
+        pnlActionButtons.GetGridBagConstraint(btnRunRootReport);
+      constraintRootButton.WeightX = isVisible ? 0 : 1;
+    }
     private void FormCreateCharts_Load(object sender, EventArgs e)
     {
+      SetProgressUIVisible(false);
     }
 
     private void btnRunCleaningReport_Click(object sender, EventArgs e)
@@ -103,9 +112,18 @@ namespace UI
 
     private void btnRunAllReports_Click(object sender, EventArgs e)
     {
+      SetProgressUIVisible(true);
+      Refresh();
+
       btnRunCleaningReport_Click(sender, e);
+      progress.Value = 33;
+      Refresh();
       btnRunInspectionReport_Click(sender, e);
+      progress.Value = 67;
+      Refresh();
       btnRunRootReport_Click(sender, e);
+
+      SetProgressUIVisible(false);
     }
   }
 }

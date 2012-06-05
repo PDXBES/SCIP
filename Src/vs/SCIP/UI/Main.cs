@@ -29,6 +29,11 @@ namespace UI
       InitializeComponent();
     }
 
+    public void SwitchToTab(string tabName)
+    {
+      tabMain.SelectedTab = tabMain.Tabs[tabName];
+    }
+
     private void buttonEditIndividualDrivers_Click(object sender, EventArgs e)
     {
       tabMain.SelectedTab = tabMain.Tabs["IndividualDrivers"];
@@ -78,6 +83,7 @@ namespace UI
     {
       switch (e.Tab.Key)
       {
+        case "Home":
         case "Charts":
         case "DriverTypes":
         case "ExportDatabase":
@@ -91,6 +97,21 @@ namespace UI
       lblPageTitle.Text = e.Tab.Text;
     }
     #endregion
+
+    private void btnHome_Click(object sender, EventArgs e)
+    {
+      SwitchToTab("Home");
+    }
+
+    private void btnExit_Click(object sender, EventArgs e)
+    {
+      Close();
+    }
+
+    private void tabMain_SelectedTabChanged(object sender, Infragistics.Win.UltraWinTabControl.SelectedTabChangedEventArgs e)
+    {
+      btnHome.Enabled = tabMain.SelectedTab.Key != "Home";
+    }
 
   }
 }

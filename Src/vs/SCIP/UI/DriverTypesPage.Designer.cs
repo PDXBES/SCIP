@@ -42,10 +42,10 @@
       Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn24 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint6 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand2 = new Infragistics.Win.UltraWinGrid.UltraGridBand("ALTERNATIVES", -1);
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("name");
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn3 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("description");
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn4 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("asset_set_id");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn5 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn6 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("name");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn7 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("description");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn8 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("asset_set_id");
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint5 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint2 = new Infragistics.Win.Layout.GridBagConstraint();
@@ -63,7 +63,7 @@
       this.ultraButtonRevertDriverTypes = new Infragistics.Win.Misc.UltraButton();
       this.dRIVER_TYPES_UPDATETableAdapter = new UI.SCIPDataSetTableAdapters.DRIVER_TYPES_UPDATETableAdapter();
       this.ultraGridBagLayoutPanel1 = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
-      this.ultraGridBagLayoutPanel2 = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
+      this.pnlActionButtons = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
       this.ultraLabel1 = new Infragistics.Win.Misc.UltraLabel();
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridDriverTypes)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.dRIVERTYPESUPDATEBindingSource)).BeginInit();
@@ -73,8 +73,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.ultraComboAlternative)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel1)).BeginInit();
       this.ultraGridBagLayoutPanel1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel2)).BeginInit();
-      this.ultraGridBagLayoutPanel2.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pnlActionButtons)).BeginInit();
+      this.pnlActionButtons.SuspendLayout();
       this.SuspendLayout();
       // 
       // ultraGridDriverTypes
@@ -133,7 +133,7 @@
       this.ultraGridDriverTypes.Location = new System.Drawing.Point(0, 31);
       this.ultraGridDriverTypes.Name = "ultraGridDriverTypes";
       this.ultraGridBagLayoutPanel1.SetPreferredSize(this.ultraGridDriverTypes, new System.Drawing.Size(905, 187));
-      this.ultraGridDriverTypes.Size = new System.Drawing.Size(930, 322);
+      this.ultraGridDriverTypes.Size = new System.Drawing.Size(620, 322);
       this.ultraGridDriverTypes.TabIndex = 0;
       this.ultraGridDriverTypes.Text = "Driver Types";
       // 
@@ -164,15 +164,15 @@
       // ultraComboAlternative
       // 
       this.ultraComboAlternative.DataSource = this.aLTERNATIVESBindingSource;
-      ultraGridColumn1.Header.VisiblePosition = 0;
-      ultraGridColumn2.Header.VisiblePosition = 1;
-      ultraGridColumn3.Header.VisiblePosition = 2;
-      ultraGridColumn4.Header.VisiblePosition = 3;
+      ultraGridColumn5.Header.VisiblePosition = 0;
+      ultraGridColumn6.Header.VisiblePosition = 1;
+      ultraGridColumn7.Header.VisiblePosition = 2;
+      ultraGridColumn8.Header.VisiblePosition = 3;
       ultraGridBand2.Columns.AddRange(new object[] {
-            ultraGridColumn1,
-            ultraGridColumn2,
-            ultraGridColumn3,
-            ultraGridColumn4});
+            ultraGridColumn5,
+            ultraGridColumn6,
+            ultraGridColumn7,
+            ultraGridColumn8});
       this.ultraComboAlternative.DisplayLayout.BandsSerializer.Add(ultraGridBand2);
       this.ultraComboAlternative.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       gridBagConstraint5.Fill = Infragistics.Win.Layout.FillType.Both;
@@ -184,7 +184,7 @@
       this.ultraComboAlternative.Location = new System.Drawing.Point(100, 0);
       this.ultraComboAlternative.Name = "ultraComboAlternative";
       this.ultraGridBagLayoutPanel1.SetPreferredSize(this.ultraComboAlternative, new System.Drawing.Size(131, 22));
-      this.ultraComboAlternative.Size = new System.Drawing.Size(630, 25);
+      this.ultraComboAlternative.Size = new System.Drawing.Size(520, 25);
       this.ultraComboAlternative.TabIndex = 1;
       this.ultraComboAlternative.Text = "Select Alternative";
       this.ultraComboAlternative.ValueChanged += new System.EventHandler(this.ComboAlternativeChanged);
@@ -195,11 +195,11 @@
       gridBagConstraint1.Fill = Infragistics.Win.Layout.FillType.Both;
       gridBagConstraint1.OriginX = 1;
       gridBagConstraint1.OriginY = 0;
-      this.ultraGridBagLayoutPanel2.SetGridBagConstraint(this.ultraButtonUpdateDriverTypes, gridBagConstraint1);
-      this.ultraButtonUpdateDriverTypes.Location = new System.Drawing.Point(101, 0);
+      this.pnlActionButtons.SetGridBagConstraint(this.ultraButtonUpdateDriverTypes, gridBagConstraint1);
+      this.ultraButtonUpdateDriverTypes.Location = new System.Drawing.Point(501, 0);
       this.ultraButtonUpdateDriverTypes.Name = "ultraButtonUpdateDriverTypes";
-      this.ultraGridBagLayoutPanel2.SetPreferredSize(this.ultraButtonUpdateDriverTypes, new System.Drawing.Size(122, 23));
-      this.ultraButtonUpdateDriverTypes.Size = new System.Drawing.Size(99, 23);
+      this.pnlActionButtons.SetPreferredSize(this.ultraButtonUpdateDriverTypes, new System.Drawing.Size(119, 23));
+      this.ultraButtonUpdateDriverTypes.Size = new System.Drawing.Size(119, 23);
       this.ultraButtonUpdateDriverTypes.TabIndex = 2;
       this.ultraButtonUpdateDriverTypes.Text = "Update";
       this.ultraButtonUpdateDriverTypes.Click += new System.EventHandler(this.ultraButtonUpdateDriverTypes_Click);
@@ -207,14 +207,15 @@
       // ultraButtonRevertDriverTypes
       // 
       this.ultraButtonRevertDriverTypes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-      gridBagConstraint2.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint2.Anchor = Infragistics.Win.Layout.AnchorType.Right;
       gridBagConstraint2.OriginX = 0;
       gridBagConstraint2.OriginY = 0;
-      this.ultraGridBagLayoutPanel2.SetGridBagConstraint(this.ultraButtonRevertDriverTypes, gridBagConstraint2);
-      this.ultraButtonRevertDriverTypes.Location = new System.Drawing.Point(0, 0);
+      gridBagConstraint2.WeightX = 1F;
+      this.pnlActionButtons.SetGridBagConstraint(this.ultraButtonRevertDriverTypes, gridBagConstraint2);
+      this.ultraButtonRevertDriverTypes.Location = new System.Drawing.Point(382, 0);
       this.ultraButtonRevertDriverTypes.Name = "ultraButtonRevertDriverTypes";
-      this.ultraGridBagLayoutPanel2.SetPreferredSize(this.ultraButtonRevertDriverTypes, new System.Drawing.Size(123, 23));
-      this.ultraButtonRevertDriverTypes.Size = new System.Drawing.Size(101, 23);
+      this.pnlActionButtons.SetPreferredSize(this.ultraButtonRevertDriverTypes, new System.Drawing.Size(119, 23));
+      this.ultraButtonRevertDriverTypes.Size = new System.Drawing.Size(119, 23);
       this.ultraButtonRevertDriverTypes.TabIndex = 3;
       this.ultraButtonRevertDriverTypes.Text = "Revert";
       this.ultraButtonRevertDriverTypes.Click += new System.EventHandler(this.ultraButtonRevertDriverTypes_Click);
@@ -225,29 +226,30 @@
       // 
       // ultraGridBagLayoutPanel1
       // 
-      this.ultraGridBagLayoutPanel1.Controls.Add(this.ultraGridBagLayoutPanel2);
+      this.ultraGridBagLayoutPanel1.Controls.Add(this.pnlActionButtons);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.ultraLabel1);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.ultraComboAlternative);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.ultraGridDriverTypes);
       this.ultraGridBagLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
       this.ultraGridBagLayoutPanel1.Location = new System.Drawing.Point(0, 0);
       this.ultraGridBagLayoutPanel1.Name = "ultraGridBagLayoutPanel1";
-      this.ultraGridBagLayoutPanel1.Size = new System.Drawing.Size(930, 380);
+      this.ultraGridBagLayoutPanel1.Size = new System.Drawing.Size(620, 380);
       this.ultraGridBagLayoutPanel1.TabIndex = 4;
       // 
-      // ultraGridBagLayoutPanel2
+      // pnlActionButtons
       // 
-      this.ultraGridBagLayoutPanel2.Controls.Add(this.ultraButtonUpdateDriverTypes);
-      this.ultraGridBagLayoutPanel2.Controls.Add(this.ultraButtonRevertDriverTypes);
+      this.pnlActionButtons.Controls.Add(this.ultraButtonUpdateDriverTypes);
+      this.pnlActionButtons.Controls.Add(this.ultraButtonRevertDriverTypes);
       gridBagConstraint3.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint3.OriginX = 2;
+      gridBagConstraint3.OriginX = 0;
       gridBagConstraint3.OriginY = 2;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.ultraGridBagLayoutPanel2, gridBagConstraint3);
-      this.ultraGridBagLayoutPanel2.Location = new System.Drawing.Point(730, 357);
-      this.ultraGridBagLayoutPanel2.Name = "ultraGridBagLayoutPanel2";
-      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.ultraGridBagLayoutPanel2, new System.Drawing.Size(200, 23));
-      this.ultraGridBagLayoutPanel2.Size = new System.Drawing.Size(200, 23);
-      this.ultraGridBagLayoutPanel2.TabIndex = 5;
+      gridBagConstraint3.SpanX = 3;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.pnlActionButtons, gridBagConstraint3);
+      this.pnlActionButtons.Location = new System.Drawing.Point(0, 357);
+      this.pnlActionButtons.Name = "pnlActionButtons";
+      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.pnlActionButtons, new System.Drawing.Size(200, 23));
+      this.pnlActionButtons.Size = new System.Drawing.Size(620, 23);
+      this.pnlActionButtons.TabIndex = 5;
       // 
       // ultraLabel1
       // 
@@ -269,7 +271,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(930, 380);
+      this.ClientSize = new System.Drawing.Size(620, 380);
       this.Controls.Add(this.ultraGridBagLayoutPanel1);
       this.Name = "DriverTypesPage";
       this.Text = "Driver Types";
@@ -283,8 +285,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel1)).EndInit();
       this.ultraGridBagLayoutPanel1.ResumeLayout(false);
       this.ultraGridBagLayoutPanel1.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel2)).EndInit();
-      this.ultraGridBagLayoutPanel2.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.pnlActionButtons)).EndInit();
+      this.pnlActionButtons.ResumeLayout(false);
       this.ResumeLayout(false);
 
         }
@@ -303,6 +305,6 @@
         private SCIPDataSetTableAdapters.DRIVER_TYPES_UPDATETableAdapter dRIVER_TYPES_UPDATETableAdapter;
         private Infragistics.Win.Misc.UltraGridBagLayoutPanel ultraGridBagLayoutPanel1;
         private Infragistics.Win.Misc.UltraLabel ultraLabel1;
-        private Infragistics.Win.Misc.UltraGridBagLayoutPanel ultraGridBagLayoutPanel2;
+        private Infragistics.Win.Misc.UltraGridBagLayoutPanel pnlActionButtons;
     }
 }

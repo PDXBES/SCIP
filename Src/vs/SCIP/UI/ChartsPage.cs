@@ -21,7 +21,7 @@ namespace UI
     {
     }
 
-    private void btnRunReport_Click(object sender, EventArgs e)
+    private void btnRunCleaningReport_Click(object sender, EventArgs e)
     {
       Cursor = Cursors.WaitCursor;
       try
@@ -99,6 +99,13 @@ namespace UI
       {
         Cursor = Cursors.Default;
       }
+    }
+
+    private void btnRunAllReports_Click(object sender, EventArgs e)
+    {
+      btnRunCleaningReport_Click(sender, e);
+      btnRunInspectionReport_Click(sender, e);
+      btnRunRootReport_Click(sender, e);
     }
   }
 }

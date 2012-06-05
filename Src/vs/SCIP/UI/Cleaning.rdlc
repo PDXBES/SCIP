@@ -221,8 +221,9 @@
                   <ToolTip>=Sum(Fields!cost.Value)</ToolTip>
                   <Style>
                     <Border>
-                      <Color>Silver</Color>
+                      <Color>DimGray</Color>
                     </Border>
+                    <Color>=Code.GetColor(Fields!reporting_category.Value)</Color>
                     <BackgroundGradientType>None</BackgroundGradientType>
                     <BackgroundGradientEndColor>White</BackgroundGradientEndColor>
                   </Style>
@@ -262,10 +263,6 @@
                   <Value>SoftEdge</Value>
                 </CustomProperty>
                 <CustomProperty>
-                  <Name>PieLineColor</Name>
-                  <Value>LightSteelBlue</Value>
-                </CustomProperty>
-                <CustomProperty>
                   <Name>MinimumRelativePieSize</Name>
                   <Value>60</Value>
                 </CustomProperty>
@@ -288,6 +285,14 @@
                 <CustomProperty>
                   <Name>CollectedSliceExploded</Name>
                   <Value>true</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedColor</Name>
+                  <Value>DimGray</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>PieLineColor</Name>
+                  <Value>DimGray</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -526,8 +531,9 @@
                   </ChartDataLabel>
                   <Style>
                     <Border>
-                      <Color>Silver</Color>
+                      <Color>DimGray</Color>
                     </Border>
+                    <Color>=Code.GetColor(Fields!reporting_category.Value)</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -584,6 +590,14 @@
                 <CustomProperty>
                   <Name>CollectedSliceExploded</Name>
                   <Value>true</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedColor</Name>
+                  <Value>DimGray</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>PieLineColor</Name>
+                  <Value>DimGray</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -824,8 +838,9 @@
                   </ChartDataLabel>
                   <Style>
                     <Border>
-                      <Color>Silver</Color>
+                      <Color>DimGray</Color>
                     </Border>
+                    <Color>=Code.GetColor(Fields!reporting_category.Value)</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -882,6 +897,14 @@
                 <CustomProperty>
                   <Name>CollectedSliceExploded</Name>
                   <Value>true</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedColor</Name>
+                  <Value>DimGray</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>PieLineColor</Name>
+                  <Value>DimGray</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -1122,8 +1145,9 @@
                   </ChartDataLabel>
                   <Style>
                     <Border>
-                      <Color>Silver</Color>
+                      <Color>DimGray</Color>
                     </Border>
+                    <Color>=Code.GetColor(Fields!reporting_category.Value)</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1176,6 +1200,14 @@
                 <CustomProperty>
                   <Name>CollectedSliceExploded</Name>
                   <Value>true</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedColor</Name>
+                  <Value>DimGray</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>PieLineColor</Name>
+                  <Value>DimGray</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -1422,7 +1454,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Red</Color>
+                    <Color>=Code.GetColor("Accelerated Area")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1461,7 +1493,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Black</Color>
+                    <Color>=Code.GetColor("Preventive Maintenance")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1500,7 +1532,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Lime</Color>
+                    <Color>=Code.GetColor("Tractive Forces")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1539,7 +1571,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Green</Color>
+                    <Color>=Code.GetColor("Tractive Forces (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1577,7 +1609,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Red</Color>
+                  <Color>=Code.GetColor("Accelerated Area")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -1615,7 +1647,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Black</Color>
+                  <Color>=Code.GetColor("Preventive Maintenance")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -1653,7 +1685,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Lime</Color>
+                  <Color>=Code.GetColor("Tractive Forces")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -1691,7 +1723,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Green</Color>
+                  <Color>=Code.GetColor("Tractive Forces (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -1992,7 +2024,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Red</Color>
+                    <Color>=Code.GetColor("Accelerated Area")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2031,7 +2063,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Black</Color>
+                    <Color>=Code.GetColor("Preventive Maintenance")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2070,7 +2102,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Lime</Color>
+                    <Color>=Code.GetColor("Tractive Forces")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2109,7 +2141,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Green</Color>
+                    <Color>=Code.GetColor("Tractive Forces (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2147,7 +2179,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Red</Color>
+                  <Color>=Code.GetColor("Accelerated Area")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2185,7 +2217,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Black</Color>
+                  <Color>=Code.GetColor("Preventive Maintenance")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2223,6 +2255,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
+                  <Color>=Code.GetColor("Tractive Forces")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2260,7 +2293,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Green</Color>
+                  <Color>=Code.GetColor("Tractive Forces (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2534,6 +2567,26 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
+  <Code>Public Function GetColor(ByVal reportingCategory As String) As String
+
+Dim returnColor As String
+
+Select Case reportingCategory
+  Case "Accelerated Area" 
+    returnColor = "Red"
+  Case "Preventive Maintenance"
+    returnColor = "Blue"
+  Case "Tractive Forces"
+    returnColor = "Lime"
+  Case "Tractive Forces (&gt;36 in)"
+    returnColor = "Green"
+  Case Else
+    returnColor = "DimGray"
+End Select
+
+Return returnColor
+
+End Function</Code>
   <Width>10.25in</Width>
   <Page>
     <PageHeight>8.5in</PageHeight>

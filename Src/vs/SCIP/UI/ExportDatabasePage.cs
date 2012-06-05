@@ -18,6 +18,9 @@ namespace UI
         public ExportDatabasePage()
         {
             InitializeComponent();
+            // TODO: This line of code loads data into the 'sCIPDataSet.ALTERNATIVES' table. You can move, or remove it, as needed.
+            this.aLTERNATIVESTableAdapter.Fill(this.sCIPDataSet.ALTERNATIVES);
+            this.comboAlternativeID.Value = this.sCIPDataSet.ALTERNATIVES[0][0];
         }
 
         private void ultraButtonExport_Click(object sender, EventArgs e)
@@ -54,43 +57,57 @@ namespace UI
         {
             BackgroundWorker worker = sender as BackgroundWorker;
             object objAffected;
+            int alternative_id = (int)comboAlternativeID.Value;
 
-            string tmpStr;
-            tmpStr = "Provider=Microsoft.Jet.OLEDB.4.0;";
-            tmpStr += "Data Source=" + AccessDBLoc + ";User Id=admin;Password=;";
-
-            ADOX.Catalog thecat = new Catalog();
-
-            ADODB.Command cmd = new Command();
-
-            thecat.Create(tmpStr);
-            ADODB.Connection connection = thecat.ActiveConnection as ADODB.Connection;
-
-            if (connection != null)
+            try
             {
-                connection.Close();
+                string tmpStr;
+                tmpStr = "Provider=Microsoft.Jet.OLEDB.4.0;";
+                tmpStr += "Data Source=" + AccessDBLoc + ";User Id=admin;Password=;";
+
+                ADOX.Catalog thecat = new Catalog();
+
+                ADODB.Command cmd = new Command();
+
+                thecat.Create(tmpStr);
+                ADODB.Connection connection = thecat.ActiveConnection as ADODB.Connection;
+
+                if (connection != null)
+                {
+                    connection.Close();
+                }
+                thecat.ActiveConnection = null;
+                thecat = null;
+
+                ADODB.Connection newConnection = new Connection();
+                newConnection.ConnectionString = tmpStr;
+
+                newConnection.Open();
+
+                string strSQL = "SELECT * INTO NEXT_ACTIVITIES FROM [ODBC;DRIVER=SQL Server;SERVER=SIRTOBY;DATABASE=SCIP;Trusted_Connection=Yes].[NEXT_ACTIVITIES]";
+                cmd.CommandText = strSQL;
+                newConnection.Execute(strSQL, out objAffected, 0);
+
+                strSQL = "SELECT * INTO ALL_ACTIVITIES FROM [ODBC;DRIVER=SQL Server;SERVER=SIRTOBY;DATABASE=SCIP;Trusted_Connection=Yes].[VW_ALL_ACTIVITIES] WHERE Alternative_ID = " + alternative_id.ToString();
+                cmd.CommandText = strSQL;
+                newConnection.Execute(strSQL, out objAffected, 0);
+
+                strSQL = "SELECT * INTO ALL_DRIVERS FROM [ODBC;DRIVER=SQL Server;SERVER=SIRTOBY;DATABASE=SCIP;Trusted_Connection=Yes].[VW_ALL_DRIVERS] WHERE Alternative_ID = " + alternative_id.ToString();
+                cmd.CommandText = strSQL;
+                newConnection.Execute(strSQL, out objAffected, 0);
+
+                strSQL = "SELECT * INTO DRIVER_TYPES FROM [ODBC;DRIVER=SQL Server;SERVER=SIRTOBY;DATABASE=SCIP;Trusted_Connection=Yes].[DRIVER_TYPES] WHERE Alternative_ID = " + alternative_id.ToString();
+                cmd.CommandText = strSQL;
+                newConnection.Execute(strSQL, out objAffected, 0);
+
+                newConnection.Close();
+
+                MessageBox.Show("Export process complete!");
             }
-            thecat.ActiveConnection = null;
-            thecat = null;
-
-            ADODB.Connection newConnection = new Connection();
-            newConnection.ConnectionString = tmpStr;
-
-            newConnection.Open();
-
-            string strSQL = "SELECT * INTO NEXT_ACTIVITIES FROM [ODBC;DRIVER=SQL Server;SERVER=SIRTOBY;DATABASE=SCIP;Trusted_Connection=Yes].[NEXT_ACTIVITIES]";
-            cmd.CommandText = strSQL;
-            newConnection.Execute(strSQL, out objAffected, 0);
-
-            strSQL = "SELECT * INTO ALL_ACTIVITIES FROM [ODBC;DRIVER=SQL Server;SERVER=SIRTOBY;DATABASE=SCIP;Trusted_Connection=Yes].[VW_ALL_ACTIVITIES]";
-            cmd.CommandText = strSQL;
-            newConnection.Execute(strSQL, out objAffected, 0);
-
-            strSQL = "SELECT * INTO ALL_DRIVERS FROM [ODBC;DRIVER=SQL Server;SERVER=SIRTOBY;DATABASE=SCIP;Trusted_Connection=Yes].[VW_ALL_DRIVERS]";
-            cmd.CommandText = strSQL;
-            newConnection.Execute(strSQL, out objAffected, 0);
-
-            newConnection.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database connection error!");
+            }
 
         }
 
@@ -98,6 +115,13 @@ namespace UI
         {
             this.ultraActivityIndicator1.Stop();
             this.ultraButtonExport.Enabled = true;
+        }
+
+        private void ExportDatabasePage_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'sCIPDataSet.ALTERNATIVES' table. You can move, or remove it, as needed.
+            this.aLTERNATIVESTableAdapter.Fill(this.sCIPDataSet.ALTERNATIVES);
+
         }
     }
 }

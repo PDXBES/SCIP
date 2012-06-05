@@ -267,8 +267,9 @@
                   </ChartDataLabel>
                   <Style>
                     <Border>
-                      <Color>Silver</Color>
+                      <Color>DimGray</Color>
                     </Border>
+                    <Color>=Code.GetColor(Fields!reporting_category.Value)</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -325,6 +326,10 @@
                 <CustomProperty>
                   <Name>CollectedStyle</Name>
                   <Value>SingleSlice</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedColor</Name>
+                  <Value>DimGray</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -563,8 +568,9 @@
                   </ChartDataLabel>
                   <Style>
                     <Border>
-                      <Color>Silver</Color>
+                      <Color>DimGray</Color>
                     </Border>
+                    <Color>=Code.GetColor(Fields!reporting_category.Value)</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -621,6 +627,10 @@
                 <CustomProperty>
                   <Name>CollectedSliceExploded</Name>
                   <Value>true</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedColor</Name>
+                  <Value>DimGray</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -861,8 +871,9 @@
                   </ChartDataLabel>
                   <Style>
                     <Border>
-                      <Color>Silver</Color>
+                      <Color>DimGray</Color>
                     </Border>
+                    <Color>=Code.GetColor(Fields!reporting_category.Value)</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -919,6 +930,10 @@
                 <CustomProperty>
                   <Name>CollectedSliceExploded</Name>
                   <Value>true</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedColor</Name>
+                  <Value>DimGray</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -1159,8 +1174,9 @@
                   </ChartDataLabel>
                   <Style>
                     <Border>
-                      <Color>Silver</Color>
+                      <Color>DimGray</Color>
                     </Border>
+                    <Color>=Code.GetColor(Fields!reporting_category.Value)</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1217,6 +1233,10 @@
                 <CustomProperty>
                   <Name>CollectedSliceExploded</Name>
                   <Value>true</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedColor</Name>
+                  <Value>DimGray</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -1481,7 +1501,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Red</Color>
+                    <Color>=Code.GetColor("Condition")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1520,7 +1540,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Orange</Color>
+                    <Color>=Code.GetColor("Condition (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1540,7 +1560,7 @@
                 </ChartDataLabel>
               </ChartEmptyPoints>
               <ChartItemInLegend>
-                <LegendText>Condition(&gt;36 in)</LegendText>
+                <LegendText>Condition (&gt;36 in)</LegendText>
               </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
@@ -1562,7 +1582,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Black</Color>
+                    <Color>=Code.GetColor("Preventive Maintenance")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1604,7 +1624,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Gray</Color>
+                    <Color>=Code.GetColor("Preventive Maintenance (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1646,7 +1666,9 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Lime</Color>
+                    <Color>=Code.GetColor("Root Control High")</Color>
+                    <BackgroundGradientType>None</BackgroundGradientType>
+                    <BackgroundHatchType>None</BackgroundHatchType>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1685,7 +1707,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>SeaGreen</Color>
+                    <Color>=Code.GetColor("Root Control High (&gt;15 in, &lt;=36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1727,7 +1749,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>DarkGreen</Color>
+                    <Color>=Code.GetColor("Root Control High (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1769,7 +1791,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Blue</Color>
+                    <Color>=Code.GetColor("Root Control Medium")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1808,7 +1830,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>CornflowerBlue</Color>
+                    <Color>=Code.GetColor("Root Control Medium (&gt;15 in, &lt;=36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1850,7 +1872,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>SlateBlue</Color>
+                    <Color>=Code.GetColor("Root Control Medium (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2546,7 +2568,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Red</Color>
+                    <Color>=Code.GetColor("Condition")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2585,7 +2607,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Orange</Color>
+                    <Color>=Code.GetColor("Condition (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2624,7 +2646,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Black</Color>
+                    <Color>=Code.GetColor("Preventive Maintenance")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2663,7 +2685,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Gray</Color>
+                    <Color>=Code.GetColor("Preventive Maintenance (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2705,7 +2727,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Lime</Color>
+                    <Color>=Code.GetColor("Root Control High")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2744,7 +2766,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>SeaGreen</Color>
+                    <Color>=Code.GetColor("Root Control High (&gt;15 in, &lt;=36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2786,7 +2808,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>DarkGreen</Color>
+                    <Color>=Code.GetColor("Root Control High (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2828,7 +2850,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>Blue</Color>
+                    <Color>=Code.GetColor("Root Control Medium")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2867,7 +2889,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>CornflowerBlue</Color>
+                    <Color>=Code.GetColor("Root Control Medium (&gt;15 in, &lt;=36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2909,7 +2931,7 @@
                     <Border>
                       <Width>2pt</Width>
                     </Border>
-                    <Color>SlateBlue</Color>
+                    <Color>=Code.GetColor("Root Control Medium (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -3562,6 +3584,38 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
+  <Code>Public Function GetColor(ByVal reportingCategory As String) As String
+
+Dim returnColor As String
+
+Select Case reportingCategory
+  Case "Condition" 
+    returnColor = "Red"
+  Case "Condition (&gt;36 in)"
+    returnColor = "Orange"
+  Case "Preventive Maintenance"
+    returnColor = "Blue"
+  Case "Preventive Maintenance (&gt;36 in)"
+    returnColor = "CornflowerBlue"
+  Case "Root Control High"
+    returnColor = "Lime"
+  Case "Root Control High (&gt;15 in, &lt;=36 in)"
+    returnColor = "SeaGreen"
+  Case "Root Control High (&gt;36 in)"
+    returnColor = "Green"
+  Case "Root Control Medium"
+    returnColor = "Fuchsia"
+  Case "Root Control Medium (&gt;15 in, &lt;=36 in)"
+    returnColor = "DarkViolet"
+  Case "Root Control Medium (&gt;36 in)"
+    returnColor = "Indigo"
+  Case Else
+    returnColor = "DimGray"
+End Select
+
+Return returnColor
+
+End Function</Code>
   <Width>10.25in</Width>
   <Page>
     <PageHeight>8.5in</PageHeight>

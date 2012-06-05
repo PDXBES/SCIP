@@ -28,25 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint3 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint2 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
       this.ultraButtonExport = new Infragistics.Win.Misc.UltraButton();
-      this.ultraActivityIndicator1 = new Infragistics.Win.UltraActivityIndicator.UltraActivityIndicator();
       this.backgroundWorkerExport = new System.ComponentModel.BackgroundWorker();
       this.ultraGridBagLayoutPanel1 = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
+      this.lblStatus = new Infragistics.Win.Misc.UltraLabel();
+      this.progress = new Infragistics.Win.UltraWinProgressBar.UltraProgressBar();
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel1)).BeginInit();
       this.ultraGridBagLayoutPanel1.SuspendLayout();
       this.SuspendLayout();
       // 
       // ultraButtonExport
       // 
-      gridBagConstraint2.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint2.Insets.Bottom = 8;
-      gridBagConstraint2.OriginX = 0;
-      gridBagConstraint2.OriginY = 0;
-      gridBagConstraint2.WeightX = 1F;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.ultraButtonExport, gridBagConstraint2);
-      this.ultraButtonExport.Location = new System.Drawing.Point(0, 204);
+      gridBagConstraint3.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint3.Insets.Bottom = 8;
+      gridBagConstraint3.OriginX = 0;
+      gridBagConstraint3.OriginY = 0;
+      gridBagConstraint3.WeightX = 1F;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.ultraButtonExport, gridBagConstraint3);
+      this.ultraButtonExport.Location = new System.Drawing.Point(0, 0);
       this.ultraButtonExport.Name = "ultraButtonExport";
       this.ultraGridBagLayoutPanel1.SetPreferredSize(this.ultraButtonExport, new System.Drawing.Size(75, 23));
       this.ultraButtonExport.Size = new System.Drawing.Size(606, 23);
@@ -54,36 +56,52 @@
       this.ultraButtonExport.Text = "Export!";
       this.ultraButtonExport.Click += new System.EventHandler(this.ultraButtonExport_Click);
       // 
-      // ultraActivityIndicator1
-      // 
-      this.ultraActivityIndicator1.CausesValidation = true;
-      gridBagConstraint1.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint1.OriginX = 0;
-      gridBagConstraint1.OriginY = 1;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.ultraActivityIndicator1, gridBagConstraint1);
-      this.ultraActivityIndicator1.Location = new System.Drawing.Point(0, 235);
-      this.ultraActivityIndicator1.Name = "ultraActivityIndicator1";
-      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.ultraActivityIndicator1, new System.Drawing.Size(268, 23));
-      this.ultraActivityIndicator1.Size = new System.Drawing.Size(606, 23);
-      this.ultraActivityIndicator1.TabIndex = 1;
-      this.ultraActivityIndicator1.TabStop = true;
-      // 
       // backgroundWorkerExport
       // 
       this.backgroundWorkerExport.WorkerReportsProgress = true;
       this.backgroundWorkerExport.WorkerSupportsCancellation = true;
       this.backgroundWorkerExport.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerExport_DoWork);
+      this.backgroundWorkerExport.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerExport_ProgressChanged);
       this.backgroundWorkerExport.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bw_RunWorkerCompleted);
       // 
       // ultraGridBagLayoutPanel1
       // 
+      this.ultraGridBagLayoutPanel1.Controls.Add(this.progress);
+      this.ultraGridBagLayoutPanel1.Controls.Add(this.lblStatus);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.ultraButtonExport);
-      this.ultraGridBagLayoutPanel1.Controls.Add(this.ultraActivityIndicator1);
       this.ultraGridBagLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
       this.ultraGridBagLayoutPanel1.Location = new System.Drawing.Point(0, 0);
       this.ultraGridBagLayoutPanel1.Name = "ultraGridBagLayoutPanel1";
       this.ultraGridBagLayoutPanel1.Size = new System.Drawing.Size(606, 462);
       this.ultraGridBagLayoutPanel1.TabIndex = 2;
+      // 
+      // lblStatus
+      // 
+      gridBagConstraint2.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint2.OriginX = 0;
+      gridBagConstraint2.OriginY = 2;
+      gridBagConstraint2.WeightY = 1F;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.lblStatus, gridBagConstraint2);
+      this.lblStatus.Location = new System.Drawing.Point(0, 62);
+      this.lblStatus.Name = "lblStatus";
+      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.lblStatus, new System.Drawing.Size(100, 23));
+      this.lblStatus.Size = new System.Drawing.Size(606, 400);
+      this.lblStatus.TabIndex = 2;
+      this.lblStatus.Text = "ultraLabel1";
+      // 
+      // progress
+      // 
+      gridBagConstraint1.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint1.Insets.Bottom = 8;
+      gridBagConstraint1.OriginX = 0;
+      gridBagConstraint1.OriginY = 1;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.progress, gridBagConstraint1);
+      this.progress.Location = new System.Drawing.Point(0, 31);
+      this.progress.Name = "progress";
+      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.progress, new System.Drawing.Size(75, 23));
+      this.progress.Size = new System.Drawing.Size(606, 23);
+      this.progress.TabIndex = 3;
+      this.progress.Text = "[Formatted]";
       // 
       // ExportDatabasePage
       // 
@@ -93,6 +111,7 @@
       this.Controls.Add(this.ultraGridBagLayoutPanel1);
       this.Name = "ExportDatabasePage";
       this.Text = "FormExportDatabase";
+      this.Load += new System.EventHandler(this.ExportDatabasePage_Load);
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel1)).EndInit();
       this.ultraGridBagLayoutPanel1.ResumeLayout(false);
       this.ResumeLayout(false);
@@ -102,8 +121,9 @@
         #endregion
 
         private Infragistics.Win.Misc.UltraButton ultraButtonExport;
-        private Infragistics.Win.UltraActivityIndicator.UltraActivityIndicator ultraActivityIndicator1;
         public System.ComponentModel.BackgroundWorker backgroundWorkerExport;
         private Infragistics.Win.Misc.UltraGridBagLayoutPanel ultraGridBagLayoutPanel1;
+        private Infragistics.Win.Misc.UltraLabel lblStatus;
+        private Infragistics.Win.UltraWinProgressBar.UltraProgressBar progress;
     }
 }

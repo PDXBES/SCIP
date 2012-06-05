@@ -42,10 +42,10 @@
       Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn24 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint6 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand2 = new Infragistics.Win.UltraWinGrid.UltraGridBand("ALTERNATIVES", -1);
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn5 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn6 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("name");
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn7 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("description");
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn8 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("asset_set_id");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("name");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn3 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("description");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn4 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("asset_set_id");
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint5 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint2 = new Infragistics.Win.Layout.GridBagConstraint();
@@ -164,15 +164,15 @@
       // ultraComboAlternative
       // 
       this.ultraComboAlternative.DataSource = this.aLTERNATIVESBindingSource;
-      ultraGridColumn5.Header.VisiblePosition = 0;
-      ultraGridColumn6.Header.VisiblePosition = 1;
-      ultraGridColumn7.Header.VisiblePosition = 2;
-      ultraGridColumn8.Header.VisiblePosition = 3;
+      ultraGridColumn1.Header.VisiblePosition = 0;
+      ultraGridColumn2.Header.VisiblePosition = 1;
+      ultraGridColumn3.Header.VisiblePosition = 2;
+      ultraGridColumn4.Header.VisiblePosition = 3;
       ultraGridBand2.Columns.AddRange(new object[] {
-            ultraGridColumn5,
-            ultraGridColumn6,
-            ultraGridColumn7,
-            ultraGridColumn8});
+            ultraGridColumn1,
+            ultraGridColumn2,
+            ultraGridColumn3,
+            ultraGridColumn4});
       this.ultraComboAlternative.DisplayLayout.BandsSerializer.Add(ultraGridBand2);
       this.ultraComboAlternative.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       gridBagConstraint5.Fill = Infragistics.Win.Layout.FillType.Both;

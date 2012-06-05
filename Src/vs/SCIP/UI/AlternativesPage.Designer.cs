@@ -72,7 +72,7 @@
             ultraGridColumn3,
             ultraGridColumn4});
       this.ultraGridAlternatives.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
-      this.ultraGridAlternatives.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.ultraGridAlternatives.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       gridBagConstraint4.Fill = Infragistics.Win.Layout.FillType.Both;
       gridBagConstraint4.Insets.Bottom = 8;
       gridBagConstraint4.OriginX = 0;

@@ -82,6 +82,12 @@ namespace UI {
         
         private FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable tableFN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRoot;
         
+        private FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection;
+        
+        private FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning;
+        
+        private FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -196,6 +202,15 @@ namespace UI {
                 }
                 if ((ds.Tables["FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRoot"] != null)) {
                     base.Tables.Add(new FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable(ds.Tables["FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRoot"]));
+                }
+                if ((ds.Tables["FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection"] != null)) {
+                    base.Tables.Add(new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable(ds.Tables["FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection"]));
+                }
+                if ((ds.Tables["FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning"] != null)) {
+                    base.Tables.Add(new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable(ds.Tables["FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning"]));
+                }
+                if ((ds.Tables["FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot"] != null)) {
+                    base.Tables.Add(new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable(ds.Tables["FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -507,6 +522,36 @@ namespace UI {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection {
+            get {
+                return this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning {
+            get {
+                return this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot {
+            get {
+                return this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -658,6 +703,15 @@ namespace UI {
                 }
                 if ((ds.Tables["FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRoot"] != null)) {
                     base.Tables.Add(new FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable(ds.Tables["FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRoot"]));
+                }
+                if ((ds.Tables["FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection"] != null)) {
+                    base.Tables.Add(new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable(ds.Tables["FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection"]));
+                }
+                if ((ds.Tables["FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning"] != null)) {
+                    base.Tables.Add(new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable(ds.Tables["FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning"]));
+                }
+                if ((ds.Tables["FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot"] != null)) {
+                    base.Tables.Add(new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable(ds.Tables["FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -866,6 +920,24 @@ namespace UI {
                     this.tableFN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.InitVars();
                 }
             }
+            this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection = ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable)(base.Tables["FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection"]));
+            if ((initTable == true)) {
+                if ((this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection != null)) {
+                    this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.InitVars();
+                }
+            }
+            this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning = ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable)(base.Tables["FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning"]));
+            if ((initTable == true)) {
+                if ((this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning != null)) {
+                    this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.InitVars();
+                }
+            }
+            this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot = ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable)(base.Tables["FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot"]));
+            if ((initTable == true)) {
+                if ((this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot != null)) {
+                    this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -934,6 +1006,12 @@ namespace UI {
             base.Tables.Add(this.tableFN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspection);
             this.tableFN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRoot = new FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable();
             base.Tables.Add(this.tableFN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRoot);
+            this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection = new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable();
+            base.Tables.Add(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection);
+            this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning = new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable();
+            base.Tables.Add(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning);
+            this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot = new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable();
+            base.Tables.Add(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1112,6 +1190,24 @@ namespace UI {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1251,6 +1347,15 @@ namespace UI {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChangeEventHandler(object sender, FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChangeEventHandler(object sender, FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChangeEventHandler(object sender, FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChangeEventHandler(object sender, FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -10439,6 +10544,1050 @@ namespace UI {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable : global::System.Data.TypedTableBase<FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow> {
+            
+            private global::System.Data.DataColumn columnfiscal_year;
+            
+            private global::System.Data.DataColumn columnactivity_type;
+            
+            private global::System.Data.DataColumn columndriver_type;
+            
+            private global::System.Data.DataColumn columnreporting_category;
+            
+            private global::System.Data.DataColumn columncompkey_count;
+            
+            private global::System.Data.DataColumn columncompkey_percent_covered;
+            
+            private global::System.Data.DataColumn columnannualized_compkey_count;
+            
+            private global::System.Data.DataColumn columnannualized_compkey_percent_covered;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable() {
+                this.TableName = "FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fiscal_yearColumn {
+                get {
+                    return this.columnfiscal_year;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn activity_typeColumn {
+                get {
+                    return this.columnactivity_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn driver_typeColumn {
+                get {
+                    return this.columndriver_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn reporting_categoryColumn {
+                get {
+                    return this.columnreporting_category;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn compkey_countColumn {
+                get {
+                    return this.columncompkey_count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn compkey_percent_coveredColumn {
+                get {
+                    return this.columncompkey_percent_covered;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn annualized_compkey_countColumn {
+                get {
+                    return this.columnannualized_compkey_count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn annualized_compkey_percent_coveredColumn {
+                get {
+                    return this.columnannualized_compkey_percent_covered;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow this[int index] {
+                get {
+                    return ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChangeEventHandler FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChangeEventHandler FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChangeEventHandler FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChangeEventHandler FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow(FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow AddFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow(int fiscal_year, string activity_type, string driver_type, string reporting_category, int compkey_count, decimal compkey_percent_covered, int annualized_compkey_count, decimal annualized_compkey_percent_covered) {
+                FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow rowFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow = ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        fiscal_year,
+                        activity_type,
+                        driver_type,
+                        reporting_category,
+                        compkey_count,
+                        compkey_percent_covered,
+                        annualized_compkey_count,
+                        annualized_compkey_percent_covered};
+                rowFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow);
+                return rowFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable cln = ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnfiscal_year = base.Columns["fiscal_year"];
+                this.columnactivity_type = base.Columns["activity_type"];
+                this.columndriver_type = base.Columns["driver_type"];
+                this.columnreporting_category = base.Columns["reporting_category"];
+                this.columncompkey_count = base.Columns["compkey_count"];
+                this.columncompkey_percent_covered = base.Columns["compkey_percent_covered"];
+                this.columnannualized_compkey_count = base.Columns["annualized_compkey_count"];
+                this.columnannualized_compkey_percent_covered = base.Columns["annualized_compkey_percent_covered"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnfiscal_year = new global::System.Data.DataColumn("fiscal_year", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfiscal_year);
+                this.columnactivity_type = new global::System.Data.DataColumn("activity_type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnactivity_type);
+                this.columndriver_type = new global::System.Data.DataColumn("driver_type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndriver_type);
+                this.columnreporting_category = new global::System.Data.DataColumn("reporting_category", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnreporting_category);
+                this.columncompkey_count = new global::System.Data.DataColumn("compkey_count", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncompkey_count);
+                this.columncompkey_percent_covered = new global::System.Data.DataColumn("compkey_percent_covered", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncompkey_percent_covered);
+                this.columnannualized_compkey_count = new global::System.Data.DataColumn("annualized_compkey_count", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnannualized_compkey_count);
+                this.columnannualized_compkey_percent_covered = new global::System.Data.DataColumn("annualized_compkey_percent_covered", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnannualized_compkey_percent_covered);
+                this.columnactivity_type.MaxLength = 50;
+                this.columndriver_type.MaxLength = 50;
+                this.columnreporting_category.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow NewFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow() {
+                return ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChanged != null)) {
+                    this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChanged(this, new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChangeEvent(((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChanging != null)) {
+                    this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChanging(this, new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChangeEvent(((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowDeleted != null)) {
+                    this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowDeleted(this, new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChangeEvent(((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowDeleting != null)) {
+                    this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowDeleting(this, new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChangeEvent(((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow(FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                SCIPDataSet ds = new SCIPDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable : global::System.Data.TypedTableBase<FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow> {
+            
+            private global::System.Data.DataColumn columnfiscal_year;
+            
+            private global::System.Data.DataColumn columnactivity_type;
+            
+            private global::System.Data.DataColumn columndriver_type;
+            
+            private global::System.Data.DataColumn columnreporting_category;
+            
+            private global::System.Data.DataColumn columncompkey_count;
+            
+            private global::System.Data.DataColumn columncompkey_percent_covered;
+            
+            private global::System.Data.DataColumn columnannualized_compkey_count;
+            
+            private global::System.Data.DataColumn columnannualized_compkey_percent_covered;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable() {
+                this.TableName = "FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fiscal_yearColumn {
+                get {
+                    return this.columnfiscal_year;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn activity_typeColumn {
+                get {
+                    return this.columnactivity_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn driver_typeColumn {
+                get {
+                    return this.columndriver_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn reporting_categoryColumn {
+                get {
+                    return this.columnreporting_category;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn compkey_countColumn {
+                get {
+                    return this.columncompkey_count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn compkey_percent_coveredColumn {
+                get {
+                    return this.columncompkey_percent_covered;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn annualized_compkey_countColumn {
+                get {
+                    return this.columnannualized_compkey_count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn annualized_compkey_percent_coveredColumn {
+                get {
+                    return this.columnannualized_compkey_percent_covered;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow this[int index] {
+                get {
+                    return ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChangeEventHandler FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChangeEventHandler FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChangeEventHandler FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChangeEventHandler FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow(FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow AddFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow(int fiscal_year, string activity_type, string driver_type, string reporting_category, int compkey_count, decimal compkey_percent_covered, int annualized_compkey_count, decimal annualized_compkey_percent_covered) {
+                FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow rowFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow = ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        fiscal_year,
+                        activity_type,
+                        driver_type,
+                        reporting_category,
+                        compkey_count,
+                        compkey_percent_covered,
+                        annualized_compkey_count,
+                        annualized_compkey_percent_covered};
+                rowFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow);
+                return rowFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable cln = ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnfiscal_year = base.Columns["fiscal_year"];
+                this.columnactivity_type = base.Columns["activity_type"];
+                this.columndriver_type = base.Columns["driver_type"];
+                this.columnreporting_category = base.Columns["reporting_category"];
+                this.columncompkey_count = base.Columns["compkey_count"];
+                this.columncompkey_percent_covered = base.Columns["compkey_percent_covered"];
+                this.columnannualized_compkey_count = base.Columns["annualized_compkey_count"];
+                this.columnannualized_compkey_percent_covered = base.Columns["annualized_compkey_percent_covered"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnfiscal_year = new global::System.Data.DataColumn("fiscal_year", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfiscal_year);
+                this.columnactivity_type = new global::System.Data.DataColumn("activity_type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnactivity_type);
+                this.columndriver_type = new global::System.Data.DataColumn("driver_type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndriver_type);
+                this.columnreporting_category = new global::System.Data.DataColumn("reporting_category", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnreporting_category);
+                this.columncompkey_count = new global::System.Data.DataColumn("compkey_count", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncompkey_count);
+                this.columncompkey_percent_covered = new global::System.Data.DataColumn("compkey_percent_covered", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncompkey_percent_covered);
+                this.columnannualized_compkey_count = new global::System.Data.DataColumn("annualized_compkey_count", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnannualized_compkey_count);
+                this.columnannualized_compkey_percent_covered = new global::System.Data.DataColumn("annualized_compkey_percent_covered", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnannualized_compkey_percent_covered);
+                this.columnactivity_type.MaxLength = 50;
+                this.columndriver_type.MaxLength = 50;
+                this.columnreporting_category.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow NewFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow() {
+                return ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChanged != null)) {
+                    this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChanged(this, new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChangeEvent(((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChanging != null)) {
+                    this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChanging(this, new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChangeEvent(((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowDeleted != null)) {
+                    this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowDeleted(this, new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChangeEvent(((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowDeleting != null)) {
+                    this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowDeleting(this, new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChangeEvent(((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow(FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                SCIPDataSet ds = new SCIPDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable : global::System.Data.TypedTableBase<FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow> {
+            
+            private global::System.Data.DataColumn columnfiscal_year;
+            
+            private global::System.Data.DataColumn columnactivity_type;
+            
+            private global::System.Data.DataColumn columndriver_type;
+            
+            private global::System.Data.DataColumn columnreporting_category;
+            
+            private global::System.Data.DataColumn columncompkey_count;
+            
+            private global::System.Data.DataColumn columncompkey_percent_covered;
+            
+            private global::System.Data.DataColumn columnannualized_compkey_count;
+            
+            private global::System.Data.DataColumn columnannualized_compkey_percent_covered;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable() {
+                this.TableName = "FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fiscal_yearColumn {
+                get {
+                    return this.columnfiscal_year;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn activity_typeColumn {
+                get {
+                    return this.columnactivity_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn driver_typeColumn {
+                get {
+                    return this.columndriver_type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn reporting_categoryColumn {
+                get {
+                    return this.columnreporting_category;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn compkey_countColumn {
+                get {
+                    return this.columncompkey_count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn compkey_percent_coveredColumn {
+                get {
+                    return this.columncompkey_percent_covered;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn annualized_compkey_countColumn {
+                get {
+                    return this.columnannualized_compkey_count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn annualized_compkey_percent_coveredColumn {
+                get {
+                    return this.columnannualized_compkey_percent_covered;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow this[int index] {
+                get {
+                    return ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChangeEventHandler FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChangeEventHandler FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChangeEventHandler FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChangeEventHandler FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow(FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow AddFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow(int fiscal_year, string activity_type, string driver_type, string reporting_category, int compkey_count, decimal compkey_percent_covered, int annualized_compkey_count, decimal annualized_compkey_percent_covered) {
+                FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow rowFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow = ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        fiscal_year,
+                        activity_type,
+                        driver_type,
+                        reporting_category,
+                        compkey_count,
+                        compkey_percent_covered,
+                        annualized_compkey_count,
+                        annualized_compkey_percent_covered};
+                rowFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow);
+                return rowFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable cln = ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnfiscal_year = base.Columns["fiscal_year"];
+                this.columnactivity_type = base.Columns["activity_type"];
+                this.columndriver_type = base.Columns["driver_type"];
+                this.columnreporting_category = base.Columns["reporting_category"];
+                this.columncompkey_count = base.Columns["compkey_count"];
+                this.columncompkey_percent_covered = base.Columns["compkey_percent_covered"];
+                this.columnannualized_compkey_count = base.Columns["annualized_compkey_count"];
+                this.columnannualized_compkey_percent_covered = base.Columns["annualized_compkey_percent_covered"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnfiscal_year = new global::System.Data.DataColumn("fiscal_year", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfiscal_year);
+                this.columnactivity_type = new global::System.Data.DataColumn("activity_type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnactivity_type);
+                this.columndriver_type = new global::System.Data.DataColumn("driver_type", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndriver_type);
+                this.columnreporting_category = new global::System.Data.DataColumn("reporting_category", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnreporting_category);
+                this.columncompkey_count = new global::System.Data.DataColumn("compkey_count", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncompkey_count);
+                this.columncompkey_percent_covered = new global::System.Data.DataColumn("compkey_percent_covered", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncompkey_percent_covered);
+                this.columnannualized_compkey_count = new global::System.Data.DataColumn("annualized_compkey_count", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnannualized_compkey_count);
+                this.columnannualized_compkey_percent_covered = new global::System.Data.DataColumn("annualized_compkey_percent_covered", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnannualized_compkey_percent_covered);
+                this.columnactivity_type.MaxLength = 50;
+                this.columndriver_type.MaxLength = 50;
+                this.columnreporting_category.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow NewFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow() {
+                return ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChanged != null)) {
+                    this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChanged(this, new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChangeEvent(((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChanging != null)) {
+                    this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChanging(this, new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChangeEvent(((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowDeleted != null)) {
+                    this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowDeleted(this, new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChangeEvent(((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowDeleting != null)) {
+                    this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowDeleting(this, new FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChangeEvent(((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow(FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                SCIPDataSet ds = new SCIPDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class DRIVERS_UPDATERow : global::System.Data.DataRow {
@@ -14548,6 +15697,747 @@ namespace UI {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow : global::System.Data.DataRow {
+            
+            private FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection = ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int fiscal_year {
+                get {
+                    try {
+                        return ((int)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.fiscal_yearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fiscal_year\' in table \'FN_CHART_PROGRESSIVE_ACTIVITIES_COUN" +
+                                "T_BETWEEN_YEARSInspection\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.fiscal_yearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string activity_type {
+                get {
+                    try {
+                        return ((string)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.activity_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'activity_type\' in table \'FN_CHART_PROGRESSIVE_ACTIVITIES_CO" +
+                                "UNT_BETWEEN_YEARSInspection\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.activity_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string driver_type {
+                get {
+                    try {
+                        return ((string)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.driver_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'driver_type\' in table \'FN_CHART_PROGRESSIVE_ACTIVITIES_COUN" +
+                                "T_BETWEEN_YEARSInspection\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.driver_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string reporting_category {
+                get {
+                    try {
+                        return ((string)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.reporting_categoryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'reporting_category\' in table \'FN_CHART_PROGRESSIVE_ACTIVITI" +
+                                "ES_COUNT_BETWEEN_YEARSInspection\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.reporting_categoryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int compkey_count {
+                get {
+                    try {
+                        return ((int)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.compkey_countColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'compkey_count\' in table \'FN_CHART_PROGRESSIVE_ACTIVITIES_CO" +
+                                "UNT_BETWEEN_YEARSInspection\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.compkey_countColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal compkey_percent_covered {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.compkey_percent_coveredColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'compkey_percent_covered\' in table \'FN_CHART_PROGRESSIVE_ACT" +
+                                "IVITIES_COUNT_BETWEEN_YEARSInspection\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.compkey_percent_coveredColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int annualized_compkey_count {
+                get {
+                    try {
+                        return ((int)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.annualized_compkey_countColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'annualized_compkey_count\' in table \'FN_CHART_PROGRESSIVE_AC" +
+                                "TIVITIES_COUNT_BETWEEN_YEARSInspection\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.annualized_compkey_countColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal annualized_compkey_percent_covered {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.annualized_compkey_percent_coveredColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'annualized_compkey_percent_covered\' in table \'FN_CHART_PROG" +
+                                "RESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.annualized_compkey_percent_coveredColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfiscal_yearNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.fiscal_yearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfiscal_yearNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.fiscal_yearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isactivity_typeNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.activity_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setactivity_typeNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.activity_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdriver_typeNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.driver_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdriver_typeNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.driver_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isreporting_categoryNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.reporting_categoryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setreporting_categoryNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.reporting_categoryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscompkey_countNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.compkey_countColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcompkey_countNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.compkey_countColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscompkey_percent_coveredNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.compkey_percent_coveredColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcompkey_percent_coveredNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.compkey_percent_coveredColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isannualized_compkey_countNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.annualized_compkey_countColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setannualized_compkey_countNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.annualized_compkey_countColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isannualized_compkey_percent_coveredNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.annualized_compkey_percent_coveredColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setannualized_compkey_percent_coveredNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection.annualized_compkey_percent_coveredColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow : global::System.Data.DataRow {
+            
+            private FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning = ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int fiscal_year {
+                get {
+                    try {
+                        return ((int)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.fiscal_yearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fiscal_year\' in table \'FN_CHART_PROGRESSIVE_ACTIVITIES_COUN" +
+                                "T_BETWEEN_YEARSCleaning\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.fiscal_yearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string activity_type {
+                get {
+                    try {
+                        return ((string)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.activity_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'activity_type\' in table \'FN_CHART_PROGRESSIVE_ACTIVITIES_CO" +
+                                "UNT_BETWEEN_YEARSCleaning\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.activity_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string driver_type {
+                get {
+                    try {
+                        return ((string)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.driver_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'driver_type\' in table \'FN_CHART_PROGRESSIVE_ACTIVITIES_COUN" +
+                                "T_BETWEEN_YEARSCleaning\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.driver_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string reporting_category {
+                get {
+                    try {
+                        return ((string)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.reporting_categoryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'reporting_category\' in table \'FN_CHART_PROGRESSIVE_ACTIVITI" +
+                                "ES_COUNT_BETWEEN_YEARSCleaning\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.reporting_categoryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int compkey_count {
+                get {
+                    try {
+                        return ((int)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.compkey_countColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'compkey_count\' in table \'FN_CHART_PROGRESSIVE_ACTIVITIES_CO" +
+                                "UNT_BETWEEN_YEARSCleaning\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.compkey_countColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal compkey_percent_covered {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.compkey_percent_coveredColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'compkey_percent_covered\' in table \'FN_CHART_PROGRESSIVE_ACT" +
+                                "IVITIES_COUNT_BETWEEN_YEARSCleaning\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.compkey_percent_coveredColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int annualized_compkey_count {
+                get {
+                    try {
+                        return ((int)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.annualized_compkey_countColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'annualized_compkey_count\' in table \'FN_CHART_PROGRESSIVE_AC" +
+                                "TIVITIES_COUNT_BETWEEN_YEARSCleaning\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.annualized_compkey_countColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal annualized_compkey_percent_covered {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.annualized_compkey_percent_coveredColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'annualized_compkey_percent_covered\' in table \'FN_CHART_PROG" +
+                                "RESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.annualized_compkey_percent_coveredColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfiscal_yearNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.fiscal_yearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfiscal_yearNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.fiscal_yearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isactivity_typeNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.activity_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setactivity_typeNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.activity_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdriver_typeNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.driver_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdriver_typeNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.driver_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isreporting_categoryNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.reporting_categoryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setreporting_categoryNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.reporting_categoryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscompkey_countNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.compkey_countColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcompkey_countNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.compkey_countColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscompkey_percent_coveredNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.compkey_percent_coveredColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcompkey_percent_coveredNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.compkey_percent_coveredColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isannualized_compkey_countNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.annualized_compkey_countColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setannualized_compkey_countNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.annualized_compkey_countColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isannualized_compkey_percent_coveredNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.annualized_compkey_percent_coveredColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setannualized_compkey_percent_coveredNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning.annualized_compkey_percent_coveredColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow : global::System.Data.DataRow {
+            
+            private FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot = ((FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int fiscal_year {
+                get {
+                    try {
+                        return ((int)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.fiscal_yearColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'fiscal_year\' in table \'FN_CHART_PROGRESSIVE_ACTIVITIES_COUN" +
+                                "T_BETWEEN_YEARSRoot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.fiscal_yearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string activity_type {
+                get {
+                    try {
+                        return ((string)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.activity_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'activity_type\' in table \'FN_CHART_PROGRESSIVE_ACTIVITIES_CO" +
+                                "UNT_BETWEEN_YEARSRoot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.activity_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string driver_type {
+                get {
+                    try {
+                        return ((string)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.driver_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'driver_type\' in table \'FN_CHART_PROGRESSIVE_ACTIVITIES_COUN" +
+                                "T_BETWEEN_YEARSRoot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.driver_typeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string reporting_category {
+                get {
+                    try {
+                        return ((string)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.reporting_categoryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'reporting_category\' in table \'FN_CHART_PROGRESSIVE_ACTIVITI" +
+                                "ES_COUNT_BETWEEN_YEARSRoot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.reporting_categoryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int compkey_count {
+                get {
+                    try {
+                        return ((int)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.compkey_countColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'compkey_count\' in table \'FN_CHART_PROGRESSIVE_ACTIVITIES_CO" +
+                                "UNT_BETWEEN_YEARSRoot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.compkey_countColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal compkey_percent_covered {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.compkey_percent_coveredColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'compkey_percent_covered\' in table \'FN_CHART_PROGRESSIVE_ACT" +
+                                "IVITIES_COUNT_BETWEEN_YEARSRoot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.compkey_percent_coveredColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int annualized_compkey_count {
+                get {
+                    try {
+                        return ((int)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.annualized_compkey_countColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'annualized_compkey_count\' in table \'FN_CHART_PROGRESSIVE_AC" +
+                                "TIVITIES_COUNT_BETWEEN_YEARSRoot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.annualized_compkey_countColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal annualized_compkey_percent_covered {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.annualized_compkey_percent_coveredColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'annualized_compkey_percent_covered\' in table \'FN_CHART_PROG" +
+                                "RESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.annualized_compkey_percent_coveredColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isfiscal_yearNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.fiscal_yearColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setfiscal_yearNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.fiscal_yearColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isactivity_typeNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.activity_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setactivity_typeNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.activity_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdriver_typeNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.driver_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdriver_typeNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.driver_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isreporting_categoryNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.reporting_categoryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setreporting_categoryNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.reporting_categoryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscompkey_countNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.compkey_countColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcompkey_countNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.compkey_countColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscompkey_percent_coveredNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.compkey_percent_coveredColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcompkey_percent_coveredNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.compkey_percent_coveredColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isannualized_compkey_countNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.annualized_compkey_countColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setannualized_compkey_countNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.annualized_compkey_countColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isannualized_compkey_percent_coveredNull() {
+                return this.IsNull(this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.annualized_compkey_percent_coveredColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setannualized_compkey_percent_coveredNull() {
+                this[this.tableFN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot.annualized_compkey_percent_coveredColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -15519,6 +17409,108 @@ namespace UI {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChangeEvent : global::System.EventArgs {
+            
+            private FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRowChangeEvent(FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChangeEvent : global::System.EventArgs {
+            
+            private FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRowChangeEvent(FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChangeEvent : global::System.EventArgs {
+            
+            private FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRowChangeEvent(FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -22965,28 +24957,20 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT activity_type, driver_type, reporting_category, compkey_count, compkey_per" +
                 "cent_covered, annualized_compkey_count, annualized_compkey_percent_covered\r\nFROM" +
-                " dbo.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARS(@beginYear, @endYear, @activityType" +
-                ")";
+                " dbo.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARS(@beginYear, @endYear, \'Cleaning\')";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@beginYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@endYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityType", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable dataTable, int beginYear, int endYear, string activityType) {
+        public virtual int Fill(SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable dataTable, int beginYear, int endYear) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(beginYear));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(endYear));
-            if ((activityType == null)) {
-                throw new global::System.ArgumentNullException("activityType");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(activityType));
-            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -22998,16 +24982,10 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable GetData(int beginYear, int endYear, string activityType) {
+        public virtual SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable GetData(int beginYear, int endYear) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(beginYear));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(endYear));
-            if ((activityType == null)) {
-                throw new global::System.ArgumentNullException("activityType");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(activityType));
-            }
             SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable dataTable = new SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -23160,28 +25138,21 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT activity_type, driver_type, reporting_category, compkey_count, compkey_per" +
                 "cent_covered, annualized_compkey_count, annualized_compkey_percent_covered\r\nFROM" +
-                " dbo.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARS(@beginYear, @endYear, @activityType" +
-                ")";
+                " dbo.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARS(@beginYear, @endYear, \'Inspection\')" +
+                "";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@beginYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@endYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityType", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable dataTable, int beginYear, int endYear, string activityType) {
+        public virtual int Fill(SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable dataTable, int beginYear, int endYear) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(beginYear));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(endYear));
-            if ((activityType == null)) {
-                throw new global::System.ArgumentNullException("activityType");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(activityType));
-            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -23193,16 +25164,10 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable GetData(int beginYear, int endYear, string activityType) {
+        public virtual SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable GetData(int beginYear, int endYear) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(beginYear));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(endYear));
-            if ((activityType == null)) {
-                throw new global::System.ArgumentNullException("activityType");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(activityType));
-            }
             SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable dataTable = new SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -23355,28 +25320,21 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT activity_type, driver_type, reporting_category, compkey_count, compkey_per" +
                 "cent_covered, annualized_compkey_count, annualized_compkey_percent_covered\r\nFROM" +
-                " dbo.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARS(@beginYear, @endYear, @activityType" +
-                ")";
+                " dbo.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARS(@beginYear, @endYear, \'Root Managem" +
+                "ent\')";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@beginYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@endYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@activityType", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable dataTable, int beginYear, int endYear, string activityType) {
+        public virtual int Fill(SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable dataTable, int beginYear, int endYear) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(beginYear));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(endYear));
-            if ((activityType == null)) {
-                throw new global::System.ArgumentNullException("activityType");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(activityType));
-            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -23388,17 +25346,557 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable GetData(int beginYear, int endYear, string activityType) {
+        public virtual SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable GetData(int beginYear, int endYear) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(beginYear));
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(endYear));
-            if ((activityType == null)) {
-                throw new global::System.ArgumentNullException("activityType");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(activityType));
-            }
             SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable dataTable = new SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection";
+            tableMapping.ColumnMappings.Add("fiscal_year", "fiscal_year");
+            tableMapping.ColumnMappings.Add("activity_type", "activity_type");
+            tableMapping.ColumnMappings.Add("driver_type", "driver_type");
+            tableMapping.ColumnMappings.Add("reporting_category", "reporting_category");
+            tableMapping.ColumnMappings.Add("compkey_count", "compkey_count");
+            tableMapping.ColumnMappings.Add("compkey_percent_covered", "compkey_percent_covered");
+            tableMapping.ColumnMappings.Add("annualized_compkey_count", "annualized_compkey_count");
+            tableMapping.ColumnMappings.Add("annualized_compkey_percent_covered", "annualized_compkey_percent_covered");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::UI.SCIPUI.Default.ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT fiscal_year, activity_type, driver_type, reporting_category, compkey_count, compkey_percent_covered, annualized_compkey_count, annualized_compkey_percent_covered
+FROM dbo.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARS(@beginYear, @endYear, 'Inspection')
+ORDER BY reporting_category, fiscal_year";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@beginYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@endYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable dataTable, int beginYear, int endYear) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(beginYear));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(endYear));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable GetData(int beginYear, int endYear) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(beginYear));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(endYear));
+            SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable dataTable = new SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning";
+            tableMapping.ColumnMappings.Add("fiscal_year", "fiscal_year");
+            tableMapping.ColumnMappings.Add("activity_type", "activity_type");
+            tableMapping.ColumnMappings.Add("driver_type", "driver_type");
+            tableMapping.ColumnMappings.Add("reporting_category", "reporting_category");
+            tableMapping.ColumnMappings.Add("compkey_count", "compkey_count");
+            tableMapping.ColumnMappings.Add("compkey_percent_covered", "compkey_percent_covered");
+            tableMapping.ColumnMappings.Add("annualized_compkey_count", "annualized_compkey_count");
+            tableMapping.ColumnMappings.Add("annualized_compkey_percent_covered", "annualized_compkey_percent_covered");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::UI.SCIPUI.Default.ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT fiscal_year, activity_type, driver_type, reporting_category, compkey_count, compkey_percent_covered, annualized_compkey_count, annualized_compkey_percent_covered
+FROM dbo.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARS(@beginYear, @endYear, 'Cleaning')
+ORDER BY reporting_category, fiscal_year";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@beginYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@endYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable dataTable, int beginYear, int endYear) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(beginYear));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(endYear));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable GetData(int beginYear, int endYear) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(beginYear));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(endYear));
+            SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable dataTable = new SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot";
+            tableMapping.ColumnMappings.Add("fiscal_year", "fiscal_year");
+            tableMapping.ColumnMappings.Add("activity_type", "activity_type");
+            tableMapping.ColumnMappings.Add("driver_type", "driver_type");
+            tableMapping.ColumnMappings.Add("reporting_category", "reporting_category");
+            tableMapping.ColumnMappings.Add("compkey_count", "compkey_count");
+            tableMapping.ColumnMappings.Add("compkey_percent_covered", "compkey_percent_covered");
+            tableMapping.ColumnMappings.Add("annualized_compkey_count", "annualized_compkey_count");
+            tableMapping.ColumnMappings.Add("annualized_compkey_percent_covered", "annualized_compkey_percent_covered");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::UI.SCIPUI.Default.ConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT fiscal_year, activity_type, driver_type, reporting_category, compkey_count, compkey_percent_covered, annualized_compkey_count, annualized_compkey_percent_covered
+FROM dbo.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARS(@beginYear, @endYear, 'Root Management')
+ORDER BY reporting_category, fiscal_year";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@beginYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@endYear", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable dataTable, int beginYear, int endYear) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(beginYear));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(endYear));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable GetData(int beginYear, int endYear) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(beginYear));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(endYear));
+            SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable dataTable = new SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -23658,6 +26156,15 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(SCIPDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._aSSET_SETSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ASSET_SETS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._aSSET_SETSTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._aLTERNATIVESTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.ALTERNATIVES.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -23667,12 +26174,12 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._aSSET_SETSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ASSET_SETS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._dRIVER_TYPES_UPDATETableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.DRIVER_TYPES_UPDATE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._aSSET_SETSTableAdapter.Update(updatedRows));
+                    result = (result + this._dRIVER_TYPES_UPDATETableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -23685,12 +26192,12 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._dRIVERSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.DRIVERS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._aSSETSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ASSETS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._dRIVERSTableAdapter.Update(updatedRows));
+                    result = (result + this._aSSETSTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -23703,12 +26210,12 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._aSSETSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ASSETS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._dRIVERSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.DRIVERS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._aSSETSTableAdapter.Update(updatedRows));
+                    result = (result + this._dRIVERSTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -23718,15 +26225,6 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._aSSETS_UPDATETableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._dRIVER_TYPES_UPDATETableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.DRIVER_TYPES_UPDATE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._dRIVER_TYPES_UPDATETableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -23740,6 +26238,14 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(SCIPDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._aSSET_SETSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ASSET_SETS.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._aSSET_SETSTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._aLTERNATIVESTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.ALTERNATIVES.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -23748,11 +26254,11 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._aSSET_SETSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ASSET_SETS.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._dRIVER_TYPES_UPDATETableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.DRIVER_TYPES_UPDATE.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._aSSET_SETSTableAdapter.Update(addedRows));
+                    result = (result + this._dRIVER_TYPES_UPDATETableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -23764,11 +26270,11 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._dRIVERSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.DRIVERS.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._aSSETSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ASSETS.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._dRIVERSTableAdapter.Update(addedRows));
+                    result = (result + this._aSSETSTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -23780,11 +26286,11 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._aSSETSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ASSETS.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._dRIVERSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.DRIVERS.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._aSSETSTableAdapter.Update(addedRows));
+                    result = (result + this._dRIVERSTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -23793,14 +26299,6 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._aSSETS_UPDATETableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._dRIVER_TYPES_UPDATETableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.DRIVER_TYPES_UPDATE.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._dRIVER_TYPES_UPDATETableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -23814,35 +26312,11 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(SCIPDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._dRIVER_TYPES_UPDATETableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.DRIVER_TYPES_UPDATE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._dRIVER_TYPES_UPDATETableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._aSSETS_UPDATETableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.ASSETS_UPDATE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._aSSETS_UPDATETableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._aSSETSTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ASSETS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._aSSETSTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._dRIVERS_UPDATETableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.DRIVERS_UPDATE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._dRIVERS_UPDATETableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -23854,6 +26328,22 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._dRIVERS_UPDATETableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.DRIVERS_UPDATE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._dRIVERS_UPDATETableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._aSSETSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ASSETS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._aSSETSTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._dRIVER_TYPESTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.DRIVER_TYPES.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -23862,11 +26352,11 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._aSSET_SETSTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ASSET_SETS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._dRIVER_TYPES_UPDATETableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.DRIVER_TYPES_UPDATE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._aSSET_SETSTableAdapter.Update(deletedRows));
+                    result = (result + this._dRIVER_TYPES_UPDATETableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -23875,6 +26365,14 @@ FROM dbo.FN_CHART_RLTF(@beginYear, @endYear)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._aLTERNATIVESTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._aSSET_SETSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ASSET_SETS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._aSSET_SETSTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

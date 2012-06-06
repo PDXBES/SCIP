@@ -136,9 +136,28 @@ namespace UI
       {
         int beginYear = Convert.ToInt32(txtBeginYear.Text);
         int endYear = Convert.ToInt32(txtEndYear.Text);
-        this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter.Fill(this.SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning, beginYear, endYear, "Cleaning");
-        this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter.Fill(this.SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspection, beginYear, endYear, "Inspection");
-        this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter.Fill(this.SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRoot, beginYear, endYear, "Root Management");
+        this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter.Fill(
+          this.SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning, beginYear, endYear);
+        this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter.Fill(
+          this.SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspection, beginYear, endYear);
+        this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter.Fill(
+          this.SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRoot, beginYear, endYear);
+
+        this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter.
+          SelectCommandTimeOut = 120;
+        this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter.Fill(
+          this.SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection, 
+          beginYear, endYear);
+        this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter.
+          SelectCommandTimeOut = 120;
+        this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter.Fill(
+          this.SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning,
+          beginYear, endYear);
+        this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter.
+          SelectCommandTimeOut = 120;
+        this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter.Fill(
+          this.SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot,
+          beginYear, endYear);
 
         ReportParameter p1 = new ReportParameter("beginYear", txtBeginYear.Text);
         ReportParameter p2 = new ReportParameter("endYear", txtEndYear.Text);

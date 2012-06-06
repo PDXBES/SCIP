@@ -1498,9 +1498,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Condition")</Color>
                   </Style>
                   <ChartMarker>
@@ -1510,7 +1508,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1537,9 +1537,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Condition (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
@@ -1549,7 +1547,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1579,9 +1579,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Preventive Maintenance")</Color>
                   </Style>
                   <ChartMarker>
@@ -1591,7 +1589,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1621,9 +1621,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Preventive Maintenance (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
@@ -1633,7 +1631,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1663,9 +1663,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Root Control High")</Color>
                     <BackgroundGradientType>None</BackgroundGradientType>
                     <BackgroundHatchType>None</BackgroundHatchType>
@@ -1677,7 +1675,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1704,9 +1704,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Root Control High (&gt;15 in, &lt;=36 in)")</Color>
                   </Style>
                   <ChartMarker>
@@ -1716,7 +1714,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1746,9 +1746,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Root Control High (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
@@ -1758,7 +1756,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1788,9 +1788,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Root Control Medium")</Color>
                   </Style>
                   <ChartMarker>
@@ -1800,7 +1798,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1827,9 +1827,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Root Control Medium (&gt;15 in, &lt;=36 in)")</Color>
                   </Style>
                   <ChartMarker>
@@ -1839,7 +1837,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1869,9 +1869,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Root Control Medium (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
@@ -1881,7 +1879,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1910,7 +1910,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Red</Color>
+                  <Color>=Code.GetColor("Condition")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -1948,7 +1948,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Orange</Color>
+                  <Color>=Code.GetColor("Condition (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -1986,7 +1986,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Black</Color>
+                  <Color>=Code.GetColor("Preventive Maintenance")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2024,7 +2024,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Gray</Color>
+                  <Color>=Code.GetColor("Preventive Maintenance (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2062,7 +2062,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Lime</Color>
+                  <Color>=Code.GetColor("Root Control High")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2100,7 +2100,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>SeaGreen</Color>
+                  <Color>=Code.GetColor("Root Control High (&gt;15 in, &lt;=36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2138,7 +2138,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>DarkGreen</Color>
+                  <Color>=Code.GetColor("Root Control High (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2176,7 +2176,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Blue</Color>
+                  <Color>=Code.GetColor("Root Control Medium")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2214,7 +2214,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>CornflowerBlue</Color>
+                  <Color>=Code.GetColor("Root Control Medium (&gt;15 in, &lt;=36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2252,7 +2252,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>SlateBlue</Color>
+                  <Color>=Code.GetColor("Root Control Medium (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2565,9 +2565,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Condition")</Color>
                   </Style>
                   <ChartMarker>
@@ -2577,7 +2575,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2604,9 +2604,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Condition (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
@@ -2616,7 +2614,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2626,6 +2626,9 @@
                   <Style />
                 </ChartDataLabel>
               </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Condition Large (&gt;36 in)</LegendText>
+              </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
@@ -2643,9 +2646,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Preventive Maintenance")</Color>
                   </Style>
                   <ChartMarker>
@@ -2655,7 +2656,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2682,9 +2685,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Preventive Maintenance (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
@@ -2694,7 +2695,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2724,9 +2727,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Root Control High")</Color>
                   </Style>
                   <ChartMarker>
@@ -2736,7 +2737,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2763,9 +2766,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Root Control High (&gt;15 in, &lt;=36 in)")</Color>
                   </Style>
                   <ChartMarker>
@@ -2775,7 +2776,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2805,9 +2808,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Root Control High (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
@@ -2817,7 +2818,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2847,9 +2850,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Root Control Medium")</Color>
                   </Style>
                   <ChartMarker>
@@ -2859,7 +2860,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2886,9 +2889,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Root Control Medium (&gt;15 in, &lt;=36 in)")</Color>
                   </Style>
                   <ChartMarker>
@@ -2898,7 +2899,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2928,9 +2931,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Root Control Medium (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
@@ -2940,7 +2941,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2969,7 +2972,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Red</Color>
+                  <Color>=Code.GetColor("Condition")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3007,7 +3010,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Orange</Color>
+                  <Color>=Code.GetColor("Condition (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3045,7 +3048,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Black</Color>
+                  <Color>=Code.GetColor("Preventive Maintenance")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3083,7 +3086,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Gray</Color>
+                  <Color>=Code.GetColor("Preventive Maintenance (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3121,7 +3124,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Lime</Color>
+                  <Color>=Code.GetColor("Root Control High")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3159,7 +3162,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>SeaGreen</Color>
+                  <Color>=Code.GetColor("Root Control High (&gt;15 in, &lt;=36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3197,7 +3200,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>DarkGreen</Color>
+                  <Color>=Code.GetColor("Root Control High (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3235,7 +3238,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Blue</Color>
+                  <Color>=Code.GetColor("Root Control Medium")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3273,7 +3276,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>CornflowerBlue</Color>
+                  <Color>=Code.GetColor("Root Control Medium (&gt;15 in, &lt;=36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3291,7 +3294,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mov.Avg (Root Control Medium (&gt;15 in, &lt;=36 in))</LegendText>
+                  <LegendText>Mean (Root Control Medium (&gt;15 in, &lt;=36 in))</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3302,15 +3305,7 @@
                 </ChartSmartLabel>
               </ChartSeries>
               <SourceChartSeriesName>RootControlMediumMidSize</SourceChartSeriesName>
-              <DerivedSeriesFormula>MovingAverage</DerivedSeriesFormula>
-              <ChartFormulaParameters>
-                <ChartFormulaParameter Name="Period">
-                  <Value>2</Value>
-                </ChartFormulaParameter>
-                <ChartFormulaParameter Name="StartFromFirst">
-                  <Value>False</Value>
-                </ChartFormulaParameter>
-              </ChartFormulaParameters>
+              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
             </ChartDerivedSeries>
             <ChartDerivedSeries>
               <ChartSeries Name="Series10">
@@ -3319,7 +3314,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>SlateBlue</Color>
+                  <Color>=Code.GetColor("Root Control Medium (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />

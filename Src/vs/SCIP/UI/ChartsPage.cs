@@ -115,15 +115,40 @@ namespace UI
       SetProgressUIVisible(true);
       Refresh();
 
+      btnRunCoverageReport_Click(sender, e);
+      progress.Value = 25;
+      Refresh();
       btnRunCleaningReport_Click(sender, e);
-      progress.Value = 33;
+      progress.Value = 50;
       Refresh();
       btnRunInspectionReport_Click(sender, e);
-      progress.Value = 67;
+      progress.Value = 75;
       Refresh();
       btnRunRootReport_Click(sender, e);
 
       SetProgressUIVisible(false);
+    }
+
+    private void btnRunCoverageReport_Click(object sender, EventArgs e)
+    {
+      Cursor = Cursors.WaitCursor;
+      try
+      {
+        int beginYear = Convert.ToInt32(txtBeginYear.Text);
+        int endYear = Convert.ToInt32(txtEndYear.Text);
+        this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter.Fill(this.SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning, beginYear, endYear, "Cleaning");
+        this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter.Fill(this.SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspection, beginYear, endYear, "Inspection");
+        this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter.Fill(this.SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRoot, beginYear, endYear, "Root Management");
+
+        ReportParameter p1 = new ReportParameter("beginYear", txtBeginYear.Text);
+        ReportParameter p2 = new ReportParameter("endYear", txtEndYear.Text);
+        this.reportViewer4.LocalReport.SetParameters(new ReportParameter[] { p1, p2 });
+        this.reportViewer4.RefreshReport();
+      }
+      finally
+      {
+        Cursor = Cursors.Default;
+      }
     }
   }
 }

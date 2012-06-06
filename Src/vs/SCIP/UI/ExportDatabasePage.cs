@@ -115,7 +115,6 @@ namespace UI
       {
         MessageBox.Show("Database connection error!");
       }
-
     }
 
     private void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

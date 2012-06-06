@@ -21,13 +21,29 @@ namespace UI
     {
       progress.Visible = isVisible;
       progress.Value = 0;
-      Infragistics.Win.Layout.GridBagConstraint constraintRootButton = 
-        pnlActionButtons.GetGridBagConstraint(btnRunRootReport);
-      constraintRootButton.WeightX = isVisible ? 0 : 1;
     }
+
     private void FormCreateCharts_Load(object sender, EventArgs e)
     {
       SetProgressUIVisible(false);
+    }
+
+    private void RunCleaningReport()
+    {
+      int beginYear = Convert.ToInt32(txtBeginYear.Text);
+      int endYear = Convert.ToInt32(txtEndYear.Text);
+
+      this.FN_CHART_CPTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CPTD, beginYear, endYear);
+      this.FN_CHART_CPTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CPTF, beginYear, endYear);
+      this.FN_CHART_CPADTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CPAD, beginYear, endYear);
+      this.FN_CHART_CPAFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CPAF, beginYear, endYear);
+      this.FN_CHART_CLTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CLTD, beginYear, endYear);
+      this.FN_CHART_CLTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CLTF, beginYear, endYear);
+
+      ReportParameter p1 = new ReportParameter("beginYear", txtBeginYear.Text);
+      ReportParameter p2 = new ReportParameter("endYear", txtEndYear.Text);
+      this.rptvwCleaning.LocalReport.SetParameters(new ReportParameter[] { p1, p2 });
+      this.rptvwCleaning.RefreshReport();
     }
 
     private void btnRunCleaningReport_Click(object sender, EventArgs e)
@@ -35,25 +51,35 @@ namespace UI
       Cursor = Cursors.WaitCursor;
       try
       {
-        int beginYear = Convert.ToInt32(txtBeginYear.Text);
-        int endYear = Convert.ToInt32(txtEndYear.Text);
-
-        this.FN_CHART_CPTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CPTD, beginYear, endYear);
-        this.FN_CHART_CPTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CPTF, beginYear, endYear);
-        this.FN_CHART_CPADTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CPAD, beginYear, endYear);
-        this.FN_CHART_CPAFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CPAF, beginYear, endYear);
-        this.FN_CHART_CLTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CLTD, beginYear, endYear);
-        this.FN_CHART_CLTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CLTF, beginYear, endYear);
-
-        ReportParameter p1 = new ReportParameter("beginYear", txtBeginYear.Text);
-        ReportParameter p2 = new ReportParameter("endYear", txtEndYear.Text);
-        this.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { p1, p2 });
-        this.reportViewer1.RefreshReport();
+        SetProgressUIVisible(true);
+        Refresh();
+        RunCleaningReport();
+        tabReports.SelectedTab = tabReports.Tabs["Cleaning"];
       }
       finally
       {
         Cursor = Cursors.Default;
+        SetProgressUIVisible(false);
       }
+    }
+
+    private void RunInspectionReport()
+    {
+      int beginYear = Convert.ToInt32(txtBeginYear.Text);
+      int endYear = Convert.ToInt32(txtEndYear.Text);
+
+      this.FN_CHART_ILTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_ILTD, beginYear, endYear);
+      this.FN_CHART_ILTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_ILTF, beginYear, endYear);
+      this.FN_CHART_IPADTableAdapter.Fill(this.SCIPDataSet.FN_CHART_IPAD, beginYear, endYear);
+      this.FN_CHART_IPAFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_IPAF, beginYear, endYear);
+      this.FN_CHART_IPTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_IPTD, beginYear, endYear);
+      this.FN_CHART_IPTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_IPTF, beginYear, endYear);
+      this.rptvwInspection.RefreshReport();
+
+      ReportParameter p1 = new ReportParameter("beginYear", txtBeginYear.Text);
+      ReportParameter p2 = new ReportParameter("endYear", txtEndYear.Text);
+      this.rptvwInspection.LocalReport.SetParameters(new ReportParameter[] { p1, p2 });
+      this.rptvwInspection.RefreshReport();
     }
 
     private void btnRunInspectionReport_Click(object sender, EventArgs e)
@@ -61,26 +87,34 @@ namespace UI
       Cursor = Cursors.WaitCursor;
       try
       {
-        int beginYear = Convert.ToInt32(txtBeginYear.Text);
-        int endYear = Convert.ToInt32(txtEndYear.Text);
-
-        this.FN_CHART_ILTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_ILTD, beginYear, endYear);
-        this.FN_CHART_ILTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_ILTF, beginYear, endYear);
-        this.FN_CHART_IPADTableAdapter.Fill(this.SCIPDataSet.FN_CHART_IPAD, beginYear, endYear);
-        this.FN_CHART_IPAFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_IPAF, beginYear, endYear);
-        this.FN_CHART_IPTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_IPTD, beginYear, endYear);
-        this.FN_CHART_IPTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_IPTF, beginYear, endYear);
-        this.reportViewer2.RefreshReport();
-
-        ReportParameter p1 = new ReportParameter("beginYear", txtBeginYear.Text);
-        ReportParameter p2 = new ReportParameter("endYear", txtEndYear.Text);
-        this.reportViewer2.LocalReport.SetParameters(new ReportParameter[] { p1, p2 });
-        this.reportViewer2.RefreshReport();
+        SetProgressUIVisible(true);
+        Refresh();
+        RunInspectionReport();
+        tabReports.SelectedTab = tabReports.Tabs["Inspection"];
       }
       finally
       {
         Cursor = Cursors.Default;
+        SetProgressUIVisible(false);
       }
+    }
+
+    private void RunRootReport()
+    {
+      int beginYear = Convert.ToInt32(txtBeginYear.Text);
+      int endYear = Convert.ToInt32(txtEndYear.Text);
+
+      this.FN_CHART_RPTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RPTD, beginYear, endYear);
+      this.FN_CHART_RPTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RPTF, beginYear, endYear);
+      this.FN_CHART_RPADTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RPAD, beginYear, endYear);
+      this.FN_CHART_RPAFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RPAF, beginYear, endYear);
+      this.FN_CHART_RLTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RLTD, beginYear, endYear);
+      this.FN_CHART_RLTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RLTF, beginYear, endYear);
+
+      ReportParameter p1 = new ReportParameter("beginYear", txtBeginYear.Text);
+      ReportParameter p2 = new ReportParameter("endYear", txtEndYear.Text);
+      this.rptvwRoot.LocalReport.SetParameters(new ReportParameter[] { p1, p2 });
+      this.rptvwRoot.RefreshReport();
     }
 
     private void btnRunRootReport_Click(object sender, EventArgs e)
@@ -89,24 +123,17 @@ namespace UI
       Cursor = Cursors.WaitCursor;
       try
       {
-        int beginYear = Convert.ToInt32(txtBeginYear.Text);
-        int endYear = Convert.ToInt32(txtEndYear.Text);
+        SetProgressUIVisible(true);
+        Refresh();
 
-        this.FN_CHART_RPTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RPTD, beginYear, endYear);
-        this.FN_CHART_RPTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RPTF, beginYear, endYear);
-        this.FN_CHART_RPADTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RPAD, beginYear, endYear);
-        this.FN_CHART_RPAFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RPAF, beginYear, endYear);
-        this.FN_CHART_RLTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RLTD, beginYear, endYear);
-        this.FN_CHART_RLTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RLTF, beginYear, endYear);
+        RunRootReport();
 
-        ReportParameter p1 = new ReportParameter("beginYear", txtBeginYear.Text);
-        ReportParameter p2 = new ReportParameter("endYear", txtEndYear.Text);
-        this.reportViewer3.LocalReport.SetParameters(new ReportParameter[] { p1, p2 });
-        this.reportViewer3.RefreshReport();
+        tabReports.SelectedTab = tabReports.Tabs["RootManagement"];
       }
       finally
       {
         Cursor = Cursors.Default;
+        SetProgressUIVisible(false);
       }
     }
 
@@ -125,8 +152,59 @@ namespace UI
       progress.Value = 75;
       Refresh();
       btnRunRootReport_Click(sender, e);
-
+      tabReports.SelectedTab = tabReports.Tabs["Cleaning"];
       SetProgressUIVisible(false);
+    }
+
+    private void RunCoverageReport()
+    {
+      int beginYear = Convert.ToInt32(txtBeginYear.Text);
+      int endYear = Convert.ToInt32(txtEndYear.Text);
+      this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter.Fill(
+        this.SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning, beginYear, endYear);
+      progress.Value = 17;
+      Refresh();
+
+      this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter.Fill(
+        this.SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspection, beginYear, endYear);
+      progress.Value = 33;
+      Refresh();
+
+      this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter.Fill(
+        this.SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRoot, beginYear, endYear);
+      progress.Value = 50;
+      Refresh();
+
+
+      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter.
+        SelectCommandTimeOut = 120;
+      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter.Fill(
+        this.SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection,
+        beginYear, endYear);
+      progress.Value = 67;
+      Refresh();
+
+      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter.
+        SelectCommandTimeOut = 120;
+      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter.Fill(
+        this.SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning,
+        beginYear, endYear);
+      progress.Value = 83;
+      Refresh();
+
+      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter.
+        SelectCommandTimeOut = 120;
+      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter.Fill(
+        this.SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot,
+        beginYear, endYear);
+      progress.Value = 95;
+      Refresh();
+
+
+      ReportParameter p1 = new ReportParameter("beginYear", txtBeginYear.Text);
+      ReportParameter p2 = new ReportParameter("endYear", txtEndYear.Text);
+      this.rptvwCoverage.LocalReport.SetParameters(new ReportParameter[] { p1, p2 });
+      this.rptvwCoverage.RefreshReport();
     }
 
     private void btnRunCoverageReport_Click(object sender, EventArgs e)
@@ -134,38 +212,16 @@ namespace UI
       Cursor = Cursors.WaitCursor;
       try
       {
-        int beginYear = Convert.ToInt32(txtBeginYear.Text);
-        int endYear = Convert.ToInt32(txtEndYear.Text);
-        this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter.Fill(
-          this.SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning, beginYear, endYear);
-        this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter.Fill(
-          this.SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspection, beginYear, endYear);
-        this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter.Fill(
-          this.SCIPDataSet.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRoot, beginYear, endYear);
+        SetProgressUIVisible(true);
+        Refresh();
 
-        this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter.
-          SelectCommandTimeOut = 120;
-        this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter.Fill(
-          this.SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection, 
-          beginYear, endYear);
-        this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter.
-          SelectCommandTimeOut = 120;
-        this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter.Fill(
-          this.SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning,
-          beginYear, endYear);
-        this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter.
-          SelectCommandTimeOut = 120;
-        this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter.Fill(
-          this.SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot,
-          beginYear, endYear);
+        RunCoverageReport();
+        tabReports.SelectedTab = tabReports.Tabs["Coverage"];
 
-        ReportParameter p1 = new ReportParameter("beginYear", txtBeginYear.Text);
-        ReportParameter p2 = new ReportParameter("endYear", txtEndYear.Text);
-        this.reportViewer4.LocalReport.SetParameters(new ReportParameter[] { p1, p2 });
-        this.reportViewer4.RefreshReport();
       }
       finally
       {
+        SetProgressUIVisible(false);
         Cursor = Cursors.Default;
       }
     }

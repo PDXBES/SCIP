@@ -54,45 +54,17 @@
       Microsoft.Reporting.WinForms.ReportDataSource reportDataSource23 = new Microsoft.Reporting.WinForms.ReportDataSource();
       Microsoft.Reporting.WinForms.ReportDataSource reportDataSource24 = new Microsoft.Reporting.WinForms.ReportDataSource();
       Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint12 = new Infragistics.Win.Layout.GridBagConstraint();
-      Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint9 = new Infragistics.Win.Layout.GridBagConstraint();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint10 = new Infragistics.Win.Layout.GridBagConstraint();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint11 = new Infragistics.Win.Layout.GridBagConstraint();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint4 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint6 = new Infragistics.Win.Layout.GridBagConstraint();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint8 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint5 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint4 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint2 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Infragistics.Win.UltraWinTabControl.UltraTab();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab3 = new Infragistics.Win.UltraWinTabControl.UltraTab();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab4 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint5 = new Infragistics.Win.Layout.GridBagConstraint();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint7 = new Infragistics.Win.Layout.GridBagConstraint();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint2 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint3 = new Infragistics.Win.Layout.GridBagConstraint();
-      this.ultraTabPageControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-      this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-      this.ultraTabPageControl2 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-      this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
-      this.ultraTabPageControl3 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-      this.reportViewer3 = new Microsoft.Reporting.WinForms.ReportViewer();
-      this.ultraTabPageControl4 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
-      this.reportViewer4 = new Microsoft.Reporting.WinForms.ReportViewer();
-      this.ultraLabel1 = new Infragistics.Win.Misc.UltraLabel();
-      this.ultraLabel2 = new Infragistics.Win.Misc.UltraLabel();
-      this.txtBeginYear = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
-      this.txtEndYear = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
-      this.btnRunCleaningReport = new Infragistics.Win.Misc.UltraButton();
-      this.btnRunInspectionReport = new Infragistics.Win.Misc.UltraButton();
-      this.ultraTabControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabControl();
-      this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
-      this.btnRunRootReport = new Infragistics.Win.Misc.UltraButton();
-      this.ultraGridBagLayoutPanel1 = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
-      this.pnlActionButtons = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
-      this.btnRunCoverageReport = new Infragistics.Win.Misc.UltraButton();
-      this.progress = new Infragistics.Win.UltraWinProgressBar.UltraProgressBar();
-      this.btnRunAllReports = new Infragistics.Win.Misc.UltraButton();
       this.FN_CHART_CPTDBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.SCIPDataSet = new UI.SCIPDataSet();
       this.FN_CHART_CPTFBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -115,7 +87,28 @@
       this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.ultraTabPageControl1 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
+      this.rptvwCleaning = new Microsoft.Reporting.WinForms.ReportViewer();
+      this.ultraTabPageControl2 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
+      this.rptvwInspection = new Microsoft.Reporting.WinForms.ReportViewer();
+      this.ultraTabPageControl3 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
+      this.rptvwRoot = new Microsoft.Reporting.WinForms.ReportViewer();
+      this.ultraTabPageControl4 = new Infragistics.Win.UltraWinTabControl.UltraTabPageControl();
+      this.rptvwCoverage = new Microsoft.Reporting.WinForms.ReportViewer();
+      this.ultraLabel1 = new Infragistics.Win.Misc.UltraLabel();
+      this.ultraLabel2 = new Infragistics.Win.Misc.UltraLabel();
+      this.txtBeginYear = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
+      this.txtEndYear = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
+      this.btnRunCleaningReport = new Infragistics.Win.Misc.UltraButton();
+      this.btnRunInspectionReport = new Infragistics.Win.Misc.UltraButton();
+      this.tabReports = new Infragistics.Win.UltraWinTabControl.UltraTabControl();
+      this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
+      this.btnRunCoverageReport = new Infragistics.Win.Misc.UltraButton();
+      this.progress = new Infragistics.Win.UltraWinProgressBar.UltraProgressBar();
+      this.btnRunAllReports = new Infragistics.Win.Misc.UltraButton();
       this.FN_CHART_CPTDTableAdapter = new UI.SCIPDataSetTableAdapters.FN_CHART_CPTDTableAdapter();
       this.FN_CHART_CPTFTableAdapter = new UI.SCIPDataSetTableAdapters.FN_CHART_CPTFTableAdapter();
       this.FN_CHART_CPADTableAdapter = new UI.SCIPDataSetTableAdapters.FN_CHART_CPADTableAdapter();
@@ -138,22 +131,12 @@
       this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter = new UI.SCIPDataSetTableAdapters.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter();
       this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter = new UI.SCIPDataSetTableAdapters.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter();
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter = new UI.SCIPDataSetTableAdapters.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter();
-      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter = new UI.SCIPDataSetTableAdapters.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter();
-      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter = new UI.SCIPDataSetTableAdapters.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter();
-      this.ultraTabPageControl1.SuspendLayout();
-      this.ultraTabPageControl2.SuspendLayout();
-      this.ultraTabPageControl3.SuspendLayout();
-      this.ultraTabPageControl4.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.txtBeginYear)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.txtEndYear)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.ultraTabControl1)).BeginInit();
-      this.ultraTabControl1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel1)).BeginInit();
-      this.ultraGridBagLayoutPanel1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.pnlActionButtons)).BeginInit();
-      this.pnlActionButtons.SuspendLayout();
+      this.pnlActionButtons = new Infragistics.Win.Misc.UltraPanel();
+      this.btnRunRootReport = new Infragistics.Win.Misc.UltraButton();
+      this.pnlMain = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
+      this.ultraFlowLayoutManager1 = new Infragistics.Win.Misc.UltraFlowLayoutManager(this.components);
       ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_CPTDBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.SCIPDataSet)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_CPTFBindingSource)).BeginInit();
@@ -176,368 +159,23 @@
       ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource)).BeginInit();
+      this.ultraTabPageControl1.SuspendLayout();
+      this.ultraTabPageControl2.SuspendLayout();
+      this.ultraTabPageControl3.SuspendLayout();
+      this.ultraTabPageControl4.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.txtBeginYear)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.txtEndYear)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.tabReports)).BeginInit();
+      this.tabReports.SuspendLayout();
+      this.pnlActionButtons.ClientArea.SuspendLayout();
+      this.pnlActionButtons.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pnlMain)).BeginInit();
+      this.pnlMain.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.ultraFlowLayoutManager1)).BeginInit();
       this.SuspendLayout();
-      // 
-      // ultraTabPageControl1
-      // 
-      this.ultraTabPageControl1.Controls.Add(this.reportViewer1);
-      this.ultraTabPageControl1.Location = new System.Drawing.Point(-10000, -10000);
-      this.ultraTabPageControl1.Name = "ultraTabPageControl1";
-      this.ultraTabPageControl1.Size = new System.Drawing.Size(711, 508);
-      // 
-      // reportViewer1
-      // 
-      this.reportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-      reportDataSource1.Name = "CPTD";
-      reportDataSource1.Value = this.FN_CHART_CPTDBindingSource;
-      reportDataSource2.Name = "CPTF";
-      reportDataSource2.Value = this.FN_CHART_CPTFBindingSource;
-      reportDataSource3.Name = "CPAD";
-      reportDataSource3.Value = this.FN_CHART_CPADBindingSource;
-      reportDataSource4.Name = "CPAF";
-      reportDataSource4.Value = this.FN_CHART_CPAFBindingSource;
-      reportDataSource5.Name = "CLTF";
-      reportDataSource5.Value = this.FN_CHART_CLTFBindingSource;
-      reportDataSource6.Name = "CLTD";
-      reportDataSource6.Value = this.FN_CHART_CLTDBindingSource;
-      this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-      this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-      this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-      this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
-      this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
-      this.reportViewer1.LocalReport.DataSources.Add(reportDataSource6);
-      this.reportViewer1.LocalReport.ReportEmbeddedResource = "UI.Cleaning.rdlc";
-      this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-      this.reportViewer1.Name = "reportViewer1";
-      this.reportViewer1.Size = new System.Drawing.Size(711, 508);
-      this.reportViewer1.TabIndex = 9;
-      // 
-      // ultraTabPageControl2
-      // 
-      this.ultraTabPageControl2.Controls.Add(this.reportViewer2);
-      this.ultraTabPageControl2.Location = new System.Drawing.Point(-10000, -10000);
-      this.ultraTabPageControl2.Name = "ultraTabPageControl2";
-      this.ultraTabPageControl2.Size = new System.Drawing.Size(711, 508);
-      // 
-      // reportViewer2
-      // 
-      this.reportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
-      reportDataSource7.Name = "ILTD";
-      reportDataSource7.Value = this.FN_CHART_ILTDBindingSource;
-      reportDataSource8.Name = "ILTF";
-      reportDataSource8.Value = this.FN_CHART_ILTFBindingSource;
-      reportDataSource9.Name = "IPAD";
-      reportDataSource9.Value = this.FN_CHART_IPADBindingSource;
-      reportDataSource10.Name = "IPAF";
-      reportDataSource10.Value = this.FN_CHART_IPAFBindingSource;
-      reportDataSource11.Name = "IPTD";
-      reportDataSource11.Value = this.FN_CHART_IPTDBindingSource;
-      reportDataSource12.Name = "IPTF";
-      reportDataSource12.Value = this.FN_CHART_IPTFBindingSource;
-      this.reportViewer2.LocalReport.DataSources.Add(reportDataSource7);
-      this.reportViewer2.LocalReport.DataSources.Add(reportDataSource8);
-      this.reportViewer2.LocalReport.DataSources.Add(reportDataSource9);
-      this.reportViewer2.LocalReport.DataSources.Add(reportDataSource10);
-      this.reportViewer2.LocalReport.DataSources.Add(reportDataSource11);
-      this.reportViewer2.LocalReport.DataSources.Add(reportDataSource12);
-      this.reportViewer2.LocalReport.ReportEmbeddedResource = "UI.Inspections.rdlc";
-      this.reportViewer2.Location = new System.Drawing.Point(0, 0);
-      this.reportViewer2.Name = "reportViewer2";
-      this.reportViewer2.Size = new System.Drawing.Size(711, 508);
-      this.reportViewer2.TabIndex = 0;
-      // 
-      // ultraTabPageControl3
-      // 
-      this.ultraTabPageControl3.Controls.Add(this.reportViewer3);
-      this.ultraTabPageControl3.Location = new System.Drawing.Point(-10000, -10000);
-      this.ultraTabPageControl3.Name = "ultraTabPageControl3";
-      this.ultraTabPageControl3.Size = new System.Drawing.Size(711, 508);
-      // 
-      // reportViewer3
-      // 
-      this.reportViewer3.Dock = System.Windows.Forms.DockStyle.Fill;
-      reportDataSource13.Name = "RPTD";
-      reportDataSource13.Value = this.FN_CHART_RPTDBindingSource;
-      reportDataSource14.Name = "RPTF";
-      reportDataSource14.Value = this.FN_CHART_RPTFBindingSource;
-      reportDataSource15.Name = "RPAD";
-      reportDataSource15.Value = this.FN_CHART_RPADBindingSource;
-      reportDataSource16.Name = "RPAF";
-      reportDataSource16.Value = this.FN_CHART_RPAFBindingSource;
-      reportDataSource17.Name = "RLTD";
-      reportDataSource17.Value = this.FN_CHART_RLTDBindingSource;
-      reportDataSource18.Name = "RLTF";
-      reportDataSource18.Value = this.FN_CHART_RLTFBindingSource;
-      this.reportViewer3.LocalReport.DataSources.Add(reportDataSource13);
-      this.reportViewer3.LocalReport.DataSources.Add(reportDataSource14);
-      this.reportViewer3.LocalReport.DataSources.Add(reportDataSource15);
-      this.reportViewer3.LocalReport.DataSources.Add(reportDataSource16);
-      this.reportViewer3.LocalReport.DataSources.Add(reportDataSource17);
-      this.reportViewer3.LocalReport.DataSources.Add(reportDataSource18);
-      this.reportViewer3.LocalReport.ReportEmbeddedResource = "UI.RootManagement.rdlc";
-      this.reportViewer3.Location = new System.Drawing.Point(0, 0);
-      this.reportViewer3.Name = "reportViewer3";
-      this.reportViewer3.Size = new System.Drawing.Size(711, 508);
-      this.reportViewer3.TabIndex = 0;
-      // 
-      // ultraTabPageControl4
-      // 
-      this.ultraTabPageControl4.Controls.Add(this.reportViewer4);
-      this.ultraTabPageControl4.Location = new System.Drawing.Point(1, 24);
-      this.ultraTabPageControl4.Name = "ultraTabPageControl4";
-      this.ultraTabPageControl4.Size = new System.Drawing.Size(711, 508);
-      // 
-      // reportViewer4
-      // 
-      this.reportViewer4.Dock = System.Windows.Forms.DockStyle.Fill;
-      reportDataSource19.Name = "COVERAGE_CLEANING";
-      reportDataSource19.Value = this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource;
-      reportDataSource20.Name = "COVERAGE_INSPECTION";
-      reportDataSource20.Value = this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionBindingSource;
-      reportDataSource21.Name = "COVERAGE_ROOT";
-      reportDataSource21.Value = this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource;
-      reportDataSource22.Name = "COVERAGE_CLEANING_LINE";
-      reportDataSource22.Value = this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource;
-      reportDataSource23.Name = "COVERAGE_INSPECTION_LINE";
-      reportDataSource23.Value = this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionBindingSource;
-      reportDataSource24.Name = "COVERAGE_ROOT_LINE";
-      reportDataSource24.Value = this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource;
-      this.reportViewer4.LocalReport.DataSources.Add(reportDataSource19);
-      this.reportViewer4.LocalReport.DataSources.Add(reportDataSource20);
-      this.reportViewer4.LocalReport.DataSources.Add(reportDataSource21);
-      this.reportViewer4.LocalReport.DataSources.Add(reportDataSource22);
-      this.reportViewer4.LocalReport.DataSources.Add(reportDataSource23);
-      this.reportViewer4.LocalReport.DataSources.Add(reportDataSource24);
-      this.reportViewer4.LocalReport.ReportEmbeddedResource = "UI.Coverage.rdlc";
-      this.reportViewer4.Location = new System.Drawing.Point(0, 0);
-      this.reportViewer4.Name = "reportViewer4";
-      this.reportViewer4.Size = new System.Drawing.Size(711, 508);
-      this.reportViewer4.TabIndex = 0;
-      // 
-      // ultraLabel1
-      // 
-      appearance1.TextVAlignAsString = "Middle";
-      this.ultraLabel1.Appearance = appearance1;
-      this.ultraLabel1.AutoSize = true;
-      gridBagConstraint12.Insets.Right = 8;
-      gridBagConstraint12.OriginX = 2;
-      gridBagConstraint12.OriginY = 0;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.ultraLabel1, gridBagConstraint12);
-      this.ultraLabel1.Location = new System.Drawing.Point(181, 4);
-      this.ultraLabel1.Name = "ultraLabel1";
-      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.ultraLabel1, new System.Drawing.Size(48, 24));
-      this.ultraLabel1.Size = new System.Drawing.Size(48, 17);
-      this.ultraLabel1.TabIndex = 3;
-      this.ultraLabel1.Text = "End Year";
-      // 
-      // ultraLabel2
-      // 
-      appearance2.TextVAlignAsString = "Middle";
-      this.ultraLabel2.Appearance = appearance2;
-      this.ultraLabel2.AutoSize = true;
-      gridBagConstraint9.Insets.Right = 8;
-      gridBagConstraint9.OriginX = 0;
-      gridBagConstraint9.OriginY = 0;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.ultraLabel2, gridBagConstraint9);
-      this.ultraLabel2.Location = new System.Drawing.Point(0, 4);
-      this.ultraLabel2.Name = "ultraLabel2";
-      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.ultraLabel2, new System.Drawing.Size(57, 24));
-      this.ultraLabel2.Size = new System.Drawing.Size(57, 17);
-      this.ultraLabel2.TabIndex = 4;
-      this.ultraLabel2.Text = "Begin Year";
-      // 
-      // txtBeginYear
-      // 
-      gridBagConstraint10.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint10.Insets.Bottom = 8;
-      gridBagConstraint10.Insets.Right = 16;
-      gridBagConstraint10.OriginX = 1;
-      gridBagConstraint10.OriginY = 0;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.txtBeginYear, gridBagConstraint10);
-      this.txtBeginYear.Location = new System.Drawing.Point(65, 0);
-      this.txtBeginYear.Name = "txtBeginYear";
-      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.txtBeginYear, new System.Drawing.Size(100, 24));
-      this.txtBeginYear.Size = new System.Drawing.Size(100, 24);
-      this.txtBeginYear.TabIndex = 5;
-      this.txtBeginYear.Text = "2012";
-      // 
-      // txtEndYear
-      // 
-      gridBagConstraint11.Anchor = Infragistics.Win.Layout.AnchorType.TopLeft;
-      gridBagConstraint11.OriginX = 3;
-      gridBagConstraint11.OriginY = 0;
-      gridBagConstraint11.WeightX = 1F;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.txtEndYear, gridBagConstraint11);
-      this.txtEndYear.Location = new System.Drawing.Point(237, 0);
-      this.txtEndYear.Name = "txtEndYear";
-      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.txtEndYear, new System.Drawing.Size(100, 24));
-      this.txtEndYear.Size = new System.Drawing.Size(100, 24);
-      this.txtEndYear.TabIndex = 6;
-      this.txtEndYear.Text = "2023";
-      // 
-      // btnRunCleaningReport
-      // 
-      gridBagConstraint4.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint4.OriginX = 2;
-      gridBagConstraint4.OriginY = 0;
-      this.pnlActionButtons.SetGridBagConstraint(this.btnRunCleaningReport, gridBagConstraint4);
-      this.btnRunCleaningReport.Location = new System.Drawing.Point(190, 4);
-      this.btnRunCleaningReport.Name = "btnRunCleaningReport";
-      this.pnlActionButtons.SetPreferredSize(this.btnRunCleaningReport, new System.Drawing.Size(90, 23));
-      this.btnRunCleaningReport.Size = new System.Drawing.Size(90, 23);
-      this.btnRunCleaningReport.TabIndex = 7;
-      this.btnRunCleaningReport.Text = "Run Cleaning";
-      this.btnRunCleaningReport.Click += new System.EventHandler(this.btnRunCleaningReport_Click);
-      // 
-      // btnRunInspectionReport
-      // 
-      gridBagConstraint6.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint6.OriginX = 3;
-      gridBagConstraint6.OriginY = 0;
-      this.pnlActionButtons.SetGridBagConstraint(this.btnRunInspectionReport, gridBagConstraint6);
-      this.btnRunInspectionReport.Location = new System.Drawing.Point(280, 4);
-      this.btnRunInspectionReport.Name = "btnRunInspectionReport";
-      this.pnlActionButtons.SetPreferredSize(this.btnRunInspectionReport, new System.Drawing.Size(90, 23));
-      this.btnRunInspectionReport.Size = new System.Drawing.Size(90, 23);
-      this.btnRunInspectionReport.TabIndex = 9;
-      this.btnRunInspectionReport.Text = "Run Inspection";
-      this.btnRunInspectionReport.Click += new System.EventHandler(this.btnRunInspectionReport_Click);
-      // 
-      // ultraTabControl1
-      // 
-      this.ultraTabControl1.Controls.Add(this.ultraTabSharedControlsPage1);
-      this.ultraTabControl1.Controls.Add(this.ultraTabPageControl1);
-      this.ultraTabControl1.Controls.Add(this.ultraTabPageControl2);
-      this.ultraTabControl1.Controls.Add(this.ultraTabPageControl3);
-      this.ultraTabControl1.Controls.Add(this.ultraTabPageControl4);
-      gridBagConstraint8.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint8.OriginX = 0;
-      gridBagConstraint8.OriginY = 2;
-      gridBagConstraint8.SpanX = 4;
-      gridBagConstraint8.WeightX = 1F;
-      gridBagConstraint8.WeightY = 1F;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.ultraTabControl1, gridBagConstraint8);
-      this.ultraTabControl1.Location = new System.Drawing.Point(0, 71);
-      this.ultraTabControl1.Name = "ultraTabControl1";
-      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.ultraTabControl1, new System.Drawing.Size(584, 232));
-      this.ultraTabControl1.SharedControlsPage = this.ultraTabSharedControlsPage1;
-      this.ultraTabControl1.Size = new System.Drawing.Size(715, 535);
-      this.ultraTabControl1.TabIndex = 10;
-      ultraTab1.TabPage = this.ultraTabPageControl1;
-      ultraTab1.Text = "Cleaning";
-      ultraTab2.TabPage = this.ultraTabPageControl2;
-      ultraTab2.Text = "Inspection";
-      ultraTab3.TabPage = this.ultraTabPageControl3;
-      ultraTab3.Text = "Root Management";
-      ultraTab4.TabPage = this.ultraTabPageControl4;
-      ultraTab4.Text = "Coverage";
-      this.ultraTabControl1.Tabs.AddRange(new Infragistics.Win.UltraWinTabControl.UltraTab[] {
-            ultraTab1,
-            ultraTab2,
-            ultraTab3,
-            ultraTab4});
-      // 
-      // ultraTabSharedControlsPage1
-      // 
-      this.ultraTabSharedControlsPage1.Location = new System.Drawing.Point(-10000, -10000);
-      this.ultraTabSharedControlsPage1.Name = "ultraTabSharedControlsPage1";
-      this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(711, 508);
-      // 
-      // btnRunRootReport
-      // 
-      gridBagConstraint5.Anchor = Infragistics.Win.Layout.AnchorType.Left;
-      gridBagConstraint5.Insets.Right = 8;
-      gridBagConstraint5.OriginX = 4;
-      gridBagConstraint5.OriginY = 0;
-      this.pnlActionButtons.SetGridBagConstraint(this.btnRunRootReport, gridBagConstraint5);
-      this.btnRunRootReport.Location = new System.Drawing.Point(370, 4);
-      this.btnRunRootReport.Name = "btnRunRootReport";
-      this.pnlActionButtons.SetPreferredSize(this.btnRunRootReport, new System.Drawing.Size(90, 23));
-      this.btnRunRootReport.Size = new System.Drawing.Size(90, 23);
-      this.btnRunRootReport.TabIndex = 11;
-      this.btnRunRootReport.Text = "Run Root";
-      this.btnRunRootReport.Click += new System.EventHandler(this.btnRunRootReport_Click);
-      // 
-      // ultraGridBagLayoutPanel1
-      // 
-      this.ultraGridBagLayoutPanel1.Controls.Add(this.pnlActionButtons);
-      this.ultraGridBagLayoutPanel1.Controls.Add(this.ultraTabControl1);
-      this.ultraGridBagLayoutPanel1.Controls.Add(this.ultraLabel2);
-      this.ultraGridBagLayoutPanel1.Controls.Add(this.txtBeginYear);
-      this.ultraGridBagLayoutPanel1.Controls.Add(this.ultraLabel1);
-      this.ultraGridBagLayoutPanel1.Controls.Add(this.txtEndYear);
-      this.ultraGridBagLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.ultraGridBagLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-      this.ultraGridBagLayoutPanel1.Name = "ultraGridBagLayoutPanel1";
-      this.ultraGridBagLayoutPanel1.Size = new System.Drawing.Size(715, 606);
-      this.ultraGridBagLayoutPanel1.TabIndex = 12;
-      // 
-      // pnlActionButtons
-      // 
-      this.pnlActionButtons.Controls.Add(this.btnRunCoverageReport);
-      this.pnlActionButtons.Controls.Add(this.progress);
-      this.pnlActionButtons.Controls.Add(this.btnRunAllReports);
-      this.pnlActionButtons.Controls.Add(this.btnRunCleaningReport);
-      this.pnlActionButtons.Controls.Add(this.btnRunRootReport);
-      this.pnlActionButtons.Controls.Add(this.btnRunInspectionReport);
-      gridBagConstraint7.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint7.Insets.Bottom = 8;
-      gridBagConstraint7.OriginX = 0;
-      gridBagConstraint7.OriginY = 1;
-      gridBagConstraint7.SpanX = 4;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.pnlActionButtons, gridBagConstraint7);
-      this.pnlActionButtons.Location = new System.Drawing.Point(0, 32);
-      this.pnlActionButtons.Name = "pnlActionButtons";
-      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.pnlActionButtons, new System.Drawing.Size(200, 31));
-      this.pnlActionButtons.Size = new System.Drawing.Size(715, 31);
-      this.pnlActionButtons.TabIndex = 7;
-      // 
-      // btnRunCoverageReport
-      // 
-      gridBagConstraint1.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint1.OriginX = 1;
-      gridBagConstraint1.OriginY = 0;
-      this.pnlActionButtons.SetGridBagConstraint(this.btnRunCoverageReport, gridBagConstraint1);
-      this.btnRunCoverageReport.Location = new System.Drawing.Point(90, 4);
-      this.btnRunCoverageReport.Name = "btnRunCoverageReport";
-      this.pnlActionButtons.SetPreferredSize(this.btnRunCoverageReport, new System.Drawing.Size(100, 23));
-      this.btnRunCoverageReport.Size = new System.Drawing.Size(100, 23);
-      this.btnRunCoverageReport.TabIndex = 14;
-      this.btnRunCoverageReport.Text = "Run Coverage";
-      this.btnRunCoverageReport.Click += new System.EventHandler(this.btnRunCoverageReport_Click);
-      // 
-      // progress
-      // 
-      gridBagConstraint2.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint2.OriginX = 5;
-      gridBagConstraint2.OriginY = 0;
-      gridBagConstraint2.WeightX = 1F;
-      this.pnlActionButtons.SetGridBagConstraint(this.progress, gridBagConstraint2);
-      this.progress.Location = new System.Drawing.Point(468, 4);
-      this.progress.Name = "progress";
-      this.pnlActionButtons.SetPreferredSize(this.progress, new System.Drawing.Size(75, 23));
-      this.progress.Size = new System.Drawing.Size(247, 23);
-      this.progress.TabIndex = 13;
-      this.progress.Text = "[Formatted]";
-      this.progress.Visible = false;
-      // 
-      // btnRunAllReports
-      // 
-      gridBagConstraint3.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint3.OriginX = 0;
-      gridBagConstraint3.OriginY = 0;
-      this.pnlActionButtons.SetGridBagConstraint(this.btnRunAllReports, gridBagConstraint3);
-      this.btnRunAllReports.Location = new System.Drawing.Point(0, 4);
-      this.btnRunAllReports.Name = "btnRunAllReports";
-      this.pnlActionButtons.SetPreferredSize(this.btnRunAllReports, new System.Drawing.Size(90, 23));
-      this.btnRunAllReports.Size = new System.Drawing.Size(90, 23);
-      this.btnRunAllReports.TabIndex = 12;
-      this.btnRunAllReports.Text = "Run All";
-      this.btnRunAllReports.Click += new System.EventHandler(this.btnRunAllReports_Click);
       // 
       // FN_CHART_CPTDBindingSource
       // 
@@ -649,10 +287,306 @@
       this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource.DataMember = "FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRoot";
       this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource.DataSource = this.SCIPDataSet;
       // 
+      // FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource
+      // 
+      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource.DataMember = "FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning";
+      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource.DataSource = this.SCIPDataSet;
+      // 
       // FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionBindingSource
       // 
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionBindingSource.DataMember = "FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection";
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionBindingSource.DataSource = this.SCIPDataSet;
+      // 
+      // FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource
+      // 
+      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource.DataMember = "FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot";
+      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource.DataSource = this.SCIPDataSet;
+      // 
+      // ultraTabPageControl1
+      // 
+      this.ultraTabPageControl1.Controls.Add(this.rptvwCleaning);
+      this.ultraTabPageControl1.Location = new System.Drawing.Point(-10000, -10000);
+      this.ultraTabPageControl1.Name = "ultraTabPageControl1";
+      this.ultraTabPageControl1.Size = new System.Drawing.Size(711, 517);
+      // 
+      // rptvwCleaning
+      // 
+      this.rptvwCleaning.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.rptvwCleaning.Dock = System.Windows.Forms.DockStyle.Fill;
+      reportDataSource1.Name = "CPTD";
+      reportDataSource1.Value = this.FN_CHART_CPTDBindingSource;
+      reportDataSource2.Name = "CPTF";
+      reportDataSource2.Value = this.FN_CHART_CPTFBindingSource;
+      reportDataSource3.Name = "CPAD";
+      reportDataSource3.Value = this.FN_CHART_CPADBindingSource;
+      reportDataSource4.Name = "CPAF";
+      reportDataSource4.Value = this.FN_CHART_CPAFBindingSource;
+      reportDataSource5.Name = "CLTF";
+      reportDataSource5.Value = this.FN_CHART_CLTFBindingSource;
+      reportDataSource6.Name = "CLTD";
+      reportDataSource6.Value = this.FN_CHART_CLTDBindingSource;
+      this.rptvwCleaning.LocalReport.DataSources.Add(reportDataSource1);
+      this.rptvwCleaning.LocalReport.DataSources.Add(reportDataSource2);
+      this.rptvwCleaning.LocalReport.DataSources.Add(reportDataSource3);
+      this.rptvwCleaning.LocalReport.DataSources.Add(reportDataSource4);
+      this.rptvwCleaning.LocalReport.DataSources.Add(reportDataSource5);
+      this.rptvwCleaning.LocalReport.DataSources.Add(reportDataSource6);
+      this.rptvwCleaning.LocalReport.ReportEmbeddedResource = "UI.Cleaning.rdlc";
+      this.rptvwCleaning.Location = new System.Drawing.Point(0, 0);
+      this.rptvwCleaning.Name = "rptvwCleaning";
+      this.rptvwCleaning.Size = new System.Drawing.Size(711, 517);
+      this.rptvwCleaning.TabIndex = 9;
+      // 
+      // ultraTabPageControl2
+      // 
+      this.ultraTabPageControl2.Controls.Add(this.rptvwInspection);
+      this.ultraTabPageControl2.Location = new System.Drawing.Point(-10000, -10000);
+      this.ultraTabPageControl2.Name = "ultraTabPageControl2";
+      this.ultraTabPageControl2.Size = new System.Drawing.Size(711, 517);
+      // 
+      // rptvwInspection
+      // 
+      this.rptvwInspection.Dock = System.Windows.Forms.DockStyle.Fill;
+      reportDataSource7.Name = "ILTD";
+      reportDataSource7.Value = this.FN_CHART_ILTDBindingSource;
+      reportDataSource8.Name = "ILTF";
+      reportDataSource8.Value = this.FN_CHART_ILTFBindingSource;
+      reportDataSource9.Name = "IPAD";
+      reportDataSource9.Value = this.FN_CHART_IPADBindingSource;
+      reportDataSource10.Name = "IPAF";
+      reportDataSource10.Value = this.FN_CHART_IPAFBindingSource;
+      reportDataSource11.Name = "IPTD";
+      reportDataSource11.Value = this.FN_CHART_IPTDBindingSource;
+      reportDataSource12.Name = "IPTF";
+      reportDataSource12.Value = this.FN_CHART_IPTFBindingSource;
+      this.rptvwInspection.LocalReport.DataSources.Add(reportDataSource7);
+      this.rptvwInspection.LocalReport.DataSources.Add(reportDataSource8);
+      this.rptvwInspection.LocalReport.DataSources.Add(reportDataSource9);
+      this.rptvwInspection.LocalReport.DataSources.Add(reportDataSource10);
+      this.rptvwInspection.LocalReport.DataSources.Add(reportDataSource11);
+      this.rptvwInspection.LocalReport.DataSources.Add(reportDataSource12);
+      this.rptvwInspection.LocalReport.ReportEmbeddedResource = "UI.Inspections.rdlc";
+      this.rptvwInspection.Location = new System.Drawing.Point(0, 0);
+      this.rptvwInspection.Name = "rptvwInspection";
+      this.rptvwInspection.Size = new System.Drawing.Size(711, 517);
+      this.rptvwInspection.TabIndex = 0;
+      // 
+      // ultraTabPageControl3
+      // 
+      this.ultraTabPageControl3.Controls.Add(this.rptvwRoot);
+      this.ultraTabPageControl3.Location = new System.Drawing.Point(-10000, -10000);
+      this.ultraTabPageControl3.Name = "ultraTabPageControl3";
+      this.ultraTabPageControl3.Size = new System.Drawing.Size(711, 517);
+      // 
+      // rptvwRoot
+      // 
+      this.rptvwRoot.Dock = System.Windows.Forms.DockStyle.Fill;
+      reportDataSource13.Name = "RPTD";
+      reportDataSource13.Value = this.FN_CHART_RPTDBindingSource;
+      reportDataSource14.Name = "RPTF";
+      reportDataSource14.Value = this.FN_CHART_RPTFBindingSource;
+      reportDataSource15.Name = "RPAD";
+      reportDataSource15.Value = this.FN_CHART_RPADBindingSource;
+      reportDataSource16.Name = "RPAF";
+      reportDataSource16.Value = this.FN_CHART_RPAFBindingSource;
+      reportDataSource17.Name = "RLTD";
+      reportDataSource17.Value = this.FN_CHART_RLTDBindingSource;
+      reportDataSource18.Name = "RLTF";
+      reportDataSource18.Value = this.FN_CHART_RLTFBindingSource;
+      this.rptvwRoot.LocalReport.DataSources.Add(reportDataSource13);
+      this.rptvwRoot.LocalReport.DataSources.Add(reportDataSource14);
+      this.rptvwRoot.LocalReport.DataSources.Add(reportDataSource15);
+      this.rptvwRoot.LocalReport.DataSources.Add(reportDataSource16);
+      this.rptvwRoot.LocalReport.DataSources.Add(reportDataSource17);
+      this.rptvwRoot.LocalReport.DataSources.Add(reportDataSource18);
+      this.rptvwRoot.LocalReport.ReportEmbeddedResource = "UI.RootManagement.rdlc";
+      this.rptvwRoot.Location = new System.Drawing.Point(0, 0);
+      this.rptvwRoot.Name = "rptvwRoot";
+      this.rptvwRoot.Size = new System.Drawing.Size(711, 517);
+      this.rptvwRoot.TabIndex = 0;
+      // 
+      // ultraTabPageControl4
+      // 
+      this.ultraTabPageControl4.Controls.Add(this.rptvwCoverage);
+      this.ultraTabPageControl4.Location = new System.Drawing.Point(1, 24);
+      this.ultraTabPageControl4.Name = "ultraTabPageControl4";
+      this.ultraTabPageControl4.Size = new System.Drawing.Size(711, 517);
+      // 
+      // rptvwCoverage
+      // 
+      this.rptvwCoverage.Dock = System.Windows.Forms.DockStyle.Fill;
+      reportDataSource19.Name = "COVERAGE_CLEANING";
+      reportDataSource19.Value = this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource;
+      reportDataSource20.Name = "COVERAGE_INSPECTION";
+      reportDataSource20.Value = this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionBindingSource;
+      reportDataSource21.Name = "COVERAGE_ROOT";
+      reportDataSource21.Value = this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource;
+      reportDataSource22.Name = "COVERAGE_CLEANING_LINE";
+      reportDataSource22.Value = this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource;
+      reportDataSource23.Name = "COVERAGE_INSPECTION_LINE";
+      reportDataSource23.Value = this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionBindingSource;
+      reportDataSource24.Name = "COVERAGE_ROOT_LINE";
+      reportDataSource24.Value = this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource;
+      this.rptvwCoverage.LocalReport.DataSources.Add(reportDataSource19);
+      this.rptvwCoverage.LocalReport.DataSources.Add(reportDataSource20);
+      this.rptvwCoverage.LocalReport.DataSources.Add(reportDataSource21);
+      this.rptvwCoverage.LocalReport.DataSources.Add(reportDataSource22);
+      this.rptvwCoverage.LocalReport.DataSources.Add(reportDataSource23);
+      this.rptvwCoverage.LocalReport.DataSources.Add(reportDataSource24);
+      this.rptvwCoverage.LocalReport.ReportEmbeddedResource = "UI.Coverage.rdlc";
+      this.rptvwCoverage.Location = new System.Drawing.Point(0, 0);
+      this.rptvwCoverage.Name = "rptvwCoverage";
+      this.rptvwCoverage.Size = new System.Drawing.Size(711, 517);
+      this.rptvwCoverage.TabIndex = 0;
+      // 
+      // ultraLabel1
+      // 
+      appearance1.TextVAlignAsString = "Middle";
+      this.ultraLabel1.Appearance = appearance1;
+      this.ultraLabel1.AutoSize = true;
+      gridBagConstraint6.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint6.OriginX = 2;
+      gridBagConstraint6.OriginY = 0;
+      this.pnlMain.SetGridBagConstraint(this.ultraLabel1, gridBagConstraint6);
+      this.ultraLabel1.Location = new System.Drawing.Point(125, 0);
+      this.ultraLabel1.Name = "ultraLabel1";
+      this.pnlMain.SetPreferredSize(this.ultraLabel1, new System.Drawing.Size(48, 17));
+      this.ultraLabel1.Size = new System.Drawing.Size(48, 17);
+      this.ultraLabel1.TabIndex = 3;
+      this.ultraLabel1.Text = "End Year";
+      // 
+      // ultraLabel2
+      // 
+      appearance2.TextVAlignAsString = "Middle";
+      this.ultraLabel2.Appearance = appearance2;
+      this.ultraLabel2.AutoSize = true;
+      gridBagConstraint5.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint5.OriginX = 0;
+      gridBagConstraint5.OriginY = 0;
+      this.pnlMain.SetGridBagConstraint(this.ultraLabel2, gridBagConstraint5);
+      this.ultraLabel2.Location = new System.Drawing.Point(0, 0);
+      this.ultraLabel2.Name = "ultraLabel2";
+      this.pnlMain.SetPreferredSize(this.ultraLabel2, new System.Drawing.Size(57, 17));
+      this.ultraLabel2.Size = new System.Drawing.Size(57, 17);
+      this.ultraLabel2.TabIndex = 4;
+      this.ultraLabel2.Text = "Begin Year";
+      // 
+      // txtBeginYear
+      // 
+      gridBagConstraint4.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint4.Insets.Right = 8;
+      gridBagConstraint4.OriginX = 1;
+      gridBagConstraint4.OriginY = 0;
+      this.pnlMain.SetGridBagConstraint(this.txtBeginYear, gridBagConstraint4);
+      this.txtBeginYear.Location = new System.Drawing.Point(57, 0);
+      this.txtBeginYear.Name = "txtBeginYear";
+      this.pnlMain.SetPreferredSize(this.txtBeginYear, new System.Drawing.Size(60, 24));
+      this.txtBeginYear.Size = new System.Drawing.Size(60, 24);
+      this.txtBeginYear.TabIndex = 5;
+      this.txtBeginYear.Text = "2012";
+      // 
+      // txtEndYear
+      // 
+      gridBagConstraint1.Anchor = Infragistics.Win.Layout.AnchorType.Left;
+      gridBagConstraint1.OriginX = 3;
+      gridBagConstraint1.OriginY = 0;
+      gridBagConstraint1.WeightX = 1F;
+      this.pnlMain.SetGridBagConstraint(this.txtEndYear, gridBagConstraint1);
+      this.txtEndYear.Location = new System.Drawing.Point(173, 0);
+      this.txtEndYear.Name = "txtEndYear";
+      this.pnlMain.SetPreferredSize(this.txtEndYear, new System.Drawing.Size(60, 24));
+      this.txtEndYear.Size = new System.Drawing.Size(60, 24);
+      this.txtEndYear.TabIndex = 6;
+      this.txtEndYear.Text = "2023";
+      // 
+      // btnRunCleaningReport
+      // 
+      this.btnRunCleaningReport.Location = new System.Drawing.Point(205, 5);
+      this.btnRunCleaningReport.Name = "btnRunCleaningReport";
+      this.btnRunCleaningReport.Size = new System.Drawing.Size(90, 23);
+      this.btnRunCleaningReport.TabIndex = 7;
+      this.btnRunCleaningReport.Text = "Run Cleaning";
+      this.btnRunCleaningReport.Click += new System.EventHandler(this.btnRunCleaningReport_Click);
+      // 
+      // btnRunInspectionReport
+      // 
+      this.btnRunInspectionReport.Location = new System.Drawing.Point(300, 5);
+      this.btnRunInspectionReport.Name = "btnRunInspectionReport";
+      this.btnRunInspectionReport.Size = new System.Drawing.Size(90, 23);
+      this.btnRunInspectionReport.TabIndex = 9;
+      this.btnRunInspectionReport.Text = "Run Inspection";
+      this.btnRunInspectionReport.Click += new System.EventHandler(this.btnRunInspectionReport_Click);
+      // 
+      // tabReports
+      // 
+      this.tabReports.Controls.Add(this.ultraTabSharedControlsPage1);
+      this.tabReports.Controls.Add(this.ultraTabPageControl1);
+      this.tabReports.Controls.Add(this.ultraTabPageControl2);
+      this.tabReports.Controls.Add(this.ultraTabPageControl3);
+      this.tabReports.Controls.Add(this.ultraTabPageControl4);
+      gridBagConstraint2.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint2.OriginX = 0;
+      gridBagConstraint2.OriginY = 2;
+      gridBagConstraint2.SpanX = 4;
+      gridBagConstraint2.WeightX = 1F;
+      gridBagConstraint2.WeightY = 1F;
+      this.pnlMain.SetGridBagConstraint(this.tabReports, gridBagConstraint2);
+      this.tabReports.Location = new System.Drawing.Point(0, 62);
+      this.tabReports.Name = "tabReports";
+      this.pnlMain.SetPreferredSize(this.tabReports, new System.Drawing.Size(715, 535));
+      this.tabReports.SharedControlsPage = this.ultraTabSharedControlsPage1;
+      this.tabReports.Size = new System.Drawing.Size(715, 544);
+      this.tabReports.TabIndex = 10;
+      ultraTab1.Key = "Cleaning";
+      ultraTab1.TabPage = this.ultraTabPageControl1;
+      ultraTab1.Text = "Cleaning";
+      ultraTab2.Key = "Inspection";
+      ultraTab2.TabPage = this.ultraTabPageControl2;
+      ultraTab2.Text = "Inspection";
+      ultraTab3.Key = "RootManagement";
+      ultraTab3.TabPage = this.ultraTabPageControl3;
+      ultraTab3.Text = "Root Management";
+      ultraTab4.Key = "Coverage";
+      ultraTab4.TabPage = this.ultraTabPageControl4;
+      ultraTab4.Text = "Coverage";
+      this.tabReports.Tabs.AddRange(new Infragistics.Win.UltraWinTabControl.UltraTab[] {
+            ultraTab1,
+            ultraTab2,
+            ultraTab3,
+            ultraTab4});
+      // 
+      // ultraTabSharedControlsPage1
+      // 
+      this.ultraTabSharedControlsPage1.Location = new System.Drawing.Point(-10000, -10000);
+      this.ultraTabSharedControlsPage1.Name = "ultraTabSharedControlsPage1";
+      this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(711, 517);
+      // 
+      // btnRunCoverageReport
+      // 
+      this.btnRunCoverageReport.Location = new System.Drawing.Point(100, 5);
+      this.btnRunCoverageReport.Name = "btnRunCoverageReport";
+      this.btnRunCoverageReport.Size = new System.Drawing.Size(100, 23);
+      this.btnRunCoverageReport.TabIndex = 14;
+      this.btnRunCoverageReport.Text = "Run Coverage";
+      this.btnRunCoverageReport.Click += new System.EventHandler(this.btnRunCoverageReport_Click);
+      // 
+      // progress
+      // 
+      this.progress.Location = new System.Drawing.Point(475, 5);
+      this.progress.Name = "progress";
+      this.progress.Size = new System.Drawing.Size(200, 23);
+      this.progress.TabIndex = 13;
+      this.progress.Text = "[Formatted]";
+      this.progress.Visible = false;
+      // 
+      // btnRunAllReports
+      // 
+      this.btnRunAllReports.Location = new System.Drawing.Point(5, 5);
+      this.btnRunAllReports.Name = "btnRunAllReports";
+      this.btnRunAllReports.Size = new System.Drawing.Size(90, 23);
+      this.btnRunAllReports.TabIndex = 12;
+      this.btnRunAllReports.Text = "Run All";
+      this.btnRunAllReports.Click += new System.EventHandler(this.btnRunAllReports_Click);
       // 
       // FN_CHART_CPTDTableAdapter
       // 
@@ -742,46 +676,77 @@
       // 
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter.ClearBeforeFill = true;
       // 
-      // FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource
-      // 
-      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource.DataMember = "FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot";
-      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource.DataSource = this.SCIPDataSet;
-      // 
       // FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter
       // 
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter.ClearBeforeFill = true;
       // 
-      // FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource
-      // 
-      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource.DataMember = "FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning";
-      this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource.DataSource = this.SCIPDataSet;
-      // 
       // FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter
       // 
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter.ClearBeforeFill = true;
+      // 
+      // pnlActionButtons
+      // 
+      this.pnlActionButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      // 
+      // pnlActionButtons.ClientArea
+      // 
+      this.pnlActionButtons.ClientArea.Controls.Add(this.btnRunAllReports);
+      this.pnlActionButtons.ClientArea.Controls.Add(this.btnRunCoverageReport);
+      this.pnlActionButtons.ClientArea.Controls.Add(this.btnRunCleaningReport);
+      this.pnlActionButtons.ClientArea.Controls.Add(this.btnRunInspectionReport);
+      this.pnlActionButtons.ClientArea.Controls.Add(this.btnRunRootReport);
+      this.pnlActionButtons.ClientArea.Controls.Add(this.progress);
+      gridBagConstraint3.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint3.Insets.Bottom = 8;
+      gridBagConstraint3.OriginX = 0;
+      gridBagConstraint3.OriginY = 1;
+      gridBagConstraint3.SpanX = 4;
+      this.pnlMain.SetGridBagConstraint(this.pnlActionButtons, gridBagConstraint3);
+      this.pnlActionButtons.Location = new System.Drawing.Point(0, 24);
+      this.pnlActionButtons.Name = "pnlActionButtons";
+      this.pnlMain.SetPreferredSize(this.pnlActionButtons, new System.Drawing.Size(200, 30));
+      this.pnlActionButtons.Size = new System.Drawing.Size(715, 30);
+      this.pnlActionButtons.TabIndex = 11;
+      // 
+      // btnRunRootReport
+      // 
+      this.btnRunRootReport.Location = new System.Drawing.Point(395, 5);
+      this.btnRunRootReport.Name = "btnRunRootReport";
+      this.btnRunRootReport.Size = new System.Drawing.Size(75, 23);
+      this.btnRunRootReport.TabIndex = 15;
+      this.btnRunRootReport.Text = "Run Root";
+      this.btnRunRootReport.Click += new System.EventHandler(this.btnRunRootReport_Click);
+      // 
+      // pnlMain
+      // 
+      this.pnlMain.Controls.Add(this.txtEndYear);
+      this.pnlMain.Controls.Add(this.tabReports);
+      this.pnlMain.Controls.Add(this.pnlActionButtons);
+      this.pnlMain.Controls.Add(this.ultraLabel1);
+      this.pnlMain.Controls.Add(this.txtBeginYear);
+      this.pnlMain.Controls.Add(this.ultraLabel2);
+      this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.pnlMain.ExpandToFitHeight = true;
+      this.pnlMain.ExpandToFitWidth = true;
+      this.pnlMain.Location = new System.Drawing.Point(0, 0);
+      this.pnlMain.Name = "pnlMain";
+      this.pnlMain.Size = new System.Drawing.Size(715, 606);
+      this.pnlMain.TabIndex = 13;
+      // 
+      // ultraFlowLayoutManager1
+      // 
+      this.ultraFlowLayoutManager1.ContainerControl = this.pnlActionButtons.ClientArea;
+      this.ultraFlowLayoutManager1.HorizontalAlignment = Infragistics.Win.Layout.DefaultableFlowLayoutAlignment.Near;
       // 
       // ChartsPage
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(715, 606);
-      this.Controls.Add(this.ultraGridBagLayoutPanel1);
+      this.Controls.Add(this.pnlMain);
       this.Name = "ChartsPage";
       this.Text = "FormCreateCharts";
       this.Load += new System.EventHandler(this.FormCreateCharts_Load);
-      this.ultraTabPageControl1.ResumeLayout(false);
-      this.ultraTabPageControl2.ResumeLayout(false);
-      this.ultraTabPageControl3.ResumeLayout(false);
-      this.ultraTabPageControl4.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.txtBeginYear)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.txtEndYear)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.ultraTabControl1)).EndInit();
-      this.ultraTabControl1.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel1)).EndInit();
-      this.ultraGridBagLayoutPanel1.ResumeLayout(false);
-      this.ultraGridBagLayoutPanel1.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.pnlActionButtons)).EndInit();
-      this.pnlActionButtons.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_CPTDBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.SCIPDataSet)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_CPTFBindingSource)).EndInit();
@@ -804,9 +769,23 @@
       ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootBindingSource)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource)).EndInit();
+      this.ultraTabPageControl1.ResumeLayout(false);
+      this.ultraTabPageControl2.ResumeLayout(false);
+      this.ultraTabPageControl3.ResumeLayout(false);
+      this.ultraTabPageControl4.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.txtBeginYear)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.txtEndYear)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.tabReports)).EndInit();
+      this.tabReports.ResumeLayout(false);
+      this.pnlActionButtons.ClientArea.ResumeLayout(false);
+      this.pnlActionButtons.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.pnlMain)).EndInit();
+      this.pnlMain.ResumeLayout(false);
+      this.pnlMain.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.ultraFlowLayoutManager1)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -832,12 +811,12 @@
     private SCIPDataSetTableAdapters.FN_CHART_CLTFTableAdapter FN_CHART_CLTFTableAdapter;
     private SCIPDataSetTableAdapters.FN_CHART_CLTDTableAdapter FN_CHART_CLTDTableAdapter;
     private Infragistics.Win.Misc.UltraButton btnRunInspectionReport;
-    private Infragistics.Win.UltraWinTabControl.UltraTabControl ultraTabControl1;
+    private Infragistics.Win.UltraWinTabControl.UltraTabControl tabReports;
     private Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage ultraTabSharedControlsPage1;
     private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl1;
-    private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+    private Microsoft.Reporting.WinForms.ReportViewer rptvwCleaning;
     private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl2;
-    private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
+    private Microsoft.Reporting.WinForms.ReportViewer rptvwInspection;
     private System.Windows.Forms.BindingSource FN_CHART_ILTDBindingSource;
     private System.Windows.Forms.BindingSource FN_CHART_ILTFBindingSource;
     private System.Windows.Forms.BindingSource FN_CHART_IPADBindingSource;
@@ -851,8 +830,7 @@
     private SCIPDataSetTableAdapters.FN_CHART_IPTDTableAdapter FN_CHART_IPTDTableAdapter;
     private SCIPDataSetTableAdapters.FN_CHART_IPTFTableAdapter FN_CHART_IPTFTableAdapter;
     private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl3;
-    private Infragistics.Win.Misc.UltraButton btnRunRootReport;
-    private Microsoft.Reporting.WinForms.ReportViewer reportViewer3;
+    private Microsoft.Reporting.WinForms.ReportViewer rptvwRoot;
     private System.Windows.Forms.BindingSource FN_CHART_RPTDBindingSource;
     private System.Windows.Forms.BindingSource FN_CHART_RPTFBindingSource;
     private System.Windows.Forms.BindingSource FN_CHART_RPADBindingSource;
@@ -865,12 +843,10 @@
     private SCIPDataSetTableAdapters.FN_CHART_RPAFTableAdapter FN_CHART_RPAFTableAdapter;
     private SCIPDataSetTableAdapters.FN_CHART_RLTDTableAdapter FN_CHART_RLTDTableAdapter;
     private SCIPDataSetTableAdapters.FN_CHART_RLTFTableAdapter FN_CHART_RLTFTableAdapter;
-    private Infragistics.Win.Misc.UltraGridBagLayoutPanel ultraGridBagLayoutPanel1;
-    private Infragistics.Win.Misc.UltraGridBagLayoutPanel pnlActionButtons;
     private Infragistics.Win.Misc.UltraButton btnRunAllReports;
     private Infragistics.Win.UltraWinProgressBar.UltraProgressBar progress;
     private Infragistics.Win.UltraWinTabControl.UltraTabPageControl ultraTabPageControl4;
-    private Microsoft.Reporting.WinForms.ReportViewer reportViewer4;
+    private Microsoft.Reporting.WinForms.ReportViewer rptvwCoverage;
     private Infragistics.Win.Misc.UltraButton btnRunCoverageReport;
     private System.Windows.Forms.BindingSource FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource;
     private System.Windows.Forms.BindingSource FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionBindingSource;
@@ -884,5 +860,9 @@
     private SCIPDataSetTableAdapters.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter;
     private System.Windows.Forms.BindingSource FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningBindingSource;
     private SCIPDataSetTableAdapters.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter;
+    private Infragistics.Win.Misc.UltraPanel pnlActionButtons;
+    private Infragistics.Win.Misc.UltraGridBagLayoutPanel pnlMain;
+    private Infragistics.Win.Misc.UltraButton btnRunRootReport;
+    private Infragistics.Win.Misc.UltraFlowLayoutManager ultraFlowLayoutManager1;
   }
 }

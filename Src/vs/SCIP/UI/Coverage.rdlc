@@ -2820,6 +2820,7 @@
             <ChartValueAxes>
               <ChartAxis Name="Primary">
                 <Style>
+                  <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>

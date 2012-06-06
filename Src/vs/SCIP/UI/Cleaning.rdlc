@@ -1451,9 +1451,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Accelerated Area")</Color>
                   </Style>
                   <ChartMarker>
@@ -1463,7 +1461,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1490,9 +1490,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Preventive Maintenance")</Color>
                   </Style>
                   <ChartMarker>
@@ -1502,7 +1500,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1529,9 +1529,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Tractive Forces")</Color>
                   </Style>
                   <ChartMarker>
@@ -1541,7 +1539,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1568,9 +1568,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Tractive Forces (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
@@ -1580,7 +1578,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2021,9 +2021,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Accelerated Area")</Color>
                   </Style>
                   <ChartMarker>
@@ -2033,7 +2031,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2060,9 +2060,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Preventive Maintenance")</Color>
                   </Style>
                   <ChartMarker>
@@ -2072,7 +2070,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2099,9 +2099,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Tractive Forces")</Color>
                   </Style>
                   <ChartMarker>
@@ -2111,7 +2109,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2138,9 +2138,7 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
+                    <Border />
                     <Color>=Code.GetColor("Tractive Forces (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
@@ -2150,7 +2148,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2293,7 +2293,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>=Code.GetColor("Tractive Forces (&gt;36 in)")</Color>
+                  <Color>=Code.GetColor("Tractive Forces (&gt;15 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />

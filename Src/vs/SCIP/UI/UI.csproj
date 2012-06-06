@@ -163,6 +163,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Coverage.rdlc" />
     <EmbeddedResource Include="RootManagement.rdlc" />
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">

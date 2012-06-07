@@ -35,6 +35,7 @@
       this.btnDrivers = new Infragistics.Win.Misc.UltraButton();
       this.btnDriverTypes = new Infragistics.Win.Misc.UltraButton();
       this.btnAlternatives = new Infragistics.Win.Misc.UltraButton();
+      this.btnModel = new Infragistics.Win.Misc.UltraButton();
       ((System.ComponentModel.ISupportInitialize)(this.ultraFlowLayoutManager1)).BeginInit();
       this.SuspendLayout();
       // 
@@ -47,7 +48,7 @@
       // 
       // btnExportDatabase
       // 
-      this.btnExportDatabase.Location = new System.Drawing.Point(5, 117);
+      this.btnExportDatabase.Location = new System.Drawing.Point(5, 145);
       this.btnExportDatabase.Name = "btnExportDatabase";
       this.btnExportDatabase.Size = new System.Drawing.Size(100, 23);
       this.btnExportDatabase.TabIndex = 0;
@@ -57,7 +58,7 @@
       // 
       // btnCharts
       // 
-      this.btnCharts.Location = new System.Drawing.Point(5, 89);
+      this.btnCharts.Location = new System.Drawing.Point(5, 117);
       this.btnCharts.Name = "btnCharts";
       this.btnCharts.Size = new System.Drawing.Size(100, 23);
       this.btnCharts.TabIndex = 1;
@@ -67,7 +68,7 @@
       // 
       // btnDrivers
       // 
-      this.btnDrivers.Location = new System.Drawing.Point(5, 61);
+      this.btnDrivers.Location = new System.Drawing.Point(5, 89);
       this.btnDrivers.Name = "btnDrivers";
       this.btnDrivers.Size = new System.Drawing.Size(100, 23);
       this.btnDrivers.TabIndex = 2;
@@ -95,12 +96,23 @@
       this.btnAlternatives.Text = "Alternatives";
       this.btnAlternatives.Click += new System.EventHandler(this.btnGeneric_Click);
       // 
+      // btnModel
+      // 
+      this.btnModel.Location = new System.Drawing.Point(5, 61);
+      this.btnModel.Name = "btnModel";
+      this.btnModel.Size = new System.Drawing.Size(100, 23);
+      this.btnModel.TabIndex = 5;
+      this.btnModel.Tag = "Model";
+      this.btnModel.Text = "Model";
+      this.btnModel.Click += new System.EventHandler(this.btnGeneric_Click);
+      // 
       // HomePage
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.ClientSize = new System.Drawing.Size(284, 262);
       this.Controls.Add(this.btnAlternatives);
       this.Controls.Add(this.btnDriverTypes);
+      this.Controls.Add(this.btnModel);
       this.Controls.Add(this.btnDrivers);
       this.Controls.Add(this.btnCharts);
       this.Controls.Add(this.btnExportDatabase);
@@ -118,5 +130,6 @@
     private Infragistics.Win.Misc.UltraButton btnDrivers;
     private Infragistics.Win.Misc.UltraButton btnCharts;
     private Infragistics.Win.Misc.UltraButton btnAlternatives;
+    private Infragistics.Win.Misc.UltraButton btnModel;
   }
 }

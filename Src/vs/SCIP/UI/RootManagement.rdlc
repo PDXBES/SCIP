@@ -280,6 +280,10 @@
                   <Name>CollectedColor</Name>
                   <Value>DimGray</Value>
                 </CustomProperty>
+                <CustomProperty>
+                  <Name>PieStartAngle</Name>
+                  <Value>45</Value>
+                </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
@@ -448,6 +452,19 @@
               <VerticalAlign>Top</VerticalAlign>
             </Style>
           </ChartTitle>
+          <ChartTitle Name="Title2">
+            <Caption>="Total" &amp; vbcrlf &amp; FormatCurrency(Sum(Fields!cost.Value), 0,true,true,true)</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Calibri</FontFamily>
+              <FontSize>18pt</FontSize>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+            <Position>BottomLeft</Position>
+            <DockToChartArea>Default</DockToChartArea>
+          </ChartTitle>
         </ChartTitles>
         <Palette>BrightPastel</Palette>
         <ChartBorderSkin>
@@ -576,6 +593,10 @@
                 <CustomProperty>
                   <Name>PieLineColor</Name>
                   <Value>DimGray</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>PieStartAngle</Name>
+                  <Value>45</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -744,6 +765,19 @@
               <VerticalAlign>Top</VerticalAlign>
             </Style>
           </ChartTitle>
+          <ChartTitle Name="Title1">
+            <Caption>="Total" &amp; vbcrlf &amp; FormatNumber(Sum(Fields!length_ft.Value), 0,true,true,true) &amp; " ft"</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Calibri</FontFamily>
+              <FontSize>18pt</FontSize>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+            <Position>BottomLeft</Position>
+            <DockToChartArea>Default</DockToChartArea>
+          </ChartTitle>
         </ChartTitles>
         <Palette>BrightPastel</Palette>
         <ChartBorderSkin>
@@ -875,6 +909,10 @@
                 <CustomProperty>
                   <Name>PieLineColor</Name>
                   <Value>DimGray</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>PieStartAngle</Name>
+                  <Value>45</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -1043,6 +1081,19 @@
               <VerticalAlign>Top</VerticalAlign>
             </Style>
           </ChartTitle>
+          <ChartTitle Name="Title1">
+            <Caption>="Total/yr" &amp; vbcrlf &amp; FormatCurrency(Sum(Fields!cost.Value), 0,true,true,true)</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Calibri</FontFamily>
+              <FontSize>18pt</FontSize>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+            <Position>BottomLeft</Position>
+            <DockToChartArea>Default</DockToChartArea>
+          </ChartTitle>
         </ChartTitles>
         <Palette>BrightPastel</Palette>
         <ChartBorderSkin>
@@ -1174,6 +1225,10 @@
                 <CustomProperty>
                   <Name>PieLineColor</Name>
                   <Value>DimGray</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>PieStartAngle</Name>
+                  <Value>45</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -1341,6 +1396,19 @@
               <TextAlign>General</TextAlign>
               <VerticalAlign>Top</VerticalAlign>
             </Style>
+          </ChartTitle>
+          <ChartTitle Name="Title1">
+            <Caption>="Total/yr" &amp; vbcrlf &amp; FormatNumber(Sum(Fields!length_ft.Value), 0,true,true,true) &amp; " ft"</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Calibri</FontFamily>
+              <FontSize>18pt</FontSize>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+            <Position>BottomLeft</Position>
+            <DockToChartArea>Default</DockToChartArea>
           </ChartTitle>
         </ChartTitles>
         <Palette>BrightPastel</Palette>
@@ -1608,7 +1676,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control High)</LegendText>
+                  <LegendText>="Mean (Root Control High), " &amp; FormatCurrency(Avg(Fields!RootControlHigh.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -1647,7 +1715,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control High (&gt;15 in))</LegendText>
+                  <LegendText>="Mean (Root Control High (&gt;15 in)), " &amp; FormatCurrency(Avg(Fields!RootControlHighLarge.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -1686,7 +1754,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control Medium)</LegendText>
+                  <LegendText>="Mean (Root Control Medium), " &amp; FormatCurrency(Avg(Fields!RootControlMedium.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -1725,7 +1793,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control Medium (&gt;15 in))</LegendText>
+                  <LegendText>="Mean (Root Control Medium (&gt;15 in)), " &amp; FormatCurrency(Avg(Fields!RootControlMediumLarge.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2185,7 +2253,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control High)</LegendText>
+                  <LegendText>="Mean (Root Control High), " &amp; FormatNumber(Avg(Fields!RootControlHigh.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2223,7 +2291,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control High (&gt;15 in))</LegendText>
+                  <LegendText>="Mean (Root Control High (&gt;15 in)), " &amp; FormatNumber(Avg(Fields!RootControlHighLarge.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2261,7 +2329,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control Medium)</LegendText>
+                  <LegendText>="Mean (Root Control Medium), " &amp; FormatNumber(Avg(Fields!RootControlMedium.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2299,7 +2367,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control Medium (&gt;15 in))</LegendText>
+                  <LegendText>="Mean (Root Control Medium (&gt;15 in)), " &amp; FormatNumber(Avg(Fields!RootControlMediumLarge.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>

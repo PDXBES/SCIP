@@ -498,6 +498,19 @@
               <VerticalAlign>Top</VerticalAlign>
             </Style>
           </ChartTitle>
+          <ChartTitle Name="Title1">
+            <Caption>="Total" &amp; vbcrlf &amp; FormatCurrency(Sum(Fields!cost.Value), 0,true,true,true)</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Calibri</FontFamily>
+              <FontSize>18pt</FontSize>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+            <Position>BottomLeft</Position>
+            <DockToChartArea>Default</DockToChartArea>
+          </ChartTitle>
         </ChartTitles>
         <Palette>BrightPastel</Palette>
         <ChartBorderSkin>
@@ -798,6 +811,19 @@
               <TextAlign>General</TextAlign>
               <VerticalAlign>Top</VerticalAlign>
             </Style>
+          </ChartTitle>
+          <ChartTitle Name="Title1">
+            <Caption>="Total" &amp; vbcrlf &amp; FormatNumber(Sum(Fields!length_ft.Value), 0,true,true,true) &amp; " ft"</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Calibri</FontFamily>
+              <FontSize>18pt</FontSize>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+            <Position>BottomLeft</Position>
+            <DockToChartArea>Default</DockToChartArea>
           </ChartTitle>
         </ChartTitles>
         <Palette>BrightPastel</Palette>
@@ -1102,6 +1128,19 @@
               <VerticalAlign>Top</VerticalAlign>
             </Style>
           </ChartTitle>
+          <ChartTitle Name="Title1">
+            <Caption>="Total/yr" &amp; vbcrlf &amp; FormatCurrency(Sum(Fields!cost.Value), 0,true,true,true)</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Calibri</FontFamily>
+              <FontSize>18pt</FontSize>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+            <Position>BottomLeft</Position>
+            <DockToChartArea>Default</DockToChartArea>
+          </ChartTitle>
         </ChartTitles>
         <Palette>BrightPastel</Palette>
         <ChartBorderSkin>
@@ -1404,6 +1443,19 @@
               <TextAlign>General</TextAlign>
               <VerticalAlign>Top</VerticalAlign>
             </Style>
+          </ChartTitle>
+          <ChartTitle Name="Title1">
+            <Caption>="Total/yr" &amp; vbcrlf &amp; FormatNumber(Sum(Fields!length_ft.Value), 0,true,true,true) &amp; " ft"</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Calibri</FontFamily>
+              <FontSize>18pt</FontSize>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+            <Position>BottomLeft</Position>
+            <DockToChartArea>Default</DockToChartArea>
           </ChartTitle>
         </ChartTitles>
         <Palette>BrightPastel</Palette>
@@ -1928,7 +1980,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Condition)</LegendText>
+                  <LegendText>="Mean (Condition), " &amp; FormatCurrency(Avg(Fields!Condition.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -1966,7 +2018,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Condition (&gt;36 in))</LegendText>
+                  <LegendText>="Mean (Condition (&gt;36 in)), " &amp; FormatCurrency(Avg(Fields!ConditionLarge.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2004,7 +2056,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Preventive Maintenance)</LegendText>
+                  <LegendText>="Mean (Preventive Maintenance), " &amp; FormatCurrency(Avg(Fields!PreventiveMaintenance.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2042,7 +2094,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Preventive Maintenance (&gt;36 in))</LegendText>
+                  <LegendText>="Mean (Preventive Maintenance (&gt;36 in)), " &amp; FormatCurrency(Avg(Fields!PreventiveMaintenanceLarge.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2080,7 +2132,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control High)</LegendText>
+                  <LegendText>="Mean (Root Control High), " &amp; FormatCurrency(Avg(Fields!RootControlHigh.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2118,7 +2170,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control High (&gt;15 in, &lt;=36 in))</LegendText>
+                  <LegendText>="Mean (Root Control High (&gt;15 in, &lt;=36 in)), " &amp; FormatCurrency(Avg(Fields!RootControlHighMidSize.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2156,7 +2208,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control High (&gt;36 in))</LegendText>
+                  <LegendText>="Mean (Root Control High (&gt;36 in)), " &amp; FormatCurrency(Avg(Fields!RootControlHighLargeSize.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2194,7 +2246,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control Medium)</LegendText>
+                  <LegendText>="Mean (Root Control Medium), " &amp; FormatCurrency(Avg(Fields!RootControlMedium.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2232,7 +2284,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control Medium (&gt;15 in, &lt;=36 in))</LegendText>
+                  <LegendText>="Mean (Root Control Medium (&gt;15 in, &lt;=36 in)), " &amp; FormatCurrency(Avg(Fields!RootControlMediumMidSize.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2270,7 +2322,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control Medium (&gt;36 in))</LegendText>
+                  <LegendText>="Mean (Root Control Medium (&gt;36 in)), " &amp; FormatCurrency(Avg(Fields!RootControlMediumLargeSize.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2990,7 +3042,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Condition)</LegendText>
+                  <LegendText>="Mean (Condition), " &amp; FormatNumber(Avg(Fields!Condition.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3028,7 +3080,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Condition (&gt;36 in))</LegendText>
+                  <LegendText>="Mean (Condition (&gt;36 in)), " &amp; FormatNumber(Avg(Fields!ConditionLarge.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3066,7 +3118,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Preventive Maintenance)</LegendText>
+                  <LegendText>="Mean (Preventive Maintenance), " &amp; FormatNumber(Avg(Fields!PreventiveMaintenance.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3104,7 +3156,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Preventive Maintenance (&gt;36 in))</LegendText>
+                  <LegendText>="Mean (Preventive Maintenance (&gt;36 in)), " &amp; FormatNumber(Avg(Fields!PreventiveMaintenanceLarge.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3142,7 +3194,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control High)</LegendText>
+                  <LegendText>="Mean (Root Control High), " &amp; FormatNumber(Avg(Fields!RootControlHigh.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3180,7 +3232,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control High (&gt;15 in, &lt;=36 in))</LegendText>
+                  <LegendText>="Mean (Root Control High (&gt;15 in, &lt;=36 in)), " &amp; FormatNumber(Avg(Fields!RootControlHighMidSize.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3218,7 +3270,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control High (&gt;36 in))</LegendText>
+                  <LegendText>="Mean (Root Control High (&gt;36 in)), " &amp; FormatNumber(Avg(Fields!RootControlHighLargeSize.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3256,7 +3308,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control Medium)</LegendText>
+                  <LegendText>="Mean (Root Control Medium), " &amp; FormatNumber(Avg(Fields!RootControlMedium.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3294,7 +3346,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control Medium (&gt;15 in, &lt;=36 in))</LegendText>
+                  <LegendText>="Mean (Root Control Medium (&gt;15 in, &lt;=36 in)), " &amp; FormatNumber(Avg(Fields!RootControlMediumMidSize.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3332,7 +3384,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control Medium (&gt;36 in))</LegendText>
+                  <LegendText>="Mean (Root Control Medium (&gt;36 in)), " &amp; FormatNumber(Avg(Fields!RootControlMediumLargeSize.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>

@@ -57,11 +57,11 @@
       this.btnExit = new Infragistics.Win.Misc.UltraButton();
       this.btnHome = new Infragistics.Win.Misc.UltraButton();
       this.ultraPanel1 = new Infragistics.Win.Misc.UltraPanel();
+      this.ultraPanel2 = new Infragistics.Win.Misc.UltraPanel();
       this.tabMain = new Infragistics.Win.UltraWinTabControl.UltraTabControl();
       this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
       this.lblPageTitle = new Infragistics.Win.Misc.UltraLabel();
       this.ultraControlContainerEditor1 = new Infragistics.Win.UltraWinEditors.UltraControlContainerEditor(this.components);
-      this.ultraPanel2 = new Infragistics.Win.Misc.UltraPanel();
       this.ultraTabPageControl5.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel2)).BeginInit();
       this.ultraGridBagLayoutPanel2.SuspendLayout();
@@ -70,15 +70,15 @@
       this.ultraGridBagLayoutPanel1.SuspendLayout();
       this.ultraPanel1.ClientArea.SuspendLayout();
       this.ultraPanel1.SuspendLayout();
+      this.ultraPanel2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
       this.tabMain.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.ultraControlContainerEditor1)).BeginInit();
-      this.ultraPanel2.SuspendLayout();
       this.SuspendLayout();
       // 
       // ultraTabPageControl6
       // 
-      this.ultraTabPageControl6.Location = new System.Drawing.Point(9, 32);
+      this.ultraTabPageControl6.Location = new System.Drawing.Point(-10000, -10000);
       this.ultraTabPageControl6.Name = "ultraTabPageControl6";
       this.ultraTabPageControl6.Size = new System.Drawing.Size(429, 348);
       // 
@@ -90,7 +90,7 @@
       // 
       // ultraTabPageControl2
       // 
-      this.ultraTabPageControl2.Location = new System.Drawing.Point(-10000, -10000);
+      this.ultraTabPageControl2.Location = new System.Drawing.Point(10, 33);
       this.ultraTabPageControl2.Name = "ultraTabPageControl2";
       this.ultraTabPageControl2.Size = new System.Drawing.Size(429, 348);
       // 
@@ -217,6 +217,15 @@
       this.ultraPanel1.Size = new System.Drawing.Size(449, 442);
       this.ultraPanel1.TabIndex = 3;
       // 
+      // ultraPanel2
+      // 
+      this.ultraPanel2.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+      this.ultraPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+      this.ultraPanel2.Location = new System.Drawing.Point(0, 51);
+      this.ultraPanel2.Name = "ultraPanel2";
+      this.ultraPanel2.Size = new System.Drawing.Size(449, 1);
+      this.ultraPanel2.TabIndex = 2;
+      // 
       // tabMain
       // 
       this.tabMain.Controls.Add(this.ultraTabSharedControlsPage1);
@@ -299,15 +308,6 @@
       this.ultraControlContainerEditor1.ContainingControl = this;
       this.ultraControlContainerEditor1.Name = "ultraControlContainerEditor1";
       // 
-      // ultraPanel2
-      // 
-      this.ultraPanel2.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
-      this.ultraPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-      this.ultraPanel2.Location = new System.Drawing.Point(0, 51);
-      this.ultraPanel2.Name = "ultraPanel2";
-      this.ultraPanel2.Size = new System.Drawing.Size(449, 1);
-      this.ultraPanel2.TabIndex = 2;
-      // 
       // Main
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,10 +329,10 @@
       this.ultraPanel1.ClientArea.ResumeLayout(false);
       this.ultraPanel1.ClientArea.PerformLayout();
       this.ultraPanel1.ResumeLayout(false);
+      this.ultraPanel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.tabMain)).EndInit();
       this.tabMain.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.ultraControlContainerEditor1)).EndInit();
-      this.ultraPanel2.ResumeLayout(false);
       this.ResumeLayout(false);
 
         }

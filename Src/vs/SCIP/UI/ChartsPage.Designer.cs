@@ -57,14 +57,14 @@
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint6 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint5 = new Infragistics.Win.Layout.GridBagConstraint();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint4 = new Infragistics.Win.Layout.GridBagConstraint();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint2 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint3 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Infragistics.Win.UltraWinTabControl.UltraTab();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab3 = new Infragistics.Win.UltraWinTabControl.UltraTab();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab4 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint3 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint4 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint2 = new Infragistics.Win.Layout.GridBagConstraint();
       this.FN_CHART_CPTDBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.SCIPDataSet = new UI.SCIPDataSet();
       this.FN_CHART_CPTFBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -100,8 +100,6 @@
       this.rptvwCoverage = new Microsoft.Reporting.WinForms.ReportViewer();
       this.ultraLabel1 = new Infragistics.Win.Misc.UltraLabel();
       this.ultraLabel2 = new Infragistics.Win.Misc.UltraLabel();
-      this.txtBeginYear = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
-      this.txtEndYear = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
       this.btnRunCleaningReport = new Infragistics.Win.Misc.UltraButton();
       this.btnRunInspectionReport = new Infragistics.Win.Misc.UltraButton();
       this.tabReports = new Infragistics.Win.UltraWinTabControl.UltraTabControl();
@@ -136,6 +134,8 @@
       this.pnlActionButtons = new Infragistics.Win.Misc.UltraPanel();
       this.btnRunRootReport = new Infragistics.Win.Misc.UltraButton();
       this.pnlMain = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
+      this.txtBeginYear = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
+      this.txtEndYear = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
       this.ultraFlowLayoutManager1 = new Infragistics.Win.Misc.UltraFlowLayoutManager(this.components);
       ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_CPTDBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.SCIPDataSet)).BeginInit();
@@ -166,14 +166,14 @@
       this.ultraTabPageControl2.SuspendLayout();
       this.ultraTabPageControl3.SuspendLayout();
       this.ultraTabPageControl4.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.txtBeginYear)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.txtEndYear)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.tabReports)).BeginInit();
       this.tabReports.SuspendLayout();
       this.pnlActionButtons.ClientArea.SuspendLayout();
       this.pnlActionButtons.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pnlMain)).BeginInit();
       this.pnlMain.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.txtBeginYear)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.txtEndYear)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.ultraFlowLayoutManager1)).BeginInit();
       this.SuspendLayout();
       // 
@@ -305,7 +305,7 @@
       // ultraTabPageControl1
       // 
       this.ultraTabPageControl1.Controls.Add(this.rptvwCleaning);
-      this.ultraTabPageControl1.Location = new System.Drawing.Point(-10000, -10000);
+      this.ultraTabPageControl1.Location = new System.Drawing.Point(1, 24);
       this.ultraTabPageControl1.Name = "ultraTabPageControl1";
       this.ultraTabPageControl1.Size = new System.Drawing.Size(711, 517);
       // 
@@ -408,7 +408,7 @@
       // ultraTabPageControl4
       // 
       this.ultraTabPageControl4.Controls.Add(this.rptvwCoverage);
-      this.ultraTabPageControl4.Location = new System.Drawing.Point(1, 24);
+      this.ultraTabPageControl4.Location = new System.Drawing.Point(-10000, -10000);
       this.ultraTabPageControl4.Name = "ultraTabPageControl4";
       this.ultraTabPageControl4.Size = new System.Drawing.Size(711, 517);
       // 
@@ -471,34 +471,6 @@
       this.ultraLabel2.TabIndex = 4;
       this.ultraLabel2.Text = "Begin Year";
       // 
-      // txtBeginYear
-      // 
-      gridBagConstraint4.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint4.Insets.Right = 8;
-      gridBagConstraint4.OriginX = 1;
-      gridBagConstraint4.OriginY = 0;
-      this.pnlMain.SetGridBagConstraint(this.txtBeginYear, gridBagConstraint4);
-      this.txtBeginYear.Location = new System.Drawing.Point(57, 0);
-      this.txtBeginYear.Name = "txtBeginYear";
-      this.pnlMain.SetPreferredSize(this.txtBeginYear, new System.Drawing.Size(60, 24));
-      this.txtBeginYear.Size = new System.Drawing.Size(60, 24);
-      this.txtBeginYear.TabIndex = 5;
-      this.txtBeginYear.Text = "2012";
-      // 
-      // txtEndYear
-      // 
-      gridBagConstraint1.Anchor = Infragistics.Win.Layout.AnchorType.Left;
-      gridBagConstraint1.OriginX = 3;
-      gridBagConstraint1.OriginY = 0;
-      gridBagConstraint1.WeightX = 1F;
-      this.pnlMain.SetGridBagConstraint(this.txtEndYear, gridBagConstraint1);
-      this.txtEndYear.Location = new System.Drawing.Point(173, 0);
-      this.txtEndYear.Name = "txtEndYear";
-      this.pnlMain.SetPreferredSize(this.txtEndYear, new System.Drawing.Size(60, 24));
-      this.txtEndYear.Size = new System.Drawing.Size(60, 24);
-      this.txtEndYear.TabIndex = 6;
-      this.txtEndYear.Text = "2023";
-      // 
       // btnRunCleaningReport
       // 
       this.btnRunCleaningReport.Location = new System.Drawing.Point(205, 5);
@@ -524,13 +496,13 @@
       this.tabReports.Controls.Add(this.ultraTabPageControl2);
       this.tabReports.Controls.Add(this.ultraTabPageControl3);
       this.tabReports.Controls.Add(this.ultraTabPageControl4);
-      gridBagConstraint2.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint2.OriginX = 0;
-      gridBagConstraint2.OriginY = 2;
-      gridBagConstraint2.SpanX = 4;
-      gridBagConstraint2.WeightX = 1F;
-      gridBagConstraint2.WeightY = 1F;
-      this.pnlMain.SetGridBagConstraint(this.tabReports, gridBagConstraint2);
+      gridBagConstraint3.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint3.OriginX = 0;
+      gridBagConstraint3.OriginY = 2;
+      gridBagConstraint3.SpanX = 4;
+      gridBagConstraint3.WeightX = 1F;
+      gridBagConstraint3.WeightY = 1F;
+      this.pnlMain.SetGridBagConstraint(this.tabReports, gridBagConstraint3);
       this.tabReports.Location = new System.Drawing.Point(0, 62);
       this.tabReports.Name = "tabReports";
       this.pnlMain.SetPreferredSize(this.tabReports, new System.Drawing.Size(715, 535));
@@ -696,12 +668,12 @@
       this.pnlActionButtons.ClientArea.Controls.Add(this.btnRunInspectionReport);
       this.pnlActionButtons.ClientArea.Controls.Add(this.btnRunRootReport);
       this.pnlActionButtons.ClientArea.Controls.Add(this.progress);
-      gridBagConstraint3.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint3.Insets.Bottom = 8;
-      gridBagConstraint3.OriginX = 0;
-      gridBagConstraint3.OriginY = 1;
-      gridBagConstraint3.SpanX = 4;
-      this.pnlMain.SetGridBagConstraint(this.pnlActionButtons, gridBagConstraint3);
+      gridBagConstraint4.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint4.Insets.Bottom = 8;
+      gridBagConstraint4.OriginX = 0;
+      gridBagConstraint4.OriginY = 1;
+      gridBagConstraint4.SpanX = 4;
+      this.pnlMain.SetGridBagConstraint(this.pnlActionButtons, gridBagConstraint4);
       this.pnlActionButtons.Location = new System.Drawing.Point(0, 24);
       this.pnlActionButtons.Name = "pnlActionButtons";
       this.pnlMain.SetPreferredSize(this.pnlActionButtons, new System.Drawing.Size(200, 30));
@@ -719,11 +691,11 @@
       // 
       // pnlMain
       // 
+      this.pnlMain.Controls.Add(this.txtBeginYear);
       this.pnlMain.Controls.Add(this.txtEndYear);
       this.pnlMain.Controls.Add(this.tabReports);
       this.pnlMain.Controls.Add(this.pnlActionButtons);
       this.pnlMain.Controls.Add(this.ultraLabel1);
-      this.pnlMain.Controls.Add(this.txtBeginYear);
       this.pnlMain.Controls.Add(this.ultraLabel2);
       this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pnlMain.ExpandToFitHeight = true;
@@ -732,6 +704,39 @@
       this.pnlMain.Name = "pnlMain";
       this.pnlMain.Size = new System.Drawing.Size(715, 606);
       this.pnlMain.TabIndex = 13;
+      // 
+      // txtBeginYear
+      // 
+      gridBagConstraint1.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint1.Insets.Right = 8;
+      gridBagConstraint1.OriginX = 1;
+      gridBagConstraint1.OriginY = 0;
+      this.pnlMain.SetGridBagConstraint(this.txtBeginYear, gridBagConstraint1);
+      this.txtBeginYear.Location = new System.Drawing.Point(57, 0);
+      this.txtBeginYear.MaskInput = "nnnn";
+      this.txtBeginYear.Name = "txtBeginYear";
+      this.pnlMain.SetPreferredSize(this.txtBeginYear, new System.Drawing.Size(60, 24));
+      this.txtBeginYear.Size = new System.Drawing.Size(60, 24);
+      this.txtBeginYear.SpinButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.OnMouseEnter;
+      this.txtBeginYear.TabIndex = 12;
+      this.txtBeginYear.Value = 2012;
+      this.txtBeginYear.ValueChanged += new System.EventHandler(this.txtEndYear_ValueChanged);
+      // 
+      // txtEndYear
+      // 
+      gridBagConstraint2.Anchor = Infragistics.Win.Layout.AnchorType.Left;
+      gridBagConstraint2.OriginX = 3;
+      gridBagConstraint2.OriginY = 0;
+      this.pnlMain.SetGridBagConstraint(this.txtEndYear, gridBagConstraint2);
+      this.txtEndYear.Location = new System.Drawing.Point(173, 0);
+      this.txtEndYear.MaskInput = "nnnn";
+      this.txtEndYear.Name = "txtEndYear";
+      this.pnlMain.SetPreferredSize(this.txtEndYear, new System.Drawing.Size(60, 24));
+      this.txtEndYear.Size = new System.Drawing.Size(60, 24);
+      this.txtEndYear.SpinButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.OnMouseEnter;
+      this.txtEndYear.TabIndex = 13;
+      this.txtEndYear.Value = 2023;
+      this.txtEndYear.ValueChanged += new System.EventHandler(this.txtEndYear_ValueChanged);
       // 
       // ultraFlowLayoutManager1
       // 
@@ -776,8 +781,6 @@
       this.ultraTabPageControl2.ResumeLayout(false);
       this.ultraTabPageControl3.ResumeLayout(false);
       this.ultraTabPageControl4.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.txtBeginYear)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.txtEndYear)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.tabReports)).EndInit();
       this.tabReports.ResumeLayout(false);
       this.pnlActionButtons.ClientArea.ResumeLayout(false);
@@ -785,6 +788,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.pnlMain)).EndInit();
       this.pnlMain.ResumeLayout(false);
       this.pnlMain.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.txtBeginYear)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.txtEndYear)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.ultraFlowLayoutManager1)).EndInit();
       this.ResumeLayout(false);
 
@@ -794,8 +799,6 @@
 
     private Infragistics.Win.Misc.UltraLabel ultraLabel1;
     private Infragistics.Win.Misc.UltraLabel ultraLabel2;
-    private Infragistics.Win.UltraWinEditors.UltraTextEditor txtBeginYear;
-    private Infragistics.Win.UltraWinEditors.UltraTextEditor txtEndYear;
     private Infragistics.Win.Misc.UltraButton btnRunCleaningReport;
     private System.Windows.Forms.BindingSource FN_CHART_CPTDBindingSource;
     private SCIPDataSet SCIPDataSet;
@@ -864,5 +867,7 @@
     private Infragistics.Win.Misc.UltraGridBagLayoutPanel pnlMain;
     private Infragistics.Win.Misc.UltraButton btnRunRootReport;
     private Infragistics.Win.Misc.UltraFlowLayoutManager ultraFlowLayoutManager1;
+    private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtBeginYear;
+    private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtEndYear;
   }
 }

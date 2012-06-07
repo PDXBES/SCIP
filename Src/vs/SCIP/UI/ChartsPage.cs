@@ -176,8 +176,9 @@ namespace UI
       Refresh();
 
 
+      const int progressiveChartTimeOutSeconds = 300;
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter.
-        SelectCommandTimeOut = 120;
+        SelectCommandTimeOut = progressiveChartTimeOutSeconds;
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter.Fill(
         this.SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection,
         beginYear, endYear);
@@ -185,7 +186,7 @@ namespace UI
       Refresh();
 
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter.
-        SelectCommandTimeOut = 120;
+        SelectCommandTimeOut = progressiveChartTimeOutSeconds;
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter.Fill(
         this.SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning,
         beginYear, endYear);
@@ -193,7 +194,7 @@ namespace UI
       Refresh();
 
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter.
-        SelectCommandTimeOut = 120;
+        SelectCommandTimeOut = progressiveChartTimeOutSeconds;
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter.Fill(
         this.SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot,
         beginYear, endYear);
@@ -224,6 +225,12 @@ namespace UI
         SetProgressUIVisible(false);
         Cursor = Cursors.Default;
       }
+    }
+
+    private void txtEndYear_ValueChanged(object sender, EventArgs e)
+    {
+      if ((int)txtEndYear.Value  < (int)txtBeginYear.Value)
+        txtEndYear.Value = txtBeginYear.Value;
     }
   }
 }

@@ -57,6 +57,7 @@
     [CBR_RANK]                INT             NULL,
     [CBRSEG_RANK]             INT             NULL,
     [BPW_RANK]                INT             NULL,
-    [BPWSEG_RANK]             INT             NULL
+    [BPWSEG_RANK]             INT             NULL,
+    [asset_set_id]            INT             NULL
 );
 

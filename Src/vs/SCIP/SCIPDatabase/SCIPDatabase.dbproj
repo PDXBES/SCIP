@@ -810,5 +810,8 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARS.function.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CLEAN_UP_ALTERNATIVE.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

@@ -29,10 +29,10 @@ namespace UI
 
 
       SqlConnection sqlConnection = new SqlConnection(SCIPUI.Default.ConnectionString);
-      SqlCommand exposeData = new SqlCommand();
-
-      exposeData.CommandText = "SP_ExposeData";
-      exposeData.CommandType = CommandType.StoredProcedure;
+      SqlCommand exposeData = new SqlCommand() {
+        Connection = sqlConnection, 
+        CommandText = "SP_ExposeData", 
+        CommandType = CommandType.StoredProcedure };
       exposeData.Parameters["asset_set_id"].Value = 1;
     }
   }

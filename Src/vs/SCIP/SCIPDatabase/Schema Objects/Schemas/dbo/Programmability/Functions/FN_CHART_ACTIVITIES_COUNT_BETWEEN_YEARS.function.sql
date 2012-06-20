@@ -34,8 +34,13 @@ BEGIN
     annualized_compkey_percent_covered DECIMAL(5,2)
   )
 
+  DECLARE @current_asset_set_id INT
+  SELECT @current_asset_set_id = asset_set_id
+  FROM ALTERNATIVES
+  WHERE alternative_id = @alternative_id
+
   DECLARE @totalAssetsCount INT;
-  SET @totalAssetsCount = dbo.FN_ASSETS_TOTAL_COUNT();
+  SET @totalAssetsCount = dbo.FN_ASSETS_TOTAL_COUNT(@current_asset_set_id);
 
   INSERT INTO @tempResults
     SELECT

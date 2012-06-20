@@ -18,10 +18,8 @@ namespace UI
 
         private void FormManageAlternatives_Load(object sender, EventArgs e)
         {
-          // TODO: This line of code loads data into the 'sCIPDataSet.ASSET_SETS' table. You can move, or remove it, as needed.
           this.aSSET_SETSTableAdapter.Fill(this.sCIPDataSet.ASSET_SETS);
-            this.aLTERNATIVESTableAdapter.Fill(this.sCIPDataSet.ALTERNATIVES);
-
+          this.aLTERNATIVESTableAdapter.Fill(this.sCIPDataSet.ALTERNATIVES);
         }
 
         private void ultraButtonDiscardChanges_Click(object sender, EventArgs e)
@@ -49,6 +47,16 @@ namespace UI
             {
                 MessageBox.Show("Invalid alternative!");
             }
+        }
+
+        private void gridAssetSets_AfterRowUpdate(object sender, Infragistics.Win.UltraWinGrid.RowEventArgs e)
+        {
+          aSSET_SETSTableAdapter.Update(sCIPDataSet);
+        }
+
+        private void gridAssetSets_AfterRowsDeleted(object sender, EventArgs e)
+        {
+          aSSET_SETSTableAdapter.Update(sCIPDataSet);
         }
     }
 }

@@ -19,4 +19,4 @@
         ,A.[updated_by]
         ,A.[update_date]
         ,D.[length_ft]*(CASE WHEN A.[override_cost_per_ft] IS NULL THEN B.default_cost_per_ft ELSE A.[override_cost_per_ft] END) AS driver_cost
-  FROM (((([DRIVERS] A INNER JOIN DRIVER_TYPES B ON A.driver_type_id = B.driver_type_id) INNER JOIN ACTIVITY_TYPES C ON B.activity_type_id = C.activity_type_id) INNER JOIN ASSETS D ON A.compkey = D.compkey) INNER JOIN BASINS E ON (E.basin_id = D.basin_id)) INNER JOIN DISTRICTS F ON (F.district_id = D.district_id)
+  FROM ((((([DRIVERS] A INNER JOIN DRIVER_TYPES B ON A.driver_type_id = B.driver_type_id) INNER JOIN ACTIVITY_TYPES C ON (B.activity_type_id = C.activity_type_id)) INNER JOIN ASSETS D ON (A.compkey = D.compkey)) INNER JOIN BASINS E ON (E.basin_id = D.basin_id)) INNER JOIN DISTRICTS F ON (F.district_id = D.district_id)) INNER JOIN ALTERNATIVES G ON (G.alternative_id = A.alternative_id AND D.asset_set_id = G.asset_set_id)

@@ -18,7 +18,8 @@ namespace UI
 
         private void FormManageAlternatives_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sCIPDataSet.ALTERNATIVES' table. You can move, or remove it, as needed.
+          // TODO: This line of code loads data into the 'sCIPDataSet.ASSET_SETS' table. You can move, or remove it, as needed.
+          this.aSSET_SETSTableAdapter.Fill(this.sCIPDataSet.ASSET_SETS);
             this.aLTERNATIVESTableAdapter.Fill(this.sCIPDataSet.ALTERNATIVES);
 
         }

@@ -2,7 +2,8 @@
 (
 	@beginYear INT, 
 	@endYear INT,
-  @activityType VARCHAR(50)
+  @activityType VARCHAR(50),
+  @alternative_id INT
 )
 RETURNS @resultTable TABLE 
 (
@@ -26,7 +27,8 @@ BEGIN
   INSERT INTO @resultTable
   SELECT @currentYear, activity_type, driver_type, reporting_category, compkey_count,
     compkey_percent_covered, annualized_compkey_count, annualized_compkey_percent_covered
-  FROM dbo.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARS(@beginYear, @currentYear, @activityType)
+  FROM dbo.FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARS(
+    @beginYear, @currentYear, @activityType, @alternative_id)
 
   SET @currentYear = @currentYear + 1
 

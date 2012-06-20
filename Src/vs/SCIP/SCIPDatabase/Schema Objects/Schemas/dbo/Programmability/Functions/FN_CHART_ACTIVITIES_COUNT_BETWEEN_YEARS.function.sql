@@ -2,7 +2,8 @@
 (
 	@beginYear INT, 
 	@endYear INT,
-  @activityType VARCHAR(50)
+  @activityType VARCHAR(50),
+  @alternative_id INT
 )
 RETURNS @resultTable TABLE 
 (
@@ -33,8 +34,13 @@ BEGIN
     annualized_compkey_percent_covered DECIMAL(5,2)
   )
 
+  DECLARE @current_asset_set_id INT
+  SELECT @current_asset_set_id = asset_set_id
+  FROM ALTERNATIVES
+  WHERE alternative_id = @alternative_id
+
   DECLARE @totalAssetsCount INT;
-  SET @totalAssetsCount = dbo.FN_ASSETS_TOTAL_COUNT();
+  SET @totalAssetsCount = dbo.FN_ASSETS_TOTAL_COUNT(@current_asset_set_id);
 
   INSERT INTO @tempResults
     SELECT
@@ -51,7 +57,7 @@ BEGIN
     FROM
     (SELECT activity_type, driver_type, reporting_category, compkey
     FROM VW_ALL_ACTIVITIES
-    WHERE fiscal_year BETWEEN @beginYear AND @endYear AND activity_type = @activityType
+    WHERE fiscal_year BETWEEN @beginYear AND @endYear AND activity_type = @activityType AND alternative_id = @alternative_id
     GROUP BY activity_type, driver_type, reporting_category, compkey) AS A
     GROUP BY A.activity_type, A.driver_type, A.reporting_category
 
@@ -78,7 +84,7 @@ BEGIN
   FROM
   (SELECT activity_type, driver_type, reporting_category, compkey
   FROM VW_ALL_ACTIVITIES
-  WHERE fiscal_year BETWEEN @beginYear AND @endYear AND activity_type = @activityType
+  WHERE fiscal_year BETWEEN @beginYear AND @endYear AND activity_type = @activityType AND alternative_id = @alternative_id
   GROUP BY activity_type, driver_type, reporting_category, compkey) AS A
   GROUP BY A.activity_type, A.driver_type, A.reporting_category
 

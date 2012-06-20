@@ -2,7 +2,8 @@
 (
 	@beginYear INT, 
 	@endYear INT,
-  @activityType VARCHAR(50)
+  @activityType VARCHAR(50),
+  @alternative_id INT
 )
 RETURNS @resultTable TABLE 
 (
@@ -51,7 +52,7 @@ BEGIN
     FROM
     (SELECT activity_type, driver_type, reporting_category, compkey
     FROM VW_ALL_ACTIVITIES
-    WHERE fiscal_year BETWEEN @beginYear AND @endYear AND activity_type = @activityType
+    WHERE fiscal_year BETWEEN @beginYear AND @endYear AND activity_type = @activityType AND alternative_id = @alternative_id
     GROUP BY activity_type, driver_type, reporting_category, compkey) AS A
     GROUP BY A.activity_type, A.driver_type, A.reporting_category
 
@@ -78,7 +79,7 @@ BEGIN
   FROM
   (SELECT activity_type, driver_type, reporting_category, compkey
   FROM VW_ALL_ACTIVITIES
-  WHERE fiscal_year BETWEEN @beginYear AND @endYear AND activity_type = @activityType
+  WHERE fiscal_year BETWEEN @beginYear AND @endYear AND activity_type = @activityType AND alternative_id = @alternative_id
   GROUP BY activity_type, driver_type, reporting_category, compkey) AS A
   GROUP BY A.activity_type, A.driver_type, A.reporting_category
 

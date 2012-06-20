@@ -1,7 +1,8 @@
 ﻿CREATE FUNCTION [dbo].[FN_CHART_RLTD]
 (
 	@beginYear int, 
-	@endYear int
+	@endYear int,
+  @alternative_id INT
 )
 RETURNS TABLE 
 AS
@@ -11,7 +12,10 @@ RETURN (
       ISNULL(SUM([Root Control High (>15 in)]), 0) AS [Root Control High (>15 in)],
       ISNULL(SUM([Root Control Medium]), 0) AS [Root Control Medium], 
       ISNULL(SUM([Root Control Medium (>15 in)]), 0) AS [Root Control Medium (>15 in)]
-  FROM (SELECT * FROM VW_ROOT_ACTIVITIES_BY_DRIVER_TYPE_FISCAL_YEAR WHERE fiscal_year BETWEEN 2012 AND 2023) PS
+  FROM (
+    SELECT * FROM VW_ROOT_ACTIVITIES_BY_DRIVER_TYPE_FISCAL_YEAR 
+      WHERE (fiscal_year BETWEEN @beginYear AND @endYear) AND
+        (alternative_id = @alternative_id)) PS
   PIVOT
   (SUM(cost) FOR reporting_category IN 
     (

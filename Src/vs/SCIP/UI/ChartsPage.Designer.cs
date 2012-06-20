@@ -54,17 +54,37 @@
       Microsoft.Reporting.WinForms.ReportDataSource reportDataSource23 = new Microsoft.Reporting.WinForms.ReportDataSource();
       Microsoft.Reporting.WinForms.ReportDataSource reportDataSource24 = new Microsoft.Reporting.WinForms.ReportDataSource();
       Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint6 = new Infragistics.Win.Layout.GridBagConstraint();
-      Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint8 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint7 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint5 = new Infragistics.Win.Layout.GridBagConstraint();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint3 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab1 = new Infragistics.Win.UltraWinTabControl.UltraTab();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab2 = new Infragistics.Win.UltraWinTabControl.UltraTab();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab3 = new Infragistics.Win.UltraWinTabControl.UltraTab();
       Infragistics.Win.UltraWinTabControl.UltraTab ultraTab4 = new Infragistics.Win.UltraWinTabControl.UltraTab();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint4 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint6 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
+      Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("ALTERNATIVES", -1);
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("name");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn3 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("description");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn4 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("asset_set_id");
+      Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
+      Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
+      Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
+      Infragistics.Win.Appearance appearance6 = new Infragistics.Win.Appearance();
+      Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
+      Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
+      Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
+      Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
+      Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
+      Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
+      Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint2 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint3 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint4 = new Infragistics.Win.Layout.GridBagConstraint();
       this.FN_CHART_CPTDBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.SCIPDataSet = new UI.SCIPDataSet();
       this.FN_CHART_CPTFBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -134,9 +154,13 @@
       this.pnlActionButtons = new Infragistics.Win.Misc.UltraPanel();
       this.btnRunRootReport = new Infragistics.Win.Misc.UltraButton();
       this.pnlMain = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
+      this.comboAlternative = new Infragistics.Win.UltraWinGrid.UltraCombo();
+      this.aLTERNATIVESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.ultraLabel3 = new Infragistics.Win.Misc.UltraLabel();
       this.txtBeginYear = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
       this.txtEndYear = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
       this.ultraFlowLayoutManager1 = new Infragistics.Win.Misc.UltraFlowLayoutManager(this.components);
+      this.aLTERNATIVESTableAdapter = new UI.SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter();
       ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_CPTDBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.SCIPDataSet)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.FN_CHART_CPTFBindingSource)).BeginInit();
@@ -172,6 +196,8 @@
       this.pnlActionButtons.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pnlMain)).BeginInit();
       this.pnlMain.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.comboAlternative)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.txtBeginYear)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.txtEndYear)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.ultraFlowLayoutManager1)).BeginInit();
@@ -305,9 +331,9 @@
       // ultraTabPageControl1
       // 
       this.ultraTabPageControl1.Controls.Add(this.rptvwCleaning);
-      this.ultraTabPageControl1.Location = new System.Drawing.Point(1, 24);
+      this.ultraTabPageControl1.Location = new System.Drawing.Point(2, 25);
       this.ultraTabPageControl1.Name = "ultraTabPageControl1";
-      this.ultraTabPageControl1.Size = new System.Drawing.Size(711, 517);
+      this.ultraTabPageControl1.Size = new System.Drawing.Size(711, 516);
       // 
       // rptvwCleaning
       // 
@@ -334,7 +360,7 @@
       this.rptvwCleaning.LocalReport.ReportEmbeddedResource = "UI.Cleaning.rdlc";
       this.rptvwCleaning.Location = new System.Drawing.Point(0, 0);
       this.rptvwCleaning.Name = "rptvwCleaning";
-      this.rptvwCleaning.Size = new System.Drawing.Size(711, 517);
+      this.rptvwCleaning.Size = new System.Drawing.Size(711, 516);
       this.rptvwCleaning.TabIndex = 9;
       // 
       // ultraTabPageControl2
@@ -342,7 +368,7 @@
       this.ultraTabPageControl2.Controls.Add(this.rptvwInspection);
       this.ultraTabPageControl2.Location = new System.Drawing.Point(-10000, -10000);
       this.ultraTabPageControl2.Name = "ultraTabPageControl2";
-      this.ultraTabPageControl2.Size = new System.Drawing.Size(711, 517);
+      this.ultraTabPageControl2.Size = new System.Drawing.Size(711, 516);
       // 
       // rptvwInspection
       // 
@@ -368,7 +394,7 @@
       this.rptvwInspection.LocalReport.ReportEmbeddedResource = "UI.Inspections.rdlc";
       this.rptvwInspection.Location = new System.Drawing.Point(0, 0);
       this.rptvwInspection.Name = "rptvwInspection";
-      this.rptvwInspection.Size = new System.Drawing.Size(711, 517);
+      this.rptvwInspection.Size = new System.Drawing.Size(711, 516);
       this.rptvwInspection.TabIndex = 0;
       // 
       // ultraTabPageControl3
@@ -376,7 +402,7 @@
       this.ultraTabPageControl3.Controls.Add(this.rptvwRoot);
       this.ultraTabPageControl3.Location = new System.Drawing.Point(-10000, -10000);
       this.ultraTabPageControl3.Name = "ultraTabPageControl3";
-      this.ultraTabPageControl3.Size = new System.Drawing.Size(711, 517);
+      this.ultraTabPageControl3.Size = new System.Drawing.Size(711, 516);
       // 
       // rptvwRoot
       // 
@@ -402,7 +428,7 @@
       this.rptvwRoot.LocalReport.ReportEmbeddedResource = "UI.RootManagement.rdlc";
       this.rptvwRoot.Location = new System.Drawing.Point(0, 0);
       this.rptvwRoot.Name = "rptvwRoot";
-      this.rptvwRoot.Size = new System.Drawing.Size(711, 517);
+      this.rptvwRoot.Size = new System.Drawing.Size(711, 516);
       this.rptvwRoot.TabIndex = 0;
       // 
       // ultraTabPageControl4
@@ -410,7 +436,7 @@
       this.ultraTabPageControl4.Controls.Add(this.rptvwCoverage);
       this.ultraTabPageControl4.Location = new System.Drawing.Point(-10000, -10000);
       this.ultraTabPageControl4.Name = "ultraTabPageControl4";
-      this.ultraTabPageControl4.Size = new System.Drawing.Size(711, 517);
+      this.ultraTabPageControl4.Size = new System.Drawing.Size(711, 516);
       // 
       // rptvwCoverage
       // 
@@ -436,7 +462,7 @@
       this.rptvwCoverage.LocalReport.ReportEmbeddedResource = "UI.Coverage.rdlc";
       this.rptvwCoverage.Location = new System.Drawing.Point(0, 0);
       this.rptvwCoverage.Name = "rptvwCoverage";
-      this.rptvwCoverage.Size = new System.Drawing.Size(711, 517);
+      this.rptvwCoverage.Size = new System.Drawing.Size(711, 516);
       this.rptvwCoverage.TabIndex = 0;
       // 
       // ultraLabel1
@@ -444,10 +470,10 @@
       appearance1.TextVAlignAsString = "Middle";
       this.ultraLabel1.Appearance = appearance1;
       this.ultraLabel1.AutoSize = true;
-      gridBagConstraint6.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint6.OriginX = 2;
-      gridBagConstraint6.OriginY = 0;
-      this.pnlMain.SetGridBagConstraint(this.ultraLabel1, gridBagConstraint6);
+      gridBagConstraint8.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint8.OriginX = 2;
+      gridBagConstraint8.OriginY = 0;
+      this.pnlMain.SetGridBagConstraint(this.ultraLabel1, gridBagConstraint8);
       this.ultraLabel1.Location = new System.Drawing.Point(125, 0);
       this.ultraLabel1.Name = "ultraLabel1";
       this.pnlMain.SetPreferredSize(this.ultraLabel1, new System.Drawing.Size(48, 17));
@@ -457,13 +483,13 @@
       // 
       // ultraLabel2
       // 
-      appearance2.TextVAlignAsString = "Middle";
-      this.ultraLabel2.Appearance = appearance2;
+      appearance15.TextVAlignAsString = "Middle";
+      this.ultraLabel2.Appearance = appearance15;
       this.ultraLabel2.AutoSize = true;
-      gridBagConstraint5.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint5.OriginX = 0;
-      gridBagConstraint5.OriginY = 0;
-      this.pnlMain.SetGridBagConstraint(this.ultraLabel2, gridBagConstraint5);
+      gridBagConstraint7.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint7.OriginX = 0;
+      gridBagConstraint7.OriginY = 0;
+      this.pnlMain.SetGridBagConstraint(this.ultraLabel2, gridBagConstraint7);
       this.ultraLabel2.Location = new System.Drawing.Point(0, 0);
       this.ultraLabel2.Name = "ultraLabel2";
       this.pnlMain.SetPreferredSize(this.ultraLabel2, new System.Drawing.Size(57, 17));
@@ -496,18 +522,18 @@
       this.tabReports.Controls.Add(this.ultraTabPageControl2);
       this.tabReports.Controls.Add(this.ultraTabPageControl3);
       this.tabReports.Controls.Add(this.ultraTabPageControl4);
-      gridBagConstraint3.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint3.OriginX = 0;
-      gridBagConstraint3.OriginY = 2;
-      gridBagConstraint3.SpanX = 4;
-      gridBagConstraint3.WeightX = 1F;
-      gridBagConstraint3.WeightY = 1F;
-      this.pnlMain.SetGridBagConstraint(this.tabReports, gridBagConstraint3);
-      this.tabReports.Location = new System.Drawing.Point(0, 62);
+      gridBagConstraint5.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint5.OriginX = 0;
+      gridBagConstraint5.OriginY = 2;
+      gridBagConstraint5.SpanX = 6;
+      gridBagConstraint5.WeightX = 1F;
+      gridBagConstraint5.WeightY = 1F;
+      this.pnlMain.SetGridBagConstraint(this.tabReports, gridBagConstraint5);
+      this.tabReports.Location = new System.Drawing.Point(0, 63);
       this.tabReports.Name = "tabReports";
       this.pnlMain.SetPreferredSize(this.tabReports, new System.Drawing.Size(715, 535));
       this.tabReports.SharedControlsPage = this.ultraTabSharedControlsPage1;
-      this.tabReports.Size = new System.Drawing.Size(715, 544);
+      this.tabReports.Size = new System.Drawing.Size(715, 543);
       this.tabReports.TabIndex = 10;
       ultraTab1.Key = "Cleaning";
       ultraTab1.TabPage = this.ultraTabPageControl1;
@@ -531,7 +557,7 @@
       // 
       this.ultraTabSharedControlsPage1.Location = new System.Drawing.Point(-10000, -10000);
       this.ultraTabSharedControlsPage1.Name = "ultraTabSharedControlsPage1";
-      this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(711, 517);
+      this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(711, 516);
       // 
       // btnRunCoverageReport
       // 
@@ -668,13 +694,13 @@
       this.pnlActionButtons.ClientArea.Controls.Add(this.btnRunInspectionReport);
       this.pnlActionButtons.ClientArea.Controls.Add(this.btnRunRootReport);
       this.pnlActionButtons.ClientArea.Controls.Add(this.progress);
-      gridBagConstraint4.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint4.Insets.Bottom = 8;
-      gridBagConstraint4.OriginX = 0;
-      gridBagConstraint4.OriginY = 1;
-      gridBagConstraint4.SpanX = 4;
-      this.pnlMain.SetGridBagConstraint(this.pnlActionButtons, gridBagConstraint4);
-      this.pnlActionButtons.Location = new System.Drawing.Point(0, 24);
+      gridBagConstraint6.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint6.Insets.Bottom = 8;
+      gridBagConstraint6.OriginX = 0;
+      gridBagConstraint6.OriginY = 1;
+      gridBagConstraint6.SpanX = 6;
+      this.pnlMain.SetGridBagConstraint(this.pnlActionButtons, gridBagConstraint6);
+      this.pnlActionButtons.Location = new System.Drawing.Point(0, 25);
       this.pnlActionButtons.Name = "pnlActionButtons";
       this.pnlMain.SetPreferredSize(this.pnlActionButtons, new System.Drawing.Size(200, 30));
       this.pnlActionButtons.Size = new System.Drawing.Size(715, 30);
@@ -691,6 +717,8 @@
       // 
       // pnlMain
       // 
+      this.pnlMain.Controls.Add(this.comboAlternative);
+      this.pnlMain.Controls.Add(this.ultraLabel3);
       this.pnlMain.Controls.Add(this.txtBeginYear);
       this.pnlMain.Controls.Add(this.txtEndYear);
       this.pnlMain.Controls.Add(this.tabReports);
@@ -705,13 +733,113 @@
       this.pnlMain.Size = new System.Drawing.Size(715, 606);
       this.pnlMain.TabIndex = 13;
       // 
+      // comboAlternative
+      // 
+      this.comboAlternative.DataSource = this.aLTERNATIVESBindingSource;
+      appearance2.BackColor = System.Drawing.SystemColors.Window;
+      appearance2.BorderColor = System.Drawing.SystemColors.InactiveCaption;
+      this.comboAlternative.DisplayLayout.Appearance = appearance2;
+      ultraGridColumn1.Header.VisiblePosition = 0;
+      ultraGridColumn2.Header.VisiblePosition = 1;
+      ultraGridColumn3.Header.VisiblePosition = 2;
+      ultraGridColumn4.Header.VisiblePosition = 3;
+      ultraGridBand1.Columns.AddRange(new object[] {
+            ultraGridColumn1,
+            ultraGridColumn2,
+            ultraGridColumn3,
+            ultraGridColumn4});
+      this.comboAlternative.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
+      this.comboAlternative.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+      this.comboAlternative.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
+      appearance3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+      appearance3.BackColor2 = System.Drawing.SystemColors.ControlDark;
+      appearance3.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+      appearance3.BorderColor = System.Drawing.SystemColors.Window;
+      this.comboAlternative.DisplayLayout.GroupByBox.Appearance = appearance3;
+      appearance4.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.comboAlternative.DisplayLayout.GroupByBox.BandLabelAppearance = appearance4;
+      this.comboAlternative.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+      appearance5.BackColor = System.Drawing.SystemColors.ControlLightLight;
+      appearance5.BackColor2 = System.Drawing.SystemColors.Control;
+      appearance5.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+      appearance5.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.comboAlternative.DisplayLayout.GroupByBox.PromptAppearance = appearance5;
+      this.comboAlternative.DisplayLayout.MaxColScrollRegions = 1;
+      this.comboAlternative.DisplayLayout.MaxRowScrollRegions = 1;
+      appearance6.BackColor = System.Drawing.SystemColors.Window;
+      appearance6.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.comboAlternative.DisplayLayout.Override.ActiveCellAppearance = appearance6;
+      appearance7.BackColor = System.Drawing.SystemColors.Highlight;
+      appearance7.ForeColor = System.Drawing.SystemColors.HighlightText;
+      this.comboAlternative.DisplayLayout.Override.ActiveRowAppearance = appearance7;
+      this.comboAlternative.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted;
+      this.comboAlternative.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted;
+      appearance8.BackColor = System.Drawing.SystemColors.Window;
+      this.comboAlternative.DisplayLayout.Override.CardAreaAppearance = appearance8;
+      appearance9.BorderColor = System.Drawing.Color.Silver;
+      appearance9.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
+      this.comboAlternative.DisplayLayout.Override.CellAppearance = appearance9;
+      this.comboAlternative.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText;
+      this.comboAlternative.DisplayLayout.Override.CellPadding = 0;
+      appearance10.BackColor = System.Drawing.SystemColors.Control;
+      appearance10.BackColor2 = System.Drawing.SystemColors.ControlDark;
+      appearance10.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
+      appearance10.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+      appearance10.BorderColor = System.Drawing.SystemColors.Window;
+      this.comboAlternative.DisplayLayout.Override.GroupByRowAppearance = appearance10;
+      appearance11.TextHAlignAsString = "Left";
+      this.comboAlternative.DisplayLayout.Override.HeaderAppearance = appearance11;
+      this.comboAlternative.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
+      this.comboAlternative.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand;
+      appearance12.BackColor = System.Drawing.SystemColors.Window;
+      appearance12.BorderColor = System.Drawing.Color.Silver;
+      this.comboAlternative.DisplayLayout.Override.RowAppearance = appearance12;
+      this.comboAlternative.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.False;
+      appearance13.BackColor = System.Drawing.SystemColors.ControlLight;
+      this.comboAlternative.DisplayLayout.Override.TemplateAddRowAppearance = appearance13;
+      this.comboAlternative.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
+      this.comboAlternative.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
+      this.comboAlternative.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
+      gridBagConstraint1.Anchor = Infragistics.Win.Layout.AnchorType.Left;
+      gridBagConstraint1.OriginX = 5;
+      gridBagConstraint1.OriginY = 0;
+      this.pnlMain.SetGridBagConstraint(this.comboAlternative, gridBagConstraint1);
+      this.comboAlternative.Location = new System.Drawing.Point(293, 0);
+      this.comboAlternative.Name = "comboAlternative";
+      this.comboAlternative.NullText = "Select an alternative";
+      this.pnlMain.SetPreferredSize(this.comboAlternative, new System.Drawing.Size(200, 25));
+      this.comboAlternative.Size = new System.Drawing.Size(200, 25);
+      this.comboAlternative.TabIndex = 15;
+      this.comboAlternative.Text = "Select an alternative";
+      // 
+      // aLTERNATIVESBindingSource
+      // 
+      this.aLTERNATIVESBindingSource.DataMember = "ALTERNATIVES";
+      this.aLTERNATIVESBindingSource.DataSource = this.SCIPDataSet;
+      // 
+      // ultraLabel3
+      // 
+      appearance14.TextVAlignAsString = "Middle";
+      this.ultraLabel3.Appearance = appearance14;
+      this.ultraLabel3.AutoSize = true;
+      gridBagConstraint2.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint2.OriginX = 4;
+      gridBagConstraint2.OriginY = 0;
+      this.pnlMain.SetGridBagConstraint(this.ultraLabel3, gridBagConstraint2);
+      this.ultraLabel3.Location = new System.Drawing.Point(233, 0);
+      this.ultraLabel3.Name = "ultraLabel3";
+      this.pnlMain.SetPreferredSize(this.ultraLabel3, new System.Drawing.Size(60, 17));
+      this.ultraLabel3.Size = new System.Drawing.Size(58, 17);
+      this.ultraLabel3.TabIndex = 14;
+      this.ultraLabel3.Text = "Alternative";
+      // 
       // txtBeginYear
       // 
-      gridBagConstraint1.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint1.Insets.Right = 8;
-      gridBagConstraint1.OriginX = 1;
-      gridBagConstraint1.OriginY = 0;
-      this.pnlMain.SetGridBagConstraint(this.txtBeginYear, gridBagConstraint1);
+      gridBagConstraint3.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint3.Insets.Right = 8;
+      gridBagConstraint3.OriginX = 1;
+      gridBagConstraint3.OriginY = 0;
+      this.pnlMain.SetGridBagConstraint(this.txtBeginYear, gridBagConstraint3);
       this.txtBeginYear.Location = new System.Drawing.Point(57, 0);
       this.txtBeginYear.MaskInput = "nnnn";
       this.txtBeginYear.Name = "txtBeginYear";
@@ -724,10 +852,10 @@
       // 
       // txtEndYear
       // 
-      gridBagConstraint2.Anchor = Infragistics.Win.Layout.AnchorType.Left;
-      gridBagConstraint2.OriginX = 3;
-      gridBagConstraint2.OriginY = 0;
-      this.pnlMain.SetGridBagConstraint(this.txtEndYear, gridBagConstraint2);
+      gridBagConstraint4.Anchor = Infragistics.Win.Layout.AnchorType.Left;
+      gridBagConstraint4.OriginX = 3;
+      gridBagConstraint4.OriginY = 0;
+      this.pnlMain.SetGridBagConstraint(this.txtEndYear, gridBagConstraint4);
       this.txtEndYear.Location = new System.Drawing.Point(173, 0);
       this.txtEndYear.MaskInput = "nnnn";
       this.txtEndYear.Name = "txtEndYear";
@@ -742,6 +870,10 @@
       // 
       this.ultraFlowLayoutManager1.ContainerControl = this.pnlActionButtons.ClientArea;
       this.ultraFlowLayoutManager1.HorizontalAlignment = Infragistics.Win.Layout.DefaultableFlowLayoutAlignment.Near;
+      // 
+      // aLTERNATIVESTableAdapter
+      // 
+      this.aLTERNATIVESTableAdapter.ClearBeforeFill = true;
       // 
       // ChartsPage
       // 
@@ -788,6 +920,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.pnlMain)).EndInit();
       this.pnlMain.ResumeLayout(false);
       this.pnlMain.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.comboAlternative)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.txtBeginYear)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.txtEndYear)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.ultraFlowLayoutManager1)).EndInit();
@@ -869,5 +1003,9 @@
     private Infragistics.Win.Misc.UltraFlowLayoutManager ultraFlowLayoutManager1;
     private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtBeginYear;
     private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtEndYear;
+    private Infragistics.Win.Misc.UltraLabel ultraLabel3;
+    private Infragistics.Win.UltraWinGrid.UltraCombo comboAlternative;
+    private System.Windows.Forms.BindingSource aLTERNATIVESBindingSource;
+    private SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter aLTERNATIVESTableAdapter;
   }
 }

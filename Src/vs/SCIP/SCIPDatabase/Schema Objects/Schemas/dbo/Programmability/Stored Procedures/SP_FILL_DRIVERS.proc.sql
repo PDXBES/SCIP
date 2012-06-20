@@ -80,7 +80,7 @@ BEGIN
   --NOTE2: We use AND in the less than function because BOTH must be less than, while only one needed to be greater than
   --NOTE3: root cutoff and pipe cutoff are based upon different equality formats
   INSERT INTO @LargeRootXORLargePipeCompKeys
-    SELECT compkey
+    SELECT DISTINCT compkey
     FROM [dbo].[ASSETS]
     WHERE 
       (
@@ -179,7 +179,7 @@ BEGIN
     EXEC SP_STATUS_MESSAGE 'Inserting H root control inspection drivers'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', @alternative_id
-      FROM (@SmallRootCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY)), DRIVER_TYPES C INNER JOIN ACTIVITY_TYPES D ON (C.activity_type_id = D.activity_type_id)
+      FROM (@SmallRootCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY AND B.asset_set_id = @asset_set_id)), DRIVER_TYPES C INNER JOIN ACTIVITY_TYPES D ON (C.activity_type_id = D.activity_type_id)
       WHERE B.ROOTPROB IN ('H') AND C.name = 'RootControlH' AND D.name = 'Inspection' AND C.alternative_id = @alternative_id
     SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records'
     EXEC SP_STATUS_MESSAGE @statusMessage
@@ -190,7 +190,7 @@ BEGIN
       EXEC SP_STATUS_MESSAGE 'Inserting H large root control inspection drivers'
       INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
         SELECT A.compkey, driver_type_id, GETDATE(), 'System', @alternative_id
-        FROM @LargeRootXORLargePipeCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES C INNER JOIN ACTIVITY_TYPES D ON (C.activity_type_id = D.activity_type_id)
+        FROM @LargeRootXORLargePipeCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY AND B.asset_set_id = @asset_set_id), DRIVER_TYPES C INNER JOIN ACTIVITY_TYPES D ON (C.activity_type_id = D.activity_type_id)
         WHERE B.ROOTPROB IN ('H') AND C.name = 'RootControlHLarge' AND D.name = 'Inspection' AND C.alternative_id = @alternative_id
         SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records'
         EXEC SP_STATUS_MESSAGE @statusMessage
@@ -201,7 +201,7 @@ BEGIN
     EXEC SP_STATUS_MESSAGE 'Inserting H large, large piperoot control inspection drivers'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', @alternative_id
-      FROM @LargeRootLargePipeCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES C INNER JOIN ACTIVITY_TYPES D ON (C.activity_type_id = D.activity_type_id)
+      FROM @LargeRootLargePipeCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY AND B.asset_set_id = @asset_set_id), DRIVER_TYPES C INNER JOIN ACTIVITY_TYPES D ON (C.activity_type_id = D.activity_type_id)
       WHERE B.ROOTPROB IN ('H') AND C.name = 'RootControlHLargePipe' AND D.name = 'Inspection' AND C.alternative_id = @alternative_id
     SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records'
     EXEC SP_STATUS_MESSAGE @statusMessage
@@ -209,7 +209,7 @@ BEGIN
     EXEC SP_STATUS_MESSAGE 'Inserting M root control inspection drivers'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
       SELECT A.compkey, driver_type_id, GETDATE(), 'System', @alternative_id
-      FROM @SmallRootCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY), DRIVER_TYPES C INNER JOIN ACTIVITY_TYPES D ON (C.activity_type_id = D.activity_type_id)
+      FROM @SmallRootCompKeys A INNER JOIN SpecialRoot B ON (A.COMPKEY = B.COMPKEY AND B.asset_set_id = @asset_set_id), DRIVER_TYPES C INNER JOIN ACTIVITY_TYPES D ON (C.activity_type_id = D.activity_type_id)
       WHERE B.ROOTPROB IN ('M') AND C.name = 'RootControlM' AND D.name = 'Inspection' AND C.alternative_id = @alternative_id
     SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records'
     EXEC SP_STATUS_MESSAGE @statusMessage

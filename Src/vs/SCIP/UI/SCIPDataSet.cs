@@ -52,19 +52,41 @@ namespace UI.SCIPDataSetTableAdapters {
   }
     
     
-    public partial class FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter {
-      public int SelectCommandTimeOut
+  public partial class FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter {
+    public int SelectCommandTimeOut
+    {
+      get { return this.CommandCollection[0].CommandTimeout; }
+      set
       {
-        get { return this.CommandCollection[0].CommandTimeout; }
-        set
+        for (int i = 0; i < this.CommandCollection.Length; i++)
         {
-          for (int i = 0; i < this.CommandCollection.Length; i++)
-          {
-            if (this.CommandCollection[i] != null)
-              ((System.Data.SqlClient.SqlCommand)
-                (this.CommandCollection[i])).CommandTimeout = value;
-          }
+          if (this.CommandCollection[i] != null)
+            ((System.Data.SqlClient.SqlCommand)
+              (this.CommandCollection[i])).CommandTimeout = value;
         }
       }
     }
+  }
+
+  public partial class QueriesTableAdapter
+  {
+    public int SelectCommandTimeOut
+    {
+      get { return this.CommandCollection[0].CommandTimeout; }
+      set
+      {
+        for (int i = 0; i < this.CommandCollection.Length; i++)
+        {
+          if (this.CommandCollection[i] != null)
+            ((System.Data.SqlClient.SqlCommand)
+              (this.CommandCollection[i])).CommandTimeout = value;
+        }
+      }
+    }
+
+    public System.Data.SqlClient.SqlConnection GetConnection()
+    {
+      return this.CommandCollection[0].Connection as System.Data.SqlClient.SqlConnection;
+    }
+  }
 }

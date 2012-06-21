@@ -31,10 +31,10 @@
       this.components = new System.ComponentModel.Container();
       Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
       Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("ALTERNATIVES", -1);
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn9 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn10 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("name");
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn11 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("description");
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn12 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("asset_set_id");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("name");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn3 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("description");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn4 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("asset_set_id");
       Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
       Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
       Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
@@ -52,13 +52,12 @@
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint4 = new Infragistics.Win.Layout.GridBagConstraint();
       this.ultraGridBagLayoutPanel1 = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
       this.cmbAlternatives = new Infragistics.Win.UltraWinGrid.UltraCombo();
+      this.alternativesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.scipDataSet = new UI.SCIPDataSet();
       this.btnExecuteFillDriversActivities = new Infragistics.Win.Misc.UltraButton();
       this.btnExecuteRetrieveAssets = new Infragistics.Win.Misc.UltraButton();
       this.btnExecuteAll = new Infragistics.Win.Misc.UltraButton();
-      this.alternativesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-      this.scipDataSet = new UI.SCIPDataSet();
       this.alternativesTableAdapter = new UI.SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter();
-      this.asseT_SETSTableAdapter = new UI.SCIPDataSetTableAdapters.ASSET_SETSTableAdapter();
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel1)).BeginInit();
       this.ultraGridBagLayoutPanel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.cmbAlternatives)).BeginInit();
@@ -84,15 +83,15 @@
       appearance1.BackColor = System.Drawing.SystemColors.Window;
       appearance1.BorderColor = System.Drawing.SystemColors.InactiveCaption;
       this.cmbAlternatives.DisplayLayout.Appearance = appearance1;
-      ultraGridColumn9.Header.VisiblePosition = 0;
-      ultraGridColumn10.Header.VisiblePosition = 1;
-      ultraGridColumn11.Header.VisiblePosition = 2;
-      ultraGridColumn12.Header.VisiblePosition = 3;
+      ultraGridColumn1.Header.VisiblePosition = 0;
+      ultraGridColumn2.Header.VisiblePosition = 1;
+      ultraGridColumn3.Header.VisiblePosition = 2;
+      ultraGridColumn4.Header.VisiblePosition = 3;
       ultraGridBand1.Columns.AddRange(new object[] {
-            ultraGridColumn9,
-            ultraGridColumn10,
-            ultraGridColumn11,
-            ultraGridColumn12});
+            ultraGridColumn1,
+            ultraGridColumn2,
+            ultraGridColumn3,
+            ultraGridColumn4});
       this.cmbAlternatives.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
       this.cmbAlternatives.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
       this.cmbAlternatives.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
@@ -157,6 +156,16 @@
       this.cmbAlternatives.TabIndex = 3;
       this.cmbAlternatives.Text = "ultraCombo1";
       // 
+      // alternativesBindingSource
+      // 
+      this.alternativesBindingSource.DataMember = "ALTERNATIVES";
+      this.alternativesBindingSource.DataSource = this.scipDataSet;
+      // 
+      // scipDataSet
+      // 
+      this.scipDataSet.DataSetName = "SCIPDataSet";
+      this.scipDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+      // 
       // btnExecuteFillDriversActivities
       // 
       gridBagConstraint2.Fill = Infragistics.Win.Layout.FillType.Both;
@@ -200,23 +209,9 @@
       this.btnExecuteAll.Text = "Run Entire Model";
       this.btnExecuteAll.Click += new System.EventHandler(this.btnExecuteAll_Click);
       // 
-      // alternativesBindingSource
-      // 
-      this.alternativesBindingSource.DataMember = "ALTERNATIVES";
-      this.alternativesBindingSource.DataSource = this.scipDataSet;
-      // 
-      // scipDataSet
-      // 
-      this.scipDataSet.DataSetName = "SCIPDataSet";
-      this.scipDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-      // 
       // alternativesTableAdapter
       // 
       this.alternativesTableAdapter.ClearBeforeFill = true;
-      // 
-      // asseT_SETSTableAdapter
-      // 
-      this.asseT_SETSTableAdapter.ClearBeforeFill = true;
       // 
       // ModelPage
       // 
@@ -245,6 +240,5 @@
     private SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter alternativesTableAdapter;
     private System.Windows.Forms.BindingSource alternativesBindingSource;
     private SCIPDataSet scipDataSet;
-    private SCIPDataSetTableAdapters.ASSET_SETSTableAdapter asseT_SETSTableAdapter;
   }
 }

@@ -15,4 +15,6 @@ BEGIN
   DELETE FROM DRIVERS WHERE alternative_id = @alternative_id;
   DELETE FROM DRIVER_TYPES WHERE alternative_id = @alternative_id;
   DELETE FROM ALTERNATIVES WHERE alternative_id = @alternative_id;
+
+  EXEC SP_STATUS_MESSAGE 'End SP_CLEAN_UP_ALTERNATIVE';
 END

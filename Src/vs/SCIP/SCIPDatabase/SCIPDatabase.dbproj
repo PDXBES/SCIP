@@ -813,5 +813,8 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CLEAN_UP_ALTERNATIVE.proc.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CLEAN_UP_ASSET_SET.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

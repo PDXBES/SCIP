@@ -25,15 +25,13 @@ namespace UI
 
     private void btnExecuteAll_Click(object sender, EventArgs e)
     {
-      asseT_SETSTableAdapter.Fill(scipDataSet.ASSET_SETS);
+      SCIPDataSetTableAdapters.QueriesTableAdapter queriesAdapter = 
+        new SCIPDataSetTableAdapters.QueriesTableAdapter();
+      
+      int? assetSetId = queriesAdapter.AssetSetIdOfAlternative((int)cmbAlternatives.Value);
 
-
-      SqlConnection sqlConnection = new SqlConnection(SCIPUI.Default.ConnectionString);
-      SqlCommand exposeData = new SqlCommand() {
-        Connection = sqlConnection, 
-        CommandText = "SP_ExposeData", 
-        CommandType = CommandType.StoredProcedure };
-      exposeData.Parameters["asset_set_id"].Value = 1;
+      if (assetSetId != null)
+        queriesAdapter.SP_ExposeData(assetSetId);
     }
   }
 }

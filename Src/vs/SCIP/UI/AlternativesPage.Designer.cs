@@ -58,7 +58,7 @@
       Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
       Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
       Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand3 = new Infragistics.Win.UltraWinGrid.UltraGridBand("ASSET_SETS", -1);
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn5 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("asset_set_id", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Descending, false);
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn5 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("asset_set_id");
       Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn6 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("name");
       Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn7 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("import_date");
       Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn8 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("description");
@@ -76,7 +76,6 @@
       this.ultraGridAlternatives = new Infragistics.Win.UltraWinGrid.UltraGrid();
       this.aLTERNATIVESBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.sCIPDataSet = new UI.SCIPDataSet();
-      this.aLTERNATIVESTableAdapter = new UI.SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter();
       this.btnSaveChanges = new Infragistics.Win.Misc.UltraButton();
       this.btnDiscardChanges = new Infragistics.Win.Misc.UltraButton();
       this.pnlAlternativesGrid = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
@@ -86,6 +85,7 @@
       this.gridAssetSets = new Infragistics.Win.UltraWinGrid.UltraGrid();
       this.aSSETSETSBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.lstAssetSets = new Infragistics.Win.UltraWinGrid.UltraDropDown();
+      this.aLTERNATIVESTableAdapter = new UI.SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter();
       this.aSSET_SETSTableAdapter = new UI.SCIPDataSetTableAdapters.ASSET_SETSTableAdapter();
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridAlternatives)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource)).BeginInit();
@@ -106,17 +106,15 @@
       this.ultraGridAlternatives.DataSource = this.aLTERNATIVESBindingSource;
       this.ultraGridAlternatives.DisplayLayout.AddNewBox.Hidden = false;
       this.ultraGridAlternatives.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns;
-      ultraGridColumn1.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
       ultraGridColumn1.Header.VisiblePosition = 0;
-      ultraGridColumn1.Hidden = true;
-      ultraGridColumn1.Width = 166;
+      ultraGridColumn1.Width = 164;
       ultraGridColumn2.Header.VisiblePosition = 1;
-      ultraGridColumn2.Width = 254;
+      ultraGridColumn2.Width = 196;
       ultraGridColumn3.Header.VisiblePosition = 2;
-      ultraGridColumn3.Width = 254;
+      ultraGridColumn3.Width = 196;
+      ultraGridColumn4.Header.Caption = "asset set";
       ultraGridColumn4.Header.VisiblePosition = 3;
-      ultraGridColumn4.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.DropDownList;
-      ultraGridColumn4.Width = 195;
+      ultraGridColumn4.Width = 147;
       ultraGridBand1.Columns.AddRange(new object[] {
             ultraGridColumn1,
             ultraGridColumn2,
@@ -133,8 +131,8 @@
       this.pnlAlternativesGrid.SetGridBagConstraint(this.ultraGridAlternatives, gridBagConstraint5);
       this.ultraGridAlternatives.Location = new System.Drawing.Point(0, 0);
       this.ultraGridAlternatives.Name = "ultraGridAlternatives";
-      this.pnlAlternativesGrid.SetPreferredSize(this.ultraGridAlternatives, new System.Drawing.Size(700, 143));
-      this.ultraGridAlternatives.Size = new System.Drawing.Size(724, 518);
+      this.pnlAlternativesGrid.SetPreferredSize(this.ultraGridAlternatives, new System.Drawing.Size(724, 143));
+      this.ultraGridAlternatives.Size = new System.Drawing.Size(724, 520);
       this.ultraGridAlternatives.TabIndex = 0;
       this.ultraGridAlternatives.Text = "Alternatives";
       // 
@@ -148,10 +146,6 @@
       this.sCIPDataSet.DataSetName = "SCIPDataSet";
       this.sCIPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
       // 
-      // aLTERNATIVESTableAdapter
-      // 
-      this.aLTERNATIVESTableAdapter.ClearBeforeFill = true;
-      // 
       // btnSaveChanges
       // 
       this.btnSaveChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -162,7 +156,7 @@
       this.btnSaveChanges.Location = new System.Drawing.Point(615, 0);
       this.btnSaveChanges.Name = "btnSaveChanges";
       this.pnlActionButtons.SetPreferredSize(this.btnSaveChanges, new System.Drawing.Size(109, 23));
-      this.btnSaveChanges.Size = new System.Drawing.Size(109, 23);
+      this.btnSaveChanges.Size = new System.Drawing.Size(109, 21);
       this.btnSaveChanges.TabIndex = 1;
       this.btnSaveChanges.Text = "Save Changes";
       this.btnSaveChanges.Click += new System.EventHandler(this.ultraButtonSaveChanges_Click);
@@ -175,7 +169,7 @@
       gridBagConstraint2.OriginY = 0;
       gridBagConstraint2.WeightX = 1F;
       this.pnlActionButtons.SetGridBagConstraint(this.btnDiscardChanges, gridBagConstraint2);
-      this.btnDiscardChanges.Location = new System.Drawing.Point(506, 0);
+      this.btnDiscardChanges.Location = new System.Drawing.Point(506, -1);
       this.btnDiscardChanges.Name = "btnDiscardChanges";
       this.pnlActionButtons.SetPreferredSize(this.btnDiscardChanges, new System.Drawing.Size(109, 23));
       this.btnDiscardChanges.Size = new System.Drawing.Size(109, 23);
@@ -202,10 +196,10 @@
       gridBagConstraint4.OriginX = 0;
       gridBagConstraint4.OriginY = 1;
       this.pnlAlternativesGrid.SetGridBagConstraint(this.pnlActionButtons, gridBagConstraint4);
-      this.pnlActionButtons.Location = new System.Drawing.Point(0, 526);
+      this.pnlActionButtons.Location = new System.Drawing.Point(0, 528);
       this.pnlActionButtons.Name = "pnlActionButtons";
-      this.pnlAlternativesGrid.SetPreferredSize(this.pnlActionButtons, new System.Drawing.Size(200, 23));
-      this.pnlActionButtons.Size = new System.Drawing.Size(724, 23);
+      this.pnlAlternativesGrid.SetPreferredSize(this.pnlActionButtons, new System.Drawing.Size(724, 21));
+      this.pnlActionButtons.Size = new System.Drawing.Size(724, 21);
       this.pnlActionButtons.TabIndex = 1;
       // 
       // btnEditAssetSets
@@ -219,7 +213,7 @@
       this.btnEditAssetSets.PopupItemKey = "gridAssetSets";
       this.btnEditAssetSets.PopupItemProvider = this.popupAssetSets;
       this.pnlActionButtons.SetPreferredSize(this.btnEditAssetSets, new System.Drawing.Size(144, 28));
-      this.btnEditAssetSets.Size = new System.Drawing.Size(144, 23);
+      this.btnEditAssetSets.Size = new System.Drawing.Size(144, 21);
       this.btnEditAssetSets.Style = Infragistics.Win.Misc.SplitButtonDisplayStyle.DropDownButtonOnly;
       this.btnEditAssetSets.TabIndex = 3;
       this.btnEditAssetSets.Text = "Edit Asset Sets";
@@ -237,14 +231,13 @@
       this.gridAssetSets.DisplayLayout.Appearance = appearance1;
       this.gridAssetSets.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns;
       ultraGridColumn9.Header.VisiblePosition = 0;
-      ultraGridColumn9.Hidden = true;
-      ultraGridColumn9.Width = 243;
+      ultraGridColumn9.Width = 51;
       ultraGridColumn10.Header.VisiblePosition = 1;
-      ultraGridColumn10.Width = 72;
+      ultraGridColumn10.Width = 54;
       ultraGridColumn11.Header.VisiblePosition = 2;
-      ultraGridColumn11.Width = 70;
+      ultraGridColumn11.Width = 53;
       ultraGridColumn12.Header.VisiblePosition = 3;
-      ultraGridColumn12.Width = 70;
+      ultraGridColumn12.Width = 54;
       ultraGridBand2.Columns.AddRange(new object[] {
             ultraGridColumn9,
             ultraGridColumn10,
@@ -303,7 +296,7 @@
       this.gridAssetSets.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
       this.gridAssetSets.DisplayLayout.UseFixedHeaders = true;
       this.gridAssetSets.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.gridAssetSets.Location = new System.Drawing.Point(442, 489);
+      this.gridAssetSets.Location = new System.Drawing.Point(442, 320);
       this.gridAssetSets.Name = "gridAssetSets";
       this.gridAssetSets.Size = new System.Drawing.Size(250, 133);
       this.gridAssetSets.TabIndex = 5;
@@ -327,11 +320,11 @@
       this.lstAssetSets.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns;
       ultraGridColumn5.Header.VisiblePosition = 0;
       ultraGridColumn5.Hidden = true;
-      ultraGridColumn5.Width = 249;
+      ultraGridColumn5.Width = 101;
       ultraGridColumn6.Header.VisiblePosition = 1;
-      ultraGridColumn6.Width = 136;
+      ultraGridColumn6.Width = 137;
       ultraGridColumn7.Header.VisiblePosition = 2;
-      ultraGridColumn7.Width = 134;
+      ultraGridColumn7.Width = 133;
       ultraGridColumn8.Header.VisiblePosition = 3;
       ultraGridColumn8.Width = 135;
       ultraGridBand3.Columns.AddRange(new object[] {
@@ -394,13 +387,17 @@
       this.lstAssetSets.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
       this.lstAssetSets.DisplayMember = "name";
       this.lstAssetSets.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lstAssetSets.Location = new System.Drawing.Point(12, 489);
+      this.lstAssetSets.Location = new System.Drawing.Point(12, 320);
       this.lstAssetSets.Name = "lstAssetSets";
       this.lstAssetSets.Size = new System.Drawing.Size(424, 80);
       this.lstAssetSets.TabIndex = 4;
       this.lstAssetSets.Text = "ultraDropDown1";
       this.lstAssetSets.ValueMember = "asset_set_id";
       this.lstAssetSets.Visible = false;
+      // 
+      // aLTERNATIVESTableAdapter
+      // 
+      this.aLTERNATIVESTableAdapter.ClearBeforeFill = true;
       // 
       // aSSET_SETSTableAdapter
       // 

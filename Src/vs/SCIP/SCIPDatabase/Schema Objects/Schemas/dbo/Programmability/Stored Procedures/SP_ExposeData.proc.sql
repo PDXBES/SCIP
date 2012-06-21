@@ -401,6 +401,10 @@ BEGIN
   FROM [dbo].[ASSETS] A INNER JOIN REHAB10FTSEGS B ON (A.COMPKEY = B.compkey)
   WHERE A.asset_set_id = @asset_set_id AND B.asset_set_id = @asset_set_id
 
+  EXEC SP_STATUS_MESSAGE 'Updating SpecialRoot'
+
+  EXEC SP_SpecialRoot @asset_set_id = @asset_set_id
+
   EXEC SP_STATUS_MESSAGE 'End SP_ExposeData'
 
 END

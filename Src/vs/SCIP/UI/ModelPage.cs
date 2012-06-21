@@ -27,11 +27,28 @@ namespace UI
     {
       SCIPDataSetTableAdapters.QueriesTableAdapter queriesAdapter = 
         new SCIPDataSetTableAdapters.QueriesTableAdapter();
-      
-      int? assetSetId = queriesAdapter.AssetSetIdOfAlternative((int)cmbAlternatives.Value);
 
-      if (assetSetId != null)
-        queriesAdapter.SP_ExposeData(assetSetId);
+      int alternativeId = (int)cmbAlternatives.Value;
+
+      Cursor = Cursors.WaitCursor;
+      try
+      {
+        if (chkFillDrivers.Checked)
+        {
+          queriesAdapter.SP_FILL_DRIVERS(alternativeId);
+        }
+
+        if (chkFillActivities.Checked)
+        {
+          queriesAdapter.SP_FILL_ACTIVITIES(alternativeId, (decimal)txtNumYears.Value);
+          queriesAdapter.SP_FILL_NEXT_ACTIVITIES(alternativeId);
+        }
+
+      }
+      finally
+      {
+        Cursor = Cursors.Default;
+      }
     }
   }
 }

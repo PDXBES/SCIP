@@ -816,5 +816,20 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CLEAN_UP_ASSET_SET.proc.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_MULTIPLES_OF_NUM_BETWEEN_RANGE.function.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CREATE_NUMS.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_ACTIVITIES_TO_INSERT.function.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\LAST_ACTIVITY_DATES_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_INSERT_ACTIVITIES.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

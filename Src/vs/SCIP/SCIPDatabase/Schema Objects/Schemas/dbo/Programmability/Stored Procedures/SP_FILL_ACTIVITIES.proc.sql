@@ -60,106 +60,21 @@ BEGIN
   DECLARE @EndDate DATETIME
   SET @EndDate = DATEADD(year, @MaxYears, @CurrentDate)
 
-  -- Get the set of frequencies
-  DECLARE activity_cursor CURSOR FOR
-  SELECT frequency_years
-  FROM @frequenciesTable
-  
-  DECLARE @currentFrequency DECIMAL(5,2)
-  DECLARE @currentYear DECIMAL(5,2)
-  DECLARE @nextYearDate DATETIME
+  EXEC SP_STATUS_MESSAGE 'Inserting backlog condition inspections'
 
-  OPEN activity_cursor
-    FETCH NEXT FROM activity_cursor INTO @currentFrequency
-    WHILE @@FETCH_STATUS = 0
-    BEGIN
-      IF @currentFrequency > @MaxYears
-      BREAK
+  INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
+    SELECT A.compkey, A.driver_id, @currentDate, A.driver_cost, A.activity_type_id, A.alternative_id
+    FROM (VW_CONTROLLING_DRIVERS A INNER JOIN VW_LAST_ACTIVITY_DATES B ON (A.compkey = B.compkey))
+    WHERE (A.frequency_years = 0) AND 
+      (A.activity_type = 'Inspection') AND 
+      (A.alternative_id = @alternative_id) AND
+      (B.asset_set_id = @asset_set_id)
+  SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records for inspection'
+  EXEC SP_STATUS_MESSAGE @statusMessage
 
-      SET @statusMessage = 'Inserting for frequency of ' + CONVERT(VARCHAR(6), @currentFrequency) + ' years'
-      EXEC SP_STATUS_MESSAGE @statusMessage
-      
-      SET @currentYear = 0
+  EXEC SP_STATUS_MESSAGE 'Inserting activities'
 
-      WHILE (@currentYear < @MaxYears)
-      BEGIN
-        SET @currentYear = @currentYear + @currentFrequency
-        IF @currentFrequency = 0
-        BEGIN
-          EXEC SP_STATUS_MESSAGE 'Inserting backlog activities'
-
-          INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
-            SELECT A.compkey, A.driver_id, @currentDate, A.driver_cost, A.activity_type_id, A.alternative_id
-            FROM (VW_CONTROLLING_DRIVERS A INNER JOIN VW_LAST_ACTIVITY_DATES B ON (A.compkey = B.compkey))
-            WHERE (A.frequency_years = @currentFrequency) AND 
-              (A.activity_type = 'Inspection') AND 
-              (A.alternative_id = @alternative_id) AND
-              (B.asset_set_id = @asset_set_id)
-          SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records for inspection'
-          EXEC SP_STATUS_MESSAGE @statusMessage
-
-          INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
-            SELECT A.compkey, A.driver_id, @currentDate, A.driver_cost, A.activity_type_id, A.alternative_id
-            FROM (VW_CONTROLLING_DRIVERS A INNER JOIN VW_LAST_ACTIVITY_DATES B ON (A.compkey = B.compkey))
-            WHERE (A.frequency_years = @currentFrequency) AND 
-              (A.activity_type = 'Cleaning') AND 
-              (A.alternative_id = @alternative_id) AND
-              (B.asset_set_id = @asset_set_id)
-          SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records for cleaning'
-          EXEC SP_STATUS_MESSAGE @statusMessage
-
-          INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
-            SELECT A.compkey, A.driver_id, @currentDate, A.driver_cost, A.activity_type_id, A.alternative_id
-            FROM (VW_CONTROLLING_DRIVERS A INNER JOIN VW_LAST_ACTIVITY_DATES B ON (A.compkey = B.compkey))
-            WHERE (A.frequency_years = @currentFrequency) AND 
-              (A.activity_type = 'Root Management') AND 
-              (A.alternative_id = @alternative_id) AND
-              (B.asset_set_id = @asset_set_id)
-          SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records for root management'
-          EXEC SP_STATUS_MESSAGE @statusMessage
-
-          BREAK
-        END
-        ELSE
-        BEGIN
-          SET @statusMessage = 'Current year = ' + CONVERT(VARCHAR(10), @currentYear)
-          EXEC SP_STATUS_MESSAGE @statusMessage
-
-          INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
-            SELECT A.compkey, A.driver_id, [dbo].[FN_DATE_ADD_FRACTIONAL_YEARS](B.last_inspection_date, @currentYear), A.driver_cost, A.activity_type_id, A.alternative_id
-            FROM (VW_CONTROLLING_DRIVERS A INNER JOIN VW_LAST_ACTIVITY_DATES B ON (A.compkey = B.compkey))
-            WHERE (A.frequency_years = @currentFrequency) AND 
-              (A.activity_type = 'Inspection') AND
-              (A.alternative_id = @alternative_id) AND
-              (B.asset_set_id = @asset_set_id)
-          SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records for inspection'
-          EXEC SP_STATUS_MESSAGE @statusMessage
-
-          INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
-            SELECT A.compkey, A.driver_id, [dbo].[FN_DATE_ADD_FRACTIONAL_YEARS](B.last_cleaning_date, @currentYear), A.driver_cost, A.activity_type_id, A.alternative_id
-            FROM (VW_CONTROLLING_DRIVERS A INNER JOIN VW_LAST_ACTIVITY_DATES B ON (A.compkey = B.compkey))
-            WHERE (A.frequency_years = @currentFrequency) AND 
-              (A.activity_type = 'Cleaning') AND
-              (A.alternative_id = @alternative_id) AND
-              (B.asset_set_id = @asset_set_id)
-          SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records for cleaning'
-          EXEC SP_STATUS_MESSAGE @statusMessage
-
-          INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
-            SELECT A.compkey, A.driver_id, [dbo].[FN_DATE_ADD_FRACTIONAL_YEARS](B.last_root_management_date, @currentYear), A.driver_cost, A.activity_type_id, A.alternative_id
-            FROM (VW_CONTROLLING_DRIVERS A INNER JOIN VW_LAST_ACTIVITY_DATES B ON (A.compkey = B.compkey))
-            WHERE (A.frequency_years = @currentFrequency) AND 
-              (A.activity_type = 'Root Management') AND
-              (A.alternative_id = @alternative_id) AND
-              (B.asset_set_id = @asset_set_id)
-          SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records for root management'
-          EXEC SP_STATUS_MESSAGE @statusMessage
-        END
-      END
-      FETCH NEXT FROM activity_cursor INTO @currentFrequency
-    END
-  CLOSE activity_cursor
-  DEALLOCATE activity_cursor
+  EXEC SP_INSERT_ACTIVITIES @alternative_id = @alternative_id, @numYears = @years_to_process
 
   EXEC SP_STATUS_MESSAGE 'End SP_FILL_ACTIVITIES'
 END

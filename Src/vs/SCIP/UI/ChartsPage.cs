@@ -12,6 +12,7 @@ namespace UI
 {
   public partial class ChartsPage : ChildFormTemplate
   {
+    const int chartTimeOutSeconds = 300;
     public ChartsPage()
     {
       InitializeComponent();
@@ -35,6 +36,12 @@ namespace UI
       int beginYear = Convert.ToInt32(txtBeginYear.Text);
       int endYear = Convert.ToInt32(txtEndYear.Text);
 
+      this.FN_CHART_CPTDTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
+      this.FN_CHART_CPTFTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
+      this.FN_CHART_CPADTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
+      this.FN_CHART_CPAFTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
+      this.FN_CHART_CLTDTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
+      this.FN_CHART_CLTFTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
       this.FN_CHART_CPTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CPTD, beginYear, endYear, (int)comboAlternative.Value);
       this.FN_CHART_CPTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CPTF, beginYear, endYear, (int)comboAlternative.Value);
       this.FN_CHART_CPADTableAdapter.Fill(this.SCIPDataSet.FN_CHART_CPAD, beginYear, endYear, (int)comboAlternative.Value);
@@ -70,6 +77,12 @@ namespace UI
       int beginYear = Convert.ToInt32(txtBeginYear.Text);
       int endYear = Convert.ToInt32(txtEndYear.Text);
 
+      this.FN_CHART_IPTDTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
+      this.FN_CHART_IPTFTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
+      this.FN_CHART_IPADTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
+      this.FN_CHART_IPAFTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
+      this.FN_CHART_ILTDTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
+      this.FN_CHART_ILTFTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
       this.FN_CHART_ILTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_ILTD, beginYear, endYear, (int)comboAlternative.Value);
       this.FN_CHART_ILTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_ILTF, beginYear, endYear, (int)comboAlternative.Value);
       this.FN_CHART_IPADTableAdapter.Fill(this.SCIPDataSet.FN_CHART_IPAD, beginYear, endYear, (int)comboAlternative.Value);
@@ -106,6 +119,12 @@ namespace UI
       int beginYear = Convert.ToInt32(txtBeginYear.Text);
       int endYear = Convert.ToInt32(txtEndYear.Text);
 
+      this.FN_CHART_RPTDTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
+      this.FN_CHART_RPTFTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
+      this.FN_CHART_RPADTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
+      this.FN_CHART_RPAFTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
+      this.FN_CHART_RLTDTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
+      this.FN_CHART_RLTFTableAdapter.SelectCommandTimeOut = chartTimeOutSeconds;
       this.FN_CHART_RPTDTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RPTD, beginYear, endYear, (int)comboAlternative.Value);
       this.FN_CHART_RPTFTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RPTF, beginYear, endYear, (int)comboAlternative.Value);
       this.FN_CHART_RPADTableAdapter.Fill(this.SCIPDataSet.FN_CHART_RPAD, beginYear, endYear, (int)comboAlternative.Value);
@@ -178,9 +197,8 @@ namespace UI
       Refresh();
 
 
-      const int progressiveChartTimeOutSeconds = 300;
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter.
-        SelectCommandTimeOut = progressiveChartTimeOutSeconds;
+        SelectCommandTimeOut = chartTimeOutSeconds;
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspectionTableAdapter.Fill(
         this.SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSInspection,
         beginYear, endYear, (int)comboAlternative.Value);
@@ -188,7 +206,7 @@ namespace UI
       Refresh();
 
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter.
-        SelectCommandTimeOut = progressiveChartTimeOutSeconds;
+        SelectCommandTimeOut = chartTimeOutSeconds;
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaningTableAdapter.Fill(
         this.SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSCleaning,
         beginYear, endYear, (int)comboAlternative.Value);
@@ -196,7 +214,7 @@ namespace UI
       Refresh();
 
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter.
-        SelectCommandTimeOut = progressiveChartTimeOutSeconds;
+        SelectCommandTimeOut = chartTimeOutSeconds;
       this.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRootTableAdapter.Fill(
         this.SCIPDataSet.FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARSRoot,
         beginYear, endYear, (int)comboAlternative.Value);

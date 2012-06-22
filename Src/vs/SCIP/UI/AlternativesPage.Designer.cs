@@ -84,6 +84,7 @@
       this.popupAssetSets = new Infragistics.Win.Misc.UltraPopupControlContainer(this.components);
       this.gridAssetSets = new Infragistics.Win.UltraWinGrid.UltraGrid();
       this.aSSETSETSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+      this.statusBar = new Infragistics.Win.UltraWinStatusBar.UltraStatusBar();
       this.lstAssetSets = new Infragistics.Win.UltraWinGrid.UltraDropDown();
       this.aLTERNATIVESTableAdapter = new UI.SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter();
       this.aSSET_SETSTableAdapter = new UI.SCIPDataSetTableAdapters.ASSET_SETSTableAdapter();
@@ -96,20 +97,19 @@
       this.pnlActionButtons.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.gridAssetSets)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.aSSETSETSBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.statusBar)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.lstAssetSets)).BeginInit();
       this.SuspendLayout();
       // 
       // ultraGridAlternatives
       // 
-      this.ultraGridAlternatives.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
       this.ultraGridAlternatives.DataSource = this.aLTERNATIVESBindingSource;
       this.ultraGridAlternatives.DisplayLayout.AddNewBox.Hidden = false;
       this.ultraGridAlternatives.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns;
       ultraGridColumn1.Header.VisiblePosition = 0;
-      ultraGridColumn1.Width = 164;
+      ultraGridColumn1.Width = 161;
       ultraGridColumn2.Header.VisiblePosition = 1;
-      ultraGridColumn2.Width = 196;
+      ultraGridColumn2.Width = 199;
       ultraGridColumn3.Header.VisiblePosition = 2;
       ultraGridColumn3.Width = 196;
       ultraGridColumn4.Header.Caption = "asset set";
@@ -132,7 +132,7 @@
       this.ultraGridAlternatives.Location = new System.Drawing.Point(0, 0);
       this.ultraGridAlternatives.Name = "ultraGridAlternatives";
       this.pnlAlternativesGrid.SetPreferredSize(this.ultraGridAlternatives, new System.Drawing.Size(724, 143));
-      this.ultraGridAlternatives.Size = new System.Drawing.Size(724, 520);
+      this.ultraGridAlternatives.Size = new System.Drawing.Size(724, 536);
       this.ultraGridAlternatives.TabIndex = 0;
       this.ultraGridAlternatives.Text = "Alternatives";
       // 
@@ -184,7 +184,7 @@
       this.pnlAlternativesGrid.Dock = System.Windows.Forms.DockStyle.Fill;
       this.pnlAlternativesGrid.Location = new System.Drawing.Point(0, 0);
       this.pnlAlternativesGrid.Name = "pnlAlternativesGrid";
-      this.pnlAlternativesGrid.Size = new System.Drawing.Size(724, 549);
+      this.pnlAlternativesGrid.Size = new System.Drawing.Size(724, 565);
       this.pnlAlternativesGrid.TabIndex = 3;
       // 
       // pnlActionButtons
@@ -196,7 +196,7 @@
       gridBagConstraint4.OriginX = 0;
       gridBagConstraint4.OriginY = 1;
       this.pnlAlternativesGrid.SetGridBagConstraint(this.pnlActionButtons, gridBagConstraint4);
-      this.pnlActionButtons.Location = new System.Drawing.Point(0, 528);
+      this.pnlActionButtons.Location = new System.Drawing.Point(0, 544);
       this.pnlActionButtons.Name = "pnlActionButtons";
       this.pnlAlternativesGrid.SetPreferredSize(this.pnlActionButtons, new System.Drawing.Size(724, 21));
       this.pnlActionButtons.Size = new System.Drawing.Size(724, 21);
@@ -231,13 +231,14 @@
       this.gridAssetSets.DisplayLayout.Appearance = appearance1;
       this.gridAssetSets.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns;
       ultraGridColumn9.Header.VisiblePosition = 0;
+      ultraGridColumn9.Hidden = true;
       ultraGridColumn9.Width = 51;
       ultraGridColumn10.Header.VisiblePosition = 1;
-      ultraGridColumn10.Width = 54;
+      ultraGridColumn10.Width = 72;
       ultraGridColumn11.Header.VisiblePosition = 2;
-      ultraGridColumn11.Width = 53;
+      ultraGridColumn11.Width = 69;
       ultraGridColumn12.Header.VisiblePosition = 3;
-      ultraGridColumn12.Width = 54;
+      ultraGridColumn12.Width = 71;
       ultraGridBand2.Columns.AddRange(new object[] {
             ultraGridColumn9,
             ultraGridColumn10,
@@ -309,6 +310,14 @@
       // 
       this.aSSETSETSBindingSource.DataMember = "ASSET_SETS";
       this.aSSETSETSBindingSource.DataSource = this.sCIPDataSet;
+      // 
+      // statusBar
+      // 
+      this.statusBar.Location = new System.Drawing.Point(0, 565);
+      this.statusBar.Name = "statusBar";
+      this.statusBar.Size = new System.Drawing.Size(724, 21);
+      this.statusBar.TabIndex = 4;
+      this.statusBar.Text = "ultraStatusBar1";
       // 
       // lstAssetSets
       // 
@@ -407,10 +416,11 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(724, 549);
+      this.ClientSize = new System.Drawing.Size(724, 586);
       this.Controls.Add(this.gridAssetSets);
       this.Controls.Add(this.lstAssetSets);
       this.Controls.Add(this.pnlAlternativesGrid);
+      this.Controls.Add(this.statusBar);
       this.Name = "AlternativesPage";
       this.Text = "Manage Alternatives";
       this.Load += new System.EventHandler(this.FormManageAlternatives_Load);
@@ -423,6 +433,7 @@
       this.pnlActionButtons.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.gridAssetSets)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.aSSETSETSBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.statusBar)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.lstAssetSets)).EndInit();
       this.ResumeLayout(false);
 
@@ -444,5 +455,6 @@
         private Infragistics.Win.UltraWinGrid.UltraGrid gridAssetSets;
         private Infragistics.Win.Misc.UltraDropDownButton btnEditAssetSets;
         private Infragistics.Win.Misc.UltraPopupControlContainer popupAssetSets;
+        private Infragistics.Win.UltraWinStatusBar.UltraStatusBar statusBar;
     }
 }

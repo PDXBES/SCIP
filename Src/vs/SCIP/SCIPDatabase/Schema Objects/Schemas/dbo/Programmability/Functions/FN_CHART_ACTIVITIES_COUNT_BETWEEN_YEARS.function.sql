@@ -56,7 +56,7 @@ BEGIN
         @totalAssetsCount/(ABS(@endYear-@beginYear)+1)*100, 2)) AS annualized_compkey_percent_covered
     FROM
     (SELECT activity_type, driver_type, reporting_category, compkey
-    FROM VW_ALL_ACTIVITIES
+    FROM ACTIVITIES_FOR_PROCESSING
     WHERE fiscal_year BETWEEN @beginYear AND @endYear AND activity_type = @activityType AND alternative_id = @alternative_id
     GROUP BY activity_type, driver_type, reporting_category, compkey) AS A
     GROUP BY A.activity_type, A.driver_type, A.reporting_category
@@ -83,7 +83,7 @@ BEGIN
       @totalAssetsCount/(ABS(@endYear-@beginYear)+1)*100, 2)) AS annualized_compkey_covered
   FROM
   (SELECT activity_type, driver_type, reporting_category, compkey
-  FROM VW_ALL_ACTIVITIES
+  FROM ACTIVITIES_FOR_PROCESSING
   WHERE fiscal_year BETWEEN @beginYear AND @endYear AND activity_type = @activityType AND alternative_id = @alternative_id
   GROUP BY activity_type, driver_type, reporting_category, compkey) AS A
   GROUP BY A.activity_type, A.driver_type, A.reporting_category

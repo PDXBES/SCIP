@@ -7,5 +7,5 @@
       ,[3] as cleaning_activity
       ,alternative_id
   FROM 
-    (SELECT compkey, activity_type_id, hansen_activity_code, alternative_id FROM VW_ALL_ACTIVITIES) PS
+    (SELECT compkey, activity_type_id, hansen_activity_code, alternative_id FROM ACTIVITIES_FOR_PROCESSING) PS
     PIVOT (MIN(hansen_activity_code) for activity_type_id in ([1],[2],[3])) PVT

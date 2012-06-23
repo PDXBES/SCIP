@@ -6,5 +6,5 @@
       ,[2] as root_fiscal_year
       ,[3] as cleaning_fiscal_year
   FROM 
-    (SELECT compkey, activity_type_id, fiscal_year FROM VW_ALL_ACTIVITIES) PS
+    (SELECT compkey, activity_type_id, fiscal_year FROM ACTIVITIES_FOR_PROCESSING) PS
     PIVOT (MIN(fiscal_year) for activity_type_id in ([1],[2],[3])) PVT

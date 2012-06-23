@@ -65,10 +65,10 @@
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint6 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
       Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("ALTERNATIVES", -1);
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("name");
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn3 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("description");
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn4 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("asset_set_id");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn5 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn6 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("name");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn7 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("description");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn8 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("asset_set_id");
       Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
       Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
       Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
@@ -154,7 +154,7 @@
       this.pnlActionButtons = new Infragistics.Win.Misc.UltraPanel();
       this.btnRunRootReport = new Infragistics.Win.Misc.UltraButton();
       this.pnlMain = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
-      this.comboAlternative = new Infragistics.Win.UltraWinGrid.UltraCombo();
+      this.cmbAlternative = new Infragistics.Win.UltraWinGrid.UltraCombo();
       this.aLTERNATIVESBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.ultraLabel3 = new Infragistics.Win.Misc.UltraLabel();
       this.txtBeginYear = new Infragistics.Win.UltraWinEditors.UltraNumericEditor();
@@ -196,7 +196,7 @@
       this.pnlActionButtons.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pnlMain)).BeginInit();
       this.pnlMain.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.comboAlternative)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.cmbAlternative)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.txtBeginYear)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.txtEndYear)).BeginInit();
@@ -331,7 +331,7 @@
       // ultraTabPageControl1
       // 
       this.ultraTabPageControl1.Controls.Add(this.rptvwCleaning);
-      this.ultraTabPageControl1.Location = new System.Drawing.Point(2, 25);
+      this.ultraTabPageControl1.Location = new System.Drawing.Point(1, 24);
       this.ultraTabPageControl1.Name = "ultraTabPageControl1";
       this.ultraTabPageControl1.Size = new System.Drawing.Size(711, 516);
       // 
@@ -717,7 +717,7 @@
       // 
       // pnlMain
       // 
-      this.pnlMain.Controls.Add(this.comboAlternative);
+      this.pnlMain.Controls.Add(this.cmbAlternative);
       this.pnlMain.Controls.Add(this.ultraLabel3);
       this.pnlMain.Controls.Add(this.txtBeginYear);
       this.pnlMain.Controls.Add(this.txtEndYear);
@@ -733,84 +733,85 @@
       this.pnlMain.Size = new System.Drawing.Size(715, 606);
       this.pnlMain.TabIndex = 13;
       // 
-      // comboAlternative
+      // cmbAlternative
       // 
-      this.comboAlternative.DataSource = this.aLTERNATIVESBindingSource;
+      this.cmbAlternative.DataSource = this.aLTERNATIVESBindingSource;
       appearance2.BackColor = System.Drawing.SystemColors.Window;
       appearance2.BorderColor = System.Drawing.SystemColors.InactiveCaption;
-      this.comboAlternative.DisplayLayout.Appearance = appearance2;
-      ultraGridColumn1.Header.VisiblePosition = 0;
-      ultraGridColumn2.Header.VisiblePosition = 1;
-      ultraGridColumn3.Header.VisiblePosition = 2;
-      ultraGridColumn4.Header.VisiblePosition = 3;
+      this.cmbAlternative.DisplayLayout.Appearance = appearance2;
+      ultraGridColumn5.Header.VisiblePosition = 0;
+      ultraGridColumn6.Header.VisiblePosition = 1;
+      ultraGridColumn7.Header.VisiblePosition = 2;
+      ultraGridColumn8.Header.VisiblePosition = 3;
       ultraGridBand1.Columns.AddRange(new object[] {
-            ultraGridColumn1,
-            ultraGridColumn2,
-            ultraGridColumn3,
-            ultraGridColumn4});
-      this.comboAlternative.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
-      this.comboAlternative.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
-      this.comboAlternative.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
+            ultraGridColumn5,
+            ultraGridColumn6,
+            ultraGridColumn7,
+            ultraGridColumn8});
+      this.cmbAlternative.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
+      this.cmbAlternative.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+      this.cmbAlternative.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
       appearance3.BackColor = System.Drawing.SystemColors.ActiveBorder;
       appearance3.BackColor2 = System.Drawing.SystemColors.ControlDark;
       appearance3.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
       appearance3.BorderColor = System.Drawing.SystemColors.Window;
-      this.comboAlternative.DisplayLayout.GroupByBox.Appearance = appearance3;
+      this.cmbAlternative.DisplayLayout.GroupByBox.Appearance = appearance3;
       appearance4.ForeColor = System.Drawing.SystemColors.GrayText;
-      this.comboAlternative.DisplayLayout.GroupByBox.BandLabelAppearance = appearance4;
-      this.comboAlternative.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+      this.cmbAlternative.DisplayLayout.GroupByBox.BandLabelAppearance = appearance4;
+      this.cmbAlternative.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
       appearance5.BackColor = System.Drawing.SystemColors.ControlLightLight;
       appearance5.BackColor2 = System.Drawing.SystemColors.Control;
       appearance5.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
       appearance5.ForeColor = System.Drawing.SystemColors.GrayText;
-      this.comboAlternative.DisplayLayout.GroupByBox.PromptAppearance = appearance5;
-      this.comboAlternative.DisplayLayout.MaxColScrollRegions = 1;
-      this.comboAlternative.DisplayLayout.MaxRowScrollRegions = 1;
+      this.cmbAlternative.DisplayLayout.GroupByBox.PromptAppearance = appearance5;
+      this.cmbAlternative.DisplayLayout.MaxColScrollRegions = 1;
+      this.cmbAlternative.DisplayLayout.MaxRowScrollRegions = 1;
       appearance6.BackColor = System.Drawing.SystemColors.Window;
       appearance6.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.comboAlternative.DisplayLayout.Override.ActiveCellAppearance = appearance6;
+      this.cmbAlternative.DisplayLayout.Override.ActiveCellAppearance = appearance6;
       appearance7.BackColor = System.Drawing.SystemColors.Highlight;
       appearance7.ForeColor = System.Drawing.SystemColors.HighlightText;
-      this.comboAlternative.DisplayLayout.Override.ActiveRowAppearance = appearance7;
-      this.comboAlternative.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted;
-      this.comboAlternative.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted;
+      this.cmbAlternative.DisplayLayout.Override.ActiveRowAppearance = appearance7;
+      this.cmbAlternative.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted;
+      this.cmbAlternative.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted;
       appearance8.BackColor = System.Drawing.SystemColors.Window;
-      this.comboAlternative.DisplayLayout.Override.CardAreaAppearance = appearance8;
+      this.cmbAlternative.DisplayLayout.Override.CardAreaAppearance = appearance8;
       appearance9.BorderColor = System.Drawing.Color.Silver;
       appearance9.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
-      this.comboAlternative.DisplayLayout.Override.CellAppearance = appearance9;
-      this.comboAlternative.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText;
-      this.comboAlternative.DisplayLayout.Override.CellPadding = 0;
+      this.cmbAlternative.DisplayLayout.Override.CellAppearance = appearance9;
+      this.cmbAlternative.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText;
+      this.cmbAlternative.DisplayLayout.Override.CellPadding = 0;
       appearance10.BackColor = System.Drawing.SystemColors.Control;
       appearance10.BackColor2 = System.Drawing.SystemColors.ControlDark;
       appearance10.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
       appearance10.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
       appearance10.BorderColor = System.Drawing.SystemColors.Window;
-      this.comboAlternative.DisplayLayout.Override.GroupByRowAppearance = appearance10;
+      this.cmbAlternative.DisplayLayout.Override.GroupByRowAppearance = appearance10;
       appearance11.TextHAlignAsString = "Left";
-      this.comboAlternative.DisplayLayout.Override.HeaderAppearance = appearance11;
-      this.comboAlternative.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
-      this.comboAlternative.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand;
+      this.cmbAlternative.DisplayLayout.Override.HeaderAppearance = appearance11;
+      this.cmbAlternative.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
+      this.cmbAlternative.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand;
       appearance12.BackColor = System.Drawing.SystemColors.Window;
       appearance12.BorderColor = System.Drawing.Color.Silver;
-      this.comboAlternative.DisplayLayout.Override.RowAppearance = appearance12;
-      this.comboAlternative.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.False;
+      this.cmbAlternative.DisplayLayout.Override.RowAppearance = appearance12;
+      this.cmbAlternative.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.False;
       appearance13.BackColor = System.Drawing.SystemColors.ControlLight;
-      this.comboAlternative.DisplayLayout.Override.TemplateAddRowAppearance = appearance13;
-      this.comboAlternative.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
-      this.comboAlternative.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
-      this.comboAlternative.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
+      this.cmbAlternative.DisplayLayout.Override.TemplateAddRowAppearance = appearance13;
+      this.cmbAlternative.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
+      this.cmbAlternative.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
+      this.cmbAlternative.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
       gridBagConstraint1.Anchor = Infragistics.Win.Layout.AnchorType.Left;
       gridBagConstraint1.OriginX = 5;
       gridBagConstraint1.OriginY = 0;
-      this.pnlMain.SetGridBagConstraint(this.comboAlternative, gridBagConstraint1);
-      this.comboAlternative.Location = new System.Drawing.Point(293, 0);
-      this.comboAlternative.Name = "comboAlternative";
-      this.comboAlternative.NullText = "Select an alternative";
-      this.pnlMain.SetPreferredSize(this.comboAlternative, new System.Drawing.Size(200, 25));
-      this.comboAlternative.Size = new System.Drawing.Size(200, 25);
-      this.comboAlternative.TabIndex = 15;
-      this.comboAlternative.Text = "Select an alternative";
+      this.pnlMain.SetGridBagConstraint(this.cmbAlternative, gridBagConstraint1);
+      this.cmbAlternative.Location = new System.Drawing.Point(293, 0);
+      this.cmbAlternative.Name = "cmbAlternative";
+      this.cmbAlternative.NullText = "Select an alternative";
+      this.pnlMain.SetPreferredSize(this.cmbAlternative, new System.Drawing.Size(200, 25));
+      this.cmbAlternative.Size = new System.Drawing.Size(200, 25);
+      this.cmbAlternative.TabIndex = 15;
+      this.cmbAlternative.Text = "Select an alternative";
+      this.cmbAlternative.ValueChanged += new System.EventHandler(this.comboAlternative_ValueChanged);
       // 
       // aLTERNATIVESBindingSource
       // 
@@ -920,7 +921,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.pnlMain)).EndInit();
       this.pnlMain.ResumeLayout(false);
       this.pnlMain.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.comboAlternative)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.cmbAlternative)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.txtBeginYear)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.txtEndYear)).EndInit();
@@ -1004,7 +1005,7 @@
     private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtBeginYear;
     private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtEndYear;
     private Infragistics.Win.Misc.UltraLabel ultraLabel3;
-    private Infragistics.Win.UltraWinGrid.UltraCombo comboAlternative;
+    private Infragistics.Win.UltraWinGrid.UltraCombo cmbAlternative;
     private System.Windows.Forms.BindingSource aLTERNATIVESBindingSource;
     private SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter aLTERNATIVESTableAdapter;
   }

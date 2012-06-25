@@ -11,6 +11,8 @@ namespace UI
 {
   public partial class ModelPage : UI.ChildFormTemplate
   {
+    const decimal defaultYears = 24.0m;
+
     public ModelPage()
     {
       InitializeComponent();
@@ -21,6 +23,7 @@ namespace UI
     private void ModelPage_Load(object sender, EventArgs e)
     {
       alternativesTableAdapter.Fill(scipDataSet.ALTERNATIVES);
+      txtNumYears.Value = defaultYears;
     }
 
     private void btnExecuteAll_Click(object sender, EventArgs e)
@@ -48,10 +51,12 @@ namespace UI
 
     private void btnExecuteFillDriversActivities_Click(object sender, EventArgs e)
     {
+      lblCurrentMessage.Text = string.Empty;
+
       var connection = new SqlConnection(SCIPUI.Default.ConnectionString);
       connection.InfoMessage += (s, evargs) =>
       {
-        lblCurrentMessage.Text = evargs.Message;
+        lblCurrentMessage.Text = String.Format("{0}\n{1}", lblCurrentMessage.Text, evargs.Message);
         lblCurrentMessage.Update();
       };
       connection.FireInfoMessageEventOnUserErrors = true;

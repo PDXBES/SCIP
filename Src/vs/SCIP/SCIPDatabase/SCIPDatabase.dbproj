@@ -834,5 +834,35 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_INSERT_ACTIVITIES_FOR_PROCESSING.proc.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_ALL_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_LARGE_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_SMALL_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_LARGE_ROOT_LARGE_PIPE_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_LARGE_ROOT_XOR_LARGE_PIPE_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_SMALL_ROOT_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_LARGE_TRACTIVE_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_SMALL_TRACTIVE_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_SMALL_TRACTIVE_SANITARY_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_SMALL_TRACTIVE_COMBO_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

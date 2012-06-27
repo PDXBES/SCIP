@@ -31,17 +31,17 @@
       this.components = new System.ComponentModel.Container();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint2 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint3 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint4 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint5 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint6 = new Infragistics.Win.Layout.GridBagConstraint();
-      Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
+      Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
       Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("ALTERNATIVES", -1);
       Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
       Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("name");
       Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn3 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("description");
       Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn4 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("asset_set_id");
-      Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
       Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
       Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
       Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
@@ -52,13 +52,14 @@
       Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
       Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
       Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
+      Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint7 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint8 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint9 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint10 = new Infragistics.Win.Layout.GridBagConstraint();
       this.ultraGridBagLayoutPanel1 = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
-      this.lblCurrentProcedure = new Infragistics.Win.Misc.UltraLabel();
-      this.lblCurrentMessage = new Infragistics.Win.Misc.UltraLabel();
+      this.activityIndicator = new Infragistics.Win.UltraActivityIndicator.UltraActivityIndicator();
+      this.txtMessages = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
       this.chkFillActivities = new Infragistics.Win.UltraWinEditors.UltraCheckEditor();
       this.chkFillDrivers = new Infragistics.Win.UltraWinEditors.UltraCheckEditor();
       this.ultraLabel1 = new Infragistics.Win.Misc.UltraLabel();
@@ -70,8 +71,10 @@
       this.btnExecuteRetrieveAssets = new Infragistics.Win.Misc.UltraButton();
       this.btnExecuteAll = new Infragistics.Win.Misc.UltraButton();
       this.alternativesTableAdapter = new UI.SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter();
+      this.bkgWorker = new System.ComponentModel.BackgroundWorker();
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel1)).BeginInit();
       this.ultraGridBagLayoutPanel1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.txtMessages)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.chkFillActivities)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.chkFillDrivers)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.txtNumYears)).BeginInit();
@@ -82,8 +85,8 @@
       // 
       // ultraGridBagLayoutPanel1
       // 
-      this.ultraGridBagLayoutPanel1.Controls.Add(this.lblCurrentProcedure);
-      this.ultraGridBagLayoutPanel1.Controls.Add(this.lblCurrentMessage);
+      this.ultraGridBagLayoutPanel1.Controls.Add(this.activityIndicator);
+      this.ultraGridBagLayoutPanel1.Controls.Add(this.txtMessages);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.chkFillActivities);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.chkFillDrivers);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.ultraLabel1);
@@ -98,41 +101,54 @@
       this.ultraGridBagLayoutPanel1.Size = new System.Drawing.Size(485, 428);
       this.ultraGridBagLayoutPanel1.TabIndex = 0;
       // 
-      // lblCurrentProcedure
+      // activityIndicator
       // 
+      this.activityIndicator.AnimationSpeed = 20;
+      this.activityIndicator.CausesValidation = true;
       gridBagConstraint1.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint1.Insets.Bottom = 8;
       gridBagConstraint1.OriginX = 0;
       gridBagConstraint1.OriginY = 7;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.lblCurrentProcedure, gridBagConstraint1);
-      this.lblCurrentProcedure.Location = new System.Drawing.Point(0, 190);
-      this.lblCurrentProcedure.Name = "lblCurrentProcedure";
-      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.lblCurrentProcedure, new System.Drawing.Size(100, 23));
-      this.lblCurrentProcedure.Size = new System.Drawing.Size(120, 23);
-      this.lblCurrentProcedure.TabIndex = 10;
+      gridBagConstraint1.SpanX = 2;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.activityIndicator, gridBagConstraint1);
+      this.activityIndicator.Location = new System.Drawing.Point(0, 210);
+      this.activityIndicator.MarqueeAnimationStyle = Infragistics.Win.UltraActivityIndicator.MarqueeAnimationStyle.BounceBack;
+      this.activityIndicator.Name = "activityIndicator";
+      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.activityIndicator, new System.Drawing.Size(100, 23));
+      this.activityIndicator.Size = new System.Drawing.Size(485, 23);
+      this.activityIndicator.TabIndex = 12;
+      this.activityIndicator.TabStop = true;
       // 
-      // lblCurrentMessage
+      // txtMessages
       // 
-      this.lblCurrentMessage.AutoSize = true;
       gridBagConstraint2.Fill = Infragistics.Win.Layout.FillType.Both;
       gridBagConstraint2.OriginX = 0;
       gridBagConstraint2.OriginY = 8;
+      gridBagConstraint2.SpanX = 2;
       gridBagConstraint2.WeightY = 1F;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.lblCurrentMessage, gridBagConstraint2);
-      this.lblCurrentMessage.Location = new System.Drawing.Point(0, 213);
-      this.lblCurrentMessage.Name = "lblCurrentMessage";
-      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.lblCurrentMessage, new System.Drawing.Size(100, 23));
-      this.lblCurrentMessage.Size = new System.Drawing.Size(0, 0);
-      this.lblCurrentMessage.TabIndex = 8;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.txtMessages, gridBagConstraint2);
+      this.txtMessages.Location = new System.Drawing.Point(0, 241);
+      this.txtMessages.Multiline = true;
+      this.txtMessages.Name = "txtMessages";
+      this.txtMessages.NullText = "Waiting for activity.";
+      appearance1.FontData.ItalicAsString = "True";
+      appearance1.ForeColor = System.Drawing.Color.Silver;
+      this.txtMessages.NullTextAppearance = appearance1;
+      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.txtMessages, new System.Drawing.Size(100, 24));
+      this.txtMessages.Scrollbars = System.Windows.Forms.ScrollBars.Vertical;
+      this.txtMessages.Size = new System.Drawing.Size(485, 187);
+      this.txtMessages.TabIndex = 11;
       // 
       // chkFillActivities
       // 
       this.chkFillActivities.Checked = true;
       this.chkFillActivities.CheckState = System.Windows.Forms.CheckState.Checked;
       gridBagConstraint3.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint3.Insets.Bottom = 8;
       gridBagConstraint3.OriginX = 0;
       gridBagConstraint3.OriginY = 6;
       this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.chkFillActivities, gridBagConstraint3);
-      this.chkFillActivities.Location = new System.Drawing.Point(0, 170);
+      this.chkFillActivities.Location = new System.Drawing.Point(0, 182);
       this.chkFillActivities.Name = "chkFillActivities";
       this.ultraGridBagLayoutPanel1.SetPreferredSize(this.chkFillActivities, new System.Drawing.Size(120, 20));
       this.chkFillActivities.Size = new System.Drawing.Size(120, 20);
@@ -144,10 +160,11 @@
       this.chkFillDrivers.Checked = true;
       this.chkFillDrivers.CheckState = System.Windows.Forms.CheckState.Checked;
       gridBagConstraint4.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint4.Insets.Bottom = 4;
       gridBagConstraint4.OriginX = 0;
       gridBagConstraint4.OriginY = 5;
       this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.chkFillDrivers, gridBagConstraint4);
-      this.chkFillDrivers.Location = new System.Drawing.Point(0, 150);
+      this.chkFillDrivers.Location = new System.Drawing.Point(0, 158);
       this.chkFillDrivers.Name = "chkFillDrivers";
       this.ultraGridBagLayoutPanel1.SetPreferredSize(this.chkFillDrivers, new System.Drawing.Size(120, 20));
       this.chkFillDrivers.Size = new System.Drawing.Size(120, 20);
@@ -187,9 +204,9 @@
       // cmbAlternatives
       // 
       this.cmbAlternatives.DataSource = this.alternativesBindingSource;
-      appearance1.BackColor = System.Drawing.SystemColors.Window;
-      appearance1.BorderColor = System.Drawing.SystemColors.InactiveCaption;
-      this.cmbAlternatives.DisplayLayout.Appearance = appearance1;
+      appearance2.BackColor = System.Drawing.SystemColors.Window;
+      appearance2.BorderColor = System.Drawing.SystemColors.InactiveCaption;
+      this.cmbAlternatives.DisplayLayout.Appearance = appearance2;
       ultraGridColumn1.Header.VisiblePosition = 0;
       ultraGridColumn2.Header.VisiblePosition = 1;
       ultraGridColumn3.Header.VisiblePosition = 2;
@@ -202,52 +219,52 @@
       this.cmbAlternatives.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
       this.cmbAlternatives.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
       this.cmbAlternatives.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
-      appearance2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-      appearance2.BackColor2 = System.Drawing.SystemColors.ControlDark;
-      appearance2.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
-      appearance2.BorderColor = System.Drawing.SystemColors.Window;
-      this.cmbAlternatives.DisplayLayout.GroupByBox.Appearance = appearance2;
-      appearance3.ForeColor = System.Drawing.SystemColors.GrayText;
-      this.cmbAlternatives.DisplayLayout.GroupByBox.BandLabelAppearance = appearance3;
-      this.cmbAlternatives.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
-      appearance4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-      appearance4.BackColor2 = System.Drawing.SystemColors.Control;
-      appearance4.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+      appearance3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+      appearance3.BackColor2 = System.Drawing.SystemColors.ControlDark;
+      appearance3.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+      appearance3.BorderColor = System.Drawing.SystemColors.Window;
+      this.cmbAlternatives.DisplayLayout.GroupByBox.Appearance = appearance3;
       appearance4.ForeColor = System.Drawing.SystemColors.GrayText;
-      this.cmbAlternatives.DisplayLayout.GroupByBox.PromptAppearance = appearance4;
+      this.cmbAlternatives.DisplayLayout.GroupByBox.BandLabelAppearance = appearance4;
+      this.cmbAlternatives.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid;
+      appearance5.BackColor = System.Drawing.SystemColors.ControlLightLight;
+      appearance5.BackColor2 = System.Drawing.SystemColors.Control;
+      appearance5.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+      appearance5.ForeColor = System.Drawing.SystemColors.GrayText;
+      this.cmbAlternatives.DisplayLayout.GroupByBox.PromptAppearance = appearance5;
       this.cmbAlternatives.DisplayLayout.MaxColScrollRegions = 1;
       this.cmbAlternatives.DisplayLayout.MaxRowScrollRegions = 1;
-      appearance5.BackColor = System.Drawing.SystemColors.Window;
-      appearance5.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.cmbAlternatives.DisplayLayout.Override.ActiveCellAppearance = appearance5;
-      appearance6.BackColor = System.Drawing.SystemColors.Highlight;
-      appearance6.ForeColor = System.Drawing.SystemColors.HighlightText;
-      this.cmbAlternatives.DisplayLayout.Override.ActiveRowAppearance = appearance6;
+      appearance6.BackColor = System.Drawing.SystemColors.Window;
+      appearance6.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.cmbAlternatives.DisplayLayout.Override.ActiveCellAppearance = appearance6;
+      appearance7.BackColor = System.Drawing.SystemColors.Highlight;
+      appearance7.ForeColor = System.Drawing.SystemColors.HighlightText;
+      this.cmbAlternatives.DisplayLayout.Override.ActiveRowAppearance = appearance7;
       this.cmbAlternatives.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted;
       this.cmbAlternatives.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted;
-      appearance7.BackColor = System.Drawing.SystemColors.Window;
-      this.cmbAlternatives.DisplayLayout.Override.CardAreaAppearance = appearance7;
-      appearance8.BorderColor = System.Drawing.Color.Silver;
-      appearance8.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
-      this.cmbAlternatives.DisplayLayout.Override.CellAppearance = appearance8;
+      appearance8.BackColor = System.Drawing.SystemColors.Window;
+      this.cmbAlternatives.DisplayLayout.Override.CardAreaAppearance = appearance8;
+      appearance9.BorderColor = System.Drawing.Color.Silver;
+      appearance9.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter;
+      this.cmbAlternatives.DisplayLayout.Override.CellAppearance = appearance9;
       this.cmbAlternatives.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText;
       this.cmbAlternatives.DisplayLayout.Override.CellPadding = 0;
-      appearance9.BackColor = System.Drawing.SystemColors.Control;
-      appearance9.BackColor2 = System.Drawing.SystemColors.ControlDark;
-      appearance9.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
-      appearance9.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
-      appearance9.BorderColor = System.Drawing.SystemColors.Window;
-      this.cmbAlternatives.DisplayLayout.Override.GroupByRowAppearance = appearance9;
-      appearance10.TextHAlignAsString = "Left";
-      this.cmbAlternatives.DisplayLayout.Override.HeaderAppearance = appearance10;
+      appearance10.BackColor = System.Drawing.SystemColors.Control;
+      appearance10.BackColor2 = System.Drawing.SystemColors.ControlDark;
+      appearance10.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element;
+      appearance10.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal;
+      appearance10.BorderColor = System.Drawing.SystemColors.Window;
+      this.cmbAlternatives.DisplayLayout.Override.GroupByRowAppearance = appearance10;
+      appearance11.TextHAlignAsString = "Left";
+      this.cmbAlternatives.DisplayLayout.Override.HeaderAppearance = appearance11;
       this.cmbAlternatives.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
       this.cmbAlternatives.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand;
-      appearance11.BackColor = System.Drawing.SystemColors.Window;
-      appearance11.BorderColor = System.Drawing.Color.Silver;
-      this.cmbAlternatives.DisplayLayout.Override.RowAppearance = appearance11;
+      appearance12.BackColor = System.Drawing.SystemColors.Window;
+      appearance12.BorderColor = System.Drawing.Color.Silver;
+      this.cmbAlternatives.DisplayLayout.Override.RowAppearance = appearance12;
       this.cmbAlternatives.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.False;
-      appearance12.BackColor = System.Drawing.SystemColors.ControlLight;
-      this.cmbAlternatives.DisplayLayout.Override.TemplateAddRowAppearance = appearance12;
+      appearance13.BackColor = System.Drawing.SystemColors.ControlLight;
+      this.cmbAlternatives.DisplayLayout.Override.TemplateAddRowAppearance = appearance13;
       this.cmbAlternatives.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
       this.cmbAlternatives.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
       this.cmbAlternatives.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
@@ -277,6 +294,7 @@
       // btnExecuteFillDriversActivities
       // 
       gridBagConstraint8.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint8.Insets.Bottom = 8;
       gridBagConstraint8.OriginX = 0;
       gridBagConstraint8.OriginY = 4;
       gridBagConstraint8.SpanX = 2;
@@ -325,6 +343,13 @@
       // 
       this.alternativesTableAdapter.ClearBeforeFill = true;
       // 
+      // bkgWorker
+      // 
+      this.bkgWorker.WorkerReportsProgress = true;
+      this.bkgWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bkgWorker_DoWork);
+      this.bkgWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bkgWorker_ProgressChanged);
+      this.bkgWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bkgWorker_RunWorkerCompleted);
+      // 
       // ModelPage
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,6 +360,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel1)).EndInit();
       this.ultraGridBagLayoutPanel1.ResumeLayout(false);
       this.ultraGridBagLayoutPanel1.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.txtMessages)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.chkFillActivities)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.chkFillDrivers)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.txtNumYears)).EndInit();
@@ -359,7 +385,8 @@
     private Infragistics.Win.UltraWinEditors.UltraNumericEditor txtNumYears;
     private Infragistics.Win.UltraWinEditors.UltraCheckEditor chkFillActivities;
     private Infragistics.Win.UltraWinEditors.UltraCheckEditor chkFillDrivers;
-    private Infragistics.Win.Misc.UltraLabel lblCurrentMessage;
-    private Infragistics.Win.Misc.UltraLabel lblCurrentProcedure;
+    private Infragistics.Win.UltraWinEditors.UltraTextEditor txtMessages;
+    private System.ComponentModel.BackgroundWorker bkgWorker;
+    private Infragistics.Win.UltraActivityIndicator.UltraActivityIndicator activityIndicator;
   }
 }

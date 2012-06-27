@@ -33,9 +33,9 @@ AS
   INSERT INTO DRIVER_TYPES ([activity_type_id], [name], [description], [reporting_category], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
     (@inspection_type_id,'RootControlMLargePipe','Root Control Medium (>36 in)','Root Control Medium (>36 in)',2.50,12,@alternative_id,8,'SPSWTV');
   INSERT INTO DRIVER_TYPES ([activity_type_id], [name], [description], [reporting_category], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (@inspection_type_id,'Condition','Condition','Condition',0.80,12,@alternative_id,3,'SPSWTV');
+    (@inspection_type_id,'Condition','Condition','Condition',1.25,12,@alternative_id,3,'SPSWTV');
   INSERT INTO DRIVER_TYPES ( [activity_type_id], [name], [description], [reporting_category], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (@inspection_type_id,'ConditionLarge','Condition (>36 in)','Condition (>36 in)',2.00,12,@alternative_id,4,'SPSWTV');
+    (@inspection_type_id,'ConditionLarge','Condition (>36 in)','Condition (>36 in)',2.50,12,@alternative_id,4,'SPSWTV');
   INSERT INTO DRIVER_TYPES ([activity_type_id], [name], [description], [reporting_category], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
     (@root_type_id,'RootControlH','Root Control High','Root Control High',1.20,2,@alternative_id,1,'RTCHEM');
   INSERT INTO DRIVER_TYPES ([activity_type_id], [name], [description], [reporting_category], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES

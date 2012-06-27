@@ -12,6 +12,8 @@ namespace UI
   public partial class ModelPage : UI.ChildFormTemplate
   {
     const decimal defaultYears = 24.0m;
+    DateTime beginTime;
+    DateTime endTime;
 
     private struct ModelRunArgs
     {
@@ -63,6 +65,7 @@ namespace UI
       EnableUI(false);
       activityIndicator.ResetAnimation();
       activityIndicator.Start();
+      beginTime = DateTime.Now;
       bkgWorker.RunWorkerAsync(modelRunArgs);
     }
 
@@ -124,18 +127,25 @@ namespace UI
       }
     }
 
-    private void bkgWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+    private void AddToMessages(string message)
     {
       txtMessages.AlwaysInEditMode = true;
-      txtMessages.AppendText((string)e.UserState + "\r\n");
+      txtMessages.AppendText(message + "\r\n");
       txtMessages.Select(txtMessages.Text.Length + 1, 0);
       txtMessages.ScrollToCaret();
       txtMessages.AlwaysInEditMode = false;
+    }
+    private void bkgWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+    {
+      AddToMessages((string)e.UserState);
       Application.DoEvents();
     }
 
     private void bkgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
     {
+      endTime = DateTime.Now;
+      TimeSpan runTime = endTime - beginTime;
+      AddToMessages(String.Format("Run time: {0:c}", runTime));
       activityIndicator.Stop();
       activityIndicator.ResetAnimation();
       EnableUI(true);

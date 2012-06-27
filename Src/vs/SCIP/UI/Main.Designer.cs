@@ -317,7 +317,7 @@
       this.Controls.Add(this.ultraGridBagLayoutPanel1);
       this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.Name = "Main";
-      this.Text = "Form1";
+      this.Text = "SCIP";
       this.Load += new System.EventHandler(this.Main_Load);
       this.ultraTabPageControl5.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel2)).EndInit();

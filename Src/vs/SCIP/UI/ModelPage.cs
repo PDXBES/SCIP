@@ -13,11 +13,29 @@ namespace UI
   {
     const decimal defaultYears = 24.0m;
 
+    private struct ModelRunArgs
+    {
+      public int AlternativeId;
+      public bool FillDrivers;
+      public bool FillActivities;
+    }
+
     public ModelPage()
     {
       InitializeComponent();
       alternativesTableAdapter.Fill(scipDataSet.ALTERNATIVES);
       cmbAlternatives.Value = scipDataSet.ALTERNATIVES[0][0];
+    }
+
+    private void EnableUI(bool enabled = true)
+    {
+      cmbAlternatives.Enabled = enabled;
+      txtNumYears.Enabled = enabled;
+      btnExecuteAll.Enabled = enabled;
+      btnExecuteRetrieveAssets.Enabled = enabled;
+      btnExecuteFillDriversActivities.Enabled = enabled;
+      chkFillDrivers.Enabled = enabled;
+      chkFillActivities.Enabled = enabled;
     }
 
     private void ModelPage_Load(object sender, EventArgs e)
@@ -30,79 +48,72 @@ namespace UI
     {
     }
 
-    private void btnTestMessages_Click(object sender, EventArgs e)
-    {
-      var connection = new SqlConnection(SCIPUI.Default.ConnectionString);
-      var command = new SqlCommand("SP_TEST_SEND_MESSAGES", connection) 
-      {
-        CommandType = CommandType.StoredProcedure
-      };
-
-      connection.InfoMessage += (s, evargs) => 
-      { 
-        lblCurrentMessage.Text = evargs.Message;
-        lblCurrentMessage.Update();
-      };
-      connection.FireInfoMessageEventOnUserErrors = true;
-      connection.Open();
-      command.ExecuteNonQuery();
-      connection.Close();
-    }
-
     private void btnExecuteFillDriversActivities_Click(object sender, EventArgs e)
     {
-      lblCurrentMessage.Text = string.Empty;
+      txtMessages.Clear();
+      int alternativeId = (int)cmbAlternatives.Value;
+
+      ModelRunArgs modelRunArgs = new ModelRunArgs
+      {
+        AlternativeId = alternativeId,
+        FillDrivers = chkFillDrivers.Checked,
+        FillActivities = chkFillActivities.Checked
+      };
+
+      EnableUI(false);
+      activityIndicator.ResetAnimation();
+      activityIndicator.Start();
+      bkgWorker.RunWorkerAsync(modelRunArgs);
+    }
+
+    private void bkgWorker_DoWork(object sender, DoWorkEventArgs e)
+    {
+      ModelRunArgs runArgs = (ModelRunArgs)e.Argument;
 
       var connection = new SqlConnection(SCIPUI.Default.ConnectionString);
       connection.InfoMessage += (s, evargs) =>
       {
-        lblCurrentMessage.Text = String.Format("{0}\n{1}", lblCurrentMessage.Text, evargs.Message);
-        lblCurrentMessage.Update();
+        bkgWorker.ReportProgress(0, evargs.Message);
       };
       connection.FireInfoMessageEventOnUserErrors = true;
-
-      int alternativeId = (int)cmbAlternatives.Value;
 
       var fillDriversCommand = new SqlCommand("SP_FILL_DRIVERS", connection)
       {
         CommandType = CommandType.StoredProcedure,
         CommandTimeout = 3600
       };
-      fillDriversCommand.Parameters.Add("@alternative_id", SqlDbType.Int).Value = alternativeId;
+      fillDriversCommand.Parameters.Add("@alternative_id", SqlDbType.Int).Value = 
+        runArgs.AlternativeId;
 
       var fillActivitiesCommand = new SqlCommand("SP_FILL_ACTIVITIES", connection)
       {
         CommandType = CommandType.StoredProcedure,
         CommandTimeout = 3600
       };
-      fillActivitiesCommand.Parameters.Add("@alternative_id", SqlDbType.Int).Value = alternativeId;
-      fillActivitiesCommand.Parameters.Add("@years_to_process", SqlDbType.Decimal).Value = (decimal)txtNumYears.Value;
+      fillActivitiesCommand.Parameters.Add("@alternative_id", SqlDbType.Int).Value = 
+        runArgs.AlternativeId;
+      fillActivitiesCommand.Parameters.Add("@years_to_process", SqlDbType.Decimal).Value = 
+        (decimal)txtNumYears.Value;
 
       var fillNextActivitiesCommand = new SqlCommand("SP_FILL_NEXT_ACTIVITIES", connection)
       {
         CommandType = CommandType.StoredProcedure,
         CommandTimeout = 3600
       };
-      fillNextActivitiesCommand.Parameters.Add("@alternative_id", SqlDbType.Int).Value = alternativeId;
+      fillNextActivitiesCommand.Parameters.Add("@alternative_id", SqlDbType.Int).Value = 
+        runArgs.AlternativeId;
 
       try
       {
-        Cursor = Cursors.WaitCursor;
         connection.Open();
-        if (chkFillDrivers.Checked)
+        if (runArgs.FillDrivers)
         {
-          lblCurrentProcedure.Text = "Filling drivers";
-          lblCurrentProcedure.Update();
           fillDriversCommand.ExecuteNonQuery();
         }
 
-        if (chkFillActivities.Checked)
+        if (runArgs.FillActivities)
         {
-          lblCurrentProcedure.Text = "Filling activities";
-          lblCurrentProcedure.Update();
           fillActivitiesCommand.ExecuteNonQuery();
-          lblCurrentProcedure.Text = "Filling next activities";
-          lblCurrentProcedure.Update();
           fillNextActivitiesCommand.ExecuteNonQuery();
         }
 
@@ -110,8 +121,24 @@ namespace UI
       finally
       {
         connection.Close();
-        Cursor = Cursors.Default;
       }
+    }
+
+    private void bkgWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+    {
+      txtMessages.AlwaysInEditMode = true;
+      txtMessages.AppendText((string)e.UserState + "\r\n");
+      txtMessages.Select(txtMessages.Text.Length + 1, 0);
+      txtMessages.ScrollToCaret();
+      txtMessages.AlwaysInEditMode = false;
+      Application.DoEvents();
+    }
+
+    private void bkgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+    {
+      activityIndicator.Stop();
+      activityIndicator.ResetAnimation();
+      EnableUI(true);
     }
   }
 }

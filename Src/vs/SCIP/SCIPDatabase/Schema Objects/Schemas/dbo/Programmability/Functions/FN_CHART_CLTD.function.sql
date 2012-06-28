@@ -1,7 +1,8 @@
 ﻿CREATE FUNCTION [dbo].[FN_CHART_CLTD]
 (
 	@beginYear int, 
-	@endYear int
+	@endYear int,
+  @alternative_id INT
 )
 RETURNS TABLE 
 AS
@@ -11,7 +12,10 @@ RETURN (
       ISNULL(SUM([Preventive Maintenance]), 0) AS [Preventive Maintenance],
       ISNULL(SUM([Tractive Forces]), 0) AS [Tractive Forces], 
       ISNULL(SUM([Tractive Forces (>36 in)]), 0) AS [Tractive Forces (>36 in)]
-  FROM (SELECT * FROM VW_CLEANING_ACTIVITIES_BY_DRIVER_TYPE_FISCAL_YEAR WHERE fiscal_year BETWEEN @beginYear AND @endYear) PS
+  FROM (
+    SELECT * FROM VW_CLEANING_ACTIVITIES_BY_DRIVER_TYPE_FISCAL_YEAR
+    WHERE (fiscal_year BETWEEN @beginYear AND @endYear) 
+      AND (alternative_id = @alternative_id)) PS
   PIVOT
   (SUM(cost) FOR reporting_category IN 
     (

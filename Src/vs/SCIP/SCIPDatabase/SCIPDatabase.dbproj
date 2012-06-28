@@ -681,9 +681,6 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_FILL_DRIVERS_UPDATE.proc.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_ACTIVITIES_COUNT_BY_DRIVER_TYPE_BETWEEN_YEARS.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_FILL_DRIVER_TYPES.proc.sql">
       <SubType>Code</SubType>
     </Build>
@@ -805,6 +802,66 @@
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARS.function.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARS.function.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CLEAN_UP_ALTERNATIVE.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CLEAN_UP_ASSET_SET.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_MULTIPLES_OF_NUM_BETWEEN_RANGE.function.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CREATE_NUMS.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_ACTIVITIES_TO_INSERT.function.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\LAST_ACTIVITY_DATES_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_INSERT_ACTIVITIES.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\ACTIVITIES_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_INSERT_ACTIVITIES_FOR_PROCESSING.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_ALL_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_LARGE_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_SMALL_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_LARGE_ROOT_LARGE_PIPE_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_LARGE_ROOT_XOR_LARGE_PIPE_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_SMALL_ROOT_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_LARGE_TRACTIVE_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_SMALL_TRACTIVE_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_SMALL_TRACTIVE_SANITARY_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_SMALL_TRACTIVE_COMBO_COMPKEYS_FOR_PROCESSING.table.sql">
       <SubType>Code</SubType>
     </Build>
   </ItemGroup>

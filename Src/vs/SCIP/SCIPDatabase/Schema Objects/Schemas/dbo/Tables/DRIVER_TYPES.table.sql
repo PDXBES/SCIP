@@ -9,5 +9,11 @@
     [default_frequency_years] FLOAT         NOT NULL,
     [rank]                    INT           NOT NULL DEFAULT 1,
     [alternative_id]          INT           NOT NULL
-);
+CONSTRAINT [unique_activity_type_id_name] UNIQUE NONCLUSTERED 
+(
+	[activity_type_id] ASC,
+	[name] ASC,
+	[alternative_id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+)
 

@@ -33,9 +33,9 @@ namespace UI
     {
       try
       {
-        ultraGridAlternatives.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.ExitEditMode);
-        ultraGridAlternatives.UpdateData();
-        CurrencyManager cm = (CurrencyManager)ultraGridAlternatives.BindingContext[ultraGridAlternatives.DataSource, ultraGridAlternatives.DataMember];
+        gridAlternatives.PerformAction(Infragistics.Win.UltraWinGrid.UltraGridAction.ExitEditMode);
+        gridAlternatives.UpdateData();
+        CurrencyManager cm = (CurrencyManager)gridAlternatives.BindingContext[gridAlternatives.DataSource, gridAlternatives.DataMember];
         cm.EndCurrentEdit();
 
         if (sCIPDataSet.HasChanges(DataRowState.Added))
@@ -121,6 +121,33 @@ namespace UI
     private void gridAssetSets_AfterRowsDeleted(object sender, EventArgs e)
     {
       aSSET_SETSTableAdapter.Update(sCIPDataSet);
+    }
+
+    private void btnResetDriverTypes_Click(object sender, EventArgs e)
+    {
+      int currentAlternative = (int)gridAlternatives.ActiveRow.Cells["alternative_id"].Value;
+
+      var connection = new SqlConnection(SCIPUI.Default.ConnectionString);
+      var fillDriverTypesCommand = new SqlCommand("SP_FILL_DRIVER_TYPES", connection)
+      {
+        CommandTimeout = 3600, 
+        CommandType = CommandType.StoredProcedure
+      };
+      fillDriverTypesCommand.Parameters.Add("@alternative_id", SqlDbType.Int).Value = 
+        currentAlternative;
+
+      try
+      {
+        Cursor = Cursors.WaitCursor;
+        connection.Open();
+        fillDriverTypesCommand.ExecuteNonQuery();
+      }
+      finally
+      {
+        Cursor = Cursors.Default;
+        connection.Close();
+      }
+
     }
   }
 }

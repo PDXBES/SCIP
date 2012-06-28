@@ -567,9 +567,6 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_FILL_ACTIVITIES.proc.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_LAST_ACTIVITY_DATES.view.sql">
-      <SubType>Code</SubType>
-    </Build>
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_STATUS_MESSAGE.proc.sql">
       <SubType>Code</SubType>
     </Build>
@@ -582,7 +579,7 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_DATE_ADD_FRACTIONAL_YEARS.function.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\CONTROLLING_DRIVER_FREQUENCIES.table.sql">
+    <Build Include="Schema Objects\Schemas\dbo\Tables\CONTROLLING_DRIVER_FREQUENCIES_FOR_PROCESSING.table.sql">
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\dbo\Views\VW_ALL_ACTIVITIES.view.sql">
@@ -862,6 +859,21 @@
       <SubType>Code</SubType>
     </Build>
     <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_SMALL_TRACTIVE_COMBO_COMPKEYS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\CONTROLLING_DRIVERS_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\RANKED_MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE_FOR_PROCESSING.table.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Views\LAST_ACTIVITY_DATES.view.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Tables\CONTROLLING_DRIVER_FREQUENCIES.table.sql">
       <SubType>Code</SubType>
     </Build>
   </ItemGroup>

@@ -8,75 +8,15 @@ CREATE PROCEDURE [dbo].[SP_ExposeData]
 AS
 BEGIN
   SET NOCOUNT ON
-  EXEC SP_STATUS_MESSAGE 'Begin SP_ExposeData'
 
-  IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[REHAB10FTSEGS]') AND type in (N'U'))
-  DROP TABLE [REHAB10FTSEGS]
+  DECLARE @statusMessage VARCHAR(200)
+  SET @statusMessage = 'Begin SP_ExposeData, asset_set_id = ' + CONVERT(VARCHAR(10), @asset_set_id)
+  EXEC SP_STATUS_MESSAGE @statusMessage
 
-  CREATE TABLE [REHAB10FTSEGS](
-	  [OBJECTID] [int] NOT NULL,
-	  [mlinkid] [int] NULL,
-	  [compkey] [int] NULL,
-	  [usnode] [nvarchar](6) NULL,
-	  [dsnode] [nvarchar](6) NULL,
-	  [linktype] [nvarchar](2) NULL,
-	  [flowtype] [nvarchar](2) NULL,
-	  [length] [numeric](38, 8) NULL,
-	  [diamwidth] [numeric](8, 2) NULL,
-	  [height] [numeric](8, 2) NULL,
-	  [pipeshape] [nvarchar](255) NULL,
-	  [material] [nvarchar](10) NULL,
-	  [instdate] [datetime] NULL,
-	  [hservstat] [nvarchar](255) NULL,
-	  [bsnrun] [nvarchar](5) NULL,
-	  [old_mlid] [int] NULL,
-	  [cutno] [int] NULL,
-	  [fm] [numeric](8, 2) NULL,
-	  [to_] [numeric](8, 2) NULL,
-	  [seglen] [numeric](8, 2) NULL,
-	  [grade_h5] [smallint] NULL,
-	  [mat_fmto] [nvarchar](21) NULL,
-	  [seg_count] [smallint] NULL,
-	  [fail_near] [int] NULL,
-	  [fail_prev] [int] NULL,
-	  [fail_tot] [int] NULL,
-	  [fail_pct] [numeric](8, 2) NULL,
-	  [def_pts] [int] NULL,
-	  [def_lin] [int] NULL,
-	  [def_tot] [int] NULL,
-	  [bpw] [int] NULL,
-	  [apw] [int] NULL,
-	  [cbr] [numeric](38, 8) NULL,
-	  [insp_date] [datetime] NULL,
-	  [insp_yrsago] [smallint] NULL,
-	  [insp_curr] [smallint] NULL,
-	  [fail_yr] [smallint] NULL,
-	  [rulife] [smallint] NULL,
-	  [rul_flag] [smallint] NULL,
-	  [std_dev] [int] NULL,
-	  [cof] [int] NULL,
-	  [replacecost] [int] NULL,
-	  [action] [smallint] NULL,
-	  [remarks] [nvarchar](100) NULL,
-	  [bpw_seg] [int] NULL,
-	  [apw_seg] [int] NULL,
-	  [cbr_seg] [numeric](38, 8) NULL,
-	  [std_dev_seg] [int] NULL,
-	  [fail_yr_seg] [smallint] NULL,
-	  [fail_yr_whole] [smallint] NULL,
-	  [std_dev_whole] [smallint] NULL,
-	  [Exceptions] [nvarchar](1000) NULL,
-	  [ACCUM_RISK_REPLACE_YEAR] [smallint] NULL,
-	  [ACCUM_RISK_INSPECT_YEAR] [smallint] NULL,
-	  [SHAPE] [int] NULL,
-	  [CBR_RANK] [int] NULL,
-	  [CBRSEG_RANK] [int] NULL,
-	  [BPW_RANK] [int] NULL,
-	  [BPWSEG_RANK] [int] NULL
-  ) ON [PRIMARY]
-
+  EXEC SP_STATUS_MESSAGE 'Inserting REHAB10FTSEGS'
+		
   INSERT INTO [REHAB10FTSEGS]
-  SELECT * FROM [REHAB].[GIS].[REHAB10FTSEGS]
+  SELECT *, @asset_set_id FROM [REHAB].[GIS].[REHAB10FTSEGS]
   WHERE MlinkID < 40000000
 
   -- SET NOCOUNT ON added to prevent extra result sets from
@@ -167,23 +107,32 @@ BEGIN
   SET @ACTKEY_SEWCLN = 1061
   SET @ACTKEY_SPCLN = 1064
 
-  DELETE FROM RootInspections
-  DELETE FROM AllInspections
-  DELETE FROM LatestInspections
-  DELETE FROM ASSETS
+  DELETE FROM RootInspections WHERE asset_set_id = @asset_set_id;
+  DELETE FROM AllInspections WHERE asset_set_id = @asset_set_id;
+  DELETE FROM LatestInspections WHERE asset_set_id = @asset_set_id;
+  DELETE FROM ASSETS WHERE asset_set_id = @asset_set_id;
 
   -----------------------------------------------------------------------
   --Fill RootInspections with all of the valid 
   --sanitary inspections for root evidence
+  EXEC SP_STATUS_MESSAGE 'Inserting RootInspections'
+
   INSERT	INTO  RootInspections 
   SELECT	C2.COMPKEY AS COMPKEY,
 		  C2.INSPKEY AS INSPKEY, 
 		  OBRATING AS OBRATING, 
 		  C3.DISTFROM AS [FROM], 
 		  C3.DISTTO	AS [TO], 
-		  STARTDTTM,		COMPDTTM,		INSTDATE,	
-		  C5.SEVDESC,		C6.INSPNDX,		INDEXVAL,	
-		  OWN,			UnitType,		ServStat
+		  STARTDTTM,		
+      COMPDTTM,		
+      INSTDATE,	
+		  C5.SEVDESC,		
+      C6.INSPNDX,		
+      INDEXVAL,	
+		  OWN,			
+      UnitType,		
+      ServStat, 
+      @asset_set_id
 	  FROM(
 			  (
 				  (
@@ -219,15 +168,24 @@ BEGIN
   -----------------------------------------------------------------------
   --Fill LatestInspections with all of the valid 
   --sanitary inspections
+  EXEC SP_STATUS_MESSAGE 'Inserting AllInspections'
+
   INSERT	INTO  AllInspections 
   SELECT	C2.COMPKEY AS COMPKEY,
 		  C2.INSPKEY AS INSPKEY, 
 		  OBRATING AS OBRATING, 
 		  C3.DISTFROM AS [FROM], 
 		  C3.DISTTO	AS [TO], 
-		  STARTDTTM,		COMPDTTM,		INSTDATE,	
-		  C5.SEVDESC,		C6.INSPNDX,		INDEXVAL,	
-		  OWN,			UnitType,		ServStat
+		  STARTDTTM,		
+      COMPDTTM,		
+      INSTDATE,	
+		  C5.SEVDESC,		
+      C6.INSPNDX,		
+      INDEXVAL,	
+		  OWN,			
+      UnitType,		
+      ServStat,
+      @asset_set_id
 	  FROM(
 			  (
 				  (
@@ -253,10 +211,16 @@ BEGIN
 		  [HANSEN8].[ASSETMANAGEMENT].[ASSETINSPINDEX] AS C6
 		  ON C6.INSPNDXKEY = C4.INDEXKEY
 
+  EXEC SP_STATUS_MESSAGE 'Inserting LatestInspections'
+
   INSERT	INTO  LatestInspections 
-  SELECT  COMPKEY, MAX(STARTDTTM) AS LastInspected
+  SELECT  COMPKEY, 
+    MAX(STARTDTTM) AS LastInspected, 
+    @asset_set_id
   FROM    dbo.AllInspections AS AllInspections_1
   GROUP BY COMPKEY
+
+  EXEC SP_STATUS_MESSAGE 'Inserting Assets'
 
   INSERT INTO [dbo].[ASSETS] (COMPKEY, length_ft, diamWidth_inches, height_inches, unit_type, basin_id, district_id, asset_set_id)
   SELECT	A.COMPKEY ,
@@ -264,14 +228,16 @@ BEGIN
 		  A.PIPEDIAM,
 		  A.PIPEHT,
       A.UNITTYPE,
-      1,
-      1,
+      'NUL',
+      'NULL',
       @asset_set_id
   FROM	([HANSEN8].[ASSETMANAGEMENT_SEWER].COMPSMN A INNER JOIN [HANSEN8].[ASSETMANAGEMENT_SEWER].COMPSMH B ON (A.UNITID = B.UNITID)) INNER JOIN [HANSEN8].[ASSETMANAGEMENT_SEWER].COMPSMH C ON (A.UNITID2 = C.UNITID)
   WHERE	(A.OWN = 'BES' OR A.OWN = 'DNRV')
 		  AND A.UNITTYPE IN ('CSINT', 'CSML', 'CSOTN', 'SAINT', 'SAML')
       AND A.SERVSTAT NOT IN ('ABAN', 'DNE', 'TBAB')
 
+
+  EXEC SP_STATUS_MESSAGE 'Updating ASSETS (last_inspection_date)'
 		
   UPDATE	[dbo].[ASSETS]
   SET		[last_inspection_date] = LastInspected
@@ -282,6 +248,8 @@ BEGIN
   WHERE ASSETS.asset_set_id = @asset_set_id
 
   --Update the root management date
+  EXEC SP_STATUS_MESSAGE 'Updating ASSETS (last_rot_management_date)'
+		
   UPDATE [dbo].[ASSETS]
   SET		last_root_management_date = COMPDTTM
   FROM	[dbo].[ASSETS] AS C
@@ -299,6 +267,8 @@ BEGIN
   WHERE C.asset_set_id = @asset_set_id
 
   --Update the root management date	if RES available
+  EXEC SP_STATUS_MESSAGE 'Updating ASSETS (last_inspection_date if work order results available)'
+		
   UPDATE [dbo].[ASSETS]
   SET		last_root_management_date = COMPDTTM
   FROM	[dbo].[ASSETS] AS C
@@ -330,6 +300,8 @@ BEGIN
   WHERE C.asset_set_id = @asset_set_id
 			
   --Update the special cleaning date
+  EXEC SP_STATUS_MESSAGE 'Updating ASSETS (last_cleaning_date)'
+		
   UPDATE  [dbo].[ASSETS]
   SET		last_cleaning_date = COMPDTTM
   FROM	[dbo].[ASSETS] AS C
@@ -352,6 +324,8 @@ BEGIN
   WHERE C.asset_set_id = @asset_set_id
 
   --Update the special cleaning date if RES available
+		
+  EXEC SP_STATUS_MESSAGE 'Updating ASSETS (last_cleaning_date if work order results available)'
 		
   UPDATE  [dbo].[ASSETS]
   SET		last_cleaning_date = COMPDTTM
@@ -388,6 +362,8 @@ BEGIN
 			  )
   WHERE C.asset_set_id = @asset_set_id
 			
+  EXEC SP_STATUS_MESSAGE 'Updating ASSETS (basin_id)'
+		
   UPDATE	[dbo].[ASSETS]
   SET		BASIN_ID = D.basin_id
   FROM	[dbo].[ASSETS] AS A
@@ -402,6 +378,8 @@ BEGIN
 		  ON	A.COMPKEY = D.COMPKEY
   WHERE A.asset_set_id = @asset_set_id
 
+  EXEC SP_STATUS_MESSAGE 'Updating ASSETS (district_id)'
+		
   UPDATE	[dbo].[ASSETS]
   SET		DISTRICT_ID = D.district_id
   FROM	[dbo].[ASSETS] AS A
@@ -416,15 +394,16 @@ BEGIN
 		  ON	A.COMPKEY = D.COMPKEY
   WHERE A.asset_set_id = @asset_set_id
 
+  EXEC SP_STATUS_MESSAGE 'Updating ASSETS (structural_grade)'
+		
   UPDATE [dbo].[ASSETS]
   SET structural_grade = B.grade_h5
   FROM [dbo].[ASSETS] A INNER JOIN REHAB10FTSEGS B ON (A.COMPKEY = B.compkey)
-  WHERE A.asset_set_id = @asset_set_id
+  WHERE A.asset_set_id = @asset_set_id AND B.asset_set_id = @asset_set_id
 
-  UPDATE [dbo].[ASSETS]
-  SET    district_id = 'NULL'
-  FROM   [dbo].[ASSETS] AS A
-  WHERE  district_id = '1' AND A.asset_set_id = @asset_set_id
+  EXEC SP_STATUS_MESSAGE 'Updating SpecialRoot'
+
+  EXEC SP_SpecialRoot @asset_set_id = @asset_set_id
 
   EXEC SP_STATUS_MESSAGE 'End SP_ExposeData'
 

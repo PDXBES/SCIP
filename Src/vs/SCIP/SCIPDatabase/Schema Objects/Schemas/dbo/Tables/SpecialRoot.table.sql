@@ -15,6 +15,7 @@
     [MODBY]           NVARCHAR (30)  NULL,
     [MODDTTM]         DATETIME       NULL,
     [ROOTPROB]        NVARCHAR (10)  NULL,
-    [SHEETNO]         NVARCHAR (10)  NULL
+    [SHEETNO]         NVARCHAR (10)  NULL,
+    [asset_set_id]    INT            NULL
 );
 

@@ -3,6 +3,6 @@
 AS
 BEGIN
   DECLARE @StatusMessage VARCHAR(223)
-	SET @StatusMessage = @message + ' ' + CONVERT(VARCHAR(23), GETDATE(), 121) 
+	SET @StatusMessage = CONVERT(VARCHAR(23), GETDATE(), 121) + ' ' + @message 
   RAISERROR(@StatusMessage, 0, 1) WITH NOWAIT
 END

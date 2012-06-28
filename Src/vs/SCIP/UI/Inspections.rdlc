@@ -267,8 +267,9 @@
                   </ChartDataLabel>
                   <Style>
                     <Border>
-                      <Color>Silver</Color>
+                      <Color>DimGray</Color>
                     </Border>
+                    <Color>=Code.GetColor(Fields!reporting_category.Value)</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -325,6 +326,10 @@
                 <CustomProperty>
                   <Name>CollectedStyle</Name>
                   <Value>SingleSlice</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedColor</Name>
+                  <Value>DimGray</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -493,6 +498,19 @@
               <VerticalAlign>Top</VerticalAlign>
             </Style>
           </ChartTitle>
+          <ChartTitle Name="Title1">
+            <Caption>="Total" &amp; vbcrlf &amp; FormatCurrency(Sum(Fields!cost.Value), 0,true,true,true)</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Calibri</FontFamily>
+              <FontSize>18pt</FontSize>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+            <Position>BottomLeft</Position>
+            <DockToChartArea>Default</DockToChartArea>
+          </ChartTitle>
         </ChartTitles>
         <Palette>BrightPastel</Palette>
         <ChartBorderSkin>
@@ -514,8 +532,8 @@
         <PageBreak>
           <BreakLocation>End</BreakLocation>
         </PageBreak>
-        <Height>7in</Height>
-        <Width>10.25in</Width>
+        <Height>8in</Height>
+        <Width>10.5in</Width>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -563,8 +581,9 @@
                   </ChartDataLabel>
                   <Style>
                     <Border>
-                      <Color>Silver</Color>
+                      <Color>DimGray</Color>
                     </Border>
+                    <Color>=Code.GetColor(Fields!reporting_category.Value)</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -621,6 +640,10 @@
                 <CustomProperty>
                   <Name>CollectedSliceExploded</Name>
                   <Value>true</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedColor</Name>
+                  <Value>DimGray</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -789,6 +812,19 @@
               <VerticalAlign>Top</VerticalAlign>
             </Style>
           </ChartTitle>
+          <ChartTitle Name="Title1">
+            <Caption>="Total" &amp; vbcrlf &amp; FormatNumber(Sum(Fields!length_ft.Value), 0,true,true,true) &amp; " ft"</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Calibri</FontFamily>
+              <FontSize>18pt</FontSize>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+            <Position>BottomLeft</Position>
+            <DockToChartArea>Default</DockToChartArea>
+          </ChartTitle>
         </ChartTitles>
         <Palette>BrightPastel</Palette>
         <ChartBorderSkin>
@@ -810,9 +846,9 @@
         <PageBreak>
           <BreakLocation>End</BreakLocation>
         </PageBreak>
-        <Top>7in</Top>
-        <Height>7in</Height>
-        <Width>10.25in</Width>
+        <Top>8in</Top>
+        <Height>8in</Height>
+        <Width>10.5in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -861,8 +897,9 @@
                   </ChartDataLabel>
                   <Style>
                     <Border>
-                      <Color>Silver</Color>
+                      <Color>DimGray</Color>
                     </Border>
+                    <Color>=Code.GetColor(Fields!reporting_category.Value)</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -919,6 +956,10 @@
                 <CustomProperty>
                   <Name>CollectedSliceExploded</Name>
                   <Value>true</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedColor</Name>
+                  <Value>DimGray</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -1087,6 +1128,19 @@
               <VerticalAlign>Top</VerticalAlign>
             </Style>
           </ChartTitle>
+          <ChartTitle Name="Title1">
+            <Caption>="Total/yr" &amp; vbcrlf &amp; FormatCurrency(Sum(Fields!cost.Value), 0,true,true,true)</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Calibri</FontFamily>
+              <FontSize>18pt</FontSize>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+            <Position>BottomLeft</Position>
+            <DockToChartArea>Default</DockToChartArea>
+          </ChartTitle>
         </ChartTitles>
         <Palette>BrightPastel</Palette>
         <ChartBorderSkin>
@@ -1108,9 +1162,9 @@
         <PageBreak>
           <BreakLocation>End</BreakLocation>
         </PageBreak>
-        <Top>14in</Top>
-        <Height>7in</Height>
-        <Width>10.25in</Width>
+        <Top>16in</Top>
+        <Height>8in</Height>
+        <Width>10.5in</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -1159,8 +1213,9 @@
                   </ChartDataLabel>
                   <Style>
                     <Border>
-                      <Color>Silver</Color>
+                      <Color>DimGray</Color>
                     </Border>
+                    <Color>=Code.GetColor(Fields!reporting_category.Value)</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1217,6 +1272,10 @@
                 <CustomProperty>
                   <Name>CollectedSliceExploded</Name>
                   <Value>true</Value>
+                </CustomProperty>
+                <CustomProperty>
+                  <Name>CollectedColor</Name>
+                  <Value>DimGray</Value>
                 </CustomProperty>
               </CustomProperties>
               <ValueAxisName>Primary</ValueAxisName>
@@ -1385,6 +1444,19 @@
               <VerticalAlign>Top</VerticalAlign>
             </Style>
           </ChartTitle>
+          <ChartTitle Name="Title1">
+            <Caption>="Total/yr" &amp; vbcrlf &amp; FormatNumber(Sum(Fields!length_ft.Value), 0,true,true,true) &amp; " ft"</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontFamily>Calibri</FontFamily>
+              <FontSize>18pt</FontSize>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+            <Position>BottomLeft</Position>
+            <DockToChartArea>Default</DockToChartArea>
+          </ChartTitle>
         </ChartTitles>
         <Palette>BrightPastel</Palette>
         <ChartBorderSkin>
@@ -1406,9 +1478,9 @@
         <PageBreak>
           <BreakLocation>End</BreakLocation>
         </PageBreak>
-        <Top>21in</Top>
-        <Height>7in</Height>
-        <Width>10.25in</Width>
+        <Top>24in</Top>
+        <Height>8in</Height>
+        <Width>10.5in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -1478,10 +1550,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>Red</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Condition")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1490,7 +1560,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1517,10 +1589,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>Orange</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Condition (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1529,7 +1599,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1540,7 +1612,7 @@
                 </ChartDataLabel>
               </ChartEmptyPoints>
               <ChartItemInLegend>
-                <LegendText>Condition(&gt;36 in)</LegendText>
+                <LegendText>Condition (&gt;36 in)</LegendText>
               </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
@@ -1559,10 +1631,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>Black</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Preventive Maintenance")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1571,7 +1641,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1601,10 +1673,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>Gray</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Preventive Maintenance (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1613,7 +1683,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1643,10 +1715,10 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>Lime</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Root Control High")</Color>
+                    <BackgroundGradientType>None</BackgroundGradientType>
+                    <BackgroundHatchType>None</BackgroundHatchType>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1655,7 +1727,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1682,10 +1756,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>SeaGreen</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Root Control High (&gt;15 in, &lt;=36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1694,7 +1766,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1724,10 +1798,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>DarkGreen</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Root Control High (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1736,7 +1808,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1766,10 +1840,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>Blue</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Root Control Medium")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1778,7 +1850,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1805,10 +1879,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>CornflowerBlue</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Root Control Medium (&gt;15 in, &lt;=36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1817,7 +1889,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1847,10 +1921,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>SlateBlue</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Root Control Medium (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -1859,7 +1931,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -1888,7 +1962,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Red</Color>
+                  <Color>=Code.GetColor("Condition")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -1906,7 +1980,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Condition)</LegendText>
+                  <LegendText>="Mean (Condition), " &amp; FormatCurrency(Avg(Fields!Condition.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -1926,7 +2000,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Orange</Color>
+                  <Color>=Code.GetColor("Condition (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -1944,7 +2018,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Condition (&gt;36 in))</LegendText>
+                  <LegendText>="Mean (Condition (&gt;36 in)), " &amp; FormatCurrency(Avg(Fields!ConditionLarge.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -1964,7 +2038,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Black</Color>
+                  <Color>=Code.GetColor("Preventive Maintenance")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -1982,7 +2056,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Preventive Maintenance)</LegendText>
+                  <LegendText>="Mean (Preventive Maintenance), " &amp; FormatCurrency(Avg(Fields!PreventiveMaintenance.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2002,7 +2076,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Gray</Color>
+                  <Color>=Code.GetColor("Preventive Maintenance (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2020,7 +2094,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Preventive Maintenance (&gt;36 in))</LegendText>
+                  <LegendText>="Mean (Preventive Maintenance (&gt;36 in)), " &amp; FormatCurrency(Avg(Fields!PreventiveMaintenanceLarge.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2040,7 +2114,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Lime</Color>
+                  <Color>=Code.GetColor("Root Control High")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2058,7 +2132,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control High)</LegendText>
+                  <LegendText>="Mean (Root Control High), " &amp; FormatCurrency(Avg(Fields!RootControlHigh.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2078,7 +2152,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>SeaGreen</Color>
+                  <Color>=Code.GetColor("Root Control High (&gt;15 in, &lt;=36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2096,7 +2170,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control High (&gt;15 in, &lt;=36 in))</LegendText>
+                  <LegendText>="Mean (Root Control High (&gt;15 in, &lt;=36 in)), " &amp; FormatCurrency(Avg(Fields!RootControlHighMidSize.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2116,7 +2190,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>DarkGreen</Color>
+                  <Color>=Code.GetColor("Root Control High (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2134,7 +2208,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control High (&gt;36 in))</LegendText>
+                  <LegendText>="Mean (Root Control High (&gt;36 in)), " &amp; FormatCurrency(Avg(Fields!RootControlHighLargeSize.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2154,7 +2228,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Blue</Color>
+                  <Color>=Code.GetColor("Root Control Medium")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2172,7 +2246,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control Medium)</LegendText>
+                  <LegendText>="Mean (Root Control Medium), " &amp; FormatCurrency(Avg(Fields!RootControlMedium.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2192,7 +2266,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>CornflowerBlue</Color>
+                  <Color>=Code.GetColor("Root Control Medium (&gt;15 in, &lt;=36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2210,7 +2284,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control Medium (&gt;15 in, &lt;=36 in))</LegendText>
+                  <LegendText>="Mean (Root Control Medium (&gt;15 in, &lt;=36 in)), " &amp; FormatCurrency(Avg(Fields!RootControlMediumMidSize.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2230,7 +2304,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>SlateBlue</Color>
+                  <Color>=Code.GetColor("Root Control Medium (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2248,7 +2322,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control Medium (&gt;36 in))</LegendText>
+                  <LegendText>="Mean (Root Control Medium (&gt;36 in)), " &amp; FormatCurrency(Avg(Fields!RootControlMediumLargeSize.Value),0,true,true,true)</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2275,7 +2349,7 @@
                   <Caption>FY</Caption>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
-                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
                 </ChartAxisTitle>
                 <Interval>1</Interval>
@@ -2357,7 +2431,7 @@
                 <ChartMajorGridLines>
                   <Style>
                     <Border>
-                      <Color>Gainsboro</Color>
+                      <Color>DimGray</Color>
                     </Border>
                   </Style>
                 </ChartMajorGridLines>
@@ -2420,11 +2494,14 @@
         <ChartLegends>
           <ChartLegend Name="Default">
             <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
+              <BackgroundColor>White</BackgroundColor>
+              <BackgroundGradientType>TopBottom</BackgroundGradientType>
+              <BackgroundGradientEndColor>#00ffffff</BackgroundGradientEndColor>
               <FontFamily>Calibri</FontFamily>
               <FontSize>8pt</FontSize>
               <FontWeight>Bold</FontWeight>
             </Style>
+            <DockToChartArea>Default</DockToChartArea>
             <ChartLegendTitle>
               <Caption />
               <Style>
@@ -2440,7 +2517,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Inspection ($)</Caption>
+            <Caption>="Inspection ($ over FY " &amp; Parameters!beginYear.Value &amp; "-" &amp; Parameters!endYear.Value &amp; ")"</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontFamily>Calibri</FontFamily>
@@ -2471,9 +2548,9 @@
         <PageBreak>
           <BreakLocation>End</BreakLocation>
         </PageBreak>
-        <Top>27.98611in</Top>
-        <Height>7in</Height>
-        <Width>10.25in</Width>
+        <Top>32in</Top>
+        <Height>8in</Height>
+        <Width>10.5in</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -2543,10 +2620,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>Red</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Condition")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2555,7 +2630,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2582,10 +2659,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>Orange</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Condition (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2594,7 +2669,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2604,6 +2681,9 @@
                   <Style />
                 </ChartDataLabel>
               </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Condition Large (&gt;36 in)</LegendText>
+              </ChartItemInLegend>
               <ValueAxisName>Primary</ValueAxisName>
               <CategoryAxisName>Primary</CategoryAxisName>
               <ChartSmartLabel>
@@ -2621,10 +2701,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>Black</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Preventive Maintenance")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2633,7 +2711,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2660,10 +2740,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>Gray</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Preventive Maintenance (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2672,7 +2750,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2702,10 +2782,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>Lime</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Root Control High")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2714,7 +2792,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2741,10 +2821,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>SeaGreen</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Root Control High (&gt;15 in, &lt;=36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2753,7 +2831,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2783,10 +2863,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>DarkGreen</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Root Control High (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2795,7 +2873,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2825,10 +2905,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>Blue</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Root Control Medium")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2837,7 +2915,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2864,10 +2944,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>CornflowerBlue</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Root Control Medium (&gt;15 in, &lt;=36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2876,7 +2954,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2906,10 +2986,8 @@
                     <Style />
                   </ChartDataLabel>
                   <Style>
-                    <Border>
-                      <Width>2pt</Width>
-                    </Border>
-                    <Color>SlateBlue</Color>
+                    <Border />
+                    <Color>=Code.GetColor("Root Control Medium (&gt;36 in)")</Color>
                   </Style>
                   <ChartMarker>
                     <Style />
@@ -2918,7 +2996,9 @@
                 </ChartDataPoint>
               </ChartDataPoints>
               <Type>Line</Type>
-              <Style />
+              <Style>
+                <ShadowOffset>0.5pt</ShadowOffset>
+              </Style>
               <ChartEmptyPoints>
                 <Style />
                 <ChartMarker>
@@ -2947,7 +3027,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Red</Color>
+                  <Color>=Code.GetColor("Condition")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -2965,7 +3045,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Condition)</LegendText>
+                  <LegendText>="Mean (Condition), " &amp; FormatNumber(Avg(Fields!Condition.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -2985,7 +3065,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Orange</Color>
+                  <Color>=Code.GetColor("Condition (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3003,7 +3083,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Condition (&gt;36 in))</LegendText>
+                  <LegendText>="Mean (Condition (&gt;36 in)), " &amp; FormatNumber(Avg(Fields!ConditionLarge.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3023,7 +3103,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Black</Color>
+                  <Color>=Code.GetColor("Preventive Maintenance")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3041,7 +3121,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Preventive Maintenance)</LegendText>
+                  <LegendText>="Mean (Preventive Maintenance), " &amp; FormatNumber(Avg(Fields!PreventiveMaintenance.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3061,7 +3141,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Gray</Color>
+                  <Color>=Code.GetColor("Preventive Maintenance (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3079,7 +3159,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Preventive Maintenance (&gt;36 in))</LegendText>
+                  <LegendText>="Mean (Preventive Maintenance (&gt;36 in)), " &amp; FormatNumber(Avg(Fields!PreventiveMaintenanceLarge.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3099,7 +3179,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Lime</Color>
+                  <Color>=Code.GetColor("Root Control High")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3117,7 +3197,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control High)</LegendText>
+                  <LegendText>="Mean (Root Control High), " &amp; FormatNumber(Avg(Fields!RootControlHigh.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3137,7 +3217,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>SeaGreen</Color>
+                  <Color>=Code.GetColor("Root Control High (&gt;15 in, &lt;=36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3155,7 +3235,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control High (&gt;15 in, &lt;=36 in))</LegendText>
+                  <LegendText>="Mean (Root Control High (&gt;15 in, &lt;=36 in)), " &amp; FormatNumber(Avg(Fields!RootControlHighMidSize.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3175,7 +3255,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>DarkGreen</Color>
+                  <Color>=Code.GetColor("Root Control High (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3193,7 +3273,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control High (&gt;36 in))</LegendText>
+                  <LegendText>="Mean (Root Control High (&gt;36 in)), " &amp; FormatNumber(Avg(Fields!RootControlHighLargeSize.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3213,7 +3293,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>Blue</Color>
+                  <Color>=Code.GetColor("Root Control Medium")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3231,7 +3311,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control Medium)</LegendText>
+                  <LegendText>="Mean (Root Control Medium), " &amp; FormatNumber(Avg(Fields!RootControlMedium.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3251,7 +3331,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>CornflowerBlue</Color>
+                  <Color>=Code.GetColor("Root Control Medium (&gt;15 in, &lt;=36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3269,7 +3349,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mov.Avg (Root Control Medium (&gt;15 in, &lt;=36 in))</LegendText>
+                  <LegendText>="Mean (Root Control Medium (&gt;15 in, &lt;=36 in)), " &amp; FormatNumber(Avg(Fields!RootControlMediumMidSize.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3280,15 +3360,7 @@
                 </ChartSmartLabel>
               </ChartSeries>
               <SourceChartSeriesName>RootControlMediumMidSize</SourceChartSeriesName>
-              <DerivedSeriesFormula>MovingAverage</DerivedSeriesFormula>
-              <ChartFormulaParameters>
-                <ChartFormulaParameter Name="Period">
-                  <Value>2</Value>
-                </ChartFormulaParameter>
-                <ChartFormulaParameter Name="StartFromFirst">
-                  <Value>False</Value>
-                </ChartFormulaParameter>
-              </ChartFormulaParameters>
+              <DerivedSeriesFormula>Mean</DerivedSeriesFormula>
             </ChartDerivedSeries>
             <ChartDerivedSeries>
               <ChartSeries Name="Series10">
@@ -3297,7 +3369,7 @@
                   <Border>
                     <Style>Dotted</Style>
                   </Border>
-                  <Color>SlateBlue</Color>
+                  <Color>=Code.GetColor("Root Control Medium (&gt;36 in)")</Color>
                 </Style>
                 <ChartMarker>
                   <Style />
@@ -3315,7 +3387,7 @@
                   </ChartDataLabel>
                 </ChartEmptyPoints>
                 <ChartItemInLegend>
-                  <LegendText>Mean (Root Control Medium (&gt;36 in))</LegendText>
+                  <LegendText>="Mean (Root Control Medium (&gt;36 in)), " &amp; FormatNumber(Avg(Fields!RootControlMediumLargeSize.Value),0,true,true,true) &amp; " ft"</LegendText>
                 </ChartItemInLegend>
                 <ChartAreaName>Default</ChartAreaName>
                 <ValueAxisName>Primary</ValueAxisName>
@@ -3342,7 +3414,7 @@
                   <Caption>FY</Caption>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
-                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
                 </ChartAxisTitle>
                 <Interval>1</Interval>
@@ -3418,13 +3490,13 @@
                   <Caption>feet</Caption>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
-                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
                 </ChartAxisTitle>
                 <ChartMajorGridLines>
                   <Style>
                     <Border>
-                      <Color>Gainsboro</Color>
+                      <Color>DimGray</Color>
                     </Border>
                   </Style>
                 </ChartMajorGridLines>
@@ -3487,11 +3559,14 @@
         <ChartLegends>
           <ChartLegend Name="Default">
             <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
+              <BackgroundColor>White</BackgroundColor>
+              <BackgroundGradientType>TopBottom</BackgroundGradientType>
+              <BackgroundGradientEndColor>#00ffffff</BackgroundGradientEndColor>
               <FontFamily>Calibri</FontFamily>
               <FontSize>8pt</FontSize>
               <FontWeight>Bold</FontWeight>
             </Style>
+            <DockToChartArea>Default</DockToChartArea>
             <ChartLegendTitle>
               <Caption />
               <Style>
@@ -3507,7 +3582,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Inspections (ft)</Caption>
+            <Caption>="Root Management (ft over FY " &amp; Parameters!beginYear.Value &amp; "-" &amp; Parameters!endYear.Value &amp; ")"</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontFamily>Calibri</FontFamily>
@@ -3535,9 +3610,9 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>ILTF</DataSetName>
-        <Top>35in</Top>
-        <Height>7in</Height>
-        <Width>10.25in</Width>
+        <Top>40in</Top>
+        <Height>8in</Height>
+        <Width>10.5in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -3548,8 +3623,98 @@
           <BackgroundGradientType>None</BackgroundGradientType>
         </Style>
       </Chart>
+      <Image Name="Image1">
+        <Source>Embedded</Source>
+        <Value>Inspection_large</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.2in</Top>
+        <Left>9.2in</Left>
+        <Height>1in</Height>
+        <Width>1in</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Image Name="Image2">
+        <Source>Embedded</Source>
+        <Value>Inspection_large</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>8.2in</Top>
+        <Left>9.2in</Left>
+        <Height>1in</Height>
+        <Width>1in</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Image Name="Image3">
+        <Source>Embedded</Source>
+        <Value>Inspection_large</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>16.2in</Top>
+        <Left>9.2in</Left>
+        <Height>1in</Height>
+        <Width>1in</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Image Name="Image4">
+        <Source>Embedded</Source>
+        <Value>Inspection_large</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>24.2in</Top>
+        <Left>9.2in</Left>
+        <Height>1in</Height>
+        <Width>1in</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Image Name="Image5">
+        <Source>Embedded</Source>
+        <Value>Inspection_large</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>32.2in</Top>
+        <Left>9.2in</Left>
+        <Height>1in</Height>
+        <Width>1in</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Image Name="Image6">
+        <Source>Embedded</Source>
+        <Value>Inspection_large</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>40.2in</Top>
+        <Left>9.2in</Left>
+        <Height>1in</Height>
+        <Width>1in</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
     </ReportItems>
-    <Height>42in</Height>
+    <Height>48in</Height>
     <Style />
   </Body>
   <ReportParameters>
@@ -3562,7 +3727,39 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
-  <Width>10.25in</Width>
+  <Code>Public Function GetColor(ByVal reportingCategory As String) As String
+
+Dim returnColor As String
+
+Select Case reportingCategory
+  Case "Condition" 
+    returnColor = "Red"
+  Case "Condition (&gt;36 in)"
+    returnColor = "Orange"
+  Case "Preventive Maintenance"
+    returnColor = "Blue"
+  Case "Preventive Maintenance (&gt;36 in)"
+    returnColor = "CornflowerBlue"
+  Case "Root Control High"
+    returnColor = "Lime"
+  Case "Root Control High (&gt;15 in, &lt;=36 in)"
+    returnColor = "SeaGreen"
+  Case "Root Control High (&gt;36 in)"
+    returnColor = "Green"
+  Case "Root Control Medium"
+    returnColor = "Fuchsia"
+  Case "Root Control Medium (&gt;15 in, &lt;=36 in)"
+    returnColor = "DarkViolet"
+  Case "Root Control Medium (&gt;36 in)"
+    returnColor = "Indigo"
+  Case Else
+    returnColor = "DimGray"
+End Select
+
+Return returnColor
+
+End Function</Code>
+  <Width>10.5in</Width>
   <Page>
     <PageHeight>8.5in</PageHeight>
     <PageWidth>11in</PageWidth>
@@ -3572,6 +3769,36 @@
     <BottomMargin>0.25in</BottomMargin>
     <Style />
   </Page>
+  <EmbeddedImages>
+    <EmbeddedImage Name="Inspection_large">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
   <rd:ReportID>e814e8dc-2bb3-4843-b73d-a7bf2f1e3ce8</rd:ReportID>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
 </Report>

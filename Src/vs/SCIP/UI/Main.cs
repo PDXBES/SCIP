@@ -34,31 +34,6 @@ namespace UI
       tabMain.SelectedTab = tabMain.Tabs[tabName];
     }
 
-    private void buttonEditIndividualDrivers_Click(object sender, EventArgs e)
-    {
-      tabMain.SelectedTab = tabMain.Tabs["IndividualDrivers"];
-    }
-
-    private void btnExportDatabases_Click(object sender, EventArgs e)
-    {
-      tabMain.SelectedTab = tabMain.Tabs["ExportDatabase"];
-    }
-
-    private void btnManageAlternatives_Click(object sender, EventArgs e)
-    {
-      tabMain.SelectedTab = tabMain.Tabs["Alternatives"];
-    }
-
-    private void buttonEditDriverTypes_Click(object sender, EventArgs e)
-    {
-      tabMain.SelectedTab = tabMain.Tabs["DriverTypes"];
-    }
-
-    private void btnCreateCharts_Click(object sender, EventArgs e)
-    {
-      tabMain.SelectedTab = tabMain.Tabs["Charts"];
-    }
-
     private void Main_Load(object sender, EventArgs e)
     {
       tabMain.SelectedTab = tabMain.Tabs["Home"];
@@ -89,6 +64,7 @@ namespace UI
         case "ExportDatabase":
         case "IndividualDrivers":
         case "Alternatives":
+        case "Model":
           if (!_pages.ContainsKey(e.Tab.Key))
             InitializePage(e.Tab.Key);
           break;

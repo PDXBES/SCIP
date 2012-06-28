@@ -15,4 +15,5 @@
   ,root_activity VARCHAR(10) NULL
   ,root_fiscal_year INT
   ,root_cost MONEY
+  ,alternative_id INT
 )

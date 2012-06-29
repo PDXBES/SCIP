@@ -16,7 +16,8 @@ BEGIN
   INSERT INTO MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE_FOR_PROCESSING
     SELECT compkey, activity_type, MIN(frequency_years) AS min_frequency_years
     FROM VW_ALL_DRIVERS
-    GROUP BY activity_type, compkey, alternative_id
+    WHERE alternative_id = @alternative_id
+    GROUP BY activity_type, compkey
 
   EXEC SP_STATUS_MESSAGE 'Preparing RANKED_MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE_FOR_PROCESSING'
   TRUNCATE TABLE RANKED_MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE_FOR_PROCESSING
@@ -25,14 +26,14 @@ BEGIN
         ,A.[activity_type]
         ,A.[min_frequency_years]
         ,MIN(B.[driver_rank]) AS min_driver_rank
-    FROM [MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE_FOR_PROCESSING] A INNER JOIN [VW_ALL_DRIVERS] B ON (A.compkey = B.compkey AND A.activity_type = B.activity_type AND A.min_frequency_years = B.frequency_years)
+    FROM [MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE_FOR_PROCESSING] A INNER JOIN [VW_ALL_DRIVERS] B ON (A.compkey = B.compkey AND A.activity_type = B.activity_type AND A.min_frequency_years = B.frequency_years AND B.alternative_id = @alternative_id)
     GROUP BY A.activity_type, A.compkey, A.min_frequency_years
       
   EXEC SP_STATUS_MESSAGE 'Preparing CONTROLLING_DRIVERS_FOR_PROCESSING'
   TRUNCATE TABLE CONTROLLING_DRIVERS_FOR_PROCESSING
   INSERT INTO CONTROLLING_DRIVERS_FOR_PROCESSING
     SELECT A.driver_id, A.compkey, A.length_ft, A.diamwidth_inches, A.height_inches, A.basin, A.district, A.driver_type, A.reporting_category, A.driver_type_id, driver_rank, A.activity_type, A.activity_type_id, A.cost_per_ft, A.frequency_years, A.updated_by, A.update_date, A.driver_cost
-    FROM VW_ALL_DRIVERS A INNER JOIN [VW_RANKED_MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE] B ON (A.compkey = B.compkey AND A.activity_type = B.activity_type AND A.frequency_years = B.min_frequency_years AND A.driver_rank = B.min_driver_rank AND A.alternative_id = B.alternative_id)
+    FROM VW_ALL_DRIVERS A INNER JOIN [RANKED_MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE_FOR_PROCESSING] B ON (A.compkey = B.compkey AND A.activity_type = B.activity_type AND A.frequency_years = B.min_frequency_years AND A.driver_rank = B.min_driver_rank AND A.alternative_id = @alternative_id)
 
   EXEC SP_STATUS_MESSAGE 'Preparing CONTROLLING_DRIVER_FREQUENCIES_FOR_PROCESSING'
   TRUNCATE TABLE CONTROLLING_DRIVER_FREQUENCIES_FOR_PROCESSING
@@ -115,10 +116,9 @@ BEGIN
   EXEC SP_STATUS_MESSAGE 'Inserting backlog condition inspections'
 
   INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
-    SELECT A.compkey, A.driver_id, @currentDate, A.driver_cost, A.activity_type_id, @alternative_id AS alternative_id
+    SELECT A.compkey, A.driver_id, @currentDate, A.driver_cost, A.activity_type_id, @alternative_id
     FROM (CONTROLLING_DRIVERS_FOR_PROCESSING A INNER JOIN LAST_ACTIVITY_DATES_FOR_PROCESSING B ON (A.compkey = B.compkey))
-    WHERE (A.frequency_years = 0) AND 
-      (A.activity_type = 'Inspection')
+    WHERE (A.frequency_years = 0) AND (A.activity_type = 'Inspection')
   SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records for inspection'
   EXEC SP_STATUS_MESSAGE @statusMessage
 

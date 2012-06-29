@@ -98,14 +98,14 @@
       ultraGridColumn18.Header.Caption = "Description";
       ultraGridColumn18.Header.VisiblePosition = 3;
       ultraGridColumn19.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
-      ultraGridColumn19.Header.VisiblePosition = 4;
+      ultraGridColumn19.Header.VisiblePosition = 6;
       ultraGridColumn20.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
       ultraGridColumn20.Header.Caption = "Hansen activity code";
-      ultraGridColumn20.Header.VisiblePosition = 5;
+      ultraGridColumn20.Header.VisiblePosition = 7;
       ultraGridColumn21.Header.Caption = "default cost per ft";
-      ultraGridColumn21.Header.VisiblePosition = 6;
+      ultraGridColumn21.Header.VisiblePosition = 4;
       ultraGridColumn22.Header.Caption = "default frequency years";
-      ultraGridColumn22.Header.VisiblePosition = 7;
+      ultraGridColumn22.Header.VisiblePosition = 5;
       ultraGridColumn23.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
       ultraGridColumn23.Header.VisiblePosition = 8;
       ultraGridColumn24.CellActivation = Infragistics.Win.UltraWinGrid.Activation.Disabled;
@@ -123,6 +123,9 @@
             ultraGridColumn23,
             ultraGridColumn24});
       this.ultraGridDriverTypes.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
+      this.ultraGridDriverTypes.DisplayLayout.Override.AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
+      this.ultraGridDriverTypes.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
+      this.ultraGridDriverTypes.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       gridBagConstraint6.Fill = Infragistics.Win.Layout.FillType.Both;
       gridBagConstraint6.Insets.Bottom = 4;
       gridBagConstraint6.OriginX = 0;
@@ -278,7 +281,6 @@
       this.Controls.Add(this.ultraGridBagLayoutPanel1);
       this.Name = "DriverTypesPage";
       this.Text = "Driver Types";
-      
       this.Load += new System.EventHandler(this.FormDriverTypes_Load);
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridDriverTypes)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.dRIVERTYPESUPDATEBindingSource)).EndInit();

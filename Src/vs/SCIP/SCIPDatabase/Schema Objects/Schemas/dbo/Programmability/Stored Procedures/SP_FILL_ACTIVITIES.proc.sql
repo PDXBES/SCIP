@@ -91,10 +91,10 @@ BEGIN
     record_count INT
   )
 
+  EXEC SP_STATUS_MESSAGE 'Building frequencies table'
   INSERT INTO @frequenciesTable
     SELECT frequency_years, COUNT(*)
-    FROM VW_CONTROLLING_DRIVERS
-    WHERE alternative_id = @alternative_id
+    FROM CONTROLLING_DRIVERS_FOR_PROCESSING
     GROUP BY frequency_years
 
   DECLARE @InsertActivities TABLE

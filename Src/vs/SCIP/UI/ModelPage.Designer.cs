@@ -268,6 +268,7 @@
       this.cmbAlternatives.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
       this.cmbAlternatives.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
       this.cmbAlternatives.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
+      this.cmbAlternatives.DisplayMember = "description";
       gridBagConstraint7.Fill = Infragistics.Win.Layout.FillType.Both;
       gridBagConstraint7.Insets.Bottom = 8;
       gridBagConstraint7.OriginX = 0;
@@ -280,6 +281,7 @@
       this.cmbAlternatives.Size = new System.Drawing.Size(485, 25);
       this.cmbAlternatives.TabIndex = 3;
       this.cmbAlternatives.Text = "ultraCombo1";
+      this.cmbAlternatives.ValueMember = "alternative_id";
       // 
       // alternativesBindingSource
       // 

@@ -189,6 +189,7 @@
       this.ultraComboAlternative.TabIndex = 1;
       this.ultraComboAlternative.Text = "Select Alternative";
       this.ultraComboAlternative.ValueMember = "alternative_id";
+      this.ultraComboAlternative.BeforeDropDown += new System.ComponentModel.CancelEventHandler(this.ultraComboAlternative_BeforeDropDown);
       this.ultraComboAlternative.ValueChanged += new System.EventHandler(this.ComboAlternativeChanged);
       // 
       // ultraButtonUpdateDriverTypes
@@ -277,6 +278,7 @@
       this.Controls.Add(this.ultraGridBagLayoutPanel1);
       this.Name = "DriverTypesPage";
       this.Text = "Driver Types";
+      
       this.Load += new System.EventHandler(this.FormDriverTypes_Load);
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridDriverTypes)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.dRIVERTYPESUPDATEBindingSource)).EndInit();

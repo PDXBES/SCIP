@@ -16,18 +16,16 @@ namespace UI
             InitializeComponent();
         }
 
+        private void UpdateTableAdapters()
+        {
+          this.dRIVER_TYPES_UPDATETableAdapter.Fill(this.sCIPDataSet.DRIVER_TYPES_UPDATE);
+          this.aLTERNATIVESTableAdapter.Fill(this.sCIPDataSet.ALTERNATIVES);
+        }
+
         private void FormDriverTypes_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sCIPDataSet.DRIVER_TYPES_UPDATE' table. You can move, or remove it, as needed.
-            this.dRIVER_TYPES_UPDATETableAdapter.Fill(this.sCIPDataSet.DRIVER_TYPES_UPDATE);
-            // TODO: This line of code loads data into the 'sCIPDataSet.ALTERNATIVES' table. You can move, or remove it, as needed.
-            this.aLTERNATIVESTableAdapter.Fill(this.sCIPDataSet.ALTERNATIVES);
-            // TODO: This line of code loads data into the 'sCIPDataSet.DRIVER_TYPES_UPDATE' table. You can move, or remove it, as needed.
-            this.dRIVER_TYPES_UPDATETableAdapter.Fill(this.sCIPDataSet.DRIVER_TYPES_UPDATE);
-            // TODO: This line of code loads data into the 'sCIPDataSet.DRIVER_TYPES' table. You can move, or remove it, as needed.
-            //this.dRIVER_TYPESTableAdapter.Fill(this.sCIPDataSet.DRIVER_TYPES);
-
-            ultraComboAlternative.Value = this.sCIPDataSet.ALTERNATIVES[0][0];
+          UpdateTableAdapters();
+          ultraComboAlternative.Value = this.sCIPDataSet.ALTERNATIVES[0][0];
         }
 
         private void ComboAlternativeChanged(object sender, EventArgs e)
@@ -81,6 +79,11 @@ namespace UI
             {
                 MessageBox.Show("Invalid alternative!");
             }
+        }
+
+        private void ultraComboAlternative_BeforeDropDown(object sender, CancelEventArgs e)
+        {
+          UpdateTableAdapters();
         }
     }
 }

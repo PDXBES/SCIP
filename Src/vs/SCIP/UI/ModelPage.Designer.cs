@@ -29,6 +29,7 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint2 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint3 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
@@ -57,8 +58,8 @@
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint9 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint10 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint11 = new Infragistics.Win.Layout.GridBagConstraint();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
       this.ultraGridBagLayoutPanel1 = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
+      this.chkOverrideCleaningPMWithTractive = new Infragistics.Win.UltraWinEditors.UltraCheckEditor();
       this.activityIndicator = new Infragistics.Win.UltraActivityIndicator.UltraActivityIndicator();
       this.txtMessages = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
       this.chkFillActivities = new Infragistics.Win.UltraWinEditors.UltraCheckEditor();
@@ -73,9 +74,9 @@
       this.btnExecuteAll = new Infragistics.Win.Misc.UltraButton();
       this.alternativesTableAdapter = new UI.SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter();
       this.bkgWorker = new System.ComponentModel.BackgroundWorker();
-      this.chkOverrideCleaningPMWithTractive = new Infragistics.Win.UltraWinEditors.UltraCheckEditor();
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel1)).BeginInit();
       this.ultraGridBagLayoutPanel1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.chkOverrideCleaningPMWithTractive)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.txtMessages)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.chkFillActivities)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.chkFillDrivers)).BeginInit();
@@ -83,7 +84,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.cmbAlternatives)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.alternativesBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.scipDataSet)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chkOverrideCleaningPMWithTractive)).BeginInit();
       this.SuspendLayout();
       // 
       // ultraGridBagLayoutPanel1
@@ -104,6 +104,21 @@
       this.ultraGridBagLayoutPanel1.Name = "ultraGridBagLayoutPanel1";
       this.ultraGridBagLayoutPanel1.Size = new System.Drawing.Size(485, 428);
       this.ultraGridBagLayoutPanel1.TabIndex = 0;
+      // 
+      // chkOverrideCleaningPMWithTractive
+      // 
+      gridBagConstraint1.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint1.Insets.Bottom = 8;
+      gridBagConstraint1.OriginX = 0;
+      gridBagConstraint1.OriginY = 7;
+      gridBagConstraint1.SpanX = 2;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.chkOverrideCleaningPMWithTractive, gridBagConstraint1);
+      this.chkOverrideCleaningPMWithTractive.Location = new System.Drawing.Point(0, 206);
+      this.chkOverrideCleaningPMWithTractive.Name = "chkOverrideCleaningPMWithTractive";
+      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.chkOverrideCleaningPMWithTractive, new System.Drawing.Size(120, 20));
+      this.chkOverrideCleaningPMWithTractive.Size = new System.Drawing.Size(485, 20);
+      this.chkOverrideCleaningPMWithTractive.TabIndex = 13;
+      this.chkOverrideCleaningPMWithTractive.Text = "Override cleaning PM with tractive (small sizes)";
       // 
       // activityIndicator
       // 
@@ -288,6 +303,7 @@
       this.cmbAlternatives.TabIndex = 3;
       this.cmbAlternatives.Text = "ultraCombo1";
       this.cmbAlternatives.ValueMember = "alternative_id";
+      this.cmbAlternatives.BeforeDropDown += new System.ComponentModel.CancelEventHandler(this.cmbAlternatives_BeforeDropDown);
       // 
       // alternativesBindingSource
       // 
@@ -358,21 +374,6 @@
       this.bkgWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bkgWorker_ProgressChanged);
       this.bkgWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bkgWorker_RunWorkerCompleted);
       // 
-      // chkOverrideCleaningPMWithTractive
-      // 
-      gridBagConstraint1.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint1.Insets.Bottom = 8;
-      gridBagConstraint1.OriginX = 0;
-      gridBagConstraint1.OriginY = 7;
-      gridBagConstraint1.SpanX = 2;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.chkOverrideCleaningPMWithTractive, gridBagConstraint1);
-      this.chkOverrideCleaningPMWithTractive.Location = new System.Drawing.Point(0, 206);
-      this.chkOverrideCleaningPMWithTractive.Name = "chkOverrideCleaningPMWithTractive";
-      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.chkOverrideCleaningPMWithTractive, new System.Drawing.Size(120, 20));
-      this.chkOverrideCleaningPMWithTractive.Size = new System.Drawing.Size(485, 20);
-      this.chkOverrideCleaningPMWithTractive.TabIndex = 13;
-      this.chkOverrideCleaningPMWithTractive.Text = "Override cleaning PM with tractive (small sizes)";
-      // 
       // ModelPage
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,6 +384,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel1)).EndInit();
       this.ultraGridBagLayoutPanel1.ResumeLayout(false);
       this.ultraGridBagLayoutPanel1.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.chkOverrideCleaningPMWithTractive)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.txtMessages)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.chkFillActivities)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.chkFillDrivers)).EndInit();
@@ -390,7 +392,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.cmbAlternatives)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.alternativesBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.scipDataSet)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.chkOverrideCleaningPMWithTractive)).EndInit();
       this.ResumeLayout(false);
 
     }

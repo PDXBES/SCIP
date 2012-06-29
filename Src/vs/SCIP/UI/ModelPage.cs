@@ -23,10 +23,15 @@ namespace UI
       public bool OverrideCleaningPMWithTractive;
     }
 
+    private void ActivateTableAdapters()
+    {
+      alternativesTableAdapter.Fill(scipDataSet.ALTERNATIVES);
+    }
+
     public ModelPage()
     {
       InitializeComponent();
-      alternativesTableAdapter.Fill(scipDataSet.ALTERNATIVES);
+      ActivateTableAdapters();
       cmbAlternatives.Value = scipDataSet.ALTERNATIVES[0][0];
     }
 
@@ -154,6 +159,11 @@ namespace UI
       activityIndicator.Stop();
       activityIndicator.ResetAnimation();
       EnableUI(true);
+    }
+
+    private void cmbAlternatives_BeforeDropDown(object sender, CancelEventArgs e)
+    {
+      ActivateTableAdapters();
     }
   }
 }

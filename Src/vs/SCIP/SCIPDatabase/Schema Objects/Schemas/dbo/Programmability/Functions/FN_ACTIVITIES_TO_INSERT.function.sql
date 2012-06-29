@@ -12,16 +12,14 @@ RETURNS @returntable TABLE
   driver_id int,
   activity_date datetime,
   cost money,
-  activity_type_id int,
-  alternative_id int
+  activity_type_id int
 )
 AS
 BEGIN
   WITH FrequencyTable(frequency_years) AS
   (
     SELECT frequency_years
-    FROM VW_CONTROLLING_DRIVERS
-    WHERE alternative_id = @alternative_id
+    FROM CONTROLLING_DRIVERS_FOR_PROCESSING
     GROUP BY activity_type_id, frequency_years
   )
 	INSERT @returntable
@@ -36,8 +34,7 @@ BEGIN
       END
       , B.value), 
     C.driver_cost, 
-    C.activity_type_id, 
-    C.alternative_id
+    C.activity_type_id 
   FROM
     (
       (SELECT DISTINCT *
@@ -47,11 +44,10 @@ BEGIN
             A.frequency_years, A.frequency_years + @numYears - 1)
       WHERE A.frequency_years > 0) B 
         INNER JOIN
-          VW_CONTROLLING_DRIVERS C ON (B.frequency_years = C.frequency_years)
+          CONTROLLING_DRIVERS_FOR_PROCESSING C ON (B.frequency_years = C.frequency_years)
     ) INNER JOIN LAST_ACTIVITY_DATES_FOR_PROCESSING D ON (C.compkey = D.compkey)
   WHERE  
-    (C.activity_type = @activity_type) AND 
-    (C.alternative_id = @alternative_id)
+    (C.activity_type = @activity_type)  
   ORDER BY value
 
 	RETURN 

@@ -38,6 +38,7 @@
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint4 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint3 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint5 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint2 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
       Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand2 = new Infragistics.Win.UltraWinGrid.UltraGridBand("ASSET_SETS", -1);
@@ -73,7 +74,6 @@
       Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
       Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
       Infragistics.Win.Appearance appearance24 = new Infragistics.Win.Appearance();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
       this.gridAlternatives = new Infragistics.Win.UltraWinGrid.UltraGrid();
       this.aLTERNATIVESBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.sCIPDataSet = new UI.SCIPDataSet();
@@ -81,6 +81,7 @@
       this.btnDiscardChanges = new Infragistics.Win.Misc.UltraButton();
       this.pnlAlternativesGrid = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
       this.pnlActionButtons = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
+      this.btnResetDriverTypes = new Infragistics.Win.Misc.UltraButton();
       this.btnEditAssetSets = new Infragistics.Win.Misc.UltraDropDownButton();
       this.popupAssetSets = new Infragistics.Win.Misc.UltraPopupControlContainer(this.components);
       this.gridAssetSets = new Infragistics.Win.UltraWinGrid.UltraGrid();
@@ -89,7 +90,6 @@
       this.lstAssetSets = new Infragistics.Win.UltraWinGrid.UltraDropDown();
       this.aLTERNATIVESTableAdapter = new UI.SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter();
       this.aSSET_SETSTableAdapter = new UI.SCIPDataSetTableAdapters.ASSET_SETSTableAdapter();
-      this.btnResetDriverTypes = new Infragistics.Win.Misc.UltraButton();
       ((System.ComponentModel.ISupportInitialize)(this.gridAlternatives)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.sCIPDataSet)).BeginInit();
@@ -109,14 +109,15 @@
       this.gridAlternatives.DisplayLayout.AddNewBox.Hidden = false;
       this.gridAlternatives.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns;
       ultraGridColumn1.Header.VisiblePosition = 0;
-      ultraGridColumn1.Width = 158;
+      ultraGridColumn1.Hidden = true;
+      ultraGridColumn1.Width = 155;
       ultraGridColumn2.Header.VisiblePosition = 1;
-      ultraGridColumn2.Width = 202;
+      ultraGridColumn2.Width = 262;
       ultraGridColumn3.Header.VisiblePosition = 2;
-      ultraGridColumn3.Width = 196;
+      ultraGridColumn3.Width = 253;
       ultraGridColumn4.Header.Caption = "asset set";
       ultraGridColumn4.Header.VisiblePosition = 3;
-      ultraGridColumn4.Width = 147;
+      ultraGridColumn4.Width = 188;
       ultraGridBand1.Columns.AddRange(new object[] {
             ultraGridColumn1,
             ultraGridColumn2,
@@ -205,6 +206,20 @@
       this.pnlAlternativesGrid.SetPreferredSize(this.pnlActionButtons, new System.Drawing.Size(724, 28));
       this.pnlActionButtons.Size = new System.Drawing.Size(724, 28);
       this.pnlActionButtons.TabIndex = 1;
+      // 
+      // btnResetDriverTypes
+      // 
+      gridBagConstraint1.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint1.OriginX = 1;
+      gridBagConstraint1.OriginY = 0;
+      this.pnlActionButtons.SetGridBagConstraint(this.btnResetDriverTypes, gridBagConstraint1);
+      this.btnResetDriverTypes.Location = new System.Drawing.Point(144, 0);
+      this.btnResetDriverTypes.Name = "btnResetDriverTypes";
+      this.pnlActionButtons.SetPreferredSize(this.btnResetDriverTypes, new System.Drawing.Size(120, 23));
+      this.btnResetDriverTypes.Size = new System.Drawing.Size(120, 28);
+      this.btnResetDriverTypes.TabIndex = 4;
+      this.btnResetDriverTypes.Text = "Reset Driver Types";
+      this.btnResetDriverTypes.Click += new System.EventHandler(this.btnResetDriverTypes_Click);
       // 
       // btnEditAssetSets
       // 
@@ -416,20 +431,6 @@
       // aSSET_SETSTableAdapter
       // 
       this.aSSET_SETSTableAdapter.ClearBeforeFill = true;
-      // 
-      // btnResetDriverTypes
-      // 
-      gridBagConstraint1.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint1.OriginX = 1;
-      gridBagConstraint1.OriginY = 0;
-      this.pnlActionButtons.SetGridBagConstraint(this.btnResetDriverTypes, gridBagConstraint1);
-      this.btnResetDriverTypes.Location = new System.Drawing.Point(144, 0);
-      this.btnResetDriverTypes.Name = "btnResetDriverTypes";
-      this.pnlActionButtons.SetPreferredSize(this.btnResetDriverTypes, new System.Drawing.Size(120, 23));
-      this.btnResetDriverTypes.Size = new System.Drawing.Size(120, 28);
-      this.btnResetDriverTypes.TabIndex = 4;
-      this.btnResetDriverTypes.Text = "Reset Driver Types";
-      this.btnResetDriverTypes.Click += new System.EventHandler(this.btnResetDriverTypes_Click);
       // 
       // AlternativesPage
       // 

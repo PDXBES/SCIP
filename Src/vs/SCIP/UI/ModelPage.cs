@@ -20,6 +20,7 @@ namespace UI
       public int AlternativeId;
       public bool FillDrivers;
       public bool FillActivities;
+      public bool OverrideCleaningPMWithTractive;
     }
 
     public ModelPage()
@@ -38,6 +39,7 @@ namespace UI
       btnExecuteFillDriversActivities.Enabled = enabled;
       chkFillDrivers.Enabled = enabled;
       chkFillActivities.Enabled = enabled;
+      chkOverrideCleaningPMWithTractive.Enabled = enabled;
     }
 
     private void ModelPage_Load(object sender, EventArgs e)
@@ -59,7 +61,8 @@ namespace UI
       {
         AlternativeId = alternativeId,
         FillDrivers = chkFillDrivers.Checked,
-        FillActivities = chkFillActivities.Checked
+        FillActivities = chkFillActivities.Checked,
+        OverrideCleaningPMWithTractive = chkOverrideCleaningPMWithTractive.Checked
       };
 
       EnableUI(false);
@@ -87,6 +90,8 @@ namespace UI
       };
       fillDriversCommand.Parameters.Add("@alternative_id", SqlDbType.Int).Value = 
         runArgs.AlternativeId;
+      fillDriversCommand.Parameters.Add("@override_cleaning_PM_for_small_size_low_tractive_force",
+        SqlDbType.Bit).Value = runArgs.OverrideCleaningPMWithTractive;
 
       var fillActivitiesCommand = new SqlCommand("SP_FILL_ACTIVITIES", connection)
       {

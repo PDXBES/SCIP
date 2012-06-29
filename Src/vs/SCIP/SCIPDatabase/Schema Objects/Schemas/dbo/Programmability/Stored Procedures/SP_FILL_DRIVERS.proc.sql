@@ -1,6 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[SP_FILL_DRIVERS]
 (
-  @alternative_id INT = 1
+  @alternative_id INT = 1,
+  @override_cleaning_PM_for_small_size_low_tractive_force BIT = 'FALSE'
 )
 AS
 BEGIN
@@ -37,6 +38,10 @@ BEGIN
   SELECT @asset_set_id = asset_set_id
   FROM ALTERNATIVES
   WHERE alternative_id = @alternative_id
+
+  ------------------------------------------------------------------------------------------------
+  -- Create Lists
+  ------------------------------------------------------------------------------------------------
 
   --Create a list of every compkey
   EXEC SP_STATUS_MESSAGE 'Creating list of all compkeys'
@@ -162,7 +167,14 @@ BEGIN
   FROM DRIVERS_SMALL_TRACTIVE_COMPKEYS_FOR_PROCESSING A INNER JOIN ASSETS B ON 
     ((A.compkey = B.COMPKEY AND B.unit_type NOT IN ('SAINT', 'SAML')) AND (B.asset_set_id = @asset_set_id))
 
+  ------------------------------------------------------------------------------------------------
   -- Filling Routine
+  ------------------------------------------------------------------------------------------------
+
+    ----------------------------------------------------------------------------------------------
+    -- Inspection Activities
+    ----------------------------------------------------------------------------------------------
+
     -- Insert normal inspection PM drivers
     EXEC SP_STATUS_MESSAGE 'Inserting normal inspection PM drivers'
     INSERT INTO [DRIVERS] (compkey, driver_type_id, update_date, updated_by, alternative_id)
@@ -286,7 +298,9 @@ BEGIN
     SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records'
     EXEC SP_STATUS_MESSAGE @statusMessage
 
-   ---------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------------------
+    -- Root Management Activities
+    ----------------------------------------------------------------------------------------------
 
     -- Insert H large root drivers
 	--@LargeRootXORLargePipeCompKeys
@@ -360,7 +374,9 @@ BEGIN
     SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records'
     EXEC SP_STATUS_MESSAGE @statusMessage
 
-    ---------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------------------
+    -- Cleaning Activities
+    ----------------------------------------------------------------------------------------------
 
     -- Insert normal cleaning PM drivers
     EXEC SP_STATUS_MESSAGE 'Inserting normal cleaning PM drivers (non-large)'
@@ -508,6 +524,30 @@ BEGIN
       WHERE C.grade = 'VL' AND D.name = 'TractiveForcesVLLarge' AND D.alternative_id = @alternative_id
     SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records'
     EXEC SP_STATUS_MESSAGE @statusMessage
+
+    -- Delete PM cleanings with tractive forces L or VL, cmb or san, non-large
+
+    IF @override_cleaning_PM_for_small_size_low_tractive_force = 'TRUE'
+    BEGIN
+      DECLARE @PMFasterDriverTypeId INT
+      SELECT @PMFasterDriverTypeId = driver_type_id FROM DRIVER_TYPES WHERE name = 'PMFaster' AND alternative_id = @alternative_id
+      DECLARE @SanTFLDriverTypeID INT
+      SELECT @SanTFLDriverTypeID = driver_type_id FROM DRIVER_TYPES WHERE name = 'TractiveForcesSanL' AND alternative_id = @alternative_id
+      DECLARE @SanTFVLDriverTypeID INT
+      SELECT @SanTFVLDriverTypeID = driver_type_id FROM DRIVER_TYPES WHERE name = 'TractiveForcesSanVL' AND alternative_id = @alternative_id
+      DECLARE @ComboTFLDriverTypeID INT
+      SELECT @ComboTFLDriverTypeID = driver_type_id FROM DRIVER_TYPES WHERE name = 'TractiveForcesCmbL' AND alternative_id = @alternative_id
+      DECLARE @ComboTFVLDriverTypeID INT
+      SELECT @ComboTFVLDriverTypeID = driver_type_id FROM DRIVER_TYPES WHERE name = 'TractiveForcesCmbVL' AND alternative_id = @alternative_id
+
+      DELETE FROM DRIVERS WHERE (alternative_id = @alternative_id) AND (compkey in (SELECT A.compkey FROM DRIVERS_SMALL_TRACTIVE_COMBO_COMPKEYS_FOR_PROCESSING A INNER JOIN DRIVERS B ON (A.compkey = B.compkey AND B.alternative_id = @alternative_id AND B.driver_type_id IN (@ComboTFLDriverTypeID, @ComboTFVLDriverTypeID)))) AND driver_type_id = @PMFasterDriverTypeId
+      SET @statusMessage = 'Deleted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' combo cleaning records - override PM with tractive'
+      EXEC SP_STATUS_MESSAGE @statusMessage
+
+      DELETE FROM DRIVERS WHERE (alternative_id = @alternative_id) AND (compkey in (SELECT A.compkey FROM DRIVERS_SMALL_TRACTIVE_SANITARY_COMPKEYS_FOR_PROCESSING A INNER JOIN DRIVERS B ON (A.compkey = B.compkey AND B.alternative_id = @alternative_id AND B.driver_type_id IN (@SanTFLDriverTypeID, @SanTFVLDriverTypeID)))) AND driver_type_id = @PMFasterDriverTypeId
+      SET @statusMessage = 'Deleted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' sanitary cleaning records - override PM with tractive'
+      EXEC SP_STATUS_MESSAGE @statusMessage
+    END
 
     -- Delete Grade 5 Cleanings
     EXEC SP_STATUS_MESSAGE 'Deleting Grade 5 Cleanings'

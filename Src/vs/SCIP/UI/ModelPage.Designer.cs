@@ -29,13 +29,13 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint2 = new Infragistics.Win.Layout.GridBagConstraint();
-      Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint3 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint4 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint5 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint6 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint7 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
       Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("ALTERNATIVES", -1);
       Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
@@ -53,10 +53,11 @@
       Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
       Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
       Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
-      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint7 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint8 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint9 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint10 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint11 = new Infragistics.Win.Layout.GridBagConstraint();
+      Infragistics.Win.Layout.GridBagConstraint gridBagConstraint1 = new Infragistics.Win.Layout.GridBagConstraint();
       this.ultraGridBagLayoutPanel1 = new Infragistics.Win.Misc.UltraGridBagLayoutPanel();
       this.activityIndicator = new Infragistics.Win.UltraActivityIndicator.UltraActivityIndicator();
       this.txtMessages = new Infragistics.Win.UltraWinEditors.UltraTextEditor();
@@ -72,6 +73,7 @@
       this.btnExecuteAll = new Infragistics.Win.Misc.UltraButton();
       this.alternativesTableAdapter = new UI.SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter();
       this.bkgWorker = new System.ComponentModel.BackgroundWorker();
+      this.chkOverrideCleaningPMWithTractive = new Infragistics.Win.UltraWinEditors.UltraCheckEditor();
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel1)).BeginInit();
       this.ultraGridBagLayoutPanel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.txtMessages)).BeginInit();
@@ -81,10 +83,12 @@
       ((System.ComponentModel.ISupportInitialize)(this.cmbAlternatives)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.alternativesBindingSource)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.scipDataSet)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chkOverrideCleaningPMWithTractive)).BeginInit();
       this.SuspendLayout();
       // 
       // ultraGridBagLayoutPanel1
       // 
+      this.ultraGridBagLayoutPanel1.Controls.Add(this.chkOverrideCleaningPMWithTractive);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.activityIndicator);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.txtMessages);
       this.ultraGridBagLayoutPanel1.Controls.Add(this.chkFillActivities);
@@ -105,13 +109,13 @@
       // 
       this.activityIndicator.AnimationSpeed = 20;
       this.activityIndicator.CausesValidation = true;
-      gridBagConstraint1.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint1.Insets.Bottom = 8;
-      gridBagConstraint1.OriginX = 0;
-      gridBagConstraint1.OriginY = 7;
-      gridBagConstraint1.SpanX = 2;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.activityIndicator, gridBagConstraint1);
-      this.activityIndicator.Location = new System.Drawing.Point(0, 210);
+      gridBagConstraint2.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint2.Insets.Bottom = 8;
+      gridBagConstraint2.OriginX = 0;
+      gridBagConstraint2.OriginY = 8;
+      gridBagConstraint2.SpanX = 2;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.activityIndicator, gridBagConstraint2);
+      this.activityIndicator.Location = new System.Drawing.Point(0, 234);
       this.activityIndicator.MarqueeAnimationStyle = Infragistics.Win.UltraActivityIndicator.MarqueeAnimationStyle.BounceBack;
       this.activityIndicator.Name = "activityIndicator";
       this.ultraGridBagLayoutPanel1.SetPreferredSize(this.activityIndicator, new System.Drawing.Size(100, 23));
@@ -121,13 +125,13 @@
       // 
       // txtMessages
       // 
-      gridBagConstraint2.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint2.OriginX = 0;
-      gridBagConstraint2.OriginY = 8;
-      gridBagConstraint2.SpanX = 2;
-      gridBagConstraint2.WeightY = 1F;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.txtMessages, gridBagConstraint2);
-      this.txtMessages.Location = new System.Drawing.Point(0, 241);
+      gridBagConstraint3.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint3.OriginX = 0;
+      gridBagConstraint3.OriginY = 9;
+      gridBagConstraint3.SpanX = 2;
+      gridBagConstraint3.WeightY = 1F;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.txtMessages, gridBagConstraint3);
+      this.txtMessages.Location = new System.Drawing.Point(0, 265);
       this.txtMessages.Multiline = true;
       this.txtMessages.Name = "txtMessages";
       this.txtMessages.NullText = "Waiting for activity.";
@@ -136,22 +140,23 @@
       this.txtMessages.NullTextAppearance = appearance1;
       this.ultraGridBagLayoutPanel1.SetPreferredSize(this.txtMessages, new System.Drawing.Size(100, 24));
       this.txtMessages.Scrollbars = System.Windows.Forms.ScrollBars.Vertical;
-      this.txtMessages.Size = new System.Drawing.Size(485, 187);
+      this.txtMessages.Size = new System.Drawing.Size(485, 163);
       this.txtMessages.TabIndex = 11;
       // 
       // chkFillActivities
       // 
       this.chkFillActivities.Checked = true;
       this.chkFillActivities.CheckState = System.Windows.Forms.CheckState.Checked;
-      gridBagConstraint3.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint3.Insets.Bottom = 8;
-      gridBagConstraint3.OriginX = 0;
-      gridBagConstraint3.OriginY = 6;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.chkFillActivities, gridBagConstraint3);
+      gridBagConstraint4.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint4.Insets.Bottom = 4;
+      gridBagConstraint4.OriginX = 0;
+      gridBagConstraint4.OriginY = 6;
+      gridBagConstraint4.SpanX = 2;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.chkFillActivities, gridBagConstraint4);
       this.chkFillActivities.Location = new System.Drawing.Point(0, 182);
       this.chkFillActivities.Name = "chkFillActivities";
       this.ultraGridBagLayoutPanel1.SetPreferredSize(this.chkFillActivities, new System.Drawing.Size(120, 20));
-      this.chkFillActivities.Size = new System.Drawing.Size(120, 20);
+      this.chkFillActivities.Size = new System.Drawing.Size(485, 20);
       this.chkFillActivities.TabIndex = 7;
       this.chkFillActivities.Text = "Fill activities";
       // 
@@ -159,25 +164,26 @@
       // 
       this.chkFillDrivers.Checked = true;
       this.chkFillDrivers.CheckState = System.Windows.Forms.CheckState.Checked;
-      gridBagConstraint4.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint4.Insets.Bottom = 4;
-      gridBagConstraint4.OriginX = 0;
-      gridBagConstraint4.OriginY = 5;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.chkFillDrivers, gridBagConstraint4);
+      gridBagConstraint5.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint5.Insets.Bottom = 4;
+      gridBagConstraint5.OriginX = 0;
+      gridBagConstraint5.OriginY = 5;
+      gridBagConstraint5.SpanX = 2;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.chkFillDrivers, gridBagConstraint5);
       this.chkFillDrivers.Location = new System.Drawing.Point(0, 158);
       this.chkFillDrivers.Name = "chkFillDrivers";
       this.ultraGridBagLayoutPanel1.SetPreferredSize(this.chkFillDrivers, new System.Drawing.Size(120, 20));
-      this.chkFillDrivers.Size = new System.Drawing.Size(120, 20);
+      this.chkFillDrivers.Size = new System.Drawing.Size(485, 20);
       this.chkFillDrivers.TabIndex = 6;
       this.chkFillDrivers.Text = "Fill drivers";
       // 
       // ultraLabel1
       // 
       this.ultraLabel1.AutoSize = true;
-      gridBagConstraint5.OriginX = 0;
-      gridBagConstraint5.OriginY = 1;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.ultraLabel1, gridBagConstraint5);
-      this.ultraLabel1.Location = new System.Drawing.Point(10, 37);
+      gridBagConstraint6.OriginX = 0;
+      gridBagConstraint6.OriginY = 1;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.ultraLabel1, gridBagConstraint6);
+      this.ultraLabel1.Location = new System.Drawing.Point(0, 37);
       this.ultraLabel1.Name = "ultraLabel1";
       this.ultraGridBagLayoutPanel1.SetPreferredSize(this.ultraLabel1, new System.Drawing.Size(100, 23));
       this.ultraLabel1.Size = new System.Drawing.Size(88, 17);
@@ -186,12 +192,12 @@
       // 
       // txtNumYears
       // 
-      gridBagConstraint6.Anchor = Infragistics.Win.Layout.AnchorType.Left;
-      gridBagConstraint6.Insets.Bottom = 8;
-      gridBagConstraint6.OriginX = 1;
-      gridBagConstraint6.OriginY = 1;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.txtNumYears, gridBagConstraint6);
-      this.txtNumYears.Location = new System.Drawing.Point(120, 33);
+      gridBagConstraint7.Anchor = Infragistics.Win.Layout.AnchorType.Left;
+      gridBagConstraint7.Insets.Bottom = 8;
+      gridBagConstraint7.OriginX = 1;
+      gridBagConstraint7.OriginY = 1;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.txtNumYears, gridBagConstraint7);
+      this.txtNumYears.Location = new System.Drawing.Point(100, 33);
       this.txtNumYears.MaskInput = "nnn.nn";
       this.txtNumYears.Name = "txtNumYears";
       this.txtNumYears.NumericType = Infragistics.Win.UltraWinEditors.NumericType.Decimal;
@@ -269,12 +275,12 @@
       this.cmbAlternatives.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
       this.cmbAlternatives.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
       this.cmbAlternatives.DisplayMember = "description";
-      gridBagConstraint7.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint7.Insets.Bottom = 8;
-      gridBagConstraint7.OriginX = 0;
-      gridBagConstraint7.OriginY = 0;
-      gridBagConstraint7.SpanX = 2;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.cmbAlternatives, gridBagConstraint7);
+      gridBagConstraint8.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint8.Insets.Bottom = 8;
+      gridBagConstraint8.OriginX = 0;
+      gridBagConstraint8.OriginY = 0;
+      gridBagConstraint8.SpanX = 2;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.cmbAlternatives, gridBagConstraint8);
       this.cmbAlternatives.Location = new System.Drawing.Point(0, 0);
       this.cmbAlternatives.Name = "cmbAlternatives";
       this.ultraGridBagLayoutPanel1.SetPreferredSize(this.cmbAlternatives, new System.Drawing.Size(100, 25));
@@ -295,12 +301,12 @@
       // 
       // btnExecuteFillDriversActivities
       // 
-      gridBagConstraint8.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint8.Insets.Bottom = 8;
-      gridBagConstraint8.OriginX = 0;
-      gridBagConstraint8.OriginY = 4;
-      gridBagConstraint8.SpanX = 2;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnExecuteFillDriversActivities, gridBagConstraint8);
+      gridBagConstraint9.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint9.Insets.Bottom = 8;
+      gridBagConstraint9.OriginX = 0;
+      gridBagConstraint9.OriginY = 4;
+      gridBagConstraint9.SpanX = 2;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnExecuteFillDriversActivities, gridBagConstraint9);
       this.btnExecuteFillDriversActivities.Location = new System.Drawing.Point(0, 127);
       this.btnExecuteFillDriversActivities.Name = "btnExecuteFillDriversActivities";
       this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnExecuteFillDriversActivities, new System.Drawing.Size(75, 23));
@@ -311,12 +317,12 @@
       // 
       // btnExecuteRetrieveAssets
       // 
-      gridBagConstraint9.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint9.Insets.Bottom = 8;
-      gridBagConstraint9.OriginX = 0;
-      gridBagConstraint9.OriginY = 3;
-      gridBagConstraint9.SpanX = 2;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnExecuteRetrieveAssets, gridBagConstraint9);
+      gridBagConstraint10.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint10.Insets.Bottom = 8;
+      gridBagConstraint10.OriginX = 0;
+      gridBagConstraint10.OriginY = 3;
+      gridBagConstraint10.SpanX = 2;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnExecuteRetrieveAssets, gridBagConstraint10);
       this.btnExecuteRetrieveAssets.Location = new System.Drawing.Point(0, 96);
       this.btnExecuteRetrieveAssets.Name = "btnExecuteRetrieveAssets";
       this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnExecuteRetrieveAssets, new System.Drawing.Size(75, 23));
@@ -326,13 +332,13 @@
       // 
       // btnExecuteAll
       // 
-      gridBagConstraint10.Fill = Infragistics.Win.Layout.FillType.Both;
-      gridBagConstraint10.Insets.Bottom = 8;
-      gridBagConstraint10.OriginX = 0;
-      gridBagConstraint10.OriginY = 2;
-      gridBagConstraint10.SpanX = 2;
-      gridBagConstraint10.WeightX = 1F;
-      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnExecuteAll, gridBagConstraint10);
+      gridBagConstraint11.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint11.Insets.Bottom = 8;
+      gridBagConstraint11.OriginX = 0;
+      gridBagConstraint11.OriginY = 2;
+      gridBagConstraint11.SpanX = 2;
+      gridBagConstraint11.WeightX = 1F;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.btnExecuteAll, gridBagConstraint11);
       this.btnExecuteAll.Location = new System.Drawing.Point(0, 65);
       this.btnExecuteAll.Name = "btnExecuteAll";
       this.ultraGridBagLayoutPanel1.SetPreferredSize(this.btnExecuteAll, new System.Drawing.Size(75, 23));
@@ -352,6 +358,21 @@
       this.bkgWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.bkgWorker_ProgressChanged);
       this.bkgWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bkgWorker_RunWorkerCompleted);
       // 
+      // chkOverrideCleaningPMWithTractive
+      // 
+      gridBagConstraint1.Fill = Infragistics.Win.Layout.FillType.Both;
+      gridBagConstraint1.Insets.Bottom = 8;
+      gridBagConstraint1.OriginX = 0;
+      gridBagConstraint1.OriginY = 7;
+      gridBagConstraint1.SpanX = 2;
+      this.ultraGridBagLayoutPanel1.SetGridBagConstraint(this.chkOverrideCleaningPMWithTractive, gridBagConstraint1);
+      this.chkOverrideCleaningPMWithTractive.Location = new System.Drawing.Point(0, 206);
+      this.chkOverrideCleaningPMWithTractive.Name = "chkOverrideCleaningPMWithTractive";
+      this.ultraGridBagLayoutPanel1.SetPreferredSize(this.chkOverrideCleaningPMWithTractive, new System.Drawing.Size(120, 20));
+      this.chkOverrideCleaningPMWithTractive.Size = new System.Drawing.Size(485, 20);
+      this.chkOverrideCleaningPMWithTractive.TabIndex = 13;
+      this.chkOverrideCleaningPMWithTractive.Text = "Override cleaning PM with tractive (small sizes)";
+      // 
       // ModelPage
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,6 +390,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.cmbAlternatives)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.alternativesBindingSource)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.scipDataSet)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.chkOverrideCleaningPMWithTractive)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -390,5 +412,6 @@
     private Infragistics.Win.UltraWinEditors.UltraTextEditor txtMessages;
     private System.ComponentModel.BackgroundWorker bkgWorker;
     private Infragistics.Win.UltraActivityIndicator.UltraActivityIndicator activityIndicator;
+    private Infragistics.Win.UltraWinEditors.UltraCheckEditor chkOverrideCleaningPMWithTractive;
   }
 }

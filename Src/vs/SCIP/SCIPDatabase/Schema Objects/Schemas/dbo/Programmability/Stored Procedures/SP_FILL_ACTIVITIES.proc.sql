@@ -43,39 +43,7 @@ BEGIN
     (SELECT compkey, activity_type, frequency_years FROM CONTROLLING_DRIVERS_FOR_PROCESSING) PS
     PIVOT (AVG(frequency_years) FOR activity_type IN ([Inspection], [Cleaning], [Root Management])) AS PVT
 
-  EXEC SP_STATUS_MESSAGE 'Preparing CONTROLLING_DRIVER_FREQUENCIES'
-  DELETE FROM CONTROLLING_DRIVER_FREQUENCIES WHERE alternative_id = @alternative_id
-  INSERT INTO CONTROLLING_DRIVER_FREQUENCIES
-    SELECT compkey, [Inspection] AS inspection_frequency_years, [Cleaning] AS cleaning_frequency_years, [Root Management] AS root_frequency_years, @alternative_id AS alternative_id
-    FROM 
-    (SELECT compkey, activity_type, frequency_years FROM CONTROLLING_DRIVERS_FOR_PROCESSING) PS
-    PIVOT (AVG(frequency_years) FOR activity_type IN ([Inspection], [Cleaning], [Root Management])) AS PVT
-
-  DECLARE @asset_set_id INT
-  SELECT @asset_set_id = asset_set_id
-  FROM ALTERNATIVES
-  WHERE alternative_id = @alternative_id
-
-  EXEC SP_STATUS_MESSAGE 'Preparing LAST_ACTIVITY_DATES_FOR_PROCESSING'
-  TRUNCATE TABLE LAST_ACTIVITY_DATES_FOR_PROCESSING
-  INSERT INTO LAST_ACTIVITY_DATES_FOR_PROCESSING
-    SELECT 
-     A.COMPKEY
-    ,CASE WHEN (A.last_inspection_date IS NULL)
-      THEN [dbo].[FN_DATE_ADD_FRACTIONAL_YEARS](GETDATE(), -B.inspection_frequency_years) 
-      ELSE CASE WHEN (A.last_inspection_date < [dbo].[FN_DATE_ADD_FRACTIONAL_YEARS](GETDATE(), -B.inspection_frequency_years)) 
-        THEN [dbo].[FN_DATE_ADD_FRACTIONAL_YEARS](GETDATE(), -B.inspection_frequency_years) 
-        ELSE A.last_inspection_date END END AS last_inspection_date
-    ,CASE WHEN (A.last_root_management_date IS NULL) 
-      THEN [dbo].[FN_DATE_ADD_FRACTIONAL_YEARS](GETDATE(), -B.root_frequency_years) 
-      ELSE CASE WHEN (A.last_root_management_date < [dbo].[FN_DATE_ADD_FRACTIONAL_YEARS](GETDATE(), -B.root_frequency_years)) 
-        THEN [dbo].[FN_DATE_ADD_FRACTIONAL_YEARS](GETDATE(), -B.root_frequency_years) 
-        ELSE A.last_root_management_date END END AS last_root_management_date
-    ,CASE WHEN (A.last_cleaning_date IS NULL) 
-      THEN [dbo].[FN_DATE_ADD_FRACTIONAL_YEARS](GETDATE(), -B.cleaning_frequency_years) 
-      ELSE CASE WHEN (A.last_cleaning_date < [dbo].[FN_DATE_ADD_FRACTIONAL_YEARS](GETDATE(), -B.cleaning_frequency_years)) THEN [dbo].[FN_DATE_ADD_FRACTIONAL_YEARS](GETDATE(), -B.cleaning_frequency_years) 
-        ELSE A.last_cleaning_date END  END AS last_cleaning_date
-    FROM CONTROLLING_DRIVER_FREQUENCIES_FOR_PROCESSING B INNER JOIN ASSETS A ON (B.compkey = A.compkey AND A.asset_set_id = @asset_set_id)
+  EXEC SP_PREPARE_CONTROLLING_DRIVERS_FOR_PROCESSING @alternative_id = @alternative_id
 
   DELETE FROM ACTIVITIES WHERE alternative_id = @alternative_id
 

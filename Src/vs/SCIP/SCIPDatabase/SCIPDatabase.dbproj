@@ -876,5 +876,11 @@
     <Build Include="Schema Objects\Schemas\dbo\Tables\CONTROLLING_DRIVER_FREQUENCIES.table.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_EXPORT_ACTIVITIES_FOR_MAPPING.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_PREPARE_CONTROLLING_DRIVERS_FOR_PROCESSING.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

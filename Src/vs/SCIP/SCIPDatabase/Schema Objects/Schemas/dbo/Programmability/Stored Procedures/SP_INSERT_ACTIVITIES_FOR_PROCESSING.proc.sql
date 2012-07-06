@@ -2,7 +2,14 @@
 	@alternative_id INT
 AS
 BEGIN
+  SET NOCOUNT ON
+
   EXEC SP_STATUS_MESSAGE 'Begin SP_INSERT_ACTIVITIES_FOR_PROCESSING'
+
+  EXEC SP_STATUS_MESSAGE 'Preparing CONTROLLING_DRIVERS_FOR_PROCESSING'
+
+  EXEC SP_PREPARE_CONTROLLING_DRIVERS_FOR_PROCESSING @alternative_id = @alternative_id
+
   EXEC SP_STATUS_MESSAGE 'Truncating ACTIVITIES_FOR_PROCESSING'
 
   TRUNCATE TABLE ACTIVITIES_FOR_PROCESSING;
@@ -39,15 +46,16 @@ BEGIN
           (
             (
               (
-                [ACTIVITIES] A INNER JOIN VW_CONTROLLING_DRIVERS B ON ((A.driver_id = B.driver_id) AND (A.alternative_id = B.alternative_id))
-              ) INNER JOIN DRIVER_TYPES C ON ((B.driver_type_id = C.driver_type_id) AND (B.alternative_id = C.alternative_id))
+                [ACTIVITIES] A INNER JOIN CONTROLLING_DRIVERS_FOR_PROCESSING B ON ((A.driver_id = B.driver_id))
+              ) INNER JOIN DRIVER_TYPES C ON ((B.driver_type_id = C.driver_type_id))
             ) INNER JOIN ALTERNATIVES I ON (A.alternative_id = I.alternative_id)
-          ) INNER JOIN VW_LAST_ACTIVITY_DATES D ON ((A.compkey = D.compkey) AND (D.asset_set_id = I.asset_set_id))
+          ) INNER JOIN LAST_ACTIVITY_DATES_FOR_PROCESSING D ON ((A.compkey = D.compkey))
         ) INNER JOIN ASSETS E ON ((A.compkey = E.COMPKEY) AND (E.asset_set_id = I.asset_set_id))
       ) INNER JOIN BASINS F ON (E.basin_id = F.basin_id)
     ) INNER JOIN DISTRICTS G ON (E.district_id = G.district_id)
   ) INNER JOIN ACTIVITY_TYPES H ON (A.activity_type_id = H.activity_type_id)
   WHERE A.alternative_id = @alternative_id;
+
   DECLARE @statusMessage VARCHAR(200)
   SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records for activities'
   EXEC SP_STATUS_MESSAGE @statusMessage

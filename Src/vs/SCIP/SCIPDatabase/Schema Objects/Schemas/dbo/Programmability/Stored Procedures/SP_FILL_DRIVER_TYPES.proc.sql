@@ -24,14 +24,10 @@ AS
     (@inspection_type_id,'RootControlH','Root Control High','Root Control High',1.25,6,@alternative_id,7,'SPSWTV');
   INSERT INTO DRIVER_TYPES ( [activity_type_id], [name], [description], [reporting_category], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
     (@inspection_type_id,'RootControlHLarge','Root Control High (>15 in, <=36 in)','Root Control High (>15 in, <=36 in)',1.25,9,@alternative_id,6,'SPSWTV');
-  INSERT INTO DRIVER_TYPES ( [activity_type_id], [name], [description], [reporting_category], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (@inspection_type_id,'RootControlHLargePipe','Root Control High (>36 in)','Root Control High (>36 in)',2.50,9,@alternative_id,5,'SPSWTV');
   INSERT INTO DRIVER_TYPES ([activity_type_id], [name], [description], [reporting_category], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
     (@inspection_type_id,'RootControlM','Root Control Medium','Root Control Medium',1.25,9,@alternative_id,10,'SPSWTV');
   INSERT INTO DRIVER_TYPES ([activity_type_id], [name], [description], [reporting_category], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
     (@inspection_type_id,'RootControlMLarge','Root Control Medium (>15 in, <=36 in)','Root Control Medium (>15 in, <=36 in)',1.25,12,@alternative_id,9,'SPSWTV');
-  INSERT INTO DRIVER_TYPES ([activity_type_id], [name], [description], [reporting_category], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
-    (@inspection_type_id,'RootControlMLargePipe','Root Control Medium (>36 in)','Root Control Medium (>36 in)',2.50,12,@alternative_id,8,'SPSWTV');
   INSERT INTO DRIVER_TYPES ([activity_type_id], [name], [description], [reporting_category], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES
     (@inspection_type_id,'Condition','Condition','Condition',1.25,12,@alternative_id,3,'SPSWTV');
   INSERT INTO DRIVER_TYPES ( [activity_type_id], [name], [description], [reporting_category], [default_cost_per_ft], [default_frequency_years], [alternative_id], [rank], [hansen_activity_code]) VALUES

@@ -882,5 +882,8 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_PREPARE_CONTROLLING_DRIVERS_FOR_PROCESSING.proc.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_VIEW_ALL_ACTIVITIES.proc.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

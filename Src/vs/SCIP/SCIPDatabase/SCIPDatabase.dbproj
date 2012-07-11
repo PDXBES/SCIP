@@ -885,5 +885,14 @@
     <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_VIEW_ALL_ACTIVITIES.proc.sql">
       <SubType>Code</SubType>
     </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_GET_PIVOT_COLUMN_HEADERS.function.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_SUMMARY_ALT_TABLE_DETAIL.function.sql">
+      <SubType>Code</SubType>
+    </Build>
+    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_SUMMARY_ALT_TABLE.function.sql">
+      <SubType>Code</SubType>
+    </Build>
   </ItemGroup>
 </Project>

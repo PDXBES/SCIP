@@ -30,6 +30,8 @@ BEGIN
   SET @ROOTPROB_R = 'R'
   SET @ROOTPROB_M = 'M'
   SET @ROOTPROB_V = 'V'
+
+  DELETE FROM SpecialRoot WHERE asset_set_id = @asset_set_id
 	
   INSERT INTO SpecialRoot
   SELECT	B.*, @asset_set_id

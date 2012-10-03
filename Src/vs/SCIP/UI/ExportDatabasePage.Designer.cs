@@ -46,14 +46,14 @@
       this.progress = new Infragistics.Win.UltraWinProgressBar.UltraProgressBar();
       this.labelSelectAlternative = new Infragistics.Win.Misc.UltraLabel();
       this.comboAlternativeID = new Infragistics.Win.UltraWinGrid.UltraCombo();
+      this.aLTERNATIVESBindingSource = new System.Windows.Forms.BindingSource(this.components);
       this.sCIPDataSet = new UI.SCIPDataSet();
       this.aLTERNATIVESTableAdapter = new UI.SCIPDataSetTableAdapters.ALTERNATIVESTableAdapter();
-      this.aLTERNATIVESBindingSource = new System.Windows.Forms.BindingSource(this.components);
       ((System.ComponentModel.ISupportInitialize)(this.ultraGridBagLayoutPanel1)).BeginInit();
       this.ultraGridBagLayoutPanel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.comboAlternativeID)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.sCIPDataSet)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.sCIPDataSet)).BeginInit();
       this.SuspendLayout();
       // 
       // ultraButtonExport
@@ -146,6 +146,7 @@
             ultraGridColumn11,
             ultraGridColumn12});
       this.comboAlternativeID.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
+      this.comboAlternativeID.DisplayMember = "name";
       this.comboAlternativeID.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       gridBagConstraint4.Fill = Infragistics.Win.Layout.FillType.Both;
       gridBagConstraint4.Insets.Bottom = 8;
@@ -158,6 +159,12 @@
       this.comboAlternativeID.Size = new System.Drawing.Size(606, 25);
       this.comboAlternativeID.TabIndex = 2;
       this.comboAlternativeID.Text = "Select Alternative";
+      this.comboAlternativeID.ValueMember = "alternative_id";
+      // 
+      // aLTERNATIVESBindingSource
+      // 
+      this.aLTERNATIVESBindingSource.DataMember = "ALTERNATIVES";
+      this.aLTERNATIVESBindingSource.DataSource = this.sCIPDataSet;
       // 
       // sCIPDataSet
       // 
@@ -167,11 +174,6 @@
       // aLTERNATIVESTableAdapter
       // 
       this.aLTERNATIVESTableAdapter.ClearBeforeFill = true;
-      // 
-      // aLTERNATIVESBindingSource
-      // 
-      this.aLTERNATIVESBindingSource.DataMember = "ALTERNATIVES";
-      this.aLTERNATIVESBindingSource.DataSource = this.sCIPDataSet;
       // 
       // ExportDatabasePage
       // 
@@ -186,8 +188,8 @@
       this.ultraGridBagLayoutPanel1.ResumeLayout(false);
       this.ultraGridBagLayoutPanel1.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.comboAlternativeID)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.sCIPDataSet)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.aLTERNATIVESBindingSource)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.sCIPDataSet)).EndInit();
       this.ResumeLayout(false);
 
         }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using ADOX;
 using ADODB;
+using System.Data.SqlClient;
 
 namespace UI
 {
@@ -88,12 +89,25 @@ namespace UI
 
         newConnection.Open();
 
-        string strSQL = "SELECT * INTO NEXT_ACTIVITIES FROM [ODBC;DRIVER=SQL Server;SERVER=SIRTOBY;DATABASE=SCIP;Trusted_Connection=Yes].[NEXT_ACTIVITIES]";
+        var sqlConnection = new SqlConnection(SCIPUI.Default.ConnectionString);
+        var insertActivitiesCommand = new SqlCommand("SP_INSERT_ACTIVITIES_FOR_PROCESSING", sqlConnection)
+        {
+          CommandType = CommandType.StoredProcedure,
+          CommandTimeout = 3600
+        };
+        insertActivitiesCommand.Parameters.Add("@alternative_id", SqlDbType.Int).Value =
+          alternative_id;
+        worker.ReportProgress(10, "Gathering activities for alternative");
+        sqlConnection.Open();
+        insertActivitiesCommand.ExecuteNonQuery();
+        sqlConnection.Close();
+
+        var strSQL = "SELECT * INTO NEXT_ACTIVITIES FROM [ODBC;DRIVER=SQL Server;SERVER=SIRTOBY;DATABASE=SCIP;Trusted_Connection=Yes].[NEXT_ACTIVITIES] WHERE Alternative_ID = " + alternative_id.ToString();;
         cmd.CommandText = strSQL;
         worker.ReportProgress(20, "Exporting NEXT_ACTIVITIES");
         newConnection.Execute(strSQL, out objAffected, 0);
 
-        strSQL = "SELECT * INTO ALL_ACTIVITIES FROM [ODBC;DRIVER=SQL Server;SERVER=SIRTOBY;DATABASE=SCIP;Trusted_Connection=Yes].[VW_ALL_ACTIVITIES] WHERE Alternative_ID = " + alternative_id.ToString();
+        strSQL = "SELECT * INTO ALL_ACTIVITIES FROM [ODBC;DRIVER=SQL Server;SERVER=SIRTOBY;DATABASE=SCIP;Trusted_Connection=Yes].[ACTIVITIES_FOR_PROCESSING] WHERE Alternative_ID = " + alternative_id.ToString();
         cmd.CommandText = strSQL;
         worker.ReportProgress(40, "Exporting ALL_ACTIVITIES");
         newConnection.Execute(strSQL, out objAffected, 0);

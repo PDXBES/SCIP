@@ -1,0 +1,12 @@
+﻿CREATE FUNCTION [dbo].[FN_ASSET_COUNT]
+(
+)
+RETURNS INT
+AS
+BEGIN
+  DECLARE @result INT
+  SELECT @result = COUNT(*)
+  FROM ASSETS
+
+  RETURN @result
+END

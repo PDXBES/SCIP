@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [tSQLt]
+    AUTHORIZATION [ROSE\arnelm];
+

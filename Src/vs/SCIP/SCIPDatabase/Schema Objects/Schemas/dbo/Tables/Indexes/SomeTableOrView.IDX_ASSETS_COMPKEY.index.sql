@@ -1,5 +1,0 @@
-﻿CREATE INDEX [IDX_ASSETS_COMPKEY]
-    ON [dbo].[ASSETS]
-	(COMPKEY)
-
-

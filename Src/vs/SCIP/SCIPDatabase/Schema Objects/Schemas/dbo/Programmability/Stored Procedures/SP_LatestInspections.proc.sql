@@ -90,7 +90,7 @@ SET @INDEXKEY_StructuralAverageFootSanitary = 1018
 IF OBJECT_ID(N'[AllInspections]', N'U') IS NOT NULL
 	DROP TABLE AllInspections
 
-CREATE TABLE AllInspections
+DECLARE @AllInspections TABLE 
 	(
 		COMPKEY		int,			INSPKEY		int,		OBRATING		float,		
 		[FROM]		float,			[TO]		float,	
@@ -102,7 +102,7 @@ CREATE TABLE AllInspections
 -----------------------------------------------------------------------
 --Fill LatestInspections with all of the valid 
 --sanitary inspections
-INSERT	INTO  AllInspections 
+INSERT	INTO  @AllInspections 
 SELECT	C2.COMPKEY AS COMPKEY,
 		C2.INSPKEY AS INSPKEY, 
 		OBRATING AS OBRATING, 
@@ -141,12 +141,13 @@ IF OBJECT_ID(N'[LatestInspections]', N'U') IS NOT NULL
 	
 CREATE TABLE LatestInspections
 	(
-		COMPKEY		int,			LastInspected DateTime
+		COMPKEY		int,			
+		LastInspected DateTime
 	)
 
-INSERT	INTO  LatestInspections 
-SELECT     COMPKEY, MAX(STARTDTTM) AS LastInspected
-FROM         dbo.AllInspections AS AllInspections_1
-GROUP BY COMPKEY
+INSERT	INTO  LatestInspections (COMPKEY, LastInspected)
+SELECT     A.COMPKEY, MAX(A.STARTDTTM) AS LastInspected
+FROM       @AllInspections AS A
+GROUP BY   COMPKEY
 
 END

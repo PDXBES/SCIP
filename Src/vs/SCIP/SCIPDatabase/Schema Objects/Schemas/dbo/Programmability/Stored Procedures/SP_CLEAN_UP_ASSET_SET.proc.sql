@@ -36,7 +36,7 @@ BEGIN
   EXEC SP_STATUS_MESSAGE 'Deleting from asset set tables'
 
   DELETE FROM ASSETS WHERE asset_set_id = @asset_set_id
-  DELETE FROM AllInspections WHERE asset_set_id = @asset_set_id
+  --DELETE FROM AllInspections WHERE asset_set_id = @asset_set_id
   DELETE FROM LatestInspections WHERE asset_set_id = @asset_set_id
   DELETE FROM RootInspections WHERE asset_set_id = @asset_set_id
   DELETE FROM SpecialRoot WHERE asset_set_id = @asset_set_id

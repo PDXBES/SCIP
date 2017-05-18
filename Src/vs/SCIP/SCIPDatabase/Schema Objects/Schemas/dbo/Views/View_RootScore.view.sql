@@ -123,7 +123,10 @@ Begin DesignProperties =
          Or = 1350
       End
    End
-End', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'View_RootScore';
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'View_RootScore';
+
+
 
 
 GO

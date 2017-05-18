@@ -28,10 +28,10 @@ FROM
 	[View_DriversInspectionPM]
 ) AS A
 GROUP BY COMPKEY
-)AS X ON X.COMPKEY = [SCIP].[dbo].[View_DriversInspectionPM].COMPKEY
-AND X.next_inspection_date = [SCIP].[dbo].[View_DriversInspectionPM].next_inspection_date
-WHERE [SCIP].[dbo].[View_DriversInspectionPM].COMPKEY NOT IN(
-SELECT [SCIP].[dbo].[View_DriversInspectionCondition].COMPKEY FROM [View_DriversInspectionCondition]
+)AS X ON X.COMPKEY = [dbo].[View_DriversInspectionPM].COMPKEY
+AND X.next_inspection_date = [dbo].[View_DriversInspectionPM].next_inspection_date
+WHERE [dbo].[View_DriversInspectionPM].COMPKEY NOT IN(
+SELECT [dbo].[View_DriversInspectionCondition].COMPKEY FROM [View_DriversInspectionCondition]
 INNER JOIN
 (SELECT COMPKEY, MIN([next_inspection_date]) as Next_inspection_date
 FROM
@@ -155,7 +155,10 @@ Begin DesignProperties =
          Or = 1350
       End
    End
-End', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'View_DriversInspections_Aggregate';
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'View_DriversInspections_Aggregate';
+
+
 
 
 GO

@@ -1,0 +1,11 @@
+Src/vs/SCIP/UI/backup/
+Src/vs/SCIP/UI/bin/
+Src/vs/SCIP/UI/obj/
+Src/vs/TractiveForces/FlowData_Report/backup/
+Src/vs/TractiveForces/FlowData_Report/obj/
+Src/vs/TractiveForces/ModelResultTableProcessing/backup/
+Src/vs/TractiveForces/ModelResultTableProcessing/obj/
+Src/vs/SCIP/Backup1/
+Src/vs/SCIP/Engine/backup/
+Src/vs/SCIP/Engine/obj/
+Src/vs/SCIP/SCIPDatabase/obj/

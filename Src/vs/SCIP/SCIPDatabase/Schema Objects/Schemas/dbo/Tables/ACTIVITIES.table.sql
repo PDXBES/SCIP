@@ -5,6 +5,7 @@
     [activity_date]        DATETIME     NOT NULL,
     [cost]                 MONEY        NULL,
     [activity_type_id]     INT          NOT NULL,
-    [alternative_id]       INT          NOT NULL
+    [alternative_id]       INT          NOT NULL, 
+    [hansen_activity_code] NCHAR(10) NULL
 );
 

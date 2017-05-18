@@ -1,6 +1,6 @@
 ﻿CREATE VIEW dbo.View_DriversInspectionCondition
 AS
-/*Drivers for small diameter PM inspections*/ SELECT DRIVER_TYPE_ID, ASSETS.COMPKEY, default_cost_per_ft, default_frequency_years, 
+/*Drivers for small diameter PM inspections*/ SELECT DRIVER_TYPE_ID, ASSETS.COMPKEY AS COMPKEY, default_cost_per_ft, default_frequency_years, 
 
 CASE WHEN DATEADD(year, 
                       default_frequency_years, last_inspection_date)< GetDate() THEN GetDate() ELSE DATEADD(year, 
@@ -14,7 +14,7 @@ FROM         (ASSETS INNER JOIN
                                                    remarks = N'DNRV') AND (ACCUM_RISK_INSPECT_YEAR IS NOT NULL)) AS X ON 
                       ASSETS.COMPKEY = X.COMPKEY
 /*Drivers For large diameter PM inspections*/ UNION
-SELECT     DRIVER_TYPE_ID, ASSETS.COMPKEY, default_cost_per_ft, default_frequency_years, 
+SELECT     DRIVER_TYPE_ID, ASSETS.COMPKEY AS COMPKEY, default_cost_per_ft, default_frequency_years, 
 
 CASE WHEN DATEADD(year, default_frequency_years, last_inspection_date) < GetDate() THEN GetDate() ELSE DATEADD(year, default_frequency_years, last_inspection_date) END
                       AS next_inspection_date
@@ -134,7 +134,10 @@ Begin DesignProperties =
          Or = 1350
       End
    End
-End', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'View_DriversInspectionCondition';
+End
+', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'View_DriversInspectionCondition';
+
+
 
 
 GO

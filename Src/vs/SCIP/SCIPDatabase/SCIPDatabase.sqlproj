@@ -379,7 +379,7 @@
     <Build Include="Schema Objects\dbo\Synonyms\HCOMPSMN.sql" />
     <Build Include="Schema Objects\dbo\Synonyms\HCOMPSMH.sql" />
     <Build Include="Schema Objects\dbo\Synonyms\HSMNINDHIST.sql" />
-    <Build Include="Schema Objects\dbo\Synonyms\SMNSERVINSPOB.sql" />
+    <Build Include="Schema Objects\dbo\Synonyms\HSMNSERVINSPOB.sql" />
     <Build Include="Schema Objects\dbo\Synonyms\HSMNSERVICEINSP.sql" />
     <Build Include="Schema Objects\dbo\Synonyms\HSMNSERVINSPTYPEOBSEV.sql" />
     <Build Include="Schema Objects\dbo\Synonyms\HASSETINSPINDEX.sql" />

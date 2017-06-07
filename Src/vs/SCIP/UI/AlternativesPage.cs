@@ -101,7 +101,7 @@ namespace UI
         aSSET_SETSTableAdapter.Update(sCIPDataSet);
 
         int assetSetId = (int)e.Row.Cells["asset_set_id"].Value;
-        var initAssetSetCommand = new SqlCommand("SP_ExposeData", connection)
+        var initAssetSetCommand = new SqlCommand("SP_ExposeData_NEW", connection)
         { 
           CommandTimeout = 3600, 
           CommandType = CommandType.StoredProcedure

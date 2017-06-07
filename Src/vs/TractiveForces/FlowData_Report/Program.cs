@@ -93,10 +93,10 @@ namespace TractiveForceAnalysis
 			//scipConnection.ConnectionString = "Integrated Security=true;" +
 			//                                                                  "Initial Catalog=SCIP_Test;" +
 			//                                                                  "Data Source=WS11285\\SQLEXPRESS";
-			// Open a connection to Sirtoby\SCIP
+			// Open a connection to BESDBTEST1\SCIP
 			conn.ConnectionString = "Integrated Security=true;" +
 																			  "Initial Catalog=SCIP;" +
-																			  "Data Source=SIRTOBY";
+                                        "Data Source=BESDBTEST1";
 			conn.Open();
 
 			SqlDataReader reader = null;
@@ -209,9 +209,9 @@ namespace TractiveForceAnalysis
 			  //scipConnection.ConnectionString = "Integrated Security=true;" +
 			  //                                                                  "Initial Catalog=SCIP_Test;" +
 			  //                                                                  "Data Source=WS11285\\SQLEXPRESS";
-			  // Open a connection to Sirtoby\SCIP
+              // Open a connection to BESDBTEST1\SCIP
 			  conn.ConnectionString = "Initial Catalog=MODELING_DEV;" +
-																				"Data Source=SIRTOBY;" +
+                                        "Data Source=BESDBTEST1;" +
 																				"User ID=ModelAdmin;" +
 																				"Password=daW7horn;";
               conn.Open();

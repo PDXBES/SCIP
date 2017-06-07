@@ -9,3 +9,7 @@ Src/vs/SCIP/Backup1/
 Src/vs/SCIP/Engine/backup/
 Src/vs/SCIP/Engine/obj/
 Src/vs/SCIP/SCIPDatabase/obj/
+Src/vs/SCIP/SCIPDatabase/SCIPDatabase.dbmdl
+Src/vs/SCIP/SCIPDatabase/sql/debug/DeploymentReport*.txt
+Src/vs/SCIP/SCIPDatabase/sql/debug/SCIPDatabase.publish*.sql
+Src/vs/SCIP/SCIPDatabase/sql/debug/SCIPDatabase*.publish.sql

@@ -1,0 +1,3 @@
+﻿ALTER TABLE [dbo].[ASSET_SETS]
+	ADD CONSTRAINT [PK_ASSET_SETS]
+	PRIMARY KEY ([asset_set_id])

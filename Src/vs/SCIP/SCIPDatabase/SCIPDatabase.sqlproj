@@ -96,34 +96,8 @@
     <Folder Include="Scripts" />
     <Folder Include="Scripts\Pre-Deployment" />
     <Folder Include="Scripts\Post-Deployment" />
-    <Folder Include="Data Generation Plans" />
-    <Folder Include="Schema Comparisons" />
     <Folder Include="Properties\" />
     <Folder Include="Schema Objects\" />
-    <Folder Include="Schema Objects\Schemas\" />
-    <Folder Include="Schema Objects\Schemas\dbo\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\Defaults\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\Functions\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\Rules\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\Types\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\Types\User Defined Data Types\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\Types\User Defined Types CLR\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Programmability\Types\XML Schema Collections\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Service Broker\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Service Broker\Queues\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Synonyms\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Tables\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Tables\Constraints\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Tables\Indexes\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Tables\Keys\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Tables\Triggers\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Tables\Statistics\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Views\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Views\Indexes\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Views\Triggers\" />
-    <Folder Include="Schema Objects\Schemas\dbo\Views\Statistics\" />
     <Folder Include="Schema Objects\Database Level Objects\" />
     <Folder Include="Schema Objects\Database Level Objects\Assemblies\" />
     <Folder Include="Schema Objects\Database Level Objects\Database Triggers\" />
@@ -151,196 +125,20 @@
     <Folder Include="Schema Objects\Database Level Objects\Storage\Full Text Catalogs\" />
     <Folder Include="Schema Objects\Database Level Objects\Storage\Partition Functions\" />
     <Folder Include="Schema Objects\Database Level Objects\Storage\Partition Schemes\" />
-    <Folder Include="dbo\" />
-    <Folder Include="dbo\Tables\" />
-    <Folder Include="dbo\Views\" />
     <Folder Include="Security\" />
-    <Folder Include="dbo\Functions\" />
-    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Schema Objects\dbo" />
+    <Folder Include="Schema Objects\dbo\Functions" />
+    <Folder Include="Schema Objects\dbo\Stored Procedures" />
+    <Folder Include="Schema Objects\dbo\Tables" />
+    <Folder Include="Schema Objects\dbo\Tables\Keys" />
+    <Folder Include="Schema Objects\dbo\Views" />
+    <Folder Include="Schema Objects\dbo\Synonyms" />
   </ItemGroup>
   <ItemGroup>
     <BuildContributorArgument Include="OutDir=$(OutDir)" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Permissions.sql" />
-    <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\pk_dtproperties.pkey.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_droppropertiesbyid.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_verstamp006.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_verstamp007.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_getpropertiesbyid_vcs.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_displayoaerror.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_adduserobject_vcs.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_addtosourcecontrol.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_checkinobject.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_checkoutobject.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_isundersourcecontrol.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_removefromsourcecontrol.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_validateloginparams.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_vcsenabled.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_whocheckedout.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_getpropertiesbyid_vcs_u.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_displayoaerror_u.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_addtosourcecontrol_u.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_checkinobject_u.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_checkoutobject_u.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_isundersourcecontrol_u.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_validateloginparams_u.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_whocheckedout_u.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_LatestInspections.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_InspectionCosts.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_ActivityCosts.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_SpecialRoot.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_generateansiname.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_adduserobject.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_setpropertybyid.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_getobjwithprop.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_getpropertiesbyid.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_setpropertybyid_u.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_getobjwithprop_u.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_getpropertiesbyid_u.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\dt_dropuserobjectbyid.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
     <Build Include="Schema Objects\Database Level Objects\Security\Roles\Database Roles\DB_Owners.role.sql">
       <SubType>Code</SubType>
     </Build>
@@ -362,603 +160,230 @@
     <Build Include="Schema Objects\Database Level Objects\Security\Users\ROSE_grp117.user.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\View_DriversInspectionPM.view.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\View_DriversCleaning.view.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\View_DriversRootManagement.view.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\View_ProjectedInspectionsAndCosts.view.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\View_ProjectedCleaningsAndCosts.view.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\View_ProjectedRootManagementsAndCosts.view.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\View_DriversInspectionCondition.view.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\View_DriversInspections_Aggregate.view.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\View_RootRating.view.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\View_RootCount.view.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\View_RootScore.view.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\View_RootAggregate.view.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\View_RootsLatest.view.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\View_LatestMaxRootGrade.view.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\ASSETS.table.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS.table.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\ALTERNATIVES.table.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\ACTIVITIES.table.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\BASIN_TYPES.table.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\BASINS.table.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\DISTRICTS.table.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVER_TYPES.table.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\ACTIVITY_TYPES.table.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\REHAB10FTSEGS.table.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\dtproperties.table.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\SpecialRoot.table.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\RootInspections.table.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\AllInspections.table.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\LatestInspections.table.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
     <Build Include="Schema Objects\Database Level Objects\Service Broker\Routes\AutoCreatedLocal.route.sql">
       <SubType>Code</SubType>
     </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\ACTIVITIES.PK_ACTIVITIES.pkey.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\ACTIVITY_TYPES.PK_ACTIVITY_TYPES.pkey.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\ALTERNATIVES.PK_ALTERNATIVES.pkey.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\BASIN_TYPES.PK_BASIN_TYPES.pkey.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\BASINS.PK_BASINS.pkey.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\DISTRICTS.PK_DISTRICT.pkey.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\DRIVER_TYPES.PK_DRIVER_TYPES.pkey.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\DRIVERS.PK_DRIVERS.pkey.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_FILL_LOOKUPS.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_INSERT_DWF_FLOW_DATA.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_INSERT_TRACTIVE_FORCE_DATA.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_DWF_FLOW_STATISTICS.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\DWF_FLOW_DATA_TABLE.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\TRACTIVE_FORCE_MODEL_INPUTS.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\ACCELERATED_CLEANINGS.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\ACCELERATED_CLEANING_CAUSES.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\ACCELERATED_CLEANING_CAUSE_TYPES.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_FILL_DRIVERS.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>Off</AnsiNulls>
-      <QuotedIdentifier>Off</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\TRACTIVE_FORCE_GRADES.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_ALL_DRIVERS.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_CONTROLLING_DRIVERS.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_RANKED_MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_NEXT_CONDITION_INSPECTION_INTERVAL.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_FILL_ACTIVITIES.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>Off</AnsiNulls>
-      <QuotedIdentifier>Off</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_STATUS_MESSAGE.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_RECORD_COUNT.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_COMPARE_TO_CURRENT_DATE.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_DATE_ADD_FRACTIONAL_YEARS.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\CONTROLLING_DRIVER_FREQUENCIES_FOR_PROCESSING.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_ALL_ACTIVITIES.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_NEXT_ACTIVITIES_BY_COMPKEY.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_EXPORT_NEXT_ACTIVITIES_FOR_MAPPING.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_NEXT_ACTIVITY_FISCAL_YEARS.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\ASSET_SETS.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\ASSET_SETS.PK_ASSET_SETS.pkey.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_NEXT_ACTIVITY_HANSEN_ACTIVITY_CODE_BY_COMPKEY.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_NEXT_ACTIVITY_FISCAL_YEAR_BY_COMPKEY.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_NEXT_ACTIVITY_COST_BY_COMPKEY.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\NEXT_ACTIVITIES.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_FILL_NEXT_ACTIVITIES.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_INSPECTION_ACTIVITIES_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_ROOT_ACTIVITIES_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_CLEANING_ACTIVITIES_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_ASSETS_TOTAL_COUNT.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_INSPECTION_ACTIVITIES_COUNT_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_CLEANING_ACTIVITIES_COUNT_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_ROOT_ACTIVITIES_COUNT_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_ANNUALIZED_INSPECTION_ACTIVITIES_BY_DRIVER_TYPE.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_ANNUALIZED_ROOT_ACTIVITIES_BY_DRIVER_TYPE.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_ANNUALIZED_CLEANING_ACTIVITIES_BY_DRIVER_TYPE.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>Off</AnsiNulls>
-      <QuotedIdentifier>Off</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_ANNUALIZED_INSPECTION_ACTIVITIES_COUNT_BY_DRIVER_TYPE.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_ANNUALIZED_CLEANING_ACTIVITIES_COUNT_BY_DRIVER_TYPE.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_ANNUALIZED_ROOT_ACTIVITIES_COUNT_BY_DRIVER_TYPE.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_ASSETS_TOTAL_LENGTH.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\VW_EXPORT_ALL_ACTIVITIES_FOR_MAPPING.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\ASSETS_UPDATE.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\ASSETS_UPDATE.PK_ASSETS_UPDATE.pkey.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_FILL_ASSETS_UPDATE.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVERS_UPDATE.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\Keys\DRIVERS_UPDATE.PK_DRIVERS_UPDATE.pkey.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_FILL_DRIVERS_UPDATE.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_FILL_DRIVER_TYPES.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_INIT_DB.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>Off</AnsiNulls>
-      <QuotedIdentifier>Off</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_IPTD.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_IPTF.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_IPAD.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_IPAF.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_RPTD.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_RPTF.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_RPAD.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_RPAF.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_CPTD.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_CPTF.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_CPAD.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_CPAF.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_ILTD.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_ILTF.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_RLTD.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_RLTF.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_CLTD.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CHART_CLTF.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\DRIVER_TYPES_UPDATE.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_CLTD.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_CLTF.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_CPAD.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_CPAF.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_CPTD.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_CPTF.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_ILTD.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_ILTF.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_IPAD.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_IPAF.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_IPTD.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_IPTF.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_RLTD.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_RLTF.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_RPAD.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_RPAF.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_RPTD.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_RPTF.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARS.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARS.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CLEAN_UP_ALTERNATIVE.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CLEAN_UP_ASSET_SET.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>Off</AnsiNulls>
-      <QuotedIdentifier>Off</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_MULTIPLES_OF_NUM_BETWEEN_RANGE.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_CREATE_NUMS.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_ACTIVITIES_TO_INSERT.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\LAST_ACTIVITY_DATES_FOR_PROCESSING.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_INSERT_ACTIVITIES.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\ACTIVITIES_FOR_PROCESSING.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_INSERT_ACTIVITIES_FOR_PROCESSING.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Views\LAST_ACTIVITY_DATES.view.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Tables\CONTROLLING_DRIVER_FREQUENCIES.table.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_EXPORT_ACTIVITIES_FOR_MAPPING.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_PREPARE_CONTROLLING_DRIVERS_FOR_PROCESSING.proc.sql">
-      <SubType>Code</SubType>
-      <AnsiNulls>Off</AnsiNulls>
-      <QuotedIdentifier>Off</QuotedIdentifier>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Stored Procedures\SP_VIEW_ALL_ACTIVITIES.proc.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_GET_PIVOT_COLUMN_HEADERS.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_SUMMARY_ALT_TABLE_DETAIL.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="Schema Objects\Schemas\dbo\Programmability\Functions\FN_SUMMARY_ALT_TABLE.function.sql">
-      <SubType>Code</SubType>
-    </Build>
-    <Build Include="dbo\Tables\VARIABLES.sql">
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Tables\SIZE_INTERVALS.sql">
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Tables\NUMS.sql">
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Tables\MlinkID_Junction_Table.sql">
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Tables\DWF_Flow_Statistics.sql">
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Tables\DmeProjLinks.sql">
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Tables\_DRIVERS_SMALL_TRACTIVE_SANITARY_COMPKEYS_FOR_PROCESSING.sql">
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Tables\_DRIVERS_SMALL_TRACTIVE_COMPKEYS_FOR_PROCESSING.sql">
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Tables\_DRIVERS_SMALL_TRACTIVE_COMBO_COMPKEYS_FOR_PROCESSING.sql">
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Tables\_DRIVERS_SMALL_ROOT_COMPKEYS_FOR_PROCESSING.sql">
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Tables\_DRIVERS_SMALL_COMPKEYS_FOR_PROCESSING.sql">
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Tables\_DRIVERS_LARGE_TRACTIVE_COMPKEYS_FOR_PROCESSING.sql">
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Tables\_DRIVERS_LARGE_ROOT_XOR_LARGE_PIPE_COMPKEYS_FOR_PROCESSING.sql">
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Tables\_DRIVERS_LARGE_ROOT_LARGE_PIPE_COMPKEYS_FOR_PROCESSING.sql">
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Tables\_DRIVERS_LARGE_COMPKEYS_FOR_PROCESSING.sql">
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Tables\_DRIVERS_ALL_COMPKEYS_FOR_PROCESSING.sql">
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Views\VW_LAST_ACTIVITY_DATES.sql" />
-    <Build Include="dbo\Views\vw_DWF_Flow_Statistics2.sql">
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
     <Build Include="Security\ROSE_csanthonyg.sql" />
     <Build Include="Security\RoleMemberships.sql" />
-    <Build Include="dbo\Functions\FN_ASSET_COUNT.sql" />
-    <Build Include="dbo\Stored Procedures\SPTEST_FILL_DRIVERS.sql" />
-    <Build Include="dbo\Stored Procedures\SP_INIT_VARIABLES.sql">
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Stored Procedures\SP_ExposeData_NEW.sql">
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Stored Procedures\SP_DATA_READOUT.sql">
-      <AnsiNulls>On</AnsiNulls>
-      <QuotedIdentifier>On</QuotedIdentifier>
-    </Build>
-    <Build Include="dbo\Stored Procedures\SP_ALPHA_TABLE_B.sql" />
-    <Build Include="dbo\Stored Procedures\SP_ALPHA_TABLE_A.sql" />
     <Build Include="Security\tSQLt.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_ACTIVITIES_TO_INSERT.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_ASSET_COUNT.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_ASSETS_TOTAL_COUNT.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_ASSETS_TOTAL_LENGTH.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_ACTIVITIES_COUNT_BETWEEN_YEARS.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_CLTD.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_CLTF.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_CPAD.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_CPAF.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_CPTD.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_CPTF.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_ILTD.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_ILTF.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_IPAD.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_IPAF.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_IPTD.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_IPTF.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_PROGRESSIVE_ACTIVITIES_COUNT_BETWEEN_YEARS.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_RLTD.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_RLTF.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_RPAD.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_RPAF.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_RPTD.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_CHART_RPTF.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_COMPARE_TO_CURRENT_DATE.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_DATE_ADD_FRACTIONAL_YEARS.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_GET_PIVOT_COLUMN_HEADERS.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_MULTIPLES_OF_NUM_BETWEEN_RANGE.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_SUMMARY_ALT_TABLE.function.sql" />
+    <Build Include="Schema Objects\dbo\Functions\FN_SUMMARY_ALT_TABLE_DETAIL.function.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_addtosourcecontrol.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_addtosourcecontrol_u.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_adduserobject.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_adduserobject_vcs.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_checkinobject.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_checkinobject_u.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_checkoutobject.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_checkoutobject_u.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_displayoaerror.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_displayoaerror_u.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_droppropertiesbyid.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_dropuserobjectbyid.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_generateansiname.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_getobjwithprop.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_getobjwithprop_u.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_getpropertiesbyid.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_getpropertiesbyid_u.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_getpropertiesbyid_vcs.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_getpropertiesbyid_vcs_u.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_isundersourcecontrol.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_isundersourcecontrol_u.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_removefromsourcecontrol.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_setpropertybyid.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_setpropertybyid_u.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_validateloginparams.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_validateloginparams_u.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_vcsenabled.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_verstamp006.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_verstamp007.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_whocheckedout.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\dt_whocheckedout_u.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_ActivityCosts.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_ALPHA_TABLE_A.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_ALPHA_TABLE_B.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_ANNUALIZED_CLEANING_ACTIVITIES_BY_DRIVER_TYPE.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_ANNUALIZED_CLEANING_ACTIVITIES_COUNT_BY_DRIVER_TYPE.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_ANNUALIZED_INSPECTION_ACTIVITIES_BY_DRIVER_TYPE.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_ANNUALIZED_INSPECTION_ACTIVITIES_COUNT_BY_DRIVER_TYPE.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_ANNUALIZED_ROOT_ACTIVITIES_BY_DRIVER_TYPE.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_ANNUALIZED_ROOT_ACTIVITIES_COUNT_BY_DRIVER_TYPE.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_CLTD.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_CLTF.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_CPAD.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_CPAF.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_CPTD.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_CPTF.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_ILTD.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_ILTF.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_IPAD.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_IPAF.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_IPTD.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_IPTF.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_RLTD.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_RLTF.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_RPAD.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_RPAF.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_RPTD.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CHART_RPTF.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CLEAN_UP_ALTERNATIVE.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CLEAN_UP_ASSET_SET.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_CREATE_NUMS.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_DATA_READOUT.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_EXPORT_ACTIVITIES_FOR_MAPPING.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_ExposeData_NEW.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_FILL_ACTIVITIES.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_FILL_ASSETS_UPDATE.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_FILL_DRIVER_TYPES.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_FILL_DRIVERS.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_FILL_DRIVERS_UPDATE.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_FILL_LOOKUPS.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_FILL_NEXT_ACTIVITIES.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_INIT_DB.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_INIT_VARIABLES.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_INSERT_ACTIVITIES.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_INSERT_ACTIVITIES_FOR_PROCESSING.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_INSERT_DWF_FLOW_DATA.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_INSERT_TRACTIVE_FORCE_DATA.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_InspectionCosts.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_LatestInspections.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_PREPARE_CONTROLLING_DRIVERS_FOR_PROCESSING.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_RECORD_COUNT.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_SpecialRoot.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_STATUS_MESSAGE.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SP_VIEW_ALL_ACTIVITIES.proc.sql" />
+    <Build Include="Schema Objects\dbo\Stored Procedures\SPTEST_FILL_DRIVERS.sql" />
+    <Build Include="Schema Objects\dbo\Tables\Keys\ACTIVITIES.PK_ACTIVITIES.pkey.sql" />
+    <Build Include="Schema Objects\dbo\Tables\Keys\ACTIVITY_TYPES.PK_ACTIVITY_TYPES.pkey.sql" />
+    <Build Include="Schema Objects\dbo\Tables\Keys\ALTERNATIVES.PK_ALTERNATIVES.pkey.sql" />
+    <Build Include="Schema Objects\dbo\Tables\Keys\ASSET_SETS.PK_ASSET_SETS.pkey.sql" />
+    <Build Include="Schema Objects\dbo\Tables\Keys\ASSETS_UPDATE.PK_ASSETS_UPDATE.pkey.sql" />
+    <Build Include="Schema Objects\dbo\Tables\Keys\BASIN_TYPES.PK_BASIN_TYPES.pkey.sql" />
+    <Build Include="Schema Objects\dbo\Tables\Keys\BASINS.PK_BASINS.pkey.sql" />
+    <Build Include="Schema Objects\dbo\Tables\Keys\DISTRICTS.PK_DISTRICT.pkey.sql" />
+    <Build Include="Schema Objects\dbo\Tables\Keys\DRIVER_TYPES.PK_DRIVER_TYPES.pkey.sql" />
+    <Build Include="Schema Objects\dbo\Tables\Keys\DRIVERS.PK_DRIVERS.pkey.sql" />
+    <Build Include="Schema Objects\dbo\Tables\Keys\DRIVERS_UPDATE.PK_DRIVERS_UPDATE.pkey.sql" />
+    <Build Include="Schema Objects\dbo\Tables\Keys\pk_dtproperties.pkey.sql" />
+    <Build Include="Schema Objects\dbo\Tables\_DRIVERS_ALL_COMPKEYS_FOR_PROCESSING.sql" />
+    <Build Include="Schema Objects\dbo\Tables\_DRIVERS_LARGE_COMPKEYS_FOR_PROCESSING.sql" />
+    <Build Include="Schema Objects\dbo\Tables\_DRIVERS_LARGE_ROOT_LARGE_PIPE_COMPKEYS_FOR_PROCESSING.sql" />
+    <Build Include="Schema Objects\dbo\Tables\_DRIVERS_LARGE_ROOT_XOR_LARGE_PIPE_COMPKEYS_FOR_PROCESSING.sql" />
+    <Build Include="Schema Objects\dbo\Tables\_DRIVERS_LARGE_TRACTIVE_COMPKEYS_FOR_PROCESSING.sql" />
+    <Build Include="Schema Objects\dbo\Tables\_DRIVERS_SMALL_COMPKEYS_FOR_PROCESSING.sql" />
+    <Build Include="Schema Objects\dbo\Tables\_DRIVERS_SMALL_ROOT_COMPKEYS_FOR_PROCESSING.sql" />
+    <Build Include="Schema Objects\dbo\Tables\_DRIVERS_SMALL_TRACTIVE_COMBO_COMPKEYS_FOR_PROCESSING.sql" />
+    <Build Include="Schema Objects\dbo\Tables\_DRIVERS_SMALL_TRACTIVE_COMPKEYS_FOR_PROCESSING.sql" />
+    <Build Include="Schema Objects\dbo\Tables\_DRIVERS_SMALL_TRACTIVE_SANITARY_COMPKEYS_FOR_PROCESSING.sql" />
+    <Build Include="Schema Objects\dbo\Tables\ACCELERATED_CLEANING_CAUSE_TYPES.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\ACCELERATED_CLEANING_CAUSES.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\ACCELERATED_CLEANINGS.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\ACTIVITIES.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\ACTIVITIES_FOR_PROCESSING.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\ACTIVITY_TYPES.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\AllInspections.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\ALTERNATIVES.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\ASSET_SETS.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\ASSETS.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\ASSETS_UPDATE.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\BASIN_TYPES.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\BASINS.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\CONTROLLING_DRIVER_FREQUENCIES.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\CONTROLLING_DRIVER_FREQUENCIES_FOR_PROCESSING.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\DISTRICTS.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\DmeProjLinks.sql" />
+    <Build Include="Schema Objects\dbo\Tables\DRIVER_TYPES.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\DRIVER_TYPES_UPDATE.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\DRIVERS.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\DRIVERS_UPDATE.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\dtproperties.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\DWF_FLOW_DATA_TABLE.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\DWF_Flow_Statistics.sql" />
+    <Build Include="Schema Objects\dbo\Tables\LAST_ACTIVITY_DATES_FOR_PROCESSING.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\LatestInspections.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\MlinkID_Junction_Table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\NEXT_ACTIVITIES.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\NUMS.sql" />
+    <Build Include="Schema Objects\dbo\Tables\REHAB10FTSEGS.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\RootInspections.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\SIZE_INTERVALS.sql" />
+    <Build Include="Schema Objects\dbo\Tables\SpecialRoot.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\TRACTIVE_FORCE_GRADES.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\TRACTIVE_FORCE_MODEL_INPUTS.table.sql" />
+    <Build Include="Schema Objects\dbo\Tables\VARIABLES.sql" />
+    <Build Include="Schema Objects\dbo\Views\LAST_ACTIVITY_DATES.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\View_DriversCleaning.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\View_DriversInspectionCondition.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\View_DriversInspectionPM.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\View_DriversInspections_Aggregate.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\View_DriversRootManagement.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\View_LatestMaxRootGrade.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\View_ProjectedCleaningsAndCosts.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\View_ProjectedInspectionsAndCosts.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\View_ProjectedRootManagementsAndCosts.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\View_RootAggregate.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\View_RootCount.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\View_RootRating.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\View_RootScore.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\View_RootsLatest.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_ALL_ACTIVITIES.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_ALL_DRIVERS.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_CLEANING_ACTIVITIES_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_CLEANING_ACTIVITIES_COUNT_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_CONTROLLING_DRIVERS.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_DWF_FLOW_STATISTICS.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\vw_DWF_Flow_Statistics2.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_EXPORT_ALL_ACTIVITIES_FOR_MAPPING.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_EXPORT_NEXT_ACTIVITIES_FOR_MAPPING.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_INSPECTION_ACTIVITIES_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_INSPECTION_ACTIVITIES_COUNT_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_LAST_ACTIVITY_DATES.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_NEXT_ACTIVITIES_BY_COMPKEY.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_NEXT_ACTIVITY_COST_BY_COMPKEY.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_NEXT_ACTIVITY_FISCAL_YEAR_BY_COMPKEY.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_NEXT_ACTIVITY_FISCAL_YEARS.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_NEXT_ACTIVITY_HANSEN_ACTIVITY_CODE_BY_COMPKEY.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_NEXT_CONDITION_INSPECTION_INTERVAL.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_RANKED_MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_ROOT_ACTIVITIES_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql" />
+    <Build Include="Schema Objects\dbo\Views\VW_ROOT_ACTIVITIES_COUNT_BY_DRIVER_TYPE_FISCAL_YEAR.view.sql" />
+    <Build Include="Schema Objects\dbo\Synonyms\HCOMPSMN.sql" />
+    <Build Include="Schema Objects\dbo\Synonyms\HCOMPSMH.sql" />
+    <Build Include="Schema Objects\dbo\Synonyms\HSMNINDHIST.sql" />
+    <Build Include="Schema Objects\dbo\Synonyms\SMNSERVINSPOB.sql" />
+    <Build Include="Schema Objects\dbo\Synonyms\HSMNSERVICEINSP.sql" />
+    <Build Include="Schema Objects\dbo\Synonyms\HSMNSERVINSPTYPEOBSEV.sql" />
+    <Build Include="Schema Objects\dbo\Synonyms\HASSETINSPINDEX.sql" />
+    <Build Include="Schema Objects\dbo\Synonyms\HHISTORY.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug.publish.xml" />

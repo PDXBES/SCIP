@@ -102,22 +102,22 @@ namespace UI
         insertActivitiesCommand.ExecuteNonQuery();
         sqlConnection.Close();
 
-        var strSQL = "SELECT * INTO NEXT_ACTIVITIES FROM [ODBC;DRIVER=SQL Server;SERVER=SIRTOBY;DATABASE=SCIP;Trusted_Connection=Yes].[NEXT_ACTIVITIES] WHERE Alternative_ID = " + alternative_id.ToString();;
+        var strSQL = "SELECT * INTO NEXT_ACTIVITIES FROM [ODBC;DRIVER=SQL Server;SERVER=BESDBTEST1;DATABASE=SCIP;Trusted_Connection=Yes].[NEXT_ACTIVITIES] WHERE Alternative_ID = " + alternative_id.ToString();;
         cmd.CommandText = strSQL;
         worker.ReportProgress(20, "Exporting NEXT_ACTIVITIES");
         newConnection.Execute(strSQL, out objAffected, 0);
 
-        strSQL = "SELECT * INTO ALL_ACTIVITIES FROM [ODBC;DRIVER=SQL Server;SERVER=SIRTOBY;DATABASE=SCIP;Trusted_Connection=Yes].[ACTIVITIES_FOR_PROCESSING] WHERE Alternative_ID = " + alternative_id.ToString();
+        strSQL = "SELECT * INTO ALL_ACTIVITIES FROM [ODBC;DRIVER=SQL Server;SERVER=BESDBTEST1;DATABASE=SCIP;Trusted_Connection=Yes].[ACTIVITIES_FOR_PROCESSING] WHERE Alternative_ID = " + alternative_id.ToString();
         cmd.CommandText = strSQL;
         worker.ReportProgress(40, "Exporting ALL_ACTIVITIES");
         newConnection.Execute(strSQL, out objAffected, 0);
 
-        strSQL = "SELECT * INTO ALL_DRIVERS FROM [ODBC;DRIVER=SQL Server;SERVER=SIRTOBY;DATABASE=SCIP;Trusted_Connection=Yes].[VW_ALL_DRIVERS] WHERE Alternative_ID = " + alternative_id.ToString();
+        strSQL = "SELECT * INTO ALL_DRIVERS FROM [ODBC;DRIVER=SQL Server;SERVER=BESDBTEST1;DATABASE=SCIP;Trusted_Connection=Yes].[VW_ALL_DRIVERS] WHERE Alternative_ID = " + alternative_id.ToString();
         cmd.CommandText = strSQL;
         worker.ReportProgress(60, "Exporting ALL_DRIVERS");
         newConnection.Execute(strSQL, out objAffected, 0);
 
-        strSQL = "SELECT * INTO DRIVER_TYPES FROM [ODBC;DRIVER=SQL Server;SERVER=SIRTOBY;DATABASE=SCIP;Trusted_Connection=Yes].[DRIVER_TYPES] WHERE Alternative_ID = " + alternative_id.ToString();
+        strSQL = "SELECT * INTO DRIVER_TYPES FROM [ODBC;DRIVER=SQL Server;SERVER=BESDBTEST1;DATABASE=SCIP;Trusted_Connection=Yes].[DRIVER_TYPES] WHERE Alternative_ID = " + alternative_id.ToString();
         cmd.CommandText = strSQL;
         worker.ReportProgress(80, "Exporting DRIVER_TYPES");
         newConnection.Execute(strSQL, out objAffected, 0);

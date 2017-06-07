@@ -5,7 +5,7 @@
     [diamWidth_inches]          FLOAT (53)    NOT NULL,
     [height_inches]             FLOAT (53)    NULL,
     [basin_id]                  VARCHAR (3)   NOT NULL,
-    [district_id]               VARCHAR (4)   NOT NULL,
+    [district_id]               VARCHAR (4)   NULL,
     [unit_type]                 VARCHAR (10)  NOT NULL,
     [last_inspection_date]      DATETIME      NULL,
     [last_root_management_date] DATETIME      NULL,

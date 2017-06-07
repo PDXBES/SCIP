@@ -111,7 +111,6 @@ BEGIN
   -----------------------------------------------------------------------
   --Fill RootInspections with all of the valid 
   --sanitary inspections for root evidence
-  EXEC SP_STATUS_MESSAGE 'Inserting RootInspections'
 
 ---############################################################
 ---############################################################
@@ -231,6 +230,7 @@ GROUP BY COMPKEY*/
 ---############################################################
 DELETE FROM dbo.ASSETS
 --[dbo].[ASSETS]
+EXEC SP_STATUS_MESSAGE 'Inserting Assets'
 INSERT INTO [dbo].[ASSETS] (COMPKEY, length_ft, diamWidth_inches, height_inches, unit_type, basin_id, district_id, last_inspection_date, last_root_management_date, last_root_inspection_date, last_cleaning_date, structural_grade, asset_set_id, unitid, unitid2, pipe_age_years, [material], [install_date])
 SELECT	A.COMPKEY,
         A.PIPELEN,
@@ -439,5 +439,6 @@ WHERE	(
 		A.UNITTYPE IN ('CSINT', 'CSML', 'CSOTN', 'SAINT', 'SAML')
 		AND 
 		A.SERVSTAT NOT IN ('ABAN', 'DNE', 'TBAB')
+EXEC SP_STATUS_MESSAGE 'Completed.'
 
 END

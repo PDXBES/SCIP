@@ -228,7 +228,7 @@ GROUP BY COMPKEY*/
 
 ---############################################################
 ---############################################################
-DELETE FROM dbo.ASSETS
+DELETE FROM dbo.ASSETS WHERE asset_set_id = @asset_set_id
 --[dbo].[ASSETS]
 EXEC SP_STATUS_MESSAGE 'Inserting Assets'
 INSERT INTO [dbo].[ASSETS] (COMPKEY, length_ft, diamWidth_inches, height_inches, unit_type, basin_id, district_id, last_inspection_date, last_root_management_date, last_root_inspection_date, last_cleaning_date, structural_grade, asset_set_id, unitid, unitid2, pipe_age_years, [material], [install_date])

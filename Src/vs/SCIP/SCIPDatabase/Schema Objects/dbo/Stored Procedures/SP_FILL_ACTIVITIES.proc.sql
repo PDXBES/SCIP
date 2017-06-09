@@ -42,32 +42,16 @@ DECLARE  @RANKED_MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE_FOR_PROCESSING TABLE(
     FROM @MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE_FOR_PROCESSING A INNER JOIN [VW_ALL_DRIVERS] B ON (A.compkey = B.compkey AND A.activity_type = B.activity_type AND A.min_frequency_years = B.frequency_years AND B.alternative_id = @alternative_id)
     GROUP BY A.activity_type, A.compkey, A.min_frequency_years
 
-DECLARE @CONTROLLING_DRIVERS_FOR_PROCESSING TABLE(
-	[driver_id] [INT] NULL,
-	[compkey] [INT] NULL,
-	[length_ft] [INT] NULL,
-	[diamwidth_inches] [DECIMAL](5, 2) NULL,
-	[height_inches] [DECIMAL](5, 2) NULL,
-	[basin] [VARCHAR](50) NULL,
-	[district] [VARCHAR](50) NULL,
-	[driver_type] [VARCHAR](50) NULL,
-	[reporting_category] [VARCHAR](100) NULL,
-	[driver_type_id] [INT] NULL,
-	[driver_rank] [INT] NULL,
-	[activity_type] [VARCHAR](20) NULL,
-	[activity_type_id] [INT] NULL,
-	[cost_per_ft] [MONEY] NULL,
-	[frequency_years] [DECIMAL](5, 2) NULL,
-	[updated_by] [VARCHAR](20) NULL,
-	[update_date] [DATETIME] NULL,
-	[driver_cost] [MONEY] NULL
-)
+DECLARE @CONTROLLING_DRIVERS_FOR_PROCESSING ControllingDriversForProcessingType
       
   EXEC SP_STATUS_MESSAGE 'Preparing CONTROLLING_DRIVERS_FOR_PROCESSING'
   
   INSERT INTO @CONTROLLING_DRIVERS_FOR_PROCESSING
     SELECT A.driver_id, A.compkey, A.length_ft, A.diamwidth_inches, A.height_inches, A.basin, A.district, A.driver_type, A.reporting_category, A.driver_type_id, driver_rank, A.activity_type, A.activity_type_id, A.cost_per_ft, A.frequency_years, A.updated_by, A.update_date, A.driver_cost
     FROM VW_ALL_DRIVERS A INNER JOIN @RANKED_MIN_DRIVER_FREQUENCY_BY_ACTIVITY_TYPE_FOR_PROCESSING B ON (A.compkey = B.compkey AND A.activity_type = B.activity_type AND A.frequency_years = B.min_frequency_years AND A.driver_rank = B.min_driver_rank AND A.alternative_id = @alternative_id)
+  SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records for controlling driver for processing'
+  EXEC SP_STATUS_MESSAGE @statusMessage
+
 
   EXEC SP_STATUS_MESSAGE 'Preparing CONTROLLING_DRIVER_FREQUENCIES_FOR_PROCESSING'
   
@@ -121,14 +105,16 @@ DECLARE @CONTROLLING_DRIVERS_FOR_PROCESSING TABLE(
 
   INSERT INTO ACTIVITIES (compkey, driver_id, activity_date, cost, activity_type_id, alternative_id)
     SELECT A.compkey, A.driver_id, @currentDate, A.driver_cost, A.activity_type_id, @alternative_id
-    FROM (CONTROLLING_DRIVERS_FOR_PROCESSING A INNER JOIN LAST_ACTIVITY_DATES_FOR_PROCESSING B ON (A.compkey = B.compkey))
+    FROM (@CONTROLLING_DRIVERS_FOR_PROCESSING A INNER JOIN LAST_ACTIVITY_DATES_FOR_PROCESSING B ON (A.compkey = B.compkey))
     WHERE (A.frequency_years = 0) AND (A.activity_type = 'Inspection')
   SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records for inspection'
   EXEC SP_STATUS_MESSAGE @statusMessage
 
   EXEC SP_STATUS_MESSAGE 'Inserting activities'
+  EXEC SP_INSERT_ACTIVITIES @alternative_id = @alternative_id, @numYears = @years_to_process, @controllingDrivers = @CONTROLLING_DRIVERS_FOR_PROCESSING
 
-  EXEC SP_INSERT_ACTIVITIES @alternative_id = @alternative_id, @numYears = @years_to_process
-
+  EXEC SP_STATUS_MESSAGE 'Inserting activities for processing'
+  EXEC dbo.SP_INSERT_ACTIVITIES_FOR_PROCESSING @alternative_id = @alternative_id, @controllingDrivers = @CONTROLLING_DRIVERS_FOR_PROCESSING
+  
   EXEC SP_STATUS_MESSAGE 'End SP_FILL_ACTIVITIES'
 END

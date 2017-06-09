@@ -1,5 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[SP_INSERT_ACTIVITIES_FOR_PROCESSING]
-	@alternative_id INT
+	@alternative_id INT,
+  @controllingDrivers ControllingDriversForProcessingType READONLY
 AS
 BEGIN
   SET NOCOUNT ON
@@ -46,7 +47,7 @@ BEGIN
           (
             (
               (
-                [ACTIVITIES] A INNER JOIN CONTROLLING_DRIVERS_FOR_PROCESSING B ON ((A.driver_id = B.driver_id))
+                [ACTIVITIES] A INNER JOIN @controllingDrivers B ON ((A.driver_id = B.driver_id))
               ) INNER JOIN DRIVER_TYPES C ON ((B.driver_type_id = C.driver_type_id))
             ) INNER JOIN ALTERNATIVES I ON (A.alternative_id = I.alternative_id)
           ) INNER JOIN LAST_ACTIVITY_DATES_FOR_PROCESSING D ON ((A.compkey = D.compkey))
@@ -59,6 +60,7 @@ BEGIN
   DECLARE @statusMessage VARCHAR(200)
   SET @statusMessage = 'Inserted ' + CONVERT(VARCHAR(10), @@ROWCOUNT) + ' records for activities'
   EXEC SP_STATUS_MESSAGE @statusMessage
+
 
   EXEC SP_STATUS_MESSAGE 'End SP_INSERT_ACTIVITIES_FOR_PROCESSING'
 

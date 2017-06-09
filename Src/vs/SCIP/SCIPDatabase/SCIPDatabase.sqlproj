@@ -133,6 +133,7 @@
     <Folder Include="Schema Objects\dbo\Tables\Keys" />
     <Folder Include="Schema Objects\dbo\Views" />
     <Folder Include="Schema Objects\dbo\Synonyms" />
+    <Folder Include="Schema Objects\dbo\Types" />
   </ItemGroup>
   <ItemGroup>
     <BuildContributorArgument Include="OutDir=$(OutDir)" />
@@ -384,6 +385,10 @@
     <Build Include="Schema Objects\dbo\Synonyms\HSMNSERVINSPTYPEOBSEV.sql" />
     <Build Include="Schema Objects\dbo\Synonyms\HASSETINSPINDEX.sql" />
     <Build Include="Schema Objects\dbo\Synonyms\HHISTORY.sql" />
+    <Build Include="Schema Objects\dbo\Types\ControllingDriversForProcessingType.sql" />
+    <Build Include="Schema Objects\dbo\Tables\Keys\DRIVERS_COMPKEY_ALTERNATIVEID.sql" />
+    <Build Include="Schema Objects\dbo\Tables\Keys\ASSETS_ASSETSETID.sql" />
+    <Build Include="Schema Objects\dbo\Tables\Keys\NEXT_ACTIVITIES_ALTERNATIVEID.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug.publish.xml" />

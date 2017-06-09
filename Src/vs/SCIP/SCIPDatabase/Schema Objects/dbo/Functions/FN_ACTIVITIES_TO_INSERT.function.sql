@@ -4,7 +4,8 @@ CREATE FUNCTION [dbo].[FN_ACTIVITIES_TO_INSERT]
 (
   @alternative_id int,
 	@activity_type VARCHAR(50), 
-	@numYears decimal(5,2)
+	@numYears decimal(5,2),
+  @controllingDrivers ControllingDriversForProcessingType READONLY
 )
 RETURNS @returntable TABLE 
 (
@@ -19,7 +20,7 @@ BEGIN
   WITH FrequencyTable(frequency_years) AS
   (
     SELECT frequency_years
-    FROM CONTROLLING_DRIVERS_FOR_PROCESSING
+    FROM @controllingDrivers
     GROUP BY activity_type_id, frequency_years
   )
 	INSERT @returntable
@@ -44,7 +45,7 @@ BEGIN
             A.frequency_years, A.frequency_years + @numYears - 1)
       WHERE A.frequency_years > 0) B 
         INNER JOIN
-          CONTROLLING_DRIVERS_FOR_PROCESSING C ON (B.frequency_years = C.frequency_years)
+          @controllingDrivers C ON (B.frequency_years = C.frequency_years)
     ) INNER JOIN LAST_ACTIVITY_DATES_FOR_PROCESSING D ON (C.compkey = D.compkey)
   WHERE  
     (C.activity_type = @activity_type)  

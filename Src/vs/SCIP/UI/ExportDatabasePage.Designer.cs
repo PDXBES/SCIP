@@ -34,10 +34,10 @@
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint2 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint3 = new Infragistics.Win.Layout.GridBagConstraint();
       Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("ALTERNATIVES", -1);
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn9 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn10 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("name");
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn11 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("description");
-      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn12 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("asset_set_id");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("alternative_id");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("name");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn3 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("description");
+      Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn4 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("asset_set_id");
       Infragistics.Win.Layout.GridBagConstraint gridBagConstraint4 = new Infragistics.Win.Layout.GridBagConstraint();
       this.ultraButtonExport = new Infragistics.Win.Misc.UltraButton();
       this.backgroundWorkerExport = new System.ComponentModel.BackgroundWorker();
@@ -136,15 +136,15 @@
       // comboAlternativeID
       // 
       this.comboAlternativeID.DataSource = this.aLTERNATIVESBindingSource;
-      ultraGridColumn9.Header.VisiblePosition = 0;
-      ultraGridColumn10.Header.VisiblePosition = 1;
-      ultraGridColumn11.Header.VisiblePosition = 2;
-      ultraGridColumn12.Header.VisiblePosition = 3;
+      ultraGridColumn1.Header.VisiblePosition = 0;
+      ultraGridColumn2.Header.VisiblePosition = 1;
+      ultraGridColumn3.Header.VisiblePosition = 2;
+      ultraGridColumn4.Header.VisiblePosition = 3;
       ultraGridBand1.Columns.AddRange(new object[] {
-            ultraGridColumn9,
-            ultraGridColumn10,
-            ultraGridColumn11,
-            ultraGridColumn12});
+            ultraGridColumn1,
+            ultraGridColumn2,
+            ultraGridColumn3,
+            ultraGridColumn4});
       this.comboAlternativeID.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
       this.comboAlternativeID.DisplayMember = "name";
       this.comboAlternativeID.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

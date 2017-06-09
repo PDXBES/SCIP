@@ -38,6 +38,8 @@ BEGIN
   SELECT @asset_set_id = asset_set_id
   FROM ALTERNATIVES
   WHERE alternative_id = @alternative_id
+  SET @statusMessage = 'Asset set = ' + CONVERT(VARCHAR(10), @asset_set_id)
+  EXEC SP_STATUS_MESSAGE @statusMessage
 
   ------------------------------------------------------------------------------------------------
   -- Create Lists
@@ -49,6 +51,11 @@ BEGIN
     SELECT compkey
     FROM [dbo].[ASSETS]
     WHERE asset_set_id = @asset_set_id
+
+  DECLARE @numDriversAllCompkeysForProcessing int
+  SELECT @numDriversAllCompkeysForProcessing = COUNT(*) FROM @DRIVERS_ALL_COMPKEYS_FOR_PROCESSING 
+  SET @statusMessage = '@DRIVERS_ALL_COMPKEYS_FOR_PROCESSING count = ' + CONVERT(VARCHAR(10), @numDriversAllCompkeysForProcessing)
+  EXEC SP_STATUS_MESSAGE @statusMessage
 
   --Create a list of compkeys for pipes with dimensions greater than @LargeDiameterIn
   EXEC SP_STATUS_MESSAGE 'Creating list of large compkeys'

@@ -111,7 +111,7 @@ namespace UI
       var fillNextActivitiesCommand = new SqlCommand("SP_FILL_NEXT_ACTIVITIES", connection)
       {
         CommandType = CommandType.StoredProcedure,
-        CommandTimeout = 3600
+        CommandTimeout = 21600
       };
       fillNextActivitiesCommand.Parameters.Add("@alternative_id", SqlDbType.Int).Value = 
         runArgs.AlternativeId;
